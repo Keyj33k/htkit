@@ -15,7 +15,7 @@ def banner():
     print("    | | | | | | | \ | |_   _| ____|  _ \    ")
     print("    | |_| | | | |  \| | | | |  _| | |_) |   ")
     print("    |  _  | |_| | |\  | | | | |___|  _ <    ")
-    print("   |_| |_|\___/|_| \_| |_| |_____|_| \_\    ")
+    print("    |_| |_|\___/|_| \_| |_| |_____|_| \_\    ")
     print("")
     print("<by@keyjeek>  |  Follow the white rabbit... ")
     print(" <contact:nomotikag33n@gmail.com>           ")
