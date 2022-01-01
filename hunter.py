@@ -21,7 +21,6 @@ def banner():
     print(" <by@keyjeek>  |  Follow the white rabbit... ")
     print(" <contact:nomotikag33n@gmail.com>           ")
     print(" [i] Hunter is a small Toolkit to perform Information Gathering   ")
-    print(" [i] Type x to exit Hunter.                 ")
 banner()
 
 def HUNT3R():
@@ -43,7 +42,7 @@ def HUNT3R():
             print("[i] Exit")
             sys.exit()
         elif c=='1':
-            os.system('cls' if os.name=='nt' else 'clear')
+            os.system('clear')
             def witcher():
                 print("     __        ___ _       _                  ")
                 print("     \ \      / (_) |_ ___| |__   ___ _ __    ")
@@ -101,7 +100,7 @@ def HUNT3R():
                 return HUNT3R()
             witcher()           
         elif c=='2':
-            os.system('cls' if os.name=='nt' else 'clear')
+            os.system('clear')
             def md5encrypt():
                 def banner():
                     print("""   
@@ -152,7 +151,7 @@ def HUNT3R():
                 md5()
             md5encrypt()
         elif c=='3':
-            os.system('cls' if os.name=='nt' else 'clear')
+            os.system('clear')
             def eye(): 
                 print("      ___ ____  _____                ")
                 print("     |_ _|  _ \| ____|   _  ___      ")
@@ -179,7 +178,7 @@ def HUNT3R():
                         return HUNT3R()
             eye()
         elif c=='4':
-            os.system('cls' if os.name=='nt' else 'clear')
+            os.system('clear')
             def eye_of_sauron():
                 print("      _____                     __   ____  _  _                             ")
                 print("     |___ / _   _  ___    ___  / _| / ___|| || |  _   _ _ __ ___  _ __      ")
@@ -211,7 +210,7 @@ def HUNT3R():
                 main()
             eye_of_sauron()
         elif c=='5':
-            os.system('cls' if os.name=='nt' else 'clear')
+            os.system('clear')
             def base64encode():
                 def banner():
                     print("""
