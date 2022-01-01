@@ -67,7 +67,7 @@ def HUNT3R():
                     ip_add_entered = input("\n[*] Enter the IP you want to scan: \n[*]--> ")
                     if ip_add_entered == 'x':
                         print("[i] Exit")
-                        sys.exit()    
+                        return HUNT3R()    
                     elif ip_add_pattern.search(ip_add_entered):
                         print(f"[i] {ip_add_entered} is valid. Please wait, it'll take some time..\n")        
                         def spinning_cursor():
