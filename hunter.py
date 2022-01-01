@@ -1,3 +1,4 @@
+
 from datetime import datetime
 import requests
 import hashlib
@@ -17,7 +18,7 @@ def banner():
     print("    |  _  | |_| | |\  | | | | |___|  _ <    ")
     print("    |_| |_|\___/|_| \_| |_| |_____|_| \_\    ")
     print("")
-    print("<by@keyjeek>  |  Follow the white rabbit... ")
+    print(" <by@keyjeek>  |  Follow the white rabbit... ")
     print(" <contact:nomotikag33n@gmail.com>           ")
     print(" [i] Hunter is a small Toolkit to perform Information Gathering   ")
     print(" [i] Type x to exit Hunter.                 ")
@@ -42,6 +43,7 @@ def HUNT3R():
             print("[i] Exit")
             sys.exit()
         elif c=='1':
+            os.system('cls' if os.name=='nt' else 'clear')
             def witcher():
                 print("     __        ___ _       _                  ")
                 print("     \ \      / (_) |_ ___| |__   ___ _ __    ")
@@ -58,35 +60,30 @@ def HUNT3R():
                 ip_add_pattern = re.compile("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
                 port_range_pattern = re.compile("([0-9]+)-([0-9]+)")
                 port_min = 0
-                port_max = int(input("\n[*] Enter maximum Port you want to scan: \n[]--> "))
+                port_max = int(input("\n[*] Enter maximum Port you want to scan: \n[*]--> "))
                 open_ports = []
-
                 tstart = datetime.now()
-
                 while True:
                     ip_add_entered = input("\n[*] Enter the IP you want to scan: \n[*]--> ")
                     if ip_add_entered == 'x':
                         print("[i] Exit")
-                        sys.exit()
-    
+                        sys.exit()    
                     elif ip_add_pattern.search(ip_add_entered):
                         print(f"[i] {ip_add_entered} is valid. Please wait, it'll take some time..\n")        
                         def spinning_cursor():
                             while True:
                                 for cursor in '|/-\\':
                                     yield cursor
-                        s=spinning_cursor()
+                        spinner = spinning_cursor()
                         print("[i] loading..")
                         for _ in range(port_max):    ####1000
-                            sys.stdout.write(next(s))
+                            sys.stdout.write(next(spinner))
                             sys.stdout.flush()
                             time.sleep(0.2)
                             sys.stdout.write('\b')           
                         break
                 print("\n\n[i] Almost finished..\n")
                 print("[r] Open connections:\n ")
-
-
                 for port in range(port_min, port_max + 1):
                     try:
                         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -95,18 +92,16 @@ def HUNT3R():
                             open_ports.append(port)
                     except:
                         pass
-
                 for port in open_ports:
                     print(f"[+] TCP/{port}  open")
                 tend = datetime.now()
                 diff = tend - tstart
                 print("\n[!] Scan complete in " + str(diff) + " seconds")
-
                 print("[i] Witcher done.")
                 return HUNT3R()
-            witcher()
-            
+            witcher()           
         elif c=='2':
+            os.system('cls' if os.name=='nt' else 'clear')
             def md5encrypt():
                 def banner():
                     print("""   
@@ -122,18 +117,16 @@ def HUNT3R():
             [i] Type x to exit md5encrypt.
                 """)
                 banner()
-
                 def md5():
                     def encrypt(): 
                         s=input("\n[*] Enter your text to hash: ")
                         if s=='x':
                             print("[i] Exit")
-                            sys.exit()
+                            return HUNT3R()
                         r=hashlib.md5(s.encode())
                         print("[+] Result: ", end ="")
                         print(r.hexdigest())
                     encrypt()
-
                     def decrypt():
                         a=input("\n[?] Do you want to decrypt/bruteforce the hash? y/n: ")
                         if a=='y':
@@ -141,25 +134,25 @@ def HUNT3R():
                             return encrypt()
                         elif a=='x':
                             print("[i] Exit")
-                            sys.exit()
+                            return HUNT3R()
                         elif a=='n':
                             e=input("[?] Do you want to exit? y/n ")
                             if e=='y':
                                 print("[i] Exit")
-                                sys.exit()
-                        elif e=='x':
-                            print("[i] Exit")
-                            sys.exit()
-                        elif e=='n':
-                            return encrypt()
-                        else:
-                            print("[i] Invalid input")
-                            return HUNT3R()
+                                return HUNT3R()
+                            elif e=='x':
+                                print("[i] Exit")
+                                return HUNT3R()
+                            elif e=='n':
+                                return encrypt()
+                            else:
+                                print("[i] Invalid input")
+                                return HUNT3R()
                     decrypt()
                 md5()
             md5encrypt()
-
         elif c=='3':
+            os.system('cls' if os.name=='nt' else 'clear')
             def eye(): 
                 print("      ___ ____  _____                ")
                 print("     |_ _|  _ \| ____|   _  ___      ")
@@ -172,15 +165,13 @@ def HUNT3R():
                 print("   [i] IPEye is a Tool to find out\n       some information about an IP.  ")
                 print("   [i] Type x to exit IPEye.")
                 print("")
-
                 q = input('[*] Enter the target IP you want to scan: ')
                 if q == 'x':
                     print("[i] Exit")
-                    sys.exit()
+                    return HUNT3R()
                 response = requests.post("http://ip-api.com/batch", json=[
                     {"query":q}
                 ]).json()
-
                 for ip in response:
                     for k,v in ip.items():
                         print(k,v)
@@ -188,6 +179,7 @@ def HUNT3R():
                         return HUNT3R()
             eye()
         elif c=='4':
+            os.system('cls' if os.name=='nt' else 'clear')
             def eye_of_sauron():
                 print("      _____                     __   ____  _  _                             ")
                 print("     |___ / _   _  ___    ___  / _| / ___|| || |  _   _ _ __ ___  _ __      ")
@@ -199,13 +191,11 @@ def HUNT3R():
                 print("          <contact:nomotikag33n@gmail.com>       ")
                 print("          [i] This Tool is made to banner grabbing   ")
                 print("")
-
                 def grabber(i, p):
                     s = socket.socket()
                     s.connect((i, int(p)))
                     banner = s.recv(1024)
                     print(banner)
-
                 def main():
                     if len(sys.argv) <= 1:
                         print("[!] Use --help\n")
@@ -217,11 +207,11 @@ def HUNT3R():
                         i = sys.argv[1]
                         p = sys.argv[2]
                         grabber(i, p)
-                        exit(0)
-                        
+                        exit(0)                       
                 main()
             eye_of_sauron()
         elif c=='5':
+            os.system('cls' if os.name=='nt' else 'clear')
             def base64encode():
                 def banner():
                     print("""
@@ -251,7 +241,7 @@ def HUNT3R():
                             x=input("\n[?] Do you want to exit? y/n ")
                             if x=='y':
                                 print("[i] Exit")
-                                sys.exit()
+                                return HUNT3R()
                             elif x=='n':
                                 return chse()
                             else:
@@ -266,7 +256,7 @@ def HUNT3R():
                         b64_m=input("\n[*] Enter your hash to decode: \n")
                         if b64_m=='x':
                             print("[i] Exit")
-                            sys.exit()
+                            return HUNT3R()
                         b64_b=b64_m.encode('ascii')
                         m_bytes=base64.b64decode(b64_b)
                         m=m_bytes.decode('ascii')
@@ -274,11 +264,10 @@ def HUNT3R():
                         return chse()
                     elif c=='x':
                         print("[i] Exit")
-                        sys.exit()
+                        return HUNT3R()
                     else:
                         print("[i] Invalid input")
                         return HUNT3R()
-
                 chse()
             base64encode()
     hunter()
