@@ -1,10 +1,12 @@
-
 from datetime import datetime
+from threading import Thread
+from scapy.all import *
 import requests
 import hashlib
 import socket
 import base64
 import socket
+import pandas
 import time
 import sys
 import os
@@ -21,6 +23,7 @@ def banner():
     print(" <by@keyjeek>  |  Follow the white rabbit... ")
     print(" <contact:nomotikag33n@gmail.com>           ")
     print(" [i] Hunter is a small Toolkit to perform Information Gathering   ")
+    print(" [i] Type x to exit Hunter.                 ")
 banner()
 
 def HUNT3R():
@@ -32,6 +35,7 @@ def HUNT3R():
             [3] eye
             [4] eye_of_sauron
             [5] base64encode
+            [6] WIFI-Stalker    >>     need monitor mode
             [x] Exit
 
     """)
@@ -66,7 +70,7 @@ def HUNT3R():
                     ip_add_entered = input("\n[*] Enter the IP you want to scan: \n[*]--> ")
                     if ip_add_entered == 'x':
                         print("[i] Exit")
-                        return HUNT3R()    
+                        return HUNT3R()
                     elif ip_add_pattern.search(ip_add_entered):
                         print(f"[i] {ip_add_entered} is valid. Please wait, it'll take some time..\n")        
                         def spinning_cursor():
@@ -75,7 +79,7 @@ def HUNT3R():
                                     yield cursor
                         spinner = spinning_cursor()
                         print("[i] loading..")
-                        for _ in range(port_max):    
+                        for _ in range(port_max):    ####1000
                             sys.stdout.write(next(spinner))
                             sys.stdout.flush()
                             time.sleep(0.2)
@@ -269,5 +273,43 @@ def HUNT3R():
                         return HUNT3R()
                 chse()
             base64encode()
+        elif c=='6':
+            def wifiStalker():
+                networks=pandas.DataFrame(columns=["BSSID", "SSID", "dBm_Signal", "Channel", "Crypto"])
+                networks.set_index("BSSID", inplace=True)
+                def callback(packet):
+                    if  packet.haslayer(Dot11Beacon):
+                        bssid=packet[Dot11].addr2
+                        ssid=packet[Dot11Elt].info.decode()
+                        try:
+                            dbm_signal = packet.dBm_AntSignal
+                        except:
+                            dbm_signal = "N/A"
+                        stats = packet[Dot11Beacon].network_stats()
+                        channel = stats.get("channel")
+                        crypto = stats.get("crypto")
+                        networks.loc[bssid] = (ssid, dbm_signal, channel, crypto)
+                def print_all():
+                    while True:
+                        os.system("clear")
+                        print(networks)
+                        time.sleep(0.5)                    
+                if __name__ == "__main__":
+                    interface = "wlan0mon"
+                    printer = Thread(target=print_all)
+                    printer.daemon = True
+                    printer.start()
+                    sniff(prn=callback, iface=interface)
+                def change_channel():
+                    ch = 1
+                    while True:
+                        os.system(f"iwconfig {interface} channel {ch}")
+                        ch = ch % 14 + 1
+                        time.sleep(0.5)
+                        channel_changer = Thread(target=change_channel)
+                        channel_changer.daemon = True
+                        channel_changer.start()
+            wifiStalker()
     hunter()
 HUNT3R()
+
