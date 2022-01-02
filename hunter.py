@@ -282,32 +282,32 @@ def HUNT3R():
                         bssid=packet[Dot11].addr2
                         ssid=packet[Dot11Elt].info.decode()
                         try:
-                            dbm_signal = packet.dBm_AntSignal
+                            dbm_signal=packet.dBm_AntSignal
                         except:
-                            dbm_signal = "N/A"
-                        stats = packet[Dot11Beacon].network_stats()
-                        channel = stats.get("channel")
-                        crypto = stats.get("crypto")
-                        networks.loc[bssid] = (ssid, dbm_signal, channel, crypto)
+                            dbm_signal="N/A"
+                        stats=packet[Dot11Beacon].network_stats()
+                        channel=stats.get("channel")
+                        crypto=stats.get("crypto")
+                        networks.loc[bssid]=(ssid, dbm_signal, channel, crypto)
                 def print_all():
                     while True:
                         os.system("clear")
                         print(networks)
                         time.sleep(0.5)                    
-                if __name__ == "__main__":
-                    interface = "wlan0mon"
-                    printer = Thread(target=print_all)
-                    printer.daemon = True
+                if __name__=="__main__":
+                    interface="wlan0mon"
+                    printer=Thread(target=print_all)
+                    printer.daemon=True
                     printer.start()
                     sniff(prn=callback, iface=interface)
                 def change_channel():
                     ch = 1
                     while True:
                         os.system(f"iwconfig {interface} channel {ch}")
-                        ch = ch % 14 + 1
+                        ch=ch%14+1
                         time.sleep(0.5)
-                        channel_changer = Thread(target=change_channel)
-                        channel_changer.daemon = True
+                        channel_change=Thread(target=change_channel)
+                        channel_changer.daemon=True
                         channel_changer.start()
             wifiStalker()
     hunter()
