@@ -8,4 +8,5 @@ Hunter using Tools like Witcher, md5encrypt, eye, eye_of_sauron, base64encode an
 Installation:
 -------------------------------------------------------------------
 cd Hunter
+
 sudo pip3 install -r requirements.txt
