@@ -4,16 +4,25 @@ import os
 
 os.system('clear')
 def eye_of_sauron():
-    print("      _____                     __   ____  _  _                             ")
-    print("     |___ / _   _  ___    ___  / _| / ___|| || |  _   _ _ __ ___  _ __      ")
-    print("       |_ \| | | |/ _ \  / _ \| |_  \___ \| || |_| | | | '__/ _ \| '_ \     ")
-    print("      ___) | |_| |  __/ | (_) |  _|  ___) |__   _| |_| | | | (_) | | | |    ")
-    print("     |____/ \__, |\___|  \___/|_|   |____/   |_|  \__,_|_|  \___/|_| |_|    ")
-    print("            |___/                                                           ")
-    print("\n        <by@keyjeek>  |  Follow the white rabbit...")
-    print("          <contact:nomotikag33n@gmail.com>       ")
-    print("          [i] This Tool is made to banner grabbing   ")
-    print("")
+    print("""
+    
+
+      ▓███▒   ██   █    █ █████   ▓██▓  ██   █        ███████▒   ▒█ ██████
+     █▓  ░█   ██   █    █ █   ▓█ ▒█  █▒ ██░  █        █     ░█   █░ █
+     █       ▒██▒  █    █ █    █ █░  ░█ █▒▓  █        █      ▒█ █▒  █
+     █▓░     ▓▒▒▓  █    █ █   ▒█ █    █ █ █  █        █       █▓█   █
+      ▓██▓   █░░█  █    █ █████  █    █ █ ▓▓ █        ██████  ▒█▒   ██████
+         ▓█  █  █  █    █ █  ░█▒ █    █ █  █ █        █        █    █
+          █ ▒████▒ █    █ █   ░█ █░  ░█ █  ▓▒█        █        █    █
+     █░  ▓█ ▓▒  ▒▓ █▒  ▒█ █    █ ▒█  █▒ █  ░██        █        █    █
+     ▒████░ █░  ░█  ████  █    ▒  ▓██▓  █   ██        ██████   █    ██████
+
+
+                                              ██████
+            <by@keyjeek>  |  Follow the white rabbit...
+              <contact:nomotikag33n@gmail.com>      
+              [i] This Tool is made to banner grabbing  
+    """)
 
     def grabber(k, j):
         sock = socket.socket()
