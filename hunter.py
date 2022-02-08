@@ -14,16 +14,23 @@ import re
 
 
 def banner():   
-    print("     _   _ _   _ _   _ _____ _____ ____     ")
-    print("    | | | | | | | \ | |_   _| ____|  _ \    ")
-    print("    | |_| | | | |  \| | | | |  _| | |_) |   ")
-    print("    |  _  | |_| | |\  | | | | |___|  _ <    ")
-    print("    |_| |_|\___/|_| \_| |_| |_____|_| \_\    ")
-    print("")
-    print(" <by@keyjeek>  |  Follow the white rabbit... ")
-    print(" <contact:nomotikag33n@gmail.com>           ")
-    print(" [i] Hunter is a small Toolkit to perform Information Gathering   ")
-    print(" [i] Type x to exit Hunter.                 ")
+   print("""
+         █    █                 █
+         █    █                 █
+         █    █ █   █  █▒██▒  █████   ███    █▒██▒
+         █    █ █   █  █▓ ▒█    █    ▓▓ ▒█   ██  █
+         ██████ █   █  █   █    █    █   █   █
+         █    █ █   █  █   █    █    █████   █
+         █    █ █   █  █   █    █    █       █
+         █    █ █▒ ▓█  █   █    █░   ▓▓  █   █
+         █    █ ▒██▒█  █   █    ▒██   ███▒   █
+
+   
+     <by@keyjeek>  |  Follow the white rabbit... 
+     <contact:nomotikag33n@gmail.com>           
+     [i] Hunter is a small Toolkit to perform Information Gathering   
+     [i] Type x to exit Hunter.              
+     """)
 banner()
 
 def HUNT3R():
@@ -48,17 +55,24 @@ def HUNT3R():
         elif choice == '1':
             os.system('clear')
             def witcher():
-                print("     __        ___ _       _                  ")
-                print("     \ \      / (_) |_ ___| |__   ___ _ __    ")
-                print("      \ \ /\ / /| | __/ __| '_ \ / _ \ '__|   ")
-                print("       \ V  V / | | || (__| | | |  __/ |      ")
-                print("        \_/\_/  |_|\__\___|_| |_|\___|_|      ")
-                print("                                              ")
-                print("   <by@keyjeek>  |  Follow the white rabbit...")
-                print("   <contact:nomotikag33n@gmail.com>       ")
-                print("   [i] Witcher is a simple port scanner.  ")
-                print("   [i] Type x to exit Witcher.")
+                print("""
 
+                      █                  █
+            █     █          █           █
+            █░ █ ░█          █           █
+            █░▒█▒░█ ███    █████   ▓██▒  █▒██▒   ███    █▒██▒
+            ▓▒███▒█   █      █    ▓█  ▓  █▓ ▒█  ▓▓ ▒█   ██  █
+            ▒▒█▒█▒▓   █      █    █░     █   █  █   █   █
+            ▒██ ██▓   █      █    █      █   █  █████   █
+            ▒█▓ ▓█▒   █      █    █░     █   █  █       █
+            ░█▒ ▒█▒   █      █░   ▓█  ▓  █   █  ▓▓  █   █
+             █   █▒ █████    ▒██   ▓██▒  █   █   ███▒   █
+
+                 <by@keyjeek>  |  Follow the white rabbit...
+                 <contact:nomotikag33n@gmail.com>      
+                 [i] Witcher is a simple port scanner.  
+                 [i] Type x to exit Witcher. 
+                """)
 
                 ip_compile = re.compile("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
                 port_min = 0
@@ -109,17 +123,27 @@ def HUNT3R():
             def md5encrypt():
                 def banner():
                     print("""   
-                       _ ____                                   _
-         _ __ ___   __| | ___|  ___ _ __   ___ _ __ _   _ _ __ | |_
-        | '_ ` _ \ / _` |___ \ / _ \ '_ \ / __| '__| | | | '_ \| __|
-        | | | | | | (_| |___) |  __/ | | | (__| |  | |_| | |_) | |_
-        |_| |_| |_|\__,_|____/ \___|_| |_|\___|_|   \__, | .__/ \__|
-                                                    |___/|_|
+
+                        █
+                        █  █████                                              █
+                        █  █                                                  █
+             ██▓█▓   ██▓█  █       ███   █▒██▒   ▓██▒   █▒██▒ █░  █  █▓██   █████
+             █▒█▒█  █▓ ▓█  ████▒  ▓▓ ▒█  █▓ ▒█  ▓█  ▓   ██  █ ▓▒ ▒▓  █▓ ▓█    █
+             █ █ █  █   █     ░█▓ █   █  █   █  █░      █     ▒█ █▒  █   █    █
+             █ █ █  █   █       █ █████  █   █  █       █      █ █   █   █    █
+             █ █ █  █   █       █ █      █   █  █░      █      █▓▓   █   █    █
+             █ █ █  █▓ ▓█  █░  █▓ ▓▓  █  █   █  ▓█  ▓   █      ▓█▒   █▓ ▓█    █░
+             █ █ █   ██▓█  ▒███▓   ███▒  █   █   ▓██▒   █      ▒█    █▓██     ▒██
+                                                               ▒█    █
+                                                               █▒    █
+                                                              ██     █
+
             <by@keyjeek>  |  Follow the white rabbit...
             <contact:nomotikag33n@gmail.com>       
             [i] md5encrypt is made to encrypt your string to an 128 bit hash value
             [i] Type x to exit md5encrypt.
                 """)
+                    
                 banner()
                 def md5():
                     def encrypt(): 
@@ -157,17 +181,28 @@ def HUNT3R():
             md5encrypt()
 
         elif choice == '3':
-            print("      ___ ____  _____                ")
-            print("     |_ _|  _ \| ____|   _  ___      ")
-            print("      | || |_) |  _|| | | |/ _ \     ")
-            print("      | ||  __/| |__| |_| |  __/     ")
-            print("     |___|_|   |_____\__, |\___|     ")
-            print("                     |___/           ")
-            print("\n <by@keyjeek>  |  Follow the white rabbit...")
-            print("   <contact:nomotikag33n@gmail.com>       ")
-            print("   [i] IPEye is a Tool to find out\n       some information about an IP.  ")
-            print("   [i] Type x to exit IPEye.")
-            print("")
+            print("""
+
+                 █████  █████░
+                   █    █   ▓█
+                   █    █    █  ███   █░  █   ███
+                   █    █   ▓█ ▓▓ ▒█  ▓▒ ▒▓  ▓▓ ▒█
+                   █    █████░ █   █  ▒█ █▒  █   █
+                   █    █      █████   █ █   █████
+                   █    █      █       █▓▓   █
+                   █    █      ▓▓  █   ▓█▒   ▓▓  █
+                 █████  █       ███▒   ▒█     ███▒
+                                       ▒█
+                                       █▒
+                                      ██
+
+             <by@keyjeek>  |  Follow the white rabbit...")
+             <contact:nomotikag33n@gmail.com>       ")
+             [i] IPEye is a Tool to find out
+                 --> some information about an IP.  ")
+             [i] Type x to exit IPEye.")
+            """)
+            
             os.system('clear')
             def eye(): 
                 scanner = input('[*] IP: ')
@@ -190,16 +225,27 @@ def HUNT3R():
         elif choice == '4':
             os.system('clear')
             def eye_of_sauron():
-                print("      _____                     __   ____  _  _                             ")
-                print("     |___ / _   _  ___    ___  / _| / ___|| || |  _   _ _ __ ___  _ __      ")
-                print("       |_ \| | | |/ _ \  / _ \| |_  \___ \| || |_| | | | '__/ _ \| '_ \     ")
-                print("      ___) | |_| |  __/ | (_) |  _|  ___) |__   _| |_| | | | (_) | | | |    ")
-                print("     |____/ \__, |\___|  \___/|_|   |____/   |_|  \__,_|_|  \___/|_| |_|    ")
-                print("            |___/                                                           ")
-                print("\n        <by@keyjeek>  |  Follow the white rabbit...")
-                print("          <contact:nomotikag33n@gmail.com>       ")
-                print("          [i] This Tool is made to banner grabbing   ")
-                print("")
+                print("""
+                
+
+              ▓███▒   ██   █    █ █████   ▓██▓  ██   █        ███████▒   ▒█ ██████
+             █▓  ░█   ██   █    █ █   ▓█ ▒█  █▒ ██░  █        █     ░█   █░ █
+             █       ▒██▒  █    █ █    █ █░  ░█ █▒▓  █        █      ▒█ █▒  █
+             █▓░     ▓▒▒▓  █    █ █   ▒█ █    █ █ █  █        █       █▓█   █
+              ▓██▓   █░░█  █    █ █████  █    █ █ ▓▓ █        ██████  ▒█▒   ██████
+                 ▓█  █  █  █    █ █  ░█▒ █    █ █  █ █        █        █    █
+                  █ ▒████▒ █    █ █   ░█ █░  ░█ █  ▓▒█        █        █    █
+             █░  ▓█ ▓▒  ▒▓ █▒  ▒█ █    █ ▒█  █▒ █  ░██        █        █    █
+             ▒████░ █░  ░█  ████  █    ▒  ▓██▓  █   ██        ██████   █    ██████
+
+
+                                                      ██████
+
+                <by@keyjeek>  |  Follow the white rabbit...")
+                <contact:nomotikag33n@gmail.com>       ")
+                [i] This Tool is made to banner grabbing   ")
+                """)
+                
                 def grabber(i, p):
                     sock = socket.socket()
                     sock.connect((i, int(p)))
@@ -225,11 +271,20 @@ def HUNT3R():
             def base64encode():
                 def banner():
                     print("""
-                     ____                  __   _  _                            _
-                    | __ )  __ _ ___  ___ / /_ | || |   ___ _ __   ___ ___   __| | ___
-                    |  _ \ / _` / __|/ _ \ '_ \| || |_ / _ \ '_ \ / __/ _ \ / _` |/ _ 
-                    | |_) | (_| \__ \  __/ (_) |__   _|  __/ | | | (_| (_) | (_| |  __/
-                    |____/ \__,_|___/\___|\___/   |_|  \___|_| |_|\___\___/ \__,_|\___|
+
+                                                                  █
+             █████░  ▒███▒    ██                                  █
+             █   ▒█ ░█▒  ▓   ▒██                                  █
+             █    █ █▒       █░█   ███   █▒██▒   ▓██▒   ███    ██▓█   ███
+             █   ▒█ █▒███   ▓▓ █  ▓▓ ▒█  █▓ ▒█  ▓█  ▓  █▓ ▓█  █▓ ▓█  ▓▓ ▒█
+             █████░ █▓  ▓█ ░█  █  █   █  █   █  █░     █   █  █   █  █   █
+             █   ▒█ █    █ █▒  █  █████  █   █  █      █   █  █   █  █████
+             █    █ █    █ ██████ █      █   █  █░     █   █  █   █  █
+             █   ▒█ ▒▓  ▓█     █  ▓▓  █  █   █  ▓█  ▓  █▓ ▓█  █▓ ▓█  ▓▓  █
+             █████░  ▓███      █   ███▒  █   █   ▓██▒   ███    ██▓█   ███▒
+
+
+
                     <by@keyjeek>  |  Follow the white rabbit...
                         <contact:nomotikag33n@gmail.com>       
                     [i] This Tool helps to encode and decode your text in base64.  
