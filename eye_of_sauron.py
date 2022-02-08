@@ -15,9 +15,9 @@ def eye_of_sauron():
     print("          [i] This Tool is made to banner grabbing   ")
     print("")
 
-    def grabber(i, p):
+    def grabber(k, j):
         sock = socket.socket()
-        sock.connect((i, int(p)))
+        sock.connect((k, int(j)))
         banner = sock.recv(1024)
         print(banner)
         
