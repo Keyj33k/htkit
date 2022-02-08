@@ -156,31 +156,33 @@ def HUNT3R():
             md5encrypt()
 
         elif choice == '3':
+            print("      ___ ____  _____                ")
+            print("     |_ _|  _ \| ____|   _  ___      ")
+            print("      | || |_) |  _|| | | |/ _ \     ")
+            print("      | ||  __/| |__| |_| |  __/     ")
+            print("     |___|_|   |_____\__, |\___|     ")
+            print("                     |___/           ")
+            print("\n <by@keyjeek>  |  Follow the white rabbit...")
+            print("   <contact:nomotikag33n@gmail.com>       ")
+            print("   [i] IPEye is a Tool to find out\n       some information about an IP.  ")
+            print("   [i] Type x to exit IPEye.")
+            print("")
             os.system('clear')
             def eye(): 
-                print("      ___ ____  _____                ")
-                print("     |_ _|  _ \| ____|   _  ___      ")
-                print("      | || |_) |  _|| | | |/ _ \     ")
-                print("      | ||  __/| |__| |_| |  __/     ")
-                print("     |___|_|   |_____\__, |\___|     ")
-                print("                     |___/           ")
-                print("\n <by@keyjeek>  |  Follow the white rabbit...")
-                print("   <contact:nomotikag33n@gmail.com>       ")
-                print("   [i] IPEye is a Tool to find out\n       some information about an IP.  ")
-                print("   [i] Type x to exit IPEye.")
-                print("")
-                target_ip_addr = input('[*] Enter the target IP you want to scan: ')
-                if target_ip_addr == 'x':
+                scanner = input('[*] IP: ')
+                if scanner == 'x':
                     print("[i] Exit")
-                    return HUNT3R()
-                response = requests.post("http://ip-api.com/batch", json=[
-                    {"query":target_ip_addr}
-                ]).json()
+                    sys.exit()
+                elif scanner == "exit":
+                    print("[i] Exit")
+                    sys.exit
+                response = requests.post("http://ip-api.com/batch", json=[{"query":scanner}]).json()
+                os.system('clear')
                 for ip in response:
-                    for k,v in ip.items():
-                        print(k,v)
-                        print(0xa)
-                        return HUNT3R()
+                    for k, j in ip.items():
+                        print(k,j)
+                print(chr(0xa))
+                print("[i] Scanner done.\n")
             eye()
 
         elif choice == '4':
