@@ -183,7 +183,7 @@ def HUNT3R():
                         print(k,j)
                 print(chr(0xa))
                 print("[i] Scanner done.\n")
-                return hunter()
+                return HUNT3R()
             eye()
 
         elif choice == '4':
