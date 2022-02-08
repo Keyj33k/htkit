@@ -65,13 +65,14 @@ def HUNT3R():
                 port_max = int(input("\n[*] Enter maximum Port you want to scan: \n[*]--> "))
                 open_ports = []
                 tstart = datetime.now()
+                
                 while True:
-                    ip_add_entered = input("\n[*] Enter the IP you want to scan: \n[*]--> ")
-                    if ip_add_entered == 'x':
+                    target_ip = input("\n[*] Enter the IP you want to scan: \n[*]--> ")
+                    if target_ip == 'x':
                         print("[i] Exit")
                         return HUNT3R()
-                    elif ip_compile.search(ip_add_entered):
-                        print(f"[i] {ip_add_entered} is valid. Please wait, it'll take some time..\n")        
+                    elif ip_compile.search(target_ip):
+                        print(f"[i] {target_ip} is valid. Please wait, it'll take some time..\n")        
                         def spinning_cursor():
                             while True:
                                 for cursor in '|/-\\':
@@ -90,7 +91,7 @@ def HUNT3R():
                     try:
                         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                             s.settimeout(0.5)
-                            s.connect((ip_add_entered, port))
+                            s.connect((target_ip, port))
                             open_ports.append(port)
                     except:
                         pass
