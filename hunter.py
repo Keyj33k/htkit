@@ -60,7 +60,7 @@ def HUNT3R():
                 print("   [i] Type x to exit Witcher.")
 
 
-                ip_add_pattern = re.compile("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
+                ip_compile = re.compile("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
                 port_min = 0
                 port_max = int(input("\n[*] Enter maximum Port you want to scan: \n[*]--> "))
                 open_ports = []
@@ -70,7 +70,7 @@ def HUNT3R():
                     if ip_add_entered == 'x':
                         print("[i] Exit")
                         return HUNT3R()
-                    elif ip_add_pattern.search(ip_add_entered):
+                    elif ip_compile.search(ip_add_entered):
                         print(f"[i] {ip_add_entered} is valid. Please wait, it'll take some time..\n")        
                         def spinning_cursor():
                             while True:
