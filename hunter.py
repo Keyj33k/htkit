@@ -29,7 +29,6 @@ banner()
 def HUNT3R():
     def menu():
         print("""
-
             [1] Witcher
             [2] md5encrypt
             [3] eye
@@ -37,15 +36,16 @@ def HUNT3R():
             [5] base64encode
             [6] WIFI-Stalker    >>     need monitor mode
             [x] Exit
-
     """)
     menu()
+    
     def hunter():
-        c=input("[*] Enter your number: ")
-        if c=='x':
+        choice = input("[*] Enter your number: ")
+        if choice == 'x':
             print("[i] Exit")
             sys.exit()
-        elif c=='1':
+
+        elif choice == '1':
             os.system('clear')
             def witcher():
                 print("     __        ___ _       _                  ")
@@ -61,7 +61,6 @@ def HUNT3R():
 
 
                 ip_add_pattern = re.compile("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
-                port_range_pattern = re.compile("([0-9]+)-([0-9]+)")
                 port_min = 0
                 port_max = int(input("\n[*] Enter maximum Port you want to scan: \n[*]--> "))
                 open_ports = []
@@ -102,8 +101,9 @@ def HUNT3R():
                 print("\n[!] Scan complete in " + str(diff) + " seconds")
                 print("[i] Witcher done.")
                 return HUNT3R()
-            witcher()           
-        elif c=='2':
+            witcher() 
+
+        elif choice == '2':
             os.system('clear')
             def md5encrypt():
                 def banner():
@@ -122,31 +122,31 @@ def HUNT3R():
                 banner()
                 def md5():
                     def encrypt(): 
-                        s=input("\n[*] Enter your text to hash: ")
-                        if s=='x':
+                        hash_val = input("\n[*] Enter your text to hash: ")
+                        if hash_val == 'x':
                             print("[i] Exit")
                             return HUNT3R()
-                        r=hashlib.md5(s.encode())
+                        r=hashlib.md5(hash_val.encode())
                         print("[+] Result: ", end ="")
                         print(r.hexdigest())
                     encrypt()
                     def decrypt():
-                        a=input("\n[?] Do you want to decrypt/bruteforce the hash? y/n: ")
-                        if a=='y':
+                        question_brute = input("\n[?] Do you want to decrypt/bruteforce the hash? y/n: ")
+                        if question_brute == 'y':
                             print("[i] Use this Link and enter your hash: https://www.md5online.org/md5-decrypt.html ")                 ##this program is using a big database to bruteforce the hash for you##
                             return encrypt()
-                        elif a=='x':
+                        elif question_brute == 'x':
                             print("[i] Exit")
                             return HUNT3R()
-                        elif a=='n':
-                            e=input("[?] Do you want to exit? y/n ")
-                            if e=='y':
+                        elif question_brute == 'n':
+                            question_exit = input("[?] Do you want to exit? y/n ")
+                            if question_exit == 'y':
                                 print("[i] Exit")
                                 return HUNT3R()
-                            elif e=='x':
+                            elif question_exit == 'x':
                                 print("[i] Exit")
                                 return HUNT3R()
-                            elif e=='n':
+                            elif question_exit == 'n':
                                 return encrypt()
                             else:
                                 print("[i] Invalid input")
@@ -154,7 +154,8 @@ def HUNT3R():
                     decrypt()
                 md5()
             md5encrypt()
-        elif c=='3':
+
+        elif choice == '3':
             os.system('clear')
             def eye(): 
                 print("      ___ ____  _____                ")
@@ -168,20 +169,21 @@ def HUNT3R():
                 print("   [i] IPEye is a Tool to find out\n       some information about an IP.  ")
                 print("   [i] Type x to exit IPEye.")
                 print("")
-                q = input('[*] Enter the target IP you want to scan: ')
-                if q == 'x':
+                target_ip_addr = input('[*] Enter the target IP you want to scan: ')
+                if target_ip_addr == 'x':
                     print("[i] Exit")
                     return HUNT3R()
                 response = requests.post("http://ip-api.com/batch", json=[
-                    {"query":q}
+                    {"query":target_ip_addr}
                 ]).json()
                 for ip in response:
                     for k,v in ip.items():
                         print(k,v)
-                        print("\n")
+                        print(0xa)
                         return HUNT3R()
             eye()
-        elif c=='4':
+
+        elif choice == '4':
             os.system('clear')
             def eye_of_sauron():
                 print("      _____                     __   ____  _  _                             ")
@@ -195,9 +197,9 @@ def HUNT3R():
                 print("          [i] This Tool is made to banner grabbing   ")
                 print("")
                 def grabber(i, p):
-                    s = socket.socket()
-                    s.connect((i, int(p)))
-                    banner = s.recv(1024)
+                    sock = socket.socket()
+                    sock.connect((i, int(p)))
+                    banner = sock.recv(1024)
                     print(banner)
                 def main():
                     if len(sys.argv) <= 1:
@@ -207,13 +209,14 @@ def HUNT3R():
                         exit(0)
                     elif len(sys.argv) == 3:
                         print("[!] success!")
-                        i = sys.argv[1]
-                        p = sys.argv[2]
-                        grabber(i, p)
+                        k = sys.argv[1]
+                        j = sys.argv[2]
+                        grabber(k, j)
                         exit(0)                       
                 main()
             eye_of_sauron()
-        elif c=='5':
+
+        elif choice == '5':
             os.system('clear')
             def base64encode():
                 def banner():
@@ -237,35 +240,35 @@ def HUNT3R():
                     """)
                 menu()
                 def chse():
-                    c=input("[*] Enter your choice: ")
-                    if c=='1':
-                        m=input("\n[*] Enter your text to hash: ")
-                        if m=='x':
-                            x=input("\n[?] Do you want to exit? y/n ")
-                            if x=='y':
+                    choice = input("[*] Enter your choice: ")
+                    if choice == '1':
+                        hash_value = input("\n[*] Enter your text to hash: ")
+                        if hash_value == 'x':
+                            exit_choice = input("\n[?] Do you want to exit? y/n ")
+                            if exit_choice == 'y':
                                 print("[i] Exit")
                                 return HUNT3R()
-                            elif x=='n':
+                            elif exit_choice == 'n':
                                 return chse()
                             else:
                                 print("[i] Invalid Input")
                                 return chse()
-                        m_bytes=m.encode('ascii')
-                        b64_bytes=base64.b64encode(m_bytes)
-                        b64_m=b64_bytes.decode('ascii')
-                        print(b64_m)
+                        m_bytes = choice.encode('ascii')
+                        b64_e = base64.b64encode(m_bytes)
+                        b64_hash = b64_e.decode('ascii')
+                        print(b64_hash)
                         return chse()       
-                    elif c=='2':
-                        b64_m=input("\n[*] Enter your hash to decode: \n")
-                        if b64_m=='x':
+                    elif choice == '2':
+                        b64_hash_val = input("\n[*] Enter your hash to decode: \n")
+                        if b64_hash_val == 'x':
                             print("[i] Exit")
                             return HUNT3R()
-                        b64_b=b64_m.encode('ascii')
-                        m_bytes=base64.b64decode(b64_b)
-                        m=m_bytes.decode('ascii')
-                        print(m)
+                        b64_d = b64_hash_val.encode('ascii')
+                        m_bytes = base64.b64decode(b64_d)
+                        result = m_bytes.decode('ascii')
+                        print(result)
                         return chse()
-                    elif c=='x':
+                    elif choice == 'x':
                         print("[i] Exit")
                         return HUNT3R()
                     else:
@@ -273,41 +276,42 @@ def HUNT3R():
                         return HUNT3R()
                 chse()
             base64encode()
-        elif c=='6':
+
+        elif choice == '6':
             def wifiStalker():
-                networks=pandas.DataFrame(columns=["BSSID", "SSID", "dBm_Signal", "Channel", "Crypto"])
+                networks = pandas.DataFrame(columns=["BSSID", "SSID", "dBm_Signal", "Channel", "Crypto"])
                 networks.set_index("BSSID", inplace=True)
                 def callback(packet):
                     if  packet.haslayer(Dot11Beacon):
-                        bssid=packet[Dot11].addr2
-                        ssid=packet[Dot11Elt].info.decode()
+                        bssid = packet[Dot11].addr2
+                        ssid = packet[Dot11Elt].info.decode()
                         try:
-                            dbm_signal=packet.dBm_AntSignal
+                            dbm_signal = packet.dBm_AntSignal
                         except:
-                            dbm_signal="N/A"
-                        stats=packet[Dot11Beacon].network_stats()
-                        channel=stats.get("channel")
-                        crypto=stats.get("crypto")
-                        networks.loc[bssid]=(ssid, dbm_signal, channel, crypto)
+                            dbm_signal = "N/A"
+                        stats = packet[Dot11Beacon].network_stats()
+                        channel = stats.get("channel")
+                        crypto = stats.get("crypto")
+                        networks.loc[bssid] = (ssid, dbm_signal, channel, crypto)
                 def print_all():
                     while True:
                         os.system("clear")
                         print(networks)
                         time.sleep(0.5)                    
-                if __name__=="__main__":
-                    interface="wlan0mon"
-                    printer=Thread(target=print_all)
-                    printer.daemon=True
+                if __name__ == "__main__":
+                    interface = "wlan0mon"
+                    printer = Thread(target=print_all)
+                    printer.daemon = True
                     printer.start()
                     sniff(prn=callback, iface=interface)
                 def change_channel():
                     ch = 1
                     while True:
                         os.system(f"iwconfig {interface} channel {ch}")
-                        ch=ch%14+1
+                        ch = ch%14+1
                         time.sleep(0.5)
-                        channel_change=Thread(target=change_channel)
-                        channel_changer.daemon=True
+                        channel_change = Thread(target=change_channel)
+                        channel_changer.daemon = True
                         channel_changer.start()
             wifiStalker()
     hunter()
