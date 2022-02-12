@@ -28,7 +28,7 @@ def banner():
    
      <by@keyjeek>  |  Follow the white rabbit... 
      <contact:nomotikag33n@gmail.com>           
-     [i] Hunter is a small Toolkit to perform Information Gathering   
+     [i] Hunter is a small toolkit to perform information gathering   
      [i] Type x to exit Hunter.              
      """)
 banner()
@@ -47,7 +47,7 @@ def HUNT3R():
     menu()
     
     def hunter():
-        choice = input("[*] Enter your number: ")
+        choice = input("[*] Nnumber: ")
         if choice == 'x':
             print("[i] Exit")
             sys.exit()
@@ -76,12 +76,12 @@ def HUNT3R():
 
                 ip_compile = re.compile("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
                 port_min = 0
-                port_max = int(input("\n[*] Enter maximum Port you want to scan: \n[*]--> "))
+                port_max = int(input("\n[*] Enter maximum port: \n[*]--> "))
                 open_ports = []
                 tstart = datetime.now()
                 
                 while True:
-                    target_ip = input("\n[*] Enter the IP you want to scan: \n[*]--> ")
+                    target_ip = input("\n[*] Enter IP: \n[*]--> ")
                     if target_ip == 'x':
                         print("[i] Exit")
                         return HUNT3R()
@@ -100,7 +100,7 @@ def HUNT3R():
                             sys.stdout.write('\b')           
                         break
                 print("\n\n[i] Almost finished..\n")
-                print("[r] Open connections:\n ")
+                print("[*] Open connections:\n ")
                 for port in range(port_min, port_max + 1):
                     try:
                         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -156,9 +156,9 @@ def HUNT3R():
                         print(r.hexdigest())
                     encrypt()
                     def decrypt():
-                        question_brute = input("\n[?] Do you want to decrypt/bruteforce the hash? y/n: ")
+                        question_brute = input("\n[?] Decrypt/bruteforce the hash? y/n: ")
                         if question_brute == 'y':
-                            print("[i] Use this Link and enter your hash: https://www.md5online.org/md5-decrypt.html ")                 ##this program is using a big database to bruteforce the hash for you##
+                            print("[i] Use this Link: https://www.md5online.org/md5-decrypt.html ")                 ##this program is using a big database to bruteforce the hash for you##
                             return encrypt()
                         elif question_brute == 'x':
                             print("[i] Exit")
@@ -299,9 +299,9 @@ def HUNT3R():
                     """)
                 menu()
                 def chse():
-                    choice = input("[*] Enter your choice: ")
+                    choice = input("[*] Enter choice: ")
                     if choice == '1':
-                        hash_value = input("\n[*] Enter your text to hash: ")
+                        hash_value = input("\n[*] Enter message: ")
                         if hash_value == 'x':
                             exit_choice = input("\n[?] Do you want to exit? y/n ")
                             if exit_choice == 'y':
@@ -318,7 +318,7 @@ def HUNT3R():
                         print(b64_hash)
                         return chse()       
                     elif choice == '2':
-                        b64_hash_val = input("\n[*] Enter your hash to decode: \n")
+                        b64_hash_val = input("\n[*] Enter hash to decode: \n")
                         if b64_hash_val == 'x':
                             print("[i] Exit")
                             return HUNT3R()
