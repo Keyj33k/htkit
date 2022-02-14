@@ -158,7 +158,7 @@ def HUNT3R():
                     def decrypt():
                         question_brute = input("\n[?] Decrypt/bruteforce the hash? y/n: ")
                         if question_brute == 'y':
-                            print("[i] Use this Link: https://www.md5online.org/md5-decrypt.html ")                 ##this program is using a big database to bruteforce the hash for you##
+                            print("[i] Use this Link: https://www.md5online.org/md5-decrypt.html ")## This program is using a big database to bruteforce the hash for you
                             return encrypt()
                         elif question_brute == 'x':
                             print("[i] Exit")
