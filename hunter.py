@@ -242,7 +242,7 @@ def HUNT3R():
                                                       ██████
                 <by@keyjeek>  |  Follow the white rabbit...")
                 <contact:nomotikag33n@gmail.com>       ")
-                [i] This Tool is made to banner grabbing   ")
+                [i] This Tool is made for banner grabbing   ")
                 """)
                 
                 def grabber(i, p):
