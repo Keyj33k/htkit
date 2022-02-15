@@ -98,13 +98,20 @@ def HUNT3R():
                         break
                 print("\n\n[i] Almost finished..\n")
                 print("[*] Open connections:\n ")
-                for port in range(port_min, port_max + 1):
-                    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-                        s.settimeout(0.5)
-                        s.connect((target_ip, port))
-                        open_ports.append(port)
+                try:
+                    for port in range(port_min, port_max + 1):
+                        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                            s.settimeout(0.5)
+                            s.connect((target_ip, port))
+                            open_ports.append(port)
+                except Exception:
+                    os.system('clear')
+                    print("Can't connect to target!")
+                    time.sleep(3)
+                    input("Press any key..")
+                    return HUNT3R()
                 for port in open_ports:
-                    print(f"[+] {port}  open")
+                    print(f"[+] TCP/{port}  open")
                 tend = datetime.now()
                 diff = tend - tstart
                 print("\n[!] Scan complete in " + str(diff) + " seconds")
