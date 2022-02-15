@@ -209,7 +209,13 @@ def HUNT3R():
                 elif scanner == "exit":
                     print("[i] Exit")
                     sys.exit
-                response = requests.post("http://ip-api.com/batch", json=[{"query":scanner}]).json()
+                try:
+                    response = requests.post("http://ip-api.com/batch", json=[{"query":scanner}]).json()
+                except Exception:
+                    print("Can't connect. An error was defined!")
+                    input("\nPress any key to continue..")
+                    os.system('clear')
+                    return HUNT3R()
                 os.system('clear')
                 for ip in response:
                     for k, j in ip.items():
@@ -364,4 +370,3 @@ def HUNT3R():
             wifiStalker()
     hunter()
 HUNT3R()
-
