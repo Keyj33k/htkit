@@ -104,7 +104,7 @@ def HUNT3R():
                         s.connect((target_ip, port))
                         open_ports.append(port)
                 for port in open_ports:
-                    print(f"[+] TCP/{port}  open")
+                    print(f"[+] {port}  open")
                 tend = datetime.now()
                 diff = tend - tstart
                 print("\n[!] Scan complete in " + str(diff) + " seconds")
