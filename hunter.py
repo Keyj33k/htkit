@@ -150,9 +150,9 @@ def HUNT3R():
                         if hash_val == 'x':
                             print("[i] Exit")
                             return HUNT3R()
-                        r=hashlib.md5(hash_val.encode())
+                        result = hashlib.md5(hash_val.encode())
                         print("[+] Result: ", end ="")
-                        print(r.hexdigest())
+                        print(result.hexdigest())
                     encrypt()
                     def decrypt():
                         question_brute = input("\n[?] Decrypt/bruteforce the hash? y/n: ")
