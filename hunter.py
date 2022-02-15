@@ -254,7 +254,7 @@ def HUNT3R():
                     if len(sys.argv) <= 1:
                         print("[!] Use --help\n")
                     elif sys.argv[1] == "--help":
-                        print("[*] Usage: ./eye_of_sauron.py <IP/Domain> <port> ")
+                        print("[*] Usage: python3 eye_of_sauron.py <IP/Domain> <port> ")
                         exit(0)
                     elif len(sys.argv) == 3:
                         print("[!] success!")
