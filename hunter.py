@@ -24,7 +24,6 @@ def banner():
          █    █ █   █  █   █    █    █       █
          █    █ █▒ ▓█  █   █    █░   ▓▓  █   █
          █    █ ▒██▒█  █   █    ▒██   ███▒   █
-
    
      <by@keyjeek>  |  Follow the white rabbit... 
      <contact:nomotikag33n@gmail.com>           
@@ -56,7 +55,6 @@ def HUNT3R():
             os.system('clear')
             def witcher():
                 print("""
-
                       █                  █
             █     █          █           █
             █░ █ ░█          █           █
@@ -67,7 +65,6 @@ def HUNT3R():
             ▒█▓ ▓█▒   █      █    █░     █   █  █       █
             ░█▒ ▒█▒   █      █░   ▓█  ▓  █   █  ▓▓  █   █
              █   █▒ █████    ▒██   ▓██▒  █   █   ███▒   █
-
                  <by@keyjeek>  |  Follow the white rabbit...
                  <contact:nomotikag33n@gmail.com>      
                  [i] Witcher is a simple port scanner.  
@@ -102,13 +99,10 @@ def HUNT3R():
                 print("\n\n[i] Almost finished..\n")
                 print("[*] Open connections:\n ")
                 for port in range(port_min, port_max + 1):
-                    try:
-                        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-                            s.settimeout(0.5)
-                            s.connect((target_ip, port))
-                            open_ports.append(port)
-                    except:
-                        pass
+                    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                        s.settimeout(0.5)
+                        s.connect((target_ip, port))
+                        open_ports.append(port)
                 for port in open_ports:
                     print(f"[+] TCP/{port}  open")
                 tend = datetime.now()
@@ -123,7 +117,6 @@ def HUNT3R():
             def md5encrypt():
                 def banner():
                     print("""   
-
                         █
                         █  █████                                              █
                         █  █                                                  █
@@ -137,7 +130,6 @@ def HUNT3R():
                                                                ▒█    █
                                                                █▒    █
                                                               ██     █
-
             <by@keyjeek>  |  Follow the white rabbit...
             <contact:nomotikag33n@gmail.com>       
             [i] md5encrypt is made to encrypt your string to an 128 bit hash value
@@ -182,7 +174,6 @@ def HUNT3R():
 
         elif choice == '3':
             print("""
-
                  █████  █████░
                    █    █   ▓█
                    █    █    █  ███   █░  █   ███
@@ -195,7 +186,6 @@ def HUNT3R():
                                        ▒█
                                        █▒
                                       ██
-
              <by@keyjeek>  |  Follow the white rabbit...")
              <contact:nomotikag33n@gmail.com>       ")
              [i] IPEye is a Tool to find out
@@ -227,7 +217,6 @@ def HUNT3R():
             def eye_of_sauron():
                 print("""
                 
-
               ▓███▒   ██   █    █ █████   ▓██▓  ██   █        ███████▒   ▒█ ██████
              █▓  ░█   ██   █    █ █   ▓█ ▒█  █▒ ██░  █        █     ░█   █░ █
              █       ▒██▒  █    █ █    █ █░  ░█ █▒▓  █        █      ▒█ █▒  █
@@ -237,10 +226,7 @@ def HUNT3R():
                   █ ▒████▒ █    █ █   ░█ █░  ░█ █  ▓▒█        █        █    █
              █░  ▓█ ▓▒  ▒▓ █▒  ▒█ █    █ ▒█  █▒ █  ░██        █        █    █
              ▒████░ █░  ░█  ████  █    ▒  ▓██▓  █   ██        ██████   █    ██████
-
-
                                                       ██████
-
                 <by@keyjeek>  |  Follow the white rabbit...")
                 <contact:nomotikag33n@gmail.com>       ")
                 [i] This Tool is made to banner grabbing   ")
@@ -271,7 +257,6 @@ def HUNT3R():
             def base64encode():
                 def banner():
                     print("""
-
                                                                   █
              █████░  ▒███▒    ██                                  █
              █   ▒█ ░█▒  ▓   ▒██                                  █
@@ -282,9 +267,6 @@ def HUNT3R():
              █    █ █    █ ██████ █      █   █  █░     █   █  █   █  █
              █   ▒█ ▒▓  ▓█     █  ▓▓  █  █   █  ▓█  ▓  █▓ ▓█  █▓ ▓█  ▓▓  █
              █████░  ▓███      █   ███▒  █   █   ▓██▒   ███    ██▓█   ███▒
-
-
-
                     <by@keyjeek>  |  Follow the white rabbit...
                         <contact:nomotikag33n@gmail.com>       
                     [i] This Tool helps to encode and decode your text in base64.  
