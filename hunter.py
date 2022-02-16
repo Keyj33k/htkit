@@ -90,7 +90,7 @@ def HUNT3R():
                                     yield cursor
                         spinner = spinning_cursor()
                         print("[i] loading..")
-                        for _ in range(port_max):    ####1000
+                        for _ in range(port_max):   
                             sys.stdout.write(next(spinner))
                             sys.stdout.flush()
                             time.sleep(0.2)
