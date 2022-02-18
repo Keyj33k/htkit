@@ -78,12 +78,13 @@ def HUNT3R():
                 tstart = datetime.now()
                 
                 while True:
-                    target_ip = input("\n[*] Enter IP: \n[*]--> ")
+                    target_ip = input("[*] Target IP: \n[*]--> ")
                     if target_ip == 'x':
                         print("[i] Exit")
                         return HUNT3R()
                     elif ip_compile.search(target_ip):
-                        print(f"[i] {target_ip} is valid. Please wait, it'll take some time..\n")        
+                        print(f"[i] {target_ip} is valid. Please wait, it'll take some time..")
+                        print(chr(0xa))
                         def spinning_cursor():
                             while True:
                                 for cursor in '|/-\\':
@@ -96,8 +97,9 @@ def HUNT3R():
                             time.sleep(0.2)
                             sys.stdout.write('\b')           
                         break
-                print("\n\n[i] Almost finished..\n")
-                print("[*] Open connections:\n ")
+                print(chr(0xa))
+                print("[i] Listing open connections..")
+                print(chr(0xa))
                 try:
                     for port in range(port_min, port_max + 1):
                         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -114,8 +116,9 @@ def HUNT3R():
                     print(f"[+] TCP/{port}  open")
                 tend = datetime.now()
                 diff = tend - tstart
-                print("\n[!] Scan complete in " + str(diff) + " seconds")
-                print("[i] Witcher done.")
+                print(chr(0xa))
+                print("[!] Scan complete in " + str(diff) + " seconds")
+                print("[i] Witcher done.\n")
                 return HUNT3R()
             witcher() 
 
@@ -213,7 +216,8 @@ def HUNT3R():
                     response = requests.post("http://ip-api.com/batch", json=[{"query":scanner}]).json()
                 except Exception:
                     print("Can't connect. An error was defined!")
-                    input("\nPress any key to continue..")
+                    print(chr(0xa))
+                    input("Press any key to continue..")
                     os.system('clear')
                     return HUNT3R()
                 os.system('clear')
@@ -221,7 +225,8 @@ def HUNT3R():
                     for k, j in ip.items():
                         print(k,j)
                 print(chr(0xa))
-                print("[i] Scanner done.\n")
+                print("[i] Scanner done.")
+                print(chr(0xa))
                 return HUNT3R()
             eye()
 
