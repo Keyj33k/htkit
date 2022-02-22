@@ -73,7 +73,8 @@ def HUNT3R():
 
                 ip_compile = re.compile("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
                 port_min = 0
-                port_max = int(input("\n[*] Enter maximum port: \n[*]--> "))
+                print(chr(0xa))
+                port_max = int(input("[*] Enter maximum port: \n[*]--> "))
                 open_ports = []
                 tstart = datetime.now()
                 
@@ -118,7 +119,8 @@ def HUNT3R():
                 diff = tend - tstart
                 print(chr(0xa))
                 print("[!] Scan complete in " + str(diff) + " seconds")
-                print("[i] Witcher done.\n")
+                print("[i] Witcher done.")
+                print(chr(0xa))
                 return HUNT3R()
             witcher() 
 
@@ -158,7 +160,8 @@ def HUNT3R():
                         print(result.hexdigest())
                     encrypt()
                     def decrypt():
-                        question_brute = input("\n[?] Decrypt/bruteforce the hash? y/n: ")
+                        print(chr(0xa))
+                        question_brute = input("[?] Decrypt/bruteforce the hash? y/n: ")
                         if question_brute == 'y':
                             print("[i] Use this Link: https://www.md5online.org/md5-decrypt.html ")## This program is using a big database to bruteforce the hash for you
                             return encrypt()
@@ -301,9 +304,11 @@ def HUNT3R():
                 def chse():
                     choice = input("[*] Enter choice: ")
                     if choice == '1':
-                        hash_value = input("\n[*] Enter message: ")
+                        print(chr(0xa))
+                        hash_value = input("[*] Enter message: ")
                         if hash_value == 'x':
-                            exit_choice = input("\n[?] Do you want to exit? y/n ")
+                            print(chr(0xa))
+                            exit_choice = input("[?] Do you want to exit? y/n ")
                             if exit_choice == 'y':
                                 print("[i] Exit")
                                 return HUNT3R()
@@ -318,7 +323,9 @@ def HUNT3R():
                         print(b64_hash)
                         return chse()       
                     elif choice == '2':
-                        b64_hash_val = input("\n[*] Enter hash to decode: \n")
+                        print(chr(0xa))
+                        b64_hash_val = input("[*] Enter hash to decode: ")
+                        print(chr(0xa))
                         if b64_hash_val == 'x':
                             print("[i] Exit")
                             return HUNT3R()
