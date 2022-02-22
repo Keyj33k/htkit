@@ -1,6 +1,6 @@
 # Hunter..
 
-is a small toolkit to perform information gathering and crypto
+is a small toolkit to perform information gathering and helping with en- and decryption
 
 
 Hunter using Tools like Witcher, md5encrypt, eye, eye_of_sauron, base64encode, WIFI-Stalker and Whereareyou.
