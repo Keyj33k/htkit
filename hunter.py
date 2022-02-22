@@ -46,7 +46,7 @@ def HUNT3R():
     menu()
     
     def hunter():
-        choice = input("[*] Nnumber: ")
+        choice = input("[*] Number: ")
         if choice == 'x':
             print("[i] Exit")
             sys.exit()
