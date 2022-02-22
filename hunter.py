@@ -1,6 +1,11 @@
+from phonenumbers import timezone
+from phonenumbers import geocoder
+from phonenumbers import carrier
+from termcolor import colored
 from datetime import datetime
 from threading import Thread
 from scapy.all import *
+import phonenumbers
 import requests
 import hashlib
 import socket
@@ -41,6 +46,7 @@ def HUNT3R():
             [4] eye_of_sauron
             [5] base64encode
             [6] WIFI-Stalker    >>     need monitor mode
+            [7] Whereareyou
             [x] Exit
     """)
     menu()
@@ -380,5 +386,59 @@ def HUNT3R():
                         channel_changer.daemon = True
                         channel_changer.start()
             wifiStalker()
+        
+        elif choice == '7':
+            os.system('clear')
+            def number_tracker():
+                print(colored("""
+        █     █ █    █ ██████ █████  ██████ █████  █    █
+        █░ █ ░█ █    █ █      █   ▓█ █      █   ▓█ █    █
+        █░▒█▒░█ █    █ █      █    █ █      █    █ █    █
+        ▓▒███▒█ █    █ █      █   ▒█ █      █   ▒█ █    █
+        ▒▒█▒█▒▓ ██████ ██████ █████  ██████ █████  █    █
+        ▒██ ██▓ █    █ █      █  ░█▒ █      █  ░█▒ █    █
+        ▒█▓ ▓█▒ █    █ █      █   ░█ █      █   ░█ █    █
+        ░█▒ ▒█▒ █    █ █      █    █ █      █    █ █▒  ▒█
+        █   █▒ █    █ ██████ █    ▒ ██████ █    ▒  ████
+
+            <by@keyjeek>  |  Follow the white rabbit...
+                <contact:nomotikag33n@gmail.com>    
+            [i] Phonenumber tracking tool
+                """, "blue"))
+
+                while True:
+                    print(chr(0xa))
+                    number = input('[*] Phonenumber: ')
+                    if number == "x":
+                        print(colored("[i] Exit", "red"))
+                        return HUNT3R()
+                    elif number == "exit":
+                        print(colored("[i] Exit", "red"))
+                        return HUNT3R()
+                    ## check if valid
+                    print(chr(0xa))
+                    valid_check = phonenumbers.parse(number)
+                    is_valid = phonenumbers.is_valid_number(valid_check)
+                    print("Valid: ")
+                    print(is_valid)
+                    ## check timezone
+                    timezone_number = phonenumbers.parse(number, "en")
+                    print(timezone.time_zones_for_number(timezone_number))
+                    ## get location
+                    target_number = phonenumbers.parse(number, "CH")
+                    print(geocoder.description_for_number(target_number, "en"))
+                    ## get provider information
+                    provider_info = phonenumbers.parse(number, "RO")
+                    print(carrier.name_for_number(provider_info, "en"))
+                    print(chr(0xa))
+                    input('Press any key..')
+                    return number_tracker()
+            number_tracker()
+        
+        else:
+            print(colored("[i] Invalid input", "red"))
+            return HUNT3R()
+
     hunter()
+    
 HUNT3R()
