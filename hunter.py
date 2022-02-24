@@ -44,7 +44,7 @@ def HUNT3R():
         print("""
             [1] WITCHER
             [2] MD5ENCRYPT
-            [3] EYE
+            [3] IPEYE
             [4] EYE_OF_SAURON
             [5] BASE64ENCODE
             [6] WIFI-STALKER    >>     [i] Need monitor mode !
