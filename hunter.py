@@ -180,10 +180,10 @@ def HUNT3R():
                             return HUNT3R()
                         elif hash_val == 'clear':
                             os.system('clear')
-                            return encrypt()
+                            return md5encrypt()
                         elif hash_val == 'c':
                             os.system('clear')
-                            return encrypt()
+                            return md5encrypt()
                         result = hashlib.md5(hash_val.encode())
                         print("[+] Result: ", end ="")
                         print(result.hexdigest())
