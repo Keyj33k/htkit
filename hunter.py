@@ -88,6 +88,9 @@ def HUNT3R():
                 elif port_max == 'c':
                     os.system('clear')
                     return witcher()
+                elif port_max == 'x':
+                    print("[*] Exit")
+                    return HUNT3R()
                 open_ports = []
                 tstart = datetime.now()
                 
