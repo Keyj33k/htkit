@@ -65,6 +65,9 @@ def HUNT3R():
         elif choice == 'c':
             os.system('clear')
             return HUNT3R()
+        elif choice == 'clear':
+            os.system('clear')
+            return HUNT3R()
 
         elif choice == '1':
             def witcher():
