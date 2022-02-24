@@ -388,7 +388,7 @@ def HUNT3R():
                         hash_value = input("[*] ENTER MESSAGE: ")
                         if hash_value == 'x':
                             print(chr(0xa))
-                            exit_choice = input("[?] Do you want to exit? y/n ")
+                            exit_choice = input("[?] EXIT? y/n ")
                             if exit_choice == 'y':
                                 print(colored("[i] Exit", "red"))
                                 return HUNT3R()
