@@ -89,7 +89,7 @@ def HUNT3R():
                     os.system('clear')
                     return witcher()
                 elif port_max == 'x':
-                    print("[*] Exit")
+                    print(colored("[*] Exit", "red"))
                     return HUNT3R()
                 open_ports = []
                 tstart = datetime.now()
@@ -97,10 +97,10 @@ def HUNT3R():
                 while True:
                     target_ip = input("[*] Target IP: \n[*]--> ")
                     if target_ip == 'x':
-                        print("[i] Exit")
+                        print(colored("[i] Exit", "red"))
                         return HUNT3R()
                     elif target_ip == 'exit':
-                        print("[*] Exit")
+                        print(colored("[*] Exit", "red"))
                         return HUNT3R()
                     elif target_ip == 'clear':
                         os.system('clear')
@@ -178,7 +178,7 @@ def HUNT3R():
                     def encrypt(): 
                         hash_val = input("\n[*] Enter your text to hash: ")
                         if hash_val == 'x':
-                            print("[i] Exit")
+                            print(colored("[i] Exit", "red"))
                             return HUNT3R()
                         elif hash_val == 'clear':
                             os.system('clear')
@@ -197,7 +197,7 @@ def HUNT3R():
                             print("[i] Use this Link: https://www.md5online.org/md5-decrypt.html ")## This program is using a big database to bruteforce the hash for you
                             return encrypt()
                         elif question_brute == 'x':
-                            print("[i] Exit")
+                            print(colored("[i] Exit", "red"))
                             return HUNT3R()
                         elif question_brute == 'clear':
                             os.system('clear')
@@ -208,10 +208,10 @@ def HUNT3R():
                         elif question_brute == 'n':
                             question_exit = input("[?] Do you want to exit? y/n ")
                             if question_exit == 'y':
-                                print("[i] Exit")
+                                print(colored("[i] Exit", "red"))
                                 return HUNT3R()
                             elif question_exit == 'x':
-                                print("[i] Exit")
+                                print(colored("[i] Exit", "red"))
                                 return HUNT3R()
                             elif question_exit == 'n':
                                 return encrypt()
@@ -247,10 +247,10 @@ def HUNT3R():
             def eye(): 
                 scanner = input('[*] IP: ')
                 if scanner == 'x':
-                    print("[i] Exit")
+                    print(colored("[i] Exit", "red"))
                     sys.exit()
                 elif scanner == 'exit':
-                    print("[i] Exit")
+                    print(colored("[i] Exit", "red"))
                     sys.exit()
                 elif scanner == 'clear':
                     os.system('clear')
@@ -353,7 +353,7 @@ def HUNT3R():
                             print(chr(0xa))
                             exit_choice = input("[?] Do you want to exit? y/n ")
                             if exit_choice == 'y':
-                                print("[i] Exit")
+                                print(colored("[i] Exit", "red"))
                                 return HUNT3R()
                             elif exit_choice == 'n':
                                 return chse()
@@ -377,10 +377,10 @@ def HUNT3R():
                             b64_hash_val = input("[*] Enter hash to decode: ")
                             print(chr(0xa))
                             if b64_hash_val == 'x':
-                                print("[i] Exit")
+                                print(colored("[i] Exit", "red"))
                                 return HUNT3R()
                             elif b64_hash_val == 'exit':
-                                print("[*] Exit")
+                                print(colored("[i] Exit", "red"))
                                 return HUNT3R()
                             elif b64_hash_val == 'clear':
                                 os.system('clear')
@@ -395,7 +395,7 @@ def HUNT3R():
                             return chse()
                         b64_decrypt()
                     elif choice == 'x':
-                        print("[i] Exit")
+                        print(colored("[i] Exit", "red"))
                         return HUNT3R()
                     else:
                         print("[i] Invalid input")
