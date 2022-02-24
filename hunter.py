@@ -50,6 +50,7 @@ def HUNT3R():
             [6] WIFI-Stalker    >>     need monitor mode
             [7] Whereareyou
             [x] Exit
+            [c] Clear
     """)
     menu()
     
@@ -58,6 +59,12 @@ def HUNT3R():
         if choice == 'x':
             print("[i] Exit")
             sys.exit()
+        elif choice == 'exit':
+            print(colored("[*] Exit"))
+            sys.exit()
+        elif choice == 'c':
+            os.system('clear')
+            return HUNT3R()
 
         elif choice == '1':
             def witcher():
