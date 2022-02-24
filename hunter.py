@@ -410,6 +410,7 @@ def HUNT3R():
                 while True:
                     print(chr(0xa))
                     def check_number():
+                        print(chr(0xa))
                         number = input('[*] Phonenumber: ')
                         if number == "x":
                             print(colored("[i] Exit", "red"))
