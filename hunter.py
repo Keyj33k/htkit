@@ -162,6 +162,10 @@ def HUNT3R():
                         if hash_val == 'x':
                             print("[i] Exit")
                             return HUNT3R()
+                        elif hash_val == 'clear':
+                            os.system('clear')
+                        elif hash_val == 'c':
+                            os.system('clear')
                         result = hashlib.md5(hash_val.encode())
                         print("[+] Result: ", end ="")
                         print(result.hexdigest())
@@ -175,6 +179,10 @@ def HUNT3R():
                         elif question_brute == 'x':
                             print("[i] Exit")
                             return HUNT3R()
+                        elif question_brute == 'clear':
+                            os.system('clear')
+                        elif question_brute == 'c':
+                            os.system('clear')
                         elif question_brute == 'n':
                             question_exit = input("[?] Do you want to exit? y/n ")
                             if question_exit == 'y':
@@ -219,9 +227,13 @@ def HUNT3R():
                 if scanner == 'x':
                     print("[i] Exit")
                     sys.exit()
-                elif scanner == "exit":
+                elif scanner == 'exi":
                     print("[i] Exit")
-                    sys.exit
+                    sys.exit()
+                elif scanner == "clear":
+                    os.system('clear')
+                elif scanner == "c":
+                    os.system('clear')
                 try:
                     response = requests.post("http://ip-api.com/batch", json=[{"query":scanner}]).json()
                 except Exception:
@@ -324,6 +336,10 @@ def HUNT3R():
                             else:
                                 print("[i] Invalid Input")
                                 return chse()
+                        elif hash_value == 'clear'
+                            os.system('clear')
+                        elif hash_value == 'c
+                            os.system('clear')
                         m_bytes = choice.encode('ascii')
                         b64_e = base64.b64encode(m_bytes)
                         b64_hash = b64_e.decode('ascii')
@@ -336,6 +352,13 @@ def HUNT3R():
                         if b64_hash_val == 'x':
                             print("[i] Exit")
                             return HUNT3R()
+                        elif b64_hash_val == 'exit':
+                            print("[*] Exit")
+                            return HUNT3R()
+                        elif b64_hash_val == 'clear':
+                            os.system('clear')
+                        elif b64_hash_val == 'c':
+                            os.system('clear')
                         b64_d = b64_hash_val.encode('ascii')
                         m_bytes = base64.b64decode(b64_d)
                         result = m_bytes.decode('ascii')
@@ -412,15 +435,15 @@ def HUNT3R():
                     def check_number():
                         print(chr(0xa))
                         number = input('[*] Phonenumber: ')
-                        if number == "x":
+                        if number == 'x':
                             print(colored("[i] Exit", "red"))
                             return HUNT3R()
-                        elif number == "exit":
+                        elif number == 'exit':
                             print(colored("[i] Exit", "red"))
                             return HUNT3R()
-                        elif number == "clear":
+                        elif number == 'clear':
                             os.system('clear')
-                        elif number == "c":
+                        elif number == 'c':
                             os.system('clear')
                         ## check if valid
                         print(chr(0xa))
