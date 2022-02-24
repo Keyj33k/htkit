@@ -418,6 +418,10 @@ def HUNT3R():
                         elif number == "exit":
                             print(colored("[i] Exit", "red"))
                             return HUNT3R()
+                        elif number == "clear":
+                            os.system('clear')
+                        elif number == "c":
+                            os.system('clear')
                         ## check if valid
                         print(chr(0xa))
                         valid_check = phonenumbers.parse(number)
