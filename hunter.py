@@ -42,25 +42,25 @@ def HUNT3R():
    
     def menu():
         print("""
-            [1] Witcher
-            [2] md5encrypt
-            [3] eye
-            [4] eye_of_sauron
-            [5] base64encode
-            [6] WIFI-Stalker    >>     need monitor mode
-            [7] Whereareyou
-            [x] Exit
-            [c] Clear
+            [1] WITCHER
+            [2] MD5ENCRYPT
+            [3] EYE
+            [4] EYE_OF_SAURON
+            [5] BASE64ENCODE
+            [6] WIFI-STALKER    >>     [i] Need monitor mode !
+            [7] WHEREAREYOU
+            [x] EXIT
+            [c] CLEAR
     """)
     menu()
     
     def hunter():
-        choice = input("[*] Number: ")
+        choice = input("[*] NUMBER: ")
         if choice == 'x':
-            print("[i] Exit")
+            print(colored("[i] EXIT", "red"))
             sys.exit()
         elif choice == 'exit':
-            print(colored("[*] Exit"))
+            print(colored("[*] EXIT", "red"))
             sys.exit()
         elif choice == 'c':
             os.system('clear')
@@ -91,7 +91,7 @@ def HUNT3R():
                 ip_compile = re.compile("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
                 port_min = 0
                 print(chr(0xa))
-                port_max = input("[*] Enter maximum port: \n[*]--> ") ## int
+                port_max = input("[*] ENTER MAX. PORT: \n[*]--> ") ## int
                 if port_max == 'clear':
                     os.system('clear')
                     return witcher()
@@ -99,18 +99,18 @@ def HUNT3R():
                     os.system('clear')
                     return witcher()
                 elif port_max == 'x':
-                    print(colored("[*] Exit", "red"))
+                    print(colored("[*] EXIT", "red"))
                     return HUNT3R()
                 open_ports = []
                 tstart = datetime.now()
                 
                 while True:
-                    target_ip = input("[*] Target IP: \n[*]--> ")
+                    target_ip = input("[*] TARGET IP: \n[*]--> ")
                     if target_ip == 'x':
-                        print(colored("[i] Exit", "red"))
+                        print(colored("[i] EXIT", "red"))
                         return HUNT3R()
                     elif target_ip == 'exit':
-                        print(colored("[*] Exit", "red"))
+                        print(colored("[*] EXIT", "red"))
                         return HUNT3R()
                     elif target_ip == 'clear':
                         os.system('clear')
@@ -126,7 +126,7 @@ def HUNT3R():
                                 for cursor in '|/-\\':
                                     yield cursor
                         spinner = spinning_cursor()
-                        print("[i] loading..")
+                        print("[i] LOADING ...")
                         for _ in range(port_max):   
                             sys.stdout.write(next(spinner))
                             sys.stdout.flush()
@@ -135,7 +135,7 @@ def HUNT3R():
                         break
                         
                 print(chr(0xa))
-                print("[i] Listing open connections..")
+                print("[i] Listing open connections ...")
                 print(chr(0xa))
                
                 try:
@@ -146,19 +146,20 @@ def HUNT3R():
                             open_ports.append(port)
                 except Exception:
                     os.system('clear')
-                    print("Can't connect to target!")
+                    print(colored("[*] Can't connect to target!", "red"))
                     time.sleep(3)
-                    input("Press any key..")
+                    input("Press any key ...")
                     return HUNT3R()
                   
                 for port in open_ports:
-                    print(f"[+] TCP/{port}  open")
+                    print(f"[+] TCP/{port}  OPEN")
                      
                 tend = datetime.now()
                 diff = tend - tstart
                 print(chr(0xa))
-                print("[!] Scan complete in " + str(diff) + " seconds")
-                print("[i] Witcher done.")
+                print("[i] SCAN COMPLETE IN " + str(diff) + " SECONDS ...")
+                time.sleep(2)
+                print("[i] WITCHER DONE !")
                 print(chr(0xa))
                 return HUNT3R()
             
@@ -191,9 +192,9 @@ def HUNT3R():
                 def md5():
                      
                     def encrypt(): 
-                        hash_val = input("\n[*] Enter your text to hash: ")
+                        hash_val = input("\n[*] TEXT TO HASH: ")
                         if hash_val == 'x':
-                            print(colored("[i] Exit", "red"))
+                            print(colored("[i] EXIT", "red"))
                             return HUNT3R()
                         elif hash_val == 'clear':
                             os.system('clear')
@@ -202,18 +203,21 @@ def HUNT3R():
                             os.system('clear')
                             return md5encrypt()
                         result = hashlib.md5(hash_val.encode())
-                        print("[+] Result: ", end ="")
+                        print("[+] RESULT: ", end ="")
                         print(result.hexdigest())
                     encrypt()
                   
                     def decrypt():
                         print(chr(0xa))
-                        question_brute = input("[?] Decrypt/bruteforce the hash? y/n: ")
+                        question_brute = input("[?] DECRYPT/BRUTEFORCE THE HASH? y/n: ")
                         if question_brute == 'y':
-                            print("[i] Use this Link: https://www.md5online.org/md5-decrypt.html ")## This program is using a big database to bruteforce the hash for you
+                            print("[i] USE THIS LINK: https://www.md5online.org/md5-decrypt.html ")## This program is using a big database to bruteforce the hash for you
                             return encrypt()
                         elif question_brute == 'x':
-                            print(colored("[i] Exit", "red"))
+                            print(colored("[i] EXIT", "red"))
+                            return HUNT3R()
+                        elif question_brute == 'exit':
+                            print(colored("[i] EXIT", "red"))
                             return HUNT3R()
                         elif question_brute == 'clear':
                             os.system('clear')
@@ -222,7 +226,7 @@ def HUNT3R():
                             os.system('clear')
                             return decrypt()
                         elif question_brute == 'n':
-                            question_exit = input("[?] Do you want to exit? y/n ")
+                            question_exit = input("[?] EXIT? y/n ")
                             if question_exit == 'y':
                                 print(colored("[i] Exit", "red"))
                                 return HUNT3R()
@@ -232,7 +236,7 @@ def HUNT3R():
                             elif question_exit == 'n':
                                 return encrypt()
                             else:
-                                print("[i] Invalid input")
+                                print("[i] INVALID INPUT !")
                                 return HUNT3R()
                     decrypt()
                   
@@ -267,10 +271,10 @@ def HUNT3R():
                     print(chr(0xa))
                     scanner = input('[*] IP: ')
                     if scanner == 'x':
-                        print(colored("[i] Exit", "red"))
+                        print(colored("[i] EXIT", "red"))
                         return HUNT3R()
                     elif scanner == 'exit':
-                        print(colored("[i] Exit", "red"))
+                        print(colored("[i] EXIT", "red"))
                         return HUNT3R()
                     elif scanner == 'clear':
                         os.system('clear')
@@ -282,9 +286,9 @@ def HUNT3R():
                     try:
                         response = requests.post("http://ip-api.com/batch", json=[{"query":scanner}]).json()
                     except Exception:
-                        print("Can't connect. An error was defined!")
+                        print(colored("CAN'T CONNECT. AN ERROR WAS DEFINED !", "red"))
                         print(chr(0xa))
-                        input("Press any key to continue..")
+                        input("Press any key ...")
                         os.system('clear')
                         return HUNT3R()
                      
@@ -294,7 +298,7 @@ def HUNT3R():
                         for k, j in ip.items():
                             print(k,j)
                     print(chr(0xa))
-                    print("[i] Scanner done.")
+                    print("[i] SCANNER DONE !")
                     print(chr(0xa))
                     return HUNT3R()
                
@@ -333,10 +337,10 @@ def HUNT3R():
                     if len(sys.argv) <= 1:
                         print("[!] Use --help\n")
                     elif sys.argv[1] == "--help":
-                        print("[*] Usage: python3 eye_of_sauron.py <IP/Domain> <port> ")
+                        print("[*] USAGE: python3 eye_of_sauron.py <IP/Domain> <port> ")
                         exit(0)
                     elif len(sys.argv) == 3:
-                        print("[!] success!")
+                        print("[i] SUCCESS !")
                         k = sys.argv[1]
                         j = sys.argv[2]
                         grabber(k, j)
@@ -378,10 +382,10 @@ def HUNT3R():
                 menu()
                
                 def chse():
-                    choice = input("[*] Enter choice: ")
+                    choice = input("[*] CHOICE: ")
                     if choice == '1':
                         print(chr(0xa))
-                        hash_value = input("[*] Enter message: ")
+                        hash_value = input("[*] ENTER MESSAGE: ")
                         if hash_value == 'x':
                             print(chr(0xa))
                             exit_choice = input("[?] Do you want to exit? y/n ")
@@ -391,7 +395,7 @@ def HUNT3R():
                             elif exit_choice == 'n':
                                 return chse()
                             else:
-                                print("[i] Invalid Input")
+                                print(colored("[i] INVALID INPUT!", "red"))
                                 return chse()
                         elif hash_value == 'clear':
                             os.system('clear')
@@ -408,13 +412,13 @@ def HUNT3R():
                     elif choice == '2':
                         def b64_decrypt():
                             print(chr(0xa))
-                            b64_hash_val = input("[*] Enter hash to decode: ")
+                            b64_hash_val = input("[*] ENTER HASH TO DECODE: ")
                             print(chr(0xa))
                             if b64_hash_val == 'x':
-                                print(colored("[i] Exit", "red"))
+                                print(colored("[i] EXIT", "red"))
                                 return HUNT3R()
                             elif b64_hash_val == 'exit':
-                                print(colored("[i] Exit", "red"))
+                                print(colored("[i] EXIT", "red"))
                                 return HUNT3R()
                             elif b64_hash_val == 'clear':
                                 os.system('clear')
@@ -430,10 +434,10 @@ def HUNT3R():
                         b64_decrypt()
                         
                     elif choice == 'x':
-                        print(colored("[i] Exit", "red"))
+                        print(colored("[i] EXIT", "red"))
                         return HUNT3R()
                     else:
-                        print("[i] Invalid input")
+                        print(colored("[i] INVALID INPUT !", "red"))
                         return HUNT3R()
                      
                 chse()
@@ -508,12 +512,12 @@ def HUNT3R():
                      
                     def check_number():
                         print(chr(0xa))
-                        number = input('[*] Phonenumber: ')
+                        number = input('[*] PHONENUMBER: ')
                         if number == 'x':
-                            print(colored("[i] Exit", "red"))
+                            print(colored("[i] EXIT", "red"))
                             return HUNT3R()
                         elif number == 'exit':
-                            print(colored("[i] Exit", "red"))
+                            print(colored("[i] EXIT", "red"))
                             return HUNT3R()
                         elif number == 'clear':
                             os.system('clear')
@@ -525,7 +529,7 @@ def HUNT3R():
                         print(chr(0xa))
                         valid_check = phonenumbers.parse(number)
                         is_valid = phonenumbers.is_valid_number(valid_check)
-                        print("Valid: ")
+                        print("VALID: ")
                         print(is_valid)
                         ## check timezone
                         timezone_number = phonenumbers.parse(number, "en")
@@ -545,7 +549,7 @@ def HUNT3R():
             number_tracker()
         
         else:
-            print(colored("[i] Invalid input", "red"))
+            print(colored("[i] INVALID INPUT !", "red"))
             return HUNT3R()
 
     hunter()
