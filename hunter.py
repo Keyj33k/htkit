@@ -288,7 +288,7 @@ def HUNT3R():
                     print(chr(0xa))
                     return HUNT3R()
                
-               eye()
+                eye()
                
             eye_main()
             
