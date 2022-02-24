@@ -90,6 +90,15 @@ def HUNT3R():
                     if target_ip == 'x':
                         print("[i] Exit")
                         return HUNT3R()
+                    elif target_ip == 'exit':
+                        print("[*] Exit")
+                        return HUNT3R()
+                    elif target_ip == 'clear':
+                        os.system('clear')
+                        return witcher()
+                    elif target_ip == 'c':
+                        os.system('clear')
+                        return witcher()
                     elif ip_compile.search(target_ip):
                         print(f"[i] {target_ip} is valid. Please wait, it'll take some time..")
                         print(chr(0xa))
@@ -164,8 +173,10 @@ def HUNT3R():
                             return HUNT3R()
                         elif hash_val == 'clear':
                             os.system('clear')
+                            return encrypt()
                         elif hash_val == 'c':
                             os.system('clear')
+                            return encrypt()
                         result = hashlib.md5(hash_val.encode())
                         print("[+] Result: ", end ="")
                         print(result.hexdigest())
@@ -181,8 +192,10 @@ def HUNT3R():
                             return HUNT3R()
                         elif question_brute == 'clear':
                             os.system('clear')
+                            return decrypt()
                         elif question_brute == 'c':
                             os.system('clear')
+                            return decrypt()
                         elif question_brute == 'n':
                             question_exit = input("[?] Do you want to exit? y/n ")
                             if question_exit == 'y':
@@ -227,13 +240,15 @@ def HUNT3R():
                 if scanner == 'x':
                     print("[i] Exit")
                     sys.exit()
-                elif scanner == 'exi":
+                elif scanner == 'exit':
                     print("[i] Exit")
                     sys.exit()
-                elif scanner == "clear":
+                elif scanner == 'clear':
                     os.system('clear')
-                elif scanner == "c":
+                    return eye()
+                elif scanner == 'c':
                     os.system('clear')
+                    return eye()
                 try:
                     response = requests.post("http://ip-api.com/batch", json=[{"query":scanner}]).json()
                 except Exception:
@@ -338,8 +353,10 @@ def HUNT3R():
                                 return chse()
                         elif hash_value == 'clear'
                             os.system('clear')
+                            return base64encode()
                         elif hash_value == 'c
                             os.system('clear')
+                            return base64encode()
                         m_bytes = choice.encode('ascii')
                         b64_e = base64.b64encode(m_bytes)
                         b64_hash = b64_e.decode('ascii')
