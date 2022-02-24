@@ -59,7 +59,6 @@ def HUNT3R():
             sys.exit()
 
         elif choice == '1':
-            os.system('clear')
             def witcher():
                 print("""
                       █                  █
@@ -150,7 +149,6 @@ def HUNT3R():
             witcher() 
 
         elif choice == '2':
-            os.system('clear')
             def md5encrypt():
                 def banner():
                     print("""   
@@ -243,8 +241,8 @@ def HUNT3R():
              [i] Type x to exit IPEye.")
             """)
             
-            os.system('clear')
             def eye(): 
+                print(chr(0xa))
                 scanner = input('[*] IP: ')
                 if scanner == 'x':
                     print(colored("[i] Exit", "red"))
@@ -317,7 +315,6 @@ def HUNT3R():
             eye_of_sauron()
 
         elif choice == '5':
-            os.system('clear')
             def base64encode():
                 def banner():
                     print("""
@@ -404,6 +401,7 @@ def HUNT3R():
             base64encode()
 
         elif choice == '6':
+            os.system('clear')
             def wifiStalker():
                 networks = pandas.DataFrame(columns=["BSSID", "SSID", "dBm_Signal", "Channel", "Crypto"])
                 networks.set_index("BSSID", inplace=True)
@@ -442,7 +440,6 @@ def HUNT3R():
             wifiStalker()
         
         elif choice == '7':
-            os.system('clear')
             def number_tracker():
                 print(colored("""
         █     █ █    █ ██████ █████  ██████ █████  █    █
