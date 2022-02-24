@@ -34,10 +34,10 @@ def eye_of_sauron():
         if len(sys.argv) <= 1:
             print("[!] Use --help\n")
         elif sys.argv[1] == "--help":
-            print("[*] Usage: ./eye_of_sauron.py <IP/Domain> <port> ")
+            print("[*] USAGE: ./eye_of_sauron.py <IP/Domain> <port> ")
             exit(0)
         elif len(sys.argv) == 3:
-            print("[!] success!")
+            print("[i] SUCCESS !")
             k = sys.argv[1]
             j = sys.argv[2]
             grabber(k, j)
