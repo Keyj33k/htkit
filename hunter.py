@@ -221,59 +221,60 @@ def HUNT3R():
             md5encrypt()
 
         elif choice == '3':
-            print("""
-                 █████  █████░
-                   █    █   ▓█
-                   █    █    █  ███   █░  █   ███
-                   █    █   ▓█ ▓▓ ▒█  ▓▒ ▒▓  ▓▓ ▒█
-                   █    █████░ █   █  ▒█ █▒  █   █
-                   █    █      █████   █ █   █████
-                   █    █      █       █▓▓   █
-                   █    █      ▓▓  █   ▓█▒   ▓▓  █
-                 █████  █       ███▒   ▒█     ███▒
-                                       ▒█
-                                       █▒
-                                      ██
-             <by@keyjeek>  |  Follow the white rabbit...")
-             <contact:nomotikag33n@gmail.com>       ")
-             [i] IPEye is a Tool to find out
-                 --> some information about an IP.  ")
-             [i] Type x to exit IPEye.")
-            """)
-            
-            def eye(): 
-                print(chr(0xa))
-                scanner = input('[*] IP: ')
-                if scanner == 'x':
-                    print(colored("[i] Exit", "red"))
-                    sys.exit()
-                elif scanner == 'exit':
-                    print(colored("[i] Exit", "red"))
-                    sys.exit()
-                elif scanner == 'clear':
-                    os.system('clear')
-                    return eye()
-                elif scanner == 'c':
-                    os.system('clear')
-                    return eye()
-                try:
-                    response = requests.post("http://ip-api.com/batch", json=[{"query":scanner}]).json()
-                except Exception:
-                    print("Can't connect. An error was defined!")
+            def eye_main():
+                print("""
+                    █████  █████░
+                    █    █   ▓█
+                    █    █    █  ███   █░  █   ███
+                    █    █   ▓█ ▓▓ ▒█  ▓▒ ▒▓  ▓▓ ▒█
+                    █    █████░ █   █  ▒█ █▒  █   █
+                    █    █      █████   █ █   █████
+                    █    █      █       █▓▓   █
+                    █    █      ▓▓  █   ▓█▒   ▓▓  █
+                    █████  █       ███▒   ▒█     ███▒
+                                        ▒█
+                                        █▒
+                                        ██
+                <by@keyjeek>  |  Follow the white rabbit...")
+                <contact:nomotikag33n@gmail.com>       ")
+                [i] IPEye is a Tool to find out
+                    --> some information about an IP.  ")
+                [i] Type x to exit IPEye.")
+                """)
+                
+                def eye(): 
                     print(chr(0xa))
-                    input("Press any key to continue..")
+                    scanner = input('[*] IP: ')
+                    if scanner == 'x':
+                        print(colored("[i] Exit", "red"))
+                        sys.exit()
+                    elif scanner == 'exit':
+                        print(colored("[i] Exit", "red"))
+                        sys.exit()
+                    elif scanner == 'clear':
+                        os.system('clear')
+                        return eye_main()
+                    elif scanner == 'c':
+                        os.system('clear')
+                        return eye_main()
+                    try:
+                        response = requests.post("http://ip-api.com/batch", json=[{"query":scanner}]).json()
+                    except Exception:
+                        print("Can't connect. An error was defined!")
+                        print(chr(0xa))
+                        input("Press any key to continue..")
+                        os.system('clear')
+                        return HUNT3R()
                     os.system('clear')
+                    for ip in response:
+                        for k, j in ip.items():
+                            print(k,j)
+                    print(chr(0xa))
+                    print("[i] Scanner done.")
+                    print(chr(0xa))
                     return HUNT3R()
-                os.system('clear')
-                for ip in response:
-                    for k, j in ip.items():
-                        print(k,j)
-                print(chr(0xa))
-                print("[i] Scanner done.")
-                print(chr(0xa))
-                return HUNT3R()
-            eye()
-
+                eye()
+            eye_main()
         elif choice == '4':
             os.system('clear')
             def eye_of_sauron():
@@ -469,10 +470,10 @@ def HUNT3R():
                             return HUNT3R()
                         elif number == 'clear':
                             os.system('clear')
-                            return check_number()
+                            return number_tracker()
                         elif number == 'c':
                             os.system('clear')
-                            return check_number()
+                            return number_tracker()
                         ## check if valid
                         print(chr(0xa))
                         valid_check = phonenumbers.parse(number)
