@@ -351,10 +351,10 @@ def HUNT3R():
                             else:
                                 print("[i] Invalid Input")
                                 return chse()
-                        elif hash_value == 'clear'
+                        elif hash_value == 'clear':
                             os.system('clear')
                             return base64encode()
-                        elif hash_value == 'c
+                        elif hash_value == 'c':
                             os.system('clear')
                             return base64encode()
                         m_bytes = choice.encode('ascii')
@@ -363,24 +363,28 @@ def HUNT3R():
                         print(b64_hash)
                         return chse()       
                     elif choice == '2':
-                        print(chr(0xa))
-                        b64_hash_val = input("[*] Enter hash to decode: ")
-                        print(chr(0xa))
-                        if b64_hash_val == 'x':
-                            print("[i] Exit")
-                            return HUNT3R()
-                        elif b64_hash_val == 'exit':
-                            print("[*] Exit")
-                            return HUNT3R()
-                        elif b64_hash_val == 'clear':
-                            os.system('clear')
-                        elif b64_hash_val == 'c':
-                            os.system('clear')
-                        b64_d = b64_hash_val.encode('ascii')
-                        m_bytes = base64.b64decode(b64_d)
-                        result = m_bytes.decode('ascii')
-                        print(result)
-                        return chse()
+                        def b64_decrypt():
+                            print(chr(0xa))
+                            b64_hash_val = input("[*] Enter hash to decode: ")
+                            print(chr(0xa))
+                            if b64_hash_val == 'x':
+                                print("[i] Exit")
+                                return HUNT3R()
+                            elif b64_hash_val == 'exit':
+                                print("[*] Exit")
+                                return HUNT3R()
+                            elif b64_hash_val == 'clear':
+                                os.system('clear')
+                                return b64_decrypt()
+                            elif b64_hash_val == 'c':
+                                os.system('clear')
+                                return b64_decrypt()
+                            b64_d = b64_hash_val.encode('ascii')
+                            m_bytes = base64.b64decode(b64_d)
+                            result = m_bytes.decode('ascii')
+                            print(result)
+                            return chse()
+                        b64_decrypt()
                     elif choice == 'x':
                         print("[i] Exit")
                         return HUNT3R()
@@ -441,7 +445,6 @@ def HUNT3R():
         ▒█▓ ▓█▒ █    █ █      █   ░█ █      █   ░█ █    █
         ░█▒ ▒█▒ █    █ █      █    █ █      █    █ █▒  ▒█
         █   █▒ █    █ ██████ █    ▒ ██████ █    ▒  ████
-
             <by@keyjeek>  |  Follow the white rabbit...
                 <contact:nomotikag33n@gmail.com>    
             [i] Phonenumber tracking tool
@@ -460,8 +463,10 @@ def HUNT3R():
                             return HUNT3R()
                         elif number == 'clear':
                             os.system('clear')
+                            return check_number()
                         elif number == 'c':
                             os.system('clear')
+                            return check_number()
                         ## check if valid
                         print(chr(0xa))
                         valid_check = phonenumbers.parse(number)
