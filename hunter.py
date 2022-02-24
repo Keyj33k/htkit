@@ -18,7 +18,8 @@ import os
 import re
 
 
-def banner():   
+def banner(): 
+   os.system('clear')
    print("""
          █    █                 █
          █    █                 █
