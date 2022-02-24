@@ -258,10 +258,10 @@ def HUNT3R():
                     scanner = input('[*] IP: ')
                     if scanner == 'x':
                         print(colored("[i] Exit", "red"))
-                        sys.exit()
+                        return HUNT3R()
                     elif scanner == 'exit':
                         print(colored("[i] Exit", "red"))
-                        sys.exit()
+                        return HUNT3R()
                     elif scanner == 'clear':
                         os.system('clear')
                         return eye_main()
