@@ -123,9 +123,11 @@ def HUNT3R():
                             time.sleep(0.2)
                             sys.stdout.write('\b')           
                         break
+                        
                 print(chr(0xa))
                 print("[i] Listing open connections..")
                 print(chr(0xa))
+               
                 try:
                     for port in range(port_min, port_max + 1):
                         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s: ## sock_DGRAM/UPD
@@ -138,8 +140,10 @@ def HUNT3R():
                     time.sleep(3)
                     input("Press any key..")
                     return HUNT3R()
+                  
                 for port in open_ports:
                     print(f"[+] TCP/{port}  open")
+                     
                 tend = datetime.now()
                 diff = tend - tstart
                 print(chr(0xa))
