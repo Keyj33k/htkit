@@ -310,7 +310,7 @@ def HUNT3R():
             os.system('clear')
             
             def banner_grabber_part():
-                os.system('clear')
+         
                 print(chr(0xa))
                 print("""
             █████░   ██   ██   █ ██   █ ██████ █████          ▒███▒ █████    ██   █████░
@@ -331,10 +331,14 @@ def HUNT3R():
                     print(chr(0xa))
 
                     target_ip = input("[*] TARGET_IP: ")
+                     
                     if target_ip == 'x':
                         print(colored("[*] Exiting ...", "red"))
                         time.sleep(1)
                         return HUNT3R()
+                    elif target_ip == 'c':
+                        os.system('clear')
+                        return banner_grabber_part()
 
                     target_port = input("[*] TARGET_PORT: ")
 
