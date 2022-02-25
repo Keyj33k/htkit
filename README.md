@@ -13,7 +13,7 @@ IPEye
 -------------------------------------------------------------------
 ~ tracking tool for the internet protocol
 
-Eye_of_sauron
+Banner Grabber
 -------------------------------------------------------------------
 ~ banner grabbing tool 
 ~ IP / URL
