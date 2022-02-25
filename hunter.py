@@ -20,7 +20,7 @@ import re
 
 def banner(): 
    os.system('clear')
-   print("""
+   print(colored("""
          █    █                 █
          █    █                 █
          █    █ █   █  █▒██▒  █████   ███    █▒██▒
@@ -35,7 +35,7 @@ def banner():
      <contact:nomotikag33n@gmail.com>           
      [i] Hunter is a small toolkit to perform information gathering   
      [i] Type x to exit Hunter.              
-     """)
+     """, "cyan"))
 banner()
 
 def HUNT3R():
