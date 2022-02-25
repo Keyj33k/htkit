@@ -41,17 +41,17 @@ banner()
 def HUNT3R():
    
     def menu():
-        print("""
+        print(colored("""
             [1] WITCHER
             [2] MD5ENCRYPT
             [3] IPEYE
-            [4] EYE_OF_SAURON
+            [4] BANNER_GRABBER
             [5] BASE64ENCODE
             [6] WIFI-STALKER    >>     [i] Need monitor mode !
             [7] WHEREAREYOU
             [x] EXIT
             [c] CLEAR
-    """)
+    """, "yellow"))
     menu()
     
     def hunter():
@@ -309,46 +309,60 @@ def HUNT3R():
         elif choice == '4':
             os.system('clear')
             
-            def eye_of_sauron():
+            def banner_grabber_part():
+                os.system('clear')
+                print(chr(0xa))
                 print("""
-                
-              ▓███▒   ██   █    █ █████   ▓██▓  ██   █        ███████▒   ▒█ ██████
-             █▓  ░█   ██   █    █ █   ▓█ ▒█  █▒ ██░  █        █     ░█   █░ █
-             █       ▒██▒  █    █ █    █ █░  ░█ █▒▓  █        █      ▒█ █▒  █
-             █▓░     ▓▒▒▓  █    █ █   ▒█ █    █ █ █  █        █       █▓█   █
-              ▓██▓   █░░█  █    █ █████  █    █ █ ▓▓ █        ██████  ▒█▒   ██████
-                 ▓█  █  █  █    █ █  ░█▒ █    █ █  █ █        █        █    █
-                  █ ▒████▒ █    █ █   ░█ █░  ░█ █  ▓▒█        █        █    █
-             █░  ▓█ ▓▒  ▒▓ █▒  ▒█ █    █ ▒█  █▒ █  ░██        █        █    █
-             ▒████░ █░  ░█  ████  █    ▒  ▓██▓  █   ██        ██████   █    ██████
-                                                      ██████
-                <by@keyjeek>  |  Follow the white rabbit...")
-                <contact:nomotikag33n@gmail.com>       ")
-                [i] This Tool is made for banner grabbing   ")
+            █████░   ██   ██   █ ██   █ ██████ █████          ▒███▒ █████    ██   █████░
+            █   ▒█   ██   ██░  █ ██░  █ █      █   ▓█        ░█▒ ░█ █   ▓█   ██   █   ▒█
+            █    █  ▒██▒  █▒▓  █ █▒▓  █ █      █    █        █▒     █    █  ▒██▒  █    █
+            █   ▒█  ▓▒▒▓  █ █  █ █ █  █ █      █   ▒█        █      █   ▒█  ▓▒▒▓  █   ▒█
+            █████░  █░░█  █ ▓▓ █ █ ▓▓ █ ██████ █████         █   ██ █████   █░░█  █████░
+            █   ▒█  █  █  █  █ █ █  █ █ █      █  ░█▒        █    █ █  ░█▒  █  █  █   ▒█
+            █    █ ▒████▒ █  ▓▒█ █  ▓▒█ █      █   ░█        █▒   █ █   ░█ ▒████▒ █    █
+            █   ▒█ ▓▒  ▒▓ █  ░██ █  ░██ █      █    █        ▒█░ ░█ █    █ ▓▒  ▒▓ █   ▒█
+            █████░ █░  ░█ █   ██ █   ██ ██████ █    ▒         ▒███▒ █    ▒ █░  ░█ █████░
+                                                    ██████
+                <   coded by@keyj33k    >
+                [*] Type x to exit banner_grabber
                 """)
-                
-                def grabber(i, p):
-                    sock = socket.socket()
-                    sock.connect((i, int(p)))
-                    banner = sock.recv(1024)
-                    print(banner)
-                     
-                def main():
-                    if len(sys.argv) <= 1:
-                        print("[!] Use --help\n")
-                    elif sys.argv[1] == "--help":
-                        print("[*] USAGE: python3 eye_of_sauron.py <IP/Domain> <port> ")
-                        exit(0)
-                    elif len(sys.argv) == 3:
-                        print("[i] SUCCESS !")
-                        k = sys.argv[1]
-                        j = sys.argv[2]
-                        grabber(k, j)
-                        exit(0)    
+
+                def banner_grab():
+                    print(chr(0xa))
+
+                    target_ip = input("[*] TARGET_IP: ")
+                    if target_ip == 'x':
+                        print(colored("[*] Exiting ...", "red"))
+                        time.sleep(1)
+                        return HUNT3R()
+
+                    target_port = input("[*] TARGET_PORT: ")
+
+                    try:
+                        socket_sock = socket.socket()
+                        socket_sock.connect((target_ip, int(target_port)))
+                        print(socket_sock.recv(1024))
+                        time.sleep(1)
+                        return HUNT3R()
+                    except Exception:
+                        print(colored("[i] Can't connect to target. An error was defined !", "red"))
+                        time.sleep(1)
                         
-                main()
-               
-            eye_of_sauron()
+                        retry_option = input("[*] Retry? (y/N) ")
+                        if retry_option == 'y':
+                            return banner_grabber_part()
+                        elif retry_option == 'n':
+                            print(colored("[*] Exiting ...", "red"))
+                            time.sleep(1)
+                            return HUNT3R()
+                        else:
+                            print(colored("[i] Invalid input !"))
+                            time.sleep(1)
+                            return banner_grabber_part()
+
+                banner_grab()
+
+            banner_grabber_part()
 
         elif choice == '5':
          
@@ -492,7 +506,7 @@ def HUNT3R():
         elif choice == '7':
             
             def number_tracker():
-                print(colored("""
+                print("""
         █     █ █    █ ██████ █████  ██████ █████  █    █
         █░ █ ░█ █    █ █      █   ▓█ █      █   ▓█ █    █
         █░▒█▒░█ █    █ █      █    █ █      █    █ █    █
@@ -505,7 +519,7 @@ def HUNT3R():
             <by@keyjeek>  |  Follow the white rabbit...
                 <contact:nomotikag33n@gmail.com>    
             [i] Phonenumber tracking tool
-                """, "blue"))
+                """)
 
                 while True:
                     print(chr(0xa))
