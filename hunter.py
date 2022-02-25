@@ -324,7 +324,8 @@ def HUNT3R():
             █████░ █░  ░█ █   ██ █   ██ ██████ █    ▒         ▒███▒ █    ▒ █░  ░█ █████░
                                                     ██████
                 <   coded by@keyj33k    >
-                [*] Type x to exit banner_grabber
+                [i] Type x to exit banner_grabber
+                [i] Type c to clean the screen
                 """)
 
                 def banner_grab():
