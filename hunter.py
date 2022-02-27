@@ -179,9 +179,9 @@ def HUNT3R():
                 banner()
                
                 def md5():
-                     
+                    print(chr(0xa))
                     def encrypt(): 
-                        hash_val = input("\n[*] TEXT TO HASH: ")
+                        hash_val = input("[*] TEXT TO HASH: ")
                         if hash_val == 'x':
                             print(colored("[i] EXIT", "red"))
                             return HUNT3R()
