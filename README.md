@@ -3,24 +3,24 @@ is a small toolkit for information gathering and helping with en- and decryption
 
 Hunter using Tools like Witcher, md5encrypt, eye, eye_of_sauron, base64encode, WIFI-Stalker and Whereareyou.
 
-Witcher
+[1] Witcher
 -------------------------------------------------------------------
 ~ simple portscanner
 
-IPEye
+[2] IPEye
 -------------------------------------------------------------------
 ~ tracking tool for the internet protocol
 
-Banner Grabber
+[3] Banner Grabber
 -------------------------------------------------------------------
 ~ banner grabbing tool 
 ~ IP 
 
-WIFI-Stalker
+[4] WIFI-Stalker
 -------------------------------------------------------------------
 ~ tool which displays all available networks around you
 
-Whereareyou
+[5] Whereareyou
 -------------------------------------------------------------------
 ~ tool for locating unknown phonenumbers
 
