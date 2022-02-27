@@ -92,6 +92,7 @@ def HUNT3R():
 ▒█▓ ▓█▒   █      █    █░     █   █  █       █
 ░█▒ ▒█▒   █      █░   ▓█  ▓  █   █  ▓▓  █   █
  █   █▒ █████    ▒██   ▓██▒  █   █   ███▒   █
+ 
 <by@keyjeek>  |  Follow the white rabbit...
 <contact:nomotikag33n@gmail.com>      
 [i] Witcher is a simple port scanner.  
@@ -444,7 +445,8 @@ def HUNT3R():
 █   ▒█ █    █ █▒  █  █      █  ░█▒   █    █        █   
 █    █ █    █ ██████ █▒     █   ░█   █    █        █   
 █   ▒█ ▒▓  ▓█     █  ░█▒ ░▓ █    █   █    █        █   
-█████░  ▓███      █   ▒███▒ █    ▒   █    █        █                                                                     
+█████░  ▓███      █   ▒███▒ █    ▒   █    █        █    
+
 <by@keyjeek>  |  Follow the white rabbit...
 <contact:nomotikag33n@gmail.com>       
 [i] This Tool helps to encode and decode your text in base64.  
@@ -623,6 +625,7 @@ def HUNT3R():
 ▒█▓ ▓█▒ █    █ █      █   ░█ █      █   ░█ █    █
 ░█▒ ▒█▒ █    █ █      █    █ █      █    █ █▒  ▒█
  █   █▒ █    █ ██████ █    ▒ ██████ █    ▒  ████
+ 
 <by@keyjeek>  |  Follow the white rabbit...
 <contact:nomotikag33n@gmail.com>    
 [i] Phonenumber tracking tool
