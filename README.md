@@ -34,9 +34,7 @@ and helping with en- and decryption with b64 and md5
 
 [7] Whereareyou
 -------------------------------------------------------------------
-~ a simple tool for grabbing informations about a phonenumber
-
->>> like location etc.
+~ a simple tool for grabbing informations about a phonenumber like location etc.
 
 Installation:
 -------------------------------------------------------------------
