@@ -126,9 +126,7 @@ def HUNT3R():
                             sys.stdout.write('\b')           
                         break
                         
-                print(chr(0xa))
                 print("[i] Listing open connections ...")
-                print(chr(0xa))
                
                 try:
                     for port in range(port_min, port_max + 1):
