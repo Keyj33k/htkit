@@ -18,7 +18,6 @@ Hunter using Tools like Witcher, md5encrypt, eye, eye_of_sauron, base64encode, W
 [4] Banner Grabber
 -------------------------------------------------------------------
 ~ banner grabbing tool 
-~ IP 
 
 [5] b64crypt
 -------------------------------------------------------------------
