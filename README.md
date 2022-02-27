@@ -7,20 +7,28 @@ Hunter using Tools like Witcher, md5encrypt, eye, eye_of_sauron, base64encode, W
 -------------------------------------------------------------------
 ~ simple portscanner
 
-[2] IPEye
+[2] md5encrypt
+-------------------------------------------------------------------
+~ a md5 encryption tool
+
+[3] IPEye
 -------------------------------------------------------------------
 ~ tracking tool for the internet protocol
 
-[3] Banner Grabber
+[4] Banner Grabber
 -------------------------------------------------------------------
 ~ banner grabbing tool 
 ~ IP 
 
-[4] WIFI-Stalker
+[5] b64crypt
+-------------------------------------------------------------------
+~ a tool written vor base64 en- and decryption
+
+[6] WIFI-Stalker
 -------------------------------------------------------------------
 ~ tool which displays all available networks around you
 
-[5] Whereareyou
+[7] Whereareyou
 -------------------------------------------------------------------
 ~ tool for locating unknown phonenumbers
 
