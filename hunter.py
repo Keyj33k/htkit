@@ -85,7 +85,7 @@ def HUNT3R():
                  <by@keyjeek>  |  Follow the white rabbit...
                  <contact:nomotikag33n@gmail.com>      
                  [i] Witcher is a simple port scanner.  
-                 [i] Type x to exit Witcher. 
+                 [i] Type x in <target ip> part to exit Witcher. 
                 """)
 
                 ip_compile = re.compile("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
