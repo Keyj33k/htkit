@@ -6,7 +6,7 @@ and helping with en- and decryption with b64 and md5
 
 [1] Witcher
 -------------------------------------------------------------------
-~ simple portscanner
+~ a simple socket tcp portscanner
 
 [2] md5encrypt
 -------------------------------------------------------------------
@@ -18,7 +18,9 @@ and helping with en- and decryption with b64 and md5
 
 [4] Banner Grabber
 -------------------------------------------------------------------
-~ banner grabbing tool 
+~ a banner grabbing tool for open ports
+
+~ you can use it in combi with the witcher portscanner
 
 [5] b64crypt
 -------------------------------------------------------------------
