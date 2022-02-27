@@ -27,6 +27,9 @@ Whereareyou
 Installation:
 -------------------------------------------------------------------
 ```
+$ git clone https://github.com/Keyj33k/Hunter.git
+```
+```
 $ cd Hunter
 ```
 ```
