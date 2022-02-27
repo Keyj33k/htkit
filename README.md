@@ -1,7 +1,8 @@
-# Hunter..
-is a small toolkit for information gathering and helping with en- and decryption with b64 and md5
+# Project - Hunter
+[i] Hunter is a small toolkit for information gathering 
+and helping with en- and decryption with b64 and md5
 
-Hunter using Tools like Witcher, md5encrypt, eye, eye_of_sauron, base64encode, WIFI-Stalker and Whereareyou.
+[i] This is a collection of selfwritten tools. 
 
 [1] Witcher
 -------------------------------------------------------------------
