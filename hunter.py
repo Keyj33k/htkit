@@ -515,8 +515,10 @@ def HUNT3R():
         ░█▒ ▒█▒ █    █ █      █    █ █      █    █ █▒  ▒█
          █   █▒ █    █ ██████ █    ▒ ██████ █    ▒  ████
             <by@keyjeek>  |  Follow the white rabbit...
-                <contact:nomotikag33n@gmail.com>    
+            <contact:nomotikag33n@gmail.com>    
             [i] Phonenumber tracking tool
+            [i] Type 'c' or 'clear' to clear the screen
+            [i] Type 'x' or 'exit' to exit whereareyou
                 """)
 
                 while True:
