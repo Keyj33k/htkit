@@ -28,7 +28,7 @@ Installation:
 -------------------------------------------------------------------
 ```
 $ cd Hunter
-
+```
+```
 $ sudo pip3 install -r requirements.txt
-
 ```
