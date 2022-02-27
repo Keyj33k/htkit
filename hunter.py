@@ -384,7 +384,8 @@ def HUNT3R():
                     <by@keyjeek>  |  Follow the white rabbit...
                         <contact:nomotikag33n@gmail.com>       
                     [i] This Tool helps to encode and decode your text in base64.  
-                    [i] Type x to exit Base64encode.
+                    [i] Type 'x' or 'exit' to exit Base64encode.
+                    [i] Type 'c' or 'clear' to clear the screen.
                 """)
                 banner()
                
@@ -445,7 +446,16 @@ def HUNT3R():
                             return chse()
                         b64_decrypt()
                         
+                    elif choice == 'c':
+                        os.system('clear')
+                        return chse()
+                    elif choice == 'clear':
+                        os.system('clear')
+                        return chse()
                     elif choice == 'x':
+                        print(colored("[i] EXIT", "red"))
+                        return HUNT3R()
+                    elif choice == 'exit':
                         print(colored("[i] EXIT", "red"))
                         return HUNT3R()
                     else:
