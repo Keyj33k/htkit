@@ -112,7 +112,7 @@ def HUNT3R():
                         return witcher()
                     elif ip_compile.search(target_ip):
                         print(f"[i] {target_ip} is valid. Please wait, it'll take some time..")
-                        print(chr(0xa))
+          
                         def spinning_cursor():
                             while True:
                                 for cursor in '|/-\\':
@@ -137,7 +137,6 @@ def HUNT3R():
                             s.connect((target_ip, port))
                             open_ports.append(port)
                 except Exception:
-                    os.system('clear')
                     print(colored("[*] Can't connect to target!", "red"))
                     time.sleep(3)
                     input("Press any key ...")
@@ -188,6 +187,9 @@ def HUNT3R():
                         if hash_val == 'x':
                             print(colored("[i] EXIT", "red"))
                             return HUNT3R()
+                        elif hash_val == 'exit':
+                            print(colored("[i] EXIT", "red"))
+                            return HUNT3R()
                         elif hash_val == 'clear':
                             os.system('clear')
                             return md5encrypt()
@@ -200,7 +202,6 @@ def HUNT3R():
                     encrypt()
                   
                     def decrypt():
-                        print(chr(0xa))
                         question_brute = input("[?] DECRYPT/BRUTEFORCE THE HASH? y/n: ")
                         if question_brute == 'y':
                             print("[i] USE THIS LINK: https://www.md5online.org/md5-decrypt.html ")## This program is using a big database to bruteforce the hash for you
@@ -279,7 +280,6 @@ def HUNT3R():
                         response = requests.post("http://ip-api.com/batch", json=[{"query":scanner}]).json()
                     except Exception:
                         print(colored("CAN'T CONNECT. AN ERROR WAS DEFINED !", "red"))
-                        print(chr(0xa))
                         input("Press any key ...")
                         os.system('clear')
                         return HUNT3R()
@@ -328,7 +328,14 @@ def HUNT3R():
                         print(colored("[*] Exiting ...", "red"))
                         time.sleep(1)
                         return HUNT3R()
+                    elif target_ip == 'exit':
+                        print(colored("[*] Exiting ...", "red"))
+                        time.sleep(1)
+                        return HUNT3R()
                     elif target_ip == 'c':
+                        os.system('clear')
+                        return banner_grabber_part()
+                    elif target_ip == 'clear':
                         os.system('clear')
                         return banner_grabber_part()
 
@@ -394,10 +401,8 @@ def HUNT3R():
                 def chse():
                     choice = input("[*] CHOICE: ")
                     if choice == '1':
-                        print(chr(0xa))
                         hash_value = input("[*] ENTER MESSAGE: ")
                         if hash_value == 'x':
-                            print(chr(0xa))
                             exit_choice = input("[?] EXIT? y/n ")
                             if exit_choice == 'y':
                                 print(colored("[i] Exit", "red"))
@@ -423,7 +428,6 @@ def HUNT3R():
                         def b64_decrypt():
                             print(chr(0xa))
                             b64_hash_val = input("[*] ENTER HASH TO DECODE: ")
-                            print(chr(0xa))
                             if b64_hash_val == 'x':
                                 print(colored("[i] EXIT", "red"))
                                 return HUNT3R()
@@ -521,7 +525,6 @@ def HUNT3R():
                     print(chr(0xa))
                      
                     def check_number():
-                        print(chr(0xa))
                         number = input('[*] PHONENUMBER: ')
                         if number == 'x':
                             print(colored("[i] EXIT", "red"))
