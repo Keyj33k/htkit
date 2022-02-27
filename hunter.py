@@ -91,7 +91,7 @@ def HUNT3R():
                 ip_compile = re.compile("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
                 port_min = 0
                 print(chr(0xa))
-                port_max = int(input("[*] ENTER MAX. PORT: \n[*]--> ")) ## int
+                port_max = int(input("[*] ENTER MAX. PORT: \n[*]--> ")) 
                
                 open_ports = []
                 tstart = datetime.now()
