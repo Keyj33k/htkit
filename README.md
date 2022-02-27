@@ -28,11 +28,15 @@ and helping with en- and decryption with b64 and md5
 
 [6] WIFI-Stalker
 -------------------------------------------------------------------
-~ tool which displays all available networks around you
+~ tool which displays all available networks around your access point
+
+~ you need to set your wireless device in the monitor mode
 
 [7] Whereareyou
 -------------------------------------------------------------------
-~ tool for locating unknown phonenumbers
+~ a simple tool for grabbing informations about a phonenumber
+
+>>> like location etc.
 
 Installation:
 -------------------------------------------------------------------
