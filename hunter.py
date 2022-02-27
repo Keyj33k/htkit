@@ -23,21 +23,21 @@ def banner():
    os.system('clear')
    
    print(colored("""
-         █    █                 █
-         █    █                 █
-         █    █ █   █  █▒██▒  █████   ███    █▒██▒
-         █    █ █   █  █▓ ▒█    █    ▓▓ ▒█   ██  █
-         ██████ █   █  █   █    █    █   █   █
-         █    █ █   █  █   █    █    █████   █
-         █    █ █   █  █   █    █    █       █
-         █    █ █▒ ▓█  █   █    █░   ▓▓  █   █
-         █    █ ▒██▒█  █   █    ▒██   ███▒   █
+█    █                 █
+█    █                 █
+█    █ █   █  █▒██▒  █████   ███    █▒██▒
+█    █ █   █  █▓ ▒█    █    ▓▓ ▒█   ██  █
+██████ █   █  █   █    █    █   █   █
+█    █ █   █  █   █    █    █████   █
+█    █ █   █  █   █    █    █       █
+█    █ █▒ ▓█  █   █    █░   ▓▓  █   █
+█    █ ▒██▒█  █   █    ▒██   ███▒   █
    
-     <by@keyjeek>  |  Follow the white rabbit... 
-     <contact:nomotikag33n@gmail.com>           
-     [i] Hunter is a small toolkit to perform information gathering   
-     [i] Type x to exit Hunter.              
-     """, "cyan"))
+<by@keyjeek>  |  Follow the white rabbit... 
+<contact:nomotikag33n@gmail.com>           
+[i] Hunter is a small toolkit to perform information gathering   
+[i] Type x to exit Hunter.              
+    """, "cyan"))
 banner()
 
 def HUNT3R():
@@ -45,16 +45,16 @@ def HUNT3R():
     def menu():
          
         print(colored("""
-            [1] WITCHER
-            [2] MD5ENCRYPT
-            [3] IPEYE
-            [4] BANNER_GRABBER
-            [5] BASE64ENCODE
-            [6] WIFI-STALKER    >>     [i] Need monitor mode !
-            [7] WHEREAREYOU
-            [x] EXIT
-            [c] CLEAR
-    """, "yellow"))
+[1] WITCHER
+[2] MD5ENCRYPT
+[3] IPEYE
+[4] BANNER_GRABBER
+[5] B64CRYPT
+[6] WIFI-STALKER    >>     [i] Need monitor mode !
+[7] WHEREAREYOU
+[x] EXIT
+[c] CLEAR
+        """, "yellow"))
       
     menu()
     
@@ -82,20 +82,20 @@ def HUNT3R():
             def witcher():
                
                 print("""
-                      █                  █
-            █     █          █           █
-            █░ █ ░█          █           █
-            █░▒█▒░█ ███    █████   ▓██▒  █▒██▒   ███    █▒██▒
-            ▓▒███▒█   █      █    ▓█  ▓  █▓ ▒█  ▓▓ ▒█   ██  █
-            ▒▒█▒█▒▓   █      █    █░     █   █  █   █   █
-            ▒██ ██▓   █      █    █      █   █  █████   █
-            ▒█▓ ▓█▒   █      █    █░     █   █  █       █
-            ░█▒ ▒█▒   █      █░   ▓█  ▓  █   █  ▓▓  █   █
-             █   █▒ █████    ▒██   ▓██▒  █   █   ███▒   █
-                 <by@keyjeek>  |  Follow the white rabbit...
-                 <contact:nomotikag33n@gmail.com>      
-                 [i] Witcher is a simple port scanner.  
-                 [i] Type x in <target ip> part to exit Witcher. 
+          █                  █
+█     █          █           █
+█░ █ ░█          █           █
+█░▒█▒░█ ███    █████   ▓██▒  █▒██▒   ███    █▒██▒
+▓▒███▒█   █      █    ▓█  ▓  █▓ ▒█  ▓▓ ▒█   ██  █
+▒▒█▒█▒▓   █      █    █░     █   █  █   █   █
+▒██ ██▓   █      █    █      █   █  █████   █
+▒█▓ ▓█▒   █      █    █░     █   █  █       █
+░█▒ ▒█▒   █      █░   ▓█  ▓  █   █  ▓▓  █   █
+ █   █▒ █████    ▒██   ▓██▒  █   █   ███▒   █
+<by@keyjeek>  |  Follow the white rabbit...
+<contact:nomotikag33n@gmail.com>      
+[i] Witcher is a simple port scanner.  
+[i] Type x in <target ip> part to exit Witcher. 
                 """)
 
                 ip_compile = re.compile("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
@@ -181,24 +181,24 @@ def HUNT3R():
                 def banner():
                      
                     print("""   
-                        █
-                        █  █████                                              █
-                        █  █                                                  █
-             ██▓█▓   ██▓█  █       ███   █▒██▒   ▓██▒   █▒██▒ █░  █  █▓██   █████
-             █▒█▒█  █▓ ▓█  ████▒  ▓▓ ▒█  █▓ ▒█  ▓█  ▓   ██  █ ▓▒ ▒▓  █▓ ▓█    █
-             █ █ █  █   █     ░█▓ █   █  █   █  █░      █     ▒█ █▒  █   █    █
-             █ █ █  █   █       █ █████  █   █  █       █      █ █   █   █    █
-             █ █ █  █   █       █ █      █   █  █░      █      █▓▓   █   █    █
-             █ █ █  █▓ ▓█  █░  █▓ ▓▓  █  █   █  ▓█  ▓   █      ▓█▒   █▓ ▓█    █░
-             █ █ █   ██▓█  ▒███▓   ███▒  █   █   ▓██▒   █      ▒█    █▓██     ▒██
-                                                               ▒█    █
-                                                               █▒    █
-                                                              ██     █
-            <by@keyjeek>  |  Follow the white rabbit...
-            <contact:nomotikag33n@gmail.com>       
-            [i] md5encrypt is made to encrypt your string to an 128 bit hash value
-            [i] Type x to exit md5encrypt.
-                """)
+            █
+            █  █████                                             █
+            █  █                                                 █
+██▓█▓   ██▓█  █       ███   █▒██▒   ▓██▒   █▒██▒ █░  █  █▓██   █████
+█▒█▒█  █▓ ▓█  ████▒  ▓▓ ▒█  █▓ ▒█  ▓█  ▓   ██  █ ▓▒ ▒▓  █▓ ▓█    █
+█ █ █  █   █     ░█▓ █   █  █   █  █░      █     ▒█ █▒  █   █    █
+█ █ █  █   █       █ █████  █   █  █       █      █ █   █   █    █
+█ █ █  █   █       █ █      █   █  █░      █      █▓▓   █   █    █
+█ █ █  █▓ ▓█  █░  █▓ ▓▓  █  █   █  ▓█  ▓   █      ▓█▒   █▓ ▓█    █░
+█ █ █   ██▓█  ▒███▓   ███▒  █   █   ▓██▒   █      ▒█    █▓██     ▒██
+                                                  ▒█    █
+                                                  █▒    █
+                                                  ██    █
+<by@keyjeek>  |  Follow the white rabbit...
+<contact:nomotikag33n@gmail.com>       
+[i] md5encrypt is made to encrypt your string to an 128 bit hash value
+[i] Type x to exit md5encrypt.
+                    """)
                 banner()
                
                 def md5():
@@ -284,23 +284,23 @@ def HUNT3R():
             def eye_main():
                
                 print("""
-                  █████  █████░
-                    █    █   ▓█
-                    █    █    █  ███   █░  █   ███
-                    █    █   ▓█ ▓▓ ▒█  ▓▒ ▒▓  ▓▓ ▒█
-                    █    █████░ █   █  ▒█ █▒  █   █
-                    █    █      █████   █ █   █████
-                    █    █      █       █▓▓   █
-                    █    █      ▓▓  █   ▓█▒   ▓▓  █
-                  █████  █       ███▒   ▒█     ███▒
-                                        ▒█
-                                        █▒
-                                        ██
-                <by@keyjeek>  |  Follow the white rabbit...")
-                <contact:nomotikag33n@gmail.com>       ")
-                [i] IPEye is a Tool to find out
-                    --> some information about an IP.  ")
-                [i] Type x to exit IPEye.")
+  █████  █████░
+    █    █   ▓█
+    █    █    █  ███   █░  █   ███
+    █    █   ▓█ ▓▓ ▒█  ▓▒ ▒▓  ▓▓ ▒█
+    █    █████░ █   █  ▒█ █▒  █   █
+    █    █      █████   █ █   █████
+    █    █      █       █▓▓   █
+    █    █      ▓▓  █   ▓█▒   ▓▓  █
+ █████   █       ███▒   ▒█     ███▒
+                        ▒█
+                        █▒
+                        ██
+<by@keyjeek>  |  Follow the white rabbit...")
+<contact:nomotikag33n@gmail.com>       ")
+[i] IPEye is a Tool to find out
+   --> some information about an IP.  ")
+[i] Type x to exit IPEye.")
                 """)
                 
                 def eye(): 
@@ -355,19 +355,20 @@ def HUNT3R():
             def banner_grabber_part():
          
                 print(chr(0xa))
+
                 print("""
-            █████░   ██   ██   █ ██   █ ██████ █████          ▒███▒ █████    ██   █████░
-            █   ▒█   ██   ██░  █ ██░  █ █      █   ▓█        ░█▒ ░█ █   ▓█   ██   █   ▒█
-            █    █  ▒██▒  █▒▓  █ █▒▓  █ █      █    █        █▒     █    █  ▒██▒  █    █
-            █   ▒█  ▓▒▒▓  █ █  █ █ █  █ █      █   ▒█        █      █   ▒█  ▓▒▒▓  █   ▒█
-            █████░  █░░█  █ ▓▓ █ █ ▓▓ █ ██████ █████         █   ██ █████   █░░█  █████░
-            █   ▒█  █  █  █  █ █ █  █ █ █      █  ░█▒        █    █ █  ░█▒  █  █  █   ▒█
-            █    █ ▒████▒ █  ▓▒█ █  ▓▒█ █      █   ░█        █▒   █ █   ░█ ▒████▒ █    █
-            █   ▒█ ▓▒  ▒▓ █  ░██ █  ░██ █      █    █        ▒█░ ░█ █    █ ▓▒  ▒▓ █   ▒█
-            █████░ █░  ░█ █   ██ █   ██ ██████ █    ▒         ▒███▒ █    ▒ █░  ░█ █████░
-                                                    ██████
-                <   coded by@keyj33k    >
-                [i] Type x to exit banner_grabber
+█████░   ██   ██   █ ██   █ ██████ █████          ▒███▒ █████    ██   █████░
+█   ▒█   ██   ██░  █ ██░  █ █      █   ▓█        ░█▒ ░█ █   ▓█   ██   █   ▒█
+█    █  ▒██▒  █▒▓  █ █▒▓  █ █      █    █        █▒     █    █  ▒██▒  █    █
+█   ▒█  ▓▒▒▓  █ █  █ █ █  █ █      █   ▒█        █      █   ▒█  ▓▒▒▓  █   ▒█
+█████░  █░░█  █ ▓▓ █ █ ▓▓ █ ██████ █████         █   ██ █████   █░░█  █████░
+█   ▒█  █  █  █  █ █ █  █ █ █      █  ░█▒        █    █ █  ░█▒  █  █  █   ▒█
+█    █ ▒████▒ █  ▓▒█ █  ▓▒█ █      █   ░█        █▒   █ █   ░█ ▒████▒ █    █
+█   ▒█ ▓▒  ▒▓ █  ░██ █  ░██ █      █    █        ▒█░ ░█ █    █ ▓▒  ▒▓ █   ▒█
+█████░ █░  ░█ █   ██ █   ██ ██████ █    ▒         ▒███▒ █    ▒ █░  ░█ █████░
+                                        ██████
+<   coded by@keyj33k    >
+[i] Type x to exit banner_grabber
                 """)
 
                 def banner_grab():
@@ -433,30 +434,32 @@ def HUNT3R():
                 def banner():
                      
                     print("""
-                                                                  █
-             █████░  ▒███▒    ██                                  █
-             █   ▒█ ░█▒  ▓   ▒██                                  █
-             █    █ █▒       █░█   ███   █▒██▒   ▓██▒   ███    ██▓█   ███
-             █   ▒█ █▒███   ▓▓ █  ▓▓ ▒█  █▓ ▒█  ▓█  ▓  █▓ ▓█  █▓ ▓█  ▓▓ ▒█
-             █████░ █▓  ▓█ ░█  █  █   █  █   █  █░     █   █  █   █  █   █
-             █   ▒█ █    █ █▒  █  █████  █   █  █      █   █  █   █  █████
-             █    █ █    █ ██████ █      █   █  █░     █   █  █   █  █
-             █   ▒█ ▒▓  ▓█     █  ▓▓  █  █   █  ▓█  ▓  █▓ ▓█  █▓ ▓█  ▓▓  █
-             █████░  ▓███      █   ███▒  █   █   ▓██▒   ███    ██▓█   ███▒
-                    <by@keyjeek>  |  Follow the white rabbit...
-                        <contact:nomotikag33n@gmail.com>       
-                    [i] This Tool helps to encode and decode your text in base64.  
-                    [i] Type 'x' or 'exit' to exit Base64encode.
-                    [i] Type 'c' or 'clear' to clear the screen.
-                """)
+                                                                  
+                                                        
+█████░  ▒███▒    ██   ░███▒ █████ █▒   ▒█ █████░███████
+█   ▒█ ░█▒  ▓   ▒██  ░█▒ ░█ █   ▓█░█   █░ █   ▓█   █   
+█    █ █▒       █░█  █▒     █    █ ▒█ █▒  █    █   █   
+█   ▒█ █▒███   ▓▓ █  █      █   ▒█  █▓█   █   ▓█   █   
+█████░ █▓  ▓█ ░█  █  █      █████   ▒█▒   █████░   █   
+█   ▒█ █    █ █▒  █  █      █  ░█▒   █    █        █   
+█    █ █    █ ██████ █▒     █   ░█   █    █        █   
+█   ▒█ ▒▓  ▓█     █  ░█▒ ░▓ █    █   █    █        █   
+█████░  ▓███      █   ▒███▒ █    ▒   █    █        █                                                                     
+<by@keyjeek>  |  Follow the white rabbit...
+<contact:nomotikag33n@gmail.com>       
+[i] This Tool helps to encode and decode your text in base64.  
+[i] Type 'x' or 'exit' to exit Base64encode.
+[i] Type 'c' or 'clear' to clear the screen.
+                    """)
+
                 banner()
                
                 def menu():
                      
                     print("""
-                        [1] Encoder
-                        [2] Decoder
-                        [x] Exit 
+[1] Encoder
+[2] Decoder
+[x] Exit 
                     """)
                   
                 menu()
@@ -611,20 +614,20 @@ def HUNT3R():
             def number_tracker():
                
                 print("""
-        █     █ █    █ ██████ █████  ██████ █████  █    █
-        █░ █ ░█ █    █ █      █   ▓█ █      █   ▓█ █    █
-        █░▒█▒░█ █    █ █      █    █ █      █    █ █    █
-        ▓▒███▒█ █    █ █      █   ▒█ █      █   ▒█ █    █
-        ▒▒█▒█▒▓ ██████ ██████ █████  ██████ █████  █    █
-        ▒██ ██▓ █    █ █      █  ░█▒ █      █  ░█▒ █    █
-        ▒█▓ ▓█▒ █    █ █      █   ░█ █      █   ░█ █    █
-        ░█▒ ▒█▒ █    █ █      █    █ █      █    █ █▒  ▒█
-         █   █▒ █    █ ██████ █    ▒ ██████ █    ▒  ████
-            <by@keyjeek>  |  Follow the white rabbit...
-            <contact:nomotikag33n@gmail.com>    
-            [i] Phonenumber tracking tool
-            [i] Type 'c' or 'clear' to clear the screen
-            [i] Type 'x' or 'exit' to exit whereareyou
+█     █ █    █ ██████ █████  ██████ █████  █    █
+█░ █ ░█ █    █ █      █   ▓█ █      █   ▓█ █    █
+█░▒█▒░█ █    █ █      █    █ █      █    █ █    █
+▓▒███▒█ █    █ █      █   ▒█ █      █   ▒█ █    █
+▒▒█▒█▒▓ ██████ ██████ █████  ██████ █████  █    █
+▒██ ██▓ █    █ █      █  ░█▒ █      █  ░█▒ █    █
+▒█▓ ▓█▒ █    █ █      █   ░█ █      █   ░█ █    █
+░█▒ ▒█▒ █    █ █      █    █ █      █    █ █▒  ▒█
+ █   █▒ █    █ ██████ █    ▒ ██████ █    ▒  ████
+<by@keyjeek>  |  Follow the white rabbit...
+<contact:nomotikag33n@gmail.com>    
+[i] Phonenumber tracking tool
+[i] Type 'c' or 'clear' to clear the screen
+[i] Type 'x' or 'exit' to exit whereareyou
                 """)
 
                 while True:
