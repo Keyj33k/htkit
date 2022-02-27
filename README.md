@@ -39,11 +39,11 @@ and helping with en- and decryption with b64 and md5
 Installation:
 -------------------------------------------------------------------
 ```
-$ git clone https://github.com/Keyj33k/Hunter.git
+git clone https://github.com/Keyj33k/Hunter.git
 ```
 ```
-$ cd Hunter
+cd Hunter
 ```
 ```
-$ sudo pip3 install -r requirements.txt
+sudo pip3 install -r requirements.txt
 ```
