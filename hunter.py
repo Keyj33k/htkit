@@ -658,7 +658,7 @@ def HUNT3R():
                         print("VALID: ")
                         print(is_valid)
                         
-                        ## check timezone
+                        ## get timezone
                         timezone_number = phonenumbers.parse(number, "en")
                         print(timezone.time_zones_for_number(timezone_number))
                         
