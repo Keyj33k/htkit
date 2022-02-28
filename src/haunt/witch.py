@@ -1,5 +1,6 @@
 from termcolor import colored
 from datetime import datetime
+from tqdm import tqdm
 import socket
 import haunt
 import time
@@ -32,7 +33,6 @@ def witcher_hunter():
     print(chr(0xa))
     port_max = int(input("[*] ENTER MAX. PORT: \n[*]--> ")) 
     open_ports = []
-    ## Record start time
     tstart = datetime.now()
                 
     while True:
@@ -57,45 +57,25 @@ def witcher_hunter():
                      
         elif ip_compile.search(target_ip):
             print(f"[i] {target_ip} is valid. Please wait, it'll take some time..")
-          
-            def spinning_cursor():
-                while True:
-                    for cursor in '|/-\\':
-                        yield cursor
-                              
-            spinner = spinning_cursor()
-            print("[i] LOADING ...")
-            ## print spinner            
-            for _ in range(port_max):   
-                sys.stdout.write(next(spinner))
-                sys.stdout.flush()
-                time.sleep(0.2)
-                sys.stdout.write('\b')           
-            break
-                        
-        print("[i] Listing open connections ...")
-               
-        try:
-            for port in range(port_min, port_max + 1):
-                ## Create a tcp socket connection
-                with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s: ## sock_DGRAM for udp
-                    s.settimeout(0.5) 
-                    ## Connect to target over transmission control protocol
-                    s.connect((target_ip, port))
-                    open_ports.append(port)
-                              
-        except Exception:
-            print(colored("[*] Can't connect to target!", "red"))
-            time.sleep(3)
-            input("Press any key ...")
-            return haunt.banner_hunter()
-                  
-        for port in open_ports:
-            print(f"[+] TCP/{port}  OPEN")
-        
-        ## Record end time
+
+        for i in tqdm (range(100), desc="Loading ..."): 
+            try:
+                for port in range(port_min, port_max + 1):
+                    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s: ## sock_DGRAM/UPD
+                        s.settimeout(0.5) 
+                        s.connect((target_ip, port))
+                        open_ports.append(port)
+                                
+            except Exception:
+                print(colored("[*] Can't connect to target!", "red"))
+                time.sleep(3)
+                input("Press any key ...")
+                return haunt.banner_hunter()
+                    
+            for port in open_ports:
+                print(f"[+] TCP/{port}  OPEN")
+                     
         tend = datetime.now()
-        ## Subtract start-time from end-time
         diff = tend - tstart
                   
         print(chr(0xa))
