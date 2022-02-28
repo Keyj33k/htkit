@@ -1,7 +1,7 @@
 ########### Hunter Ver.: 1.0.2 ############
 
 from termcolor import colored
-import witcher_portscan
+import witcher
 import banner
 import time
 import sys
@@ -26,8 +26,8 @@ def banner_hunter():
         
     ## witcher
     if hunter_choice == 1:
-        print(witcher_portscan)
-        #return banner_hunter()
+        print(witcher)
+        return banner_hunter()
         
     ## md5
     elif hunter_choice == 2:
