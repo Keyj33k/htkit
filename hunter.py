@@ -5,6 +5,7 @@ from termcolor import colored
 from datetime import datetime
 from threading import Thread
 from scapy.all import *
+from tqdm import tqdm
 import phonenumbers
 import requests
 import hashlib
@@ -127,50 +128,35 @@ def HUNT3R():
                      
                     elif ip_compile.search(target_ip):
                         print(f"[i] {target_ip} is valid. Please wait, it'll take some time..")
-          
-                        def spinning_cursor():
-                            while True:
-                                for cursor in '|/-\\':
-                                    yield cursor
+
+                    ## Print a pregress bar
+                    for i in tqdm (range(100), desc="Loading ..."): 
+                        try:
+                            for port in range(port_min, port_max + 1):
+                                with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s: ## sock_DGRAM/UPD
+                                    s.settimeout(0.5) 
+                                    s.connect((target_ip, port))
+                                    open_ports.append(port)
                               
-                        spinner = spinning_cursor()
-                        print("[i] LOADING ...")
-                        
-                        for _ in range(port_max):   
-                            sys.stdout.write(next(spinner))
-                            sys.stdout.flush()
-                            time.sleep(0.2)
-                            sys.stdout.write('\b')           
-                        break
-                        
-                print("[i] Listing open connections ...")
-               
-                try:
-                    for port in range(port_min, port_max + 1):
-                        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s: ## sock_DGRAM/UPD
-                            s.settimeout(0.5) 
-                            s.connect((target_ip, port))
-                            open_ports.append(port)
-                              
-                except Exception:
-                    print(colored("[*] Can't connect to target!", "red"))
-                    time.sleep(3)
-                    input("Press any key ...")
-                    return HUNT3R()
+                        except Exception:
+                            print(colored("[*] Can't connect to target!", "red"))
+                            time.sleep(3)
+                            input("Press any key ...")
+                            return HUNT3R()
                   
-                for port in open_ports:
-                    print(f"[+] TCP/{port}  OPEN")
+                        for port in open_ports:
+                            print(f"[+] TCP/{port}  OPEN")
                      
-                tend = datetime.now()
-                diff = tend - tstart
-                  
-                print(chr(0xa))
-                print("[i] SCAN COMPLETE IN " + str(diff) + " SECONDS ...")
-                time.sleep(2)
-               
-                print("[i] WITCHER DONE !")
-                print(chr(0xa))
-                return HUNT3R()
+                        tend = datetime.now()
+                        diff = tend - tstart
+                    
+                        print(chr(0xa))
+                        print("[i] SCAN COMPLETE IN " + str(diff) + " SECONDS ...")
+                        time.sleep(2)
+                
+                        print("[i] WITCHER DONE !")
+                        print(chr(0xa))
+                        return HUNT3R()
             
             witcher() 
 
@@ -445,7 +431,6 @@ def HUNT3R():
 █    █ █    █ ██████ █▒     █   ░█   █    █        █   
 █   ▒█ ▒▓  ▓█     █  ░█▒ ░▓ █    █   █    █        █   
 █████░  ▓███      █   ▒███▒ █    ▒   █    █        █    
-
 <by@keyjeek>  |  Follow the white rabbit...
 <contact:nomotikag33n@gmail.com>       
 [i] This Tool helps to encode and decode your text in base64.  
