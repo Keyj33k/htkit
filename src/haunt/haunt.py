@@ -27,7 +27,6 @@ def banner_hunter():
     ## witcher
     if hunter_choice == 1:
         print(witcher)
-        return banner_hunter()
         
     ## md5
     elif hunter_choice == 2:
