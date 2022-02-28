@@ -33,7 +33,7 @@ def banner_hunter():
 #    [99] CLEAR
 #    """, "yellow"))
 
-    print(banner.main()) ## banner
+    print(banner.main(banner)) 
 
     hunter_choice = int(input("[*] Number: "))
 
