@@ -19,34 +19,41 @@ import os
 
 
 def banner_hunter(): 
+    ## menu
     print(banner.main(banner)) 
 
     hunter_choice = int(input("[*] Number: "))
-
+    
+    ## witcher
     if hunter_choice == 11:
         print(witch)
         return banner_hunter()
-
+    
+    ## md5
     elif hunter_choice == 2:
         from md5crypt import md5encrypt
         print(md5encrypt)
         return banner_hunter()
     
+    ## ipeye
     elif hunter_choice == 3:
         import ipeye
         print(ipeye.eye_main())
         return banner_hunter()
-
+    
+    ## banner grabber
     elif hunter_choice == 4:
         import banner_grab
         print(banner_grab.banner_grabber_part())
         return banner_hunter()
-
+    
+    ## b64 en- and decryptor
     elif hunter_choice == 5:
         from b64crypt import base64encode
         print(base64encode)
         return banner_hunter()
     
+    ## wherareyou
     elif hunter_choice == 6:
         import wherareyou
         print(wherareyou.number_tracker())
