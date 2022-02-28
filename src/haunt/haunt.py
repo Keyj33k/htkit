@@ -11,7 +11,7 @@ import os
 #   Contact :   nomotikag33n@gmail.com    #
 #   Twitter :   @keyjeek                  #
 #   Github  :   @keyj33k                  #
-#   Version :   1.0.1                     #
+#   Version :   1.0.2                     #
 #                                         #
 # # # # # # # # # # # # # # # # # # # # # # 
 
