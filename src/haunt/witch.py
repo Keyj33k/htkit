@@ -32,6 +32,7 @@ def witcher_hunter():
     print(chr(0xa))
     port_max = int(input("[*] ENTER MAX. PORT: \n[*]--> ")) 
     open_ports = []
+    ## Record start time
     tstart = datetime.now()
                 
     while True:
@@ -64,7 +65,7 @@ def witcher_hunter():
                               
             spinner = spinning_cursor()
             print("[i] LOADING ...")
-                        
+            ## print spinner            
             for _ in range(port_max):   
                 sys.stdout.write(next(spinner))
                 sys.stdout.flush()
@@ -76,8 +77,10 @@ def witcher_hunter():
                
         try:
             for port in range(port_min, port_max + 1):
-                with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s: ## sock_DGRAM/UPD
+                ## Create a tcp socket connection
+                with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s: ## sock_DGRAM for udp
                     s.settimeout(0.5) 
+                    ## Connect to target over transmission control protocol
                     s.connect((target_ip, port))
                     open_ports.append(port)
                               
@@ -89,8 +92,10 @@ def witcher_hunter():
                   
         for port in open_ports:
             print(f"[+] TCP/{port}  OPEN")
-                     
+        
+        ## Record end time
         tend = datetime.now()
+        ## Subtract start-time from end-time
         diff = tend - tstart
                   
         print(chr(0xa))
