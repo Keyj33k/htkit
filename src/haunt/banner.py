@@ -1,10 +1,10 @@
 from termcolor import colored
 import os
 
-def main(banner): 
-    
+def main(): # banner
+
     os.system('clear')
-    
+
     print(colored("""
     █    █                 █
     █    █                 █
@@ -31,4 +31,5 @@ def main(banner):
     [99] EXIT
     """, "yellow"))
 
-main(banner=True)
+main()
+#main(banner=True)
