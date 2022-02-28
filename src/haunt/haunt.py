@@ -5,34 +5,18 @@ import time
 import sys
 import os
 
+# # # # # # # # # # # # # # # # # # # # # #
+#                                         #
+#   Author  :   Keyj33k                   #
+#   Contact :   nomotikag33n@gmail.com    #
+#   Twitter :   @keyjeek                  #
+#   Github  :   @keyj33k                  #
+#   Version :   1.0.1                     #
+#                                         #
+# # # # # # # # # # # # # # # # # # # # # # 
+
+
 def banner_hunter(): 
-
-#    print(colored("""
-#    █    █                 █
-#    █    █                 █
-#    █    █ █   █  █▒██▒  █████   ███    █▒██▒
-#    █    █ █   █  █▓ ▒█    █    ▓▓ ▒█   ██  █
-#    ██████ █   █  █   █    █    █   █   █
-#    █    █ █   █  █   █    █    █████   █
-#    █    █ █   █  █   █    █    █       █
-#    █    █ █▒ ▓█  █   █    █░   ▓▓  █   █
-#    █    █ ▒██▒█  █   █    ▒██   ███▒   █
-    
-#    <by@keyjeek>  |  Follow the white rabbit... 
-#    <contact:nomotikag33n@gmail.com>           
-#    [i] Hunter is a small toolkit to perform information gathering   
-#    [i] Type x to exit Hunter.              
-
-#    [1] WITCHER
-#    [2] MD5CRYPT
-#    [3] IPEYE
-#    [4] BANNER_GRABBER
-#    [5] B64CRYPT
-#    [6] WHEREAREYOU
-#    [98] EXIT
-#    [99] CLEAR
-#    """, "yellow"))
-
     print(banner.main(banner)) 
 
     hunter_choice = int(input("[*] Number: "))
