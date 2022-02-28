@@ -95,7 +95,6 @@ def witcher_hunter():
         diff = tend - tstart
                   
         print(chr(0xa))
-        #print("[i] SCAN COMPLETE IN {str(diff)} SECONDS ...")
         print("[i] SCAN COMPLETE IN " + str(diff) + " SECONDS ...")
         time.sleep(2)
                
