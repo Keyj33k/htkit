@@ -1,5 +1,4 @@
 from termcolor import colored
-#import ipeye
 import banner
 import witch
 import time
