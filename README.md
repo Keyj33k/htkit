@@ -4,6 +4,8 @@ and helping with en- and decryption with b64 and md5.
 
 [i] - Hunter is a collection of selfwritten tools. 
 
+[i] Haunt-Toolkit in progress ...
+
 [1] Witcher
 -------------------------------------------------------------------
 ~ a simple socket tcp portscanner
