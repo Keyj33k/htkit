@@ -8,7 +8,6 @@ from scapy.all import *
 import phonenumbers
 import requests
 import hashlib
-import socket
 import base64
 import socket
 import pandas
