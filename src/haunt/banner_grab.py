@@ -50,6 +50,7 @@ def banner_grabber_part():
         target_port = input("[*] TARGET_PORT: ")
 
         try:
+            ## grab banner with tcp socket 
             socket_sock = socket.socket()
             socket_sock.connect((target_ip, int(target_port)))
             print(socket_sock.recv(1024))
