@@ -1,7 +1,9 @@
 from termcolor import colored
 
 def main(banner): 
-
+    
+    os.system('clear')
+    
     print(colored("""
     █    █                 █
     █    █                 █
