@@ -1,5 +1,3 @@
-########### Hunter Ver.: 1.0.2 ############
-
 from termcolor import colored
 import banner
 import witch
@@ -66,5 +64,10 @@ def banner_hunter():
         print(colored("[*] Exiting ...", "red"))
         time.sleep(2)
         sys.exit()
+   
+    else:
+        print(colored("[i] Invalid input !", "red"))
+        input("[*] Press any key to continue ...")
+        return banner_hunter()
         
 banner_hunter()
