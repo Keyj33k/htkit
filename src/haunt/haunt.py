@@ -1,3 +1,5 @@
+########### Hunter Ver.: 1.0.2 ############
+
 from termcolor import colored
 import banner
 import witch
