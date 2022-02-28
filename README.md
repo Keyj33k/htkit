@@ -1,8 +1,9 @@
-# Project - Hunter
+# Project - Hunter / Haunt
 [i] Hunter is a small toolkit for information gathering 
 and helping with en- and decryption with b64 and md5
 
-[i] Hunter is a collection of selfwritten tools. 
+[i] Haunt is a second version of the hunter toolkit; same functionality; same usage; different code
+[i] Haunt / Hunter is a collection of selfwritten tools. 
 
 [1] Witcher
 -------------------------------------------------------------------
