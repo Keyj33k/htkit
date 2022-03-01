@@ -1,10 +1,10 @@
 # Project - Hunter | Written In Python3
 
-- Toolkit - Collection Of Selfwritten Tools
+- Hunter-Toolkit >> A Collection Of Selfwritten Tools
 
 ![Hunter](https://raw.githubusercontent.com/Keyj33k/Hunter/main/src/backup/hunter_profile.png)
 
-- Hunter is a small toolkit for information gathering and en-/decryption with b64 and md5.
+- The hunter-toolkit is a python project for information gathering and en-/decryption with b64 and md5.
 
 - Haunt-Toolkit in progress. [ ... ]
 
