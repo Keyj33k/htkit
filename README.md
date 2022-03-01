@@ -1,42 +1,43 @@
-# Project - Hunter
-[i] - hunter is a small toolkit for information gathering 
+# Project - Hunter | written in python3
+
+Hunter is a small toolkit for information gathering 
 and helping with en- and decryption with b64 and md5.
 
-[i] - Hunter is a collection of selfwritten tools. 
+- Hunter is a collection of selfwritten tools. 
 
 [i] Haunt-Toolkit in progress ...
 
 [1] Witcher
 -------------------------------------------------------------------
-~ a simple socket tcp portscanner
+~ A simple socket tcp portscanner.
 
 [2] md5encrypt
 -------------------------------------------------------------------
-~ a md5 encryption tool
+~ A md5 encryption tool.
 
 [3] IPEye
 -------------------------------------------------------------------
-~ tracking tool for the internet protocol
+~ Tracking tool for the internet protocol.
 
 [4] Banner Grabber
 -------------------------------------------------------------------
-~ a banner grabbing tool for open ports
+~ A banner grabbing tool for open ports.
 
-~ you can use it in combi with the witcher portscanner
+~ You can use it in combi with the witcher portscanner.
 
 [5] b64crypt
 -------------------------------------------------------------------
-~ a tool written vor base64 en- and decryption
+~ A tool written vor base64 en- and decryption.
 
 [6] WIFI-Stalker
 -------------------------------------------------------------------
-~ tool which displays all available networks around your access point
+~ A tool which displays all available networks around your access point.
 
-~ you need to set your wireless device in the monitor mode
+~ You need to set your wireless device in the monitor mode.
 
 [7] Whereareyou
 -------------------------------------------------------------------
-~ a simple tool for grabbing informations about a phonenumber like location etc.
+~ A simple tool for grabbing informations about a phonenumber like location etc.
 
 Installation:
 -------------------------------------------------------------------
