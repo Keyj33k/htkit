@@ -64,12 +64,13 @@ def witcher_hunter():
                      
         elif ip_compile.search(target_ip):
             print(f"[i] {target_ip} is valid. Please wait, it'll take some time..")
+            print(chr(0xa))
 
         for i in tqdm (range(100), desc="Loading ..."): 
             try:
                 for port in range(port_min, port_max + 1):
                     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s: ## sock_DGRAM/UPD
-                        s.settimeout(0.5) 
+                        ## s.settimeout(0.5) 
                         s.connect((target_ip, port))
                         open_ports.append(port)
                                 
