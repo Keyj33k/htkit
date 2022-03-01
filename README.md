@@ -5,7 +5,7 @@ and helping with en- and decryption with b64 and md5.
 
 - Hunter is a collection of selfwritten tools. 
 
-[i] Haunt-Toolkit in progress ...
+- Haunt-Toolkit in progress. [ ... ]
 
 [1] Witcher
 -------------------------------------------------------------------
