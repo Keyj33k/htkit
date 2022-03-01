@@ -142,7 +142,6 @@ def HUNT3R():
                         print(f"[i] {target_ip} is valid. Please wait, it'll take some time..")
                         print(chr(0xa))
 
-                    ## Print a progress bar
                     for i in tqdm (range(100), desc="Loading ..."): 
                         try:
                             for port in range(port_min, port_max + 1):
