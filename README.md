@@ -1,6 +1,6 @@
-# Project - Hunter | written in python3
+# Project - Hunter | Written In Python3
 
-- Toolkit - collection of selfwritten tools
+- Toolkit - Collection Of Selfwritten Tools
 
 ![Hunter](https://raw.githubusercontent.com/Keyj33k/Hunter/main/src/backup/hunter_profile.png)
 
