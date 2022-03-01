@@ -6,35 +6,35 @@
 
 - Haunt-Toolkit in progress. [ ... ]
 
-[1] Witcher
+[1]   Witcher
 -------------------------------------------------------------------
 - A simple socket tcp portscanner.
 
-[2] md5encrypt
+[2]   md5encrypt
 -------------------------------------------------------------------
 - A md5 encryption tool.
 
-[3] IPEye
+[3]   IPEye
 -------------------------------------------------------------------
 - Tracking tool for the internet protocol.
 
-[4] Banner Grabber
+[4]   Banner Grabber
 -------------------------------------------------------------------
 - A banner grabbing tool for open ports.
 
 - You can use it in combi with the witcher portscanner.
 
-[5] b64crypt
+[5]   B64crypt
 -------------------------------------------------------------------
 - A tool written vor base64 en- and decryption.
 
-[6] WIFI-Stalker
+[6]   WIFI-Stalker
 -------------------------------------------------------------------
 - A tool which displays all available networks around your access point.
 
 - You need to set your wireless device in the monitor mode.
 
-[7] Whereareyou
+[7]   WhereAreYou
 -------------------------------------------------------------------
 - A simple tool for grabbing informations about a phonenumber like location etc.
 
