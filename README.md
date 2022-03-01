@@ -1,6 +1,6 @@
 # Project - Hunter | written in python3
 
-Hunter is a small toolkit for information gathering 
+- Hunter is a small toolkit for information gathering 
 and helping with en- and decryption with b64 and md5.
 
 - Hunter is a collection of selfwritten tools. 
