@@ -8,35 +8,35 @@
 
 [1] Witcher
 -------------------------------------------------------------------
-~ A simple socket tcp portscanner.
+- A simple socket tcp portscanner.
 
 [2] md5encrypt
 -------------------------------------------------------------------
-~ A md5 encryption tool.
+- A md5 encryption tool.
 
 [3] IPEye
 -------------------------------------------------------------------
-~ Tracking tool for the internet protocol.
+- Tracking tool for the internet protocol.
 
 [4] Banner Grabber
 -------------------------------------------------------------------
-~ A banner grabbing tool for open ports.
+- A banner grabbing tool for open ports.
 
-~ You can use it in combi with the witcher portscanner.
+- You can use it in combi with the witcher portscanner.
 
 [5] b64crypt
 -------------------------------------------------------------------
-~ A tool written vor base64 en- and decryption.
+- A tool written vor base64 en- and decryption.
 
 [6] WIFI-Stalker
 -------------------------------------------------------------------
-~ A tool which displays all available networks around your access point.
+- A tool which displays all available networks around your access point.
 
-~ You need to set your wireless device in the monitor mode.
+- You need to set your wireless device in the monitor mode.
 
 [7] Whereareyou
 -------------------------------------------------------------------
-~ A simple tool for grabbing informations about a phonenumber like location etc.
+- A simple tool for grabbing informations about a phonenumber like location etc.
 
 USAGE of HUNTER:
 -------------------------------------------------------------------
