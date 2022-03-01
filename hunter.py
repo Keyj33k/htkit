@@ -140,6 +140,7 @@ def HUNT3R():
                      
                     elif ip_compile.search(target_ip):
                         print(f"[i] {target_ip} is valid. Please wait, it'll take some time..")
+                        print(chr(0xa))
 
                     ## Print a progress bar
                     for i in tqdm (range(100), desc="Loading ..."): 
