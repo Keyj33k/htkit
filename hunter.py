@@ -6,6 +6,7 @@ from phonenumbers import carrier
 from termcolor import colored
 from datetime import datetime
 from threading import Thread
+import banner_whereareyou
 from scapy.all import *
 from tqdm import tqdm
 import phonenumbers
@@ -18,6 +19,7 @@ import time
 import sys
 import os
 import re
+
 
 # # # # # # # # # # # # # # # # # # # # # #
 #                                         #
@@ -609,73 +611,72 @@ def HUNT3R():
         elif choice == '7':
             
             def number_tracker():
-               
-                print("""
-█     █ █    █ ██████ █████  ██████ █████  █    █
-█░ █ ░█ █    █ █      █   ▓█ █      █   ▓█ █    █
-█░▒█▒░█ █    █ █      █    █ █      █    █ █    █
-▓▒███▒█ █    █ █      █   ▒█ █      █   ▒█ █    █
-▒▒█▒█▒▓ ██████ ██████ █████  ██████ █████  █    █
-▒██ ██▓ █    █ █      █  ░█▒ █      █  ░█▒ █    █
-▒█▓ ▓█▒ █    █ █      █   ░█ █      █   ░█ █    █
-░█▒ ▒█▒ █    █ █      █    █ █      █    █ █▒  ▒█
- █   █▒ █    █ ██████ █    ▒ ██████ █    ▒  ████
- 
-<by@keyjeek>  |  Follow the white rabbit...
-<contact:nomotikag33n@gmail.com>    
-[i] Phonenumber tracking tool
-[i] Type 'c' or 'clear' to clear the screen
-[i] Type 'x' or 'exit' to exit whereareyou
-                """)
+                try:
+                    banner_whereareyou.set_banner_whereareryou()
+                except:
+                    print(colored("Banner not available !", "red"))
 
                 while True:
-                  
                     print(chr(0xa))
-                     
-                    def check_number():
-                     
-                        number = input('[*] PHONENUMBER: ')
-                        
-                        if number == 'x':
-                            print(colored("[i] EXIT", "red"))
-                            return HUNT3R()
-                        
-                        elif number == 'exit':
-                            print(colored("[i] EXIT", "red"))
-                            return HUNT3R()
-                        
-                        elif number == 'clear':
-                            os.system('clear')
-                            return number_tracker()
-                        
-                        elif number == 'c':
-                            os.system('clear')
-                            return number_tracker()
-                        
-                        ## check if valid
-                        print(chr(0xa))
+                    number = input('[*] PHONENUMBER: ')
+                    
+                    if number == '/x':
+                        print(colored("[i] EXIT", "red"))
+                        return HUNT3R()
+                    
+                    elif number == '/exit':
+                        print(colored("[i] EXIT", "red"))
+                        return HUNT3R()
+                    
+                    elif number == '/c':
+                        os.system('clear')
+                        return HUNT3R()
+                    
+                    elif number == '/clear':
+                        os.system('clear')
+                        return HUNT3R()
+
+                    elif number == '/help':
+                        banner_whereareyou.set_help_banner()
+                        return HUNT3R()
+            
+                    print(chr(0xa))
+                
+                    try:
                         valid_check = phonenumbers.parse(number)
                         is_valid = phonenumbers.is_valid_number(valid_check)
-                        print("VALID: ")
+                        print(colored("Validation:", "yellow"))
                         print(is_valid)
+                        print(chr(0xa))
                         
-                        ## get timezone
+                        print(colored("Timezone:", "yellow"))
                         timezone_number = phonenumbers.parse(number, "en")
                         print(timezone.time_zones_for_number(timezone_number))
+                        print(chr(0xa))
                         
-                        ## get location
+                        print(colored("Location:", "yellow"))
                         target_number = phonenumbers.parse(number, "CH")
                         print(geocoder.description_for_number(target_number, "en"))
+
+                        try:
+                            print(colored("Provider:", "yellow"))
+                            provider_info = phonenumbers.parse(number, "RO")
+                            print(carrier.name_for_number(provider_info, "en"))
+                            print(chr(0xa))
+
+                        except Exception:
+                            print(colored("Provider info not available !", "red"))
+                            time.sleep(2)
                         
-                        ## get provider information
-                        provider_info = phonenumbers.parse(number, "RO")
-                        print(carrier.name_for_number(provider_info, "en"))
-                        print(chr(0xa))
-                        input('Press any key..')
-                        return check_number()
-                     
-                    check_number()
-                  
+                    except Exception:
+                        print(colored("[i] AN ERROR WAS DEFINED !", "red"))
+                        time.sleep(2)
+                        return HUNT3R()
+                    
+                    print(chr(0xa))
+                    input('Press any key ...')
+                    return number_tracker()
+                
             number_tracker()
         
         else:
