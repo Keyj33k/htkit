@@ -1,5 +1,7 @@
 # Project - Hunter | written in python3
 
+![Hunter](https://raw.githubusercontent.com/Keyj33k/Hunter/main/src/backup/hunter_profile.png)
+
 - Hunter is a small toolkit for information gathering and en-/decryption with b64 and md5.
 
 - Hunter is a collection of selfwritten tools. 
@@ -37,10 +39,6 @@ WIFI-Stalker
 WhereAreYou
 -------------------------------------------------------------------
 - A simple tool for grabbing informations about a phonenumber like location etc.
-
-
-![Hunter](https://raw.githubusercontent.com/Keyj33k/Hunter/main/src/backup/hunter_profile.png)
-
 
 USAGE of HUNTER:
 -------------------------------------------------------------------
