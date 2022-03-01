@@ -38,6 +38,10 @@ WhereAreYou
 -------------------------------------------------------------------
 - A simple tool for grabbing informations about a phonenumber like location etc.
 
+
+! hunter_profile.png (https://raw.githubusercontent.com/Keyj33k/Hunter/main/src/backup/hunter_profile.png)
+
+
 USAGE of HUNTER:
 -------------------------------------------------------------------
 
