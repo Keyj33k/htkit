@@ -39,14 +39,22 @@ and helping with en- and decryption with b64 and md5.
 -------------------------------------------------------------------
 ~ A simple tool for grabbing informations about a phonenumber like location etc.
 
-Installation:
+USAGE of HUNTER:
 -------------------------------------------------------------------
+
+Cloning the repo:
 ```
 git clone https://github.com/Keyj33k/Hunter.git
 ```
+After cloning:
 ```
 cd Hunter
 ```
+Install python requirements:
 ```
 sudo pip3 install -r requirements.txt
+```
+Run the script:
+```
+python3 hunter.py
 ```
