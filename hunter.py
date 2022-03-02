@@ -157,7 +157,7 @@ def HUNT3R():
                             return HUNT3R()
                   
                         for port in open_ports:
-                            print(f"[+] TCP/{port}  OPEN")
+                            print(f"[+] TCP/{port}       OPEN")
                      
                         tend = datetime.now()
                         diff = tend - tstart
