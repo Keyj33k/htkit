@@ -59,7 +59,7 @@ def witcher_hunter():
             print(f"[i] {target_ip} is valid. Please wait, it'll take some time..")
             print(chr(0xa))
 
-        for i in tqdm (range(100), desc="Loading ..."): 
+        ## for i in tqdm (range(100), desc="Loading ..."): 
             try:
                 for port in range(port_min, port_max + 1):
                     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s: ## sock_DGRAM/UPD
