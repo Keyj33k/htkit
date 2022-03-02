@@ -32,11 +32,6 @@ def witcher_hunter():
     port_min = 0
     print(chr(0xa))
     port_max = int(input("[*] ENTER MAX. PORT: \n[*]--> ")) 
-    if port_max == 0:
-        print(colored("[*] Exit", "red"))
-        time.sleep(2)
-        sys.exit()
-        ## return haunt.banner_hunter()
     open_ports = []
     tstart = datetime.now()
                 
@@ -46,13 +41,11 @@ def witcher_hunter():
                   
         if target_ip == 'x':
             print(colored("[i] EXIT", "red"))
-            sys.exit()
-            ## return haunt.banner_hunter()
+            return haunt.banner_hunter()
                      
         elif target_ip == 'exit':
             print(colored("[*] EXIT", "red"))
-            sys.exit()
-            ## return haunt.banner_hunter()
+            return haunt.banner_hunter()
                      
         elif target_ip == 'clear':
             os.system('clear')
@@ -66,33 +59,32 @@ def witcher_hunter():
             print(f"[i] {target_ip} is valid. Please wait, it'll take some time..")
             print(chr(0xa))
 
-        for i in tqdm (range(100), desc="Loading ..."): 
-            try:
-                for port in range(port_min, port_max + 1):
-                    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s: ## sock_DGRAM/UPD
-                        ## s.settimeout(0.5) 
-                        s.connect((target_ip, port))
-                        open_ports.append(port)
+        ## for i in tqdm (range(100), desc="Loading ..."): 
+        try:
+            for port in range(port_min, port_max + 1):
+                with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s: ## sock_DGRAM/UPD
+                    ## s.settimeout(0.5) 
+                    s.connect((target_ip, port))
+                    open_ports.append(port)
                                 
-            except Exception:
-                print(colored("[*] Can't connect to target!", "red"))
-                time.sleep(3)
-                input("Press any key ...")
-                ## return haunt.banner_hunter()
-                sys.exit()
+        except Exception:
+            print(colored("[*] Can't connect to target!", "red"))
+            time.sleep(3)
+            input("Press any key ...")
+            return haunt.banner_hunter()
                     
-            for port in open_ports:
-                print(f"[+] TCP/{port}  OPEN")
+        for port in open_ports:
+            print(f"[+] TCP/{port}  OPEN")
                      
         tend = datetime.now()
         diff = tend - tstart
-                  
+                    
         print(chr(0xa))
         print("[i] SCAN COMPLETE IN " + str(diff) + " SECONDS ...")
         time.sleep(2)
-               
+                
         print("[i] WITCHER DONE !")
         print(chr(0xa))
-        sys.exit()
+        return haunt.banner_hunter()
             
 witcher_hunter() 
