@@ -145,9 +145,9 @@ def HUNT3R():
                     ## for i in tqdm (range(100), desc="Loading ... "): 
                     try:
                         for port in range(port_min, port_max + 1):
-                            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s: ## sock_DGRAM/UPD
+                            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as socket_sock: ## sock_DGRAM/UPD
                                 ## s.settimeout(0.5) 
-                                s.connect((target_ip, port))
+                                socket_sock.connect((target_ip, port))
                                 open_ports.append(port)
                               
                     except Exception:
