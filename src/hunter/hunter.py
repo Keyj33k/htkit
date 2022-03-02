@@ -148,9 +148,9 @@ def HUNT3R():
                
                 try:
                     for port in range(port_min, port_max + 1):
-                        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s: ## sock_DGRAM/UPD
-                            s.settimeout(0.5) 
-                            s.connect((target_ip, port))
+                        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as socket_sock: ## sock_DGRAM/UPD
+                            ## socket_sock.settimeout(0.5) 
+                            ## socket_sock.connect((target_ip, port))
                             open_ports.append(port)
                               
                 except Exception:
