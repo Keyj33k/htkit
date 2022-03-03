@@ -31,9 +31,7 @@ import re
 # # # # # # # # # # # # # # # # # # # # # # 
 
 def banner(): 
-   
    os.system('clear')
-   
    print(colored("""
 █    █                 █
 █    █                 █
@@ -53,9 +51,7 @@ def banner():
 banner()
 
 def HUNT3R():
-   
-    def menu():
-         
+    def menu(): 
         print(colored("""
 [1] WITCHER
 [2] MD5ENCRYPT
@@ -71,7 +67,6 @@ def HUNT3R():
     menu()
     
     def hunter():
-      
         choice = input("[*] NUMBER: ")
          
         if choice == 'x':
@@ -119,7 +114,6 @@ def HUNT3R():
                 tstart = datetime.now()
                 
                 while True:
-                     
                     target_ip = input("[*] TARGET IP: \n[*]--> ")
                   
                     if target_ip == 'x':
@@ -173,11 +167,8 @@ def HUNT3R():
             witcher() 
 
         elif choice == '2':
-         
             def md5encrypt():
-               
                 def banner():
-                     
                     print("""   
             █
             █  █████                                             █
@@ -200,11 +191,8 @@ def HUNT3R():
                 banner()
                
                 def md5():
-                     
                     print(chr(0xa))
-                  
                     def encrypt(): 
-                        
                         hash_val = input("[*] TEXT TO HASH: ")
                         
                         if hash_val == 'x':
@@ -230,7 +218,6 @@ def HUNT3R():
                     encrypt()
                   
                     def decrypt():
-                        
                         question_brute = input("[?] DECRYPT/BRUTEFORCE THE HASH? y/n: ")
                         
                         if question_brute == 'y':
@@ -254,7 +241,6 @@ def HUNT3R():
                             return decrypt()
                         
                         elif question_brute == 'n':
-                           
                             question_exit = input("[?] EXIT? y/n ")
                               
                             if question_exit == 'y':
@@ -278,9 +264,7 @@ def HUNT3R():
             md5encrypt()
 
         elif choice == '3':
-         
             def eye_main():
-               
                 print("""
   █████  █████░
     █    █   ▓█
@@ -302,7 +286,6 @@ def HUNT3R():
                 """)
                 
                 def eye(): 
-                     
                     print(chr(0xa))
                     scanner = input('[*] IP: ')
                      
@@ -347,11 +330,8 @@ def HUNT3R():
             eye_main()
             
         elif choice == '4':
-         
             os.system('clear')
-            
             def banner_grabber_part():
-         
                 print(chr(0xa))
 
                 print("""
@@ -370,9 +350,7 @@ def HUNT3R():
                 """)
 
                 def banner_grab():
-                     
                     print(chr(0xa))
-
                     target_ip = input("[*] TARGET_IP: ")
                      
                     if target_ip == 'x':
@@ -405,7 +383,6 @@ def HUNT3R():
                     except Exception:
                         print(colored("[i] Can't connect to target. An error was defined !", "red"))
                         time.sleep(1)
-                        
                         retry_option = input("[*] Retry? (y/N) ")
                         
                         if retry_option == 'y':
@@ -426,11 +403,8 @@ def HUNT3R():
             banner_grabber_part()
 
         elif choice == '5':
-         
-            def base64encode():
-               
+            def base64encode():   
                 def banner():
-                     
                     print("""
                                                                   
                                                         
@@ -453,7 +427,6 @@ def HUNT3R():
                 banner()
                
                 def menu():
-                     
                     print("""
 [1] Encoder
 [2] Decoder
@@ -463,15 +436,12 @@ def HUNT3R():
                 menu()
                
                 def chse():
-                     
                     choice = input("[*] CHOICE: ")
                   
                     if choice == '1':
-                        
                         hash_value = input("[*] ENTER MESSAGE: ")
                         
                         if hash_value == 'x':
-                           
                             exit_choice = input("[?] EXIT? y/n ")
                               
                             if exit_choice == 'y':
@@ -501,7 +471,6 @@ def HUNT3R():
                      
                     elif choice == '2':
                         def b64_decrypt():
-                           
                             print(chr(0xa))
                             b64_hash_val = input("[*] ENTER HASH TO DECODE: ")
                            
@@ -554,16 +523,12 @@ def HUNT3R():
             base64encode()
 
         elif choice == '6':
-         
             os.system('clear')
-            
             def wifiStalker():
-               
                 networks = pandas.DataFrame(columns=["BSSID", "SSID", "dBm_Signal", "Channel", "Crypto"])
                 networks.set_index("BSSID", inplace=True)
                
                 def callback(packet):
-                     
                     if  packet.haslayer(Dot11Beacon):
                         bssid = packet[Dot11].addr2
                         ssid = packet[Dot11Elt].info.decode()
@@ -580,7 +545,6 @@ def HUNT3R():
                         networks.loc[bssid] = (ssid, dbm_signal, channel, crypto)
                         
                 def print_all():
-                  
                     while True:
                         os.system("clear")
                         print(networks)
@@ -594,9 +558,7 @@ def HUNT3R():
                     sniff(prn=callback, iface=interface)
                      
                 def change_channel():
-                  
                     ch = 1
-                     
                     while True:
                         os.system(f"iwconfig {interface} channel {ch}")
                         ch = ch%14+1
@@ -608,7 +570,6 @@ def HUNT3R():
             wifiStalker()
         
         elif choice == '7':
-            
             def number_tracker():
                 try:
                     banner_whereareyou.set_banner_whereareryou()
