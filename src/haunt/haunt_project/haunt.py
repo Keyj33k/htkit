@@ -18,10 +18,8 @@ import os
 # # # # # # # # # # # # # # # # # # # # # # 
 
 def banner_hunter(): 
-
     ## menu
     print(banner.main()) ## banner
-
     hunter_choice = int(input("[*] Number: "))
         
     ## witcher
