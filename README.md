@@ -1,4 +1,4 @@
-# Project - Hunter | Written In Python3
+# Project - Hunter | Written In ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
 - Hunter-Toolkit >> A Collection Of Selfwritten Tools
 
