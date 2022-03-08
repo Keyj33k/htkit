@@ -59,3 +59,9 @@ Run the script:
 ```
 python3 hunter.py
 ```
+Note:
+- This tool is only for educational purposes. 
+- I'm not responsible for your actions. 
+- Don't hack anyone without their permissions.
+- With great force follows great responsibility.
+# Thank you
