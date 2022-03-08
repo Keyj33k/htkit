@@ -64,4 +64,10 @@ Note:
 - I'm not responsible for your actions. 
 - Don't hack anyone without their permissions.
 - With great force follows great responsibility.
+
 # Thank you
+![Instagram](https://img.shields.io/badge/instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white) https://www.instagram.com/keyjeek/
+
+![Twitter](https://img.shields.io/badge/twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white) https://twitter.com/keyjeek
+
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) https://github.com/Keyj33k
