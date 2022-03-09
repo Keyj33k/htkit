@@ -103,68 +103,40 @@ def HUNT3R():
 <by@keyjeek>  |  Follow the white rabbit...
 <contact:nomotikag33n@gmail.com>      
 [i] Witcher is a simple port scanner.  
-[i] Type x in <target ip> part to exit Witcher. 
+[i] Type x to exit Witcher. 
                 """)
 
-                ip_compile = re.compile("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
-                port_min = 0
-                print(chr(0xa))
-                port_max = int(input("[*] ENTER MAX. PORT: \n[*]--> ")) 
-                open_ports = []
-                tstart = datetime.now()
-                
-                while True:
-                    target_ip = input("[*] TARGET IP: \n[*]--> ")
-                  
-                    if target_ip == 'x':
-                        print(colored("[i] EXIT", "red"))
-                        return HUNT3R()
-                     
-                    elif target_ip == 'exit':
-                        print(colored("[*] EXIT", "red"))
-                        return HUNT3R()
-                     
-                    elif target_ip == 'clear':
-                        os.system('clear')
-                        return witcher()
-                     
-                    elif target_ip == 'c':
-                        os.system('clear')
-                        return witcher()
-                     
-                    elif ip_compile.search(target_ip):
-                        print(f"[i] {target_ip} is valid. Please wait, it'll take some time..")
-                        print(chr(0xa))
+                from termcolor import colored
+                import nmap
+                import re
+                IP_COMPILE = re.compile("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
+                PORT_MAX = 65535
+                PORT_MIN = 0
+                TARGET_ADDR = input("Address: ")
 
-                    ## for i in tqdm (range(100), desc="Loading ... "): 
-                    try:
-                        for port in range(port_min, port_max + 1):
-                            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as socket_sock: ## sock_DGRAM/UPD
-                                ## socket_sock.settimeout(0.5) 
-                                socket_sock.connect((target_ip, port))
-                                open_ports.append(port)
-                              
-                    except Exception:
-                        print(colored("[*] Can't connect to target!", "red"))
-                        time.sleep(3)
-                        input("Press any key ...")
-                        return HUNT3R()
-                  
-                    for port in open_ports:
-                        print(f"[+] TCP/{port}       OPEN")
-                     
-                    tend = datetime.now()
-                    diff = tend - tstart
-                    
-                    print(chr(0xa))
-                    print("[i] SCAN COMPLETE IN " + str(diff) + " SECONDS ...")
-                    time.sleep(2)
-                
-                    print("[i] WITCHER DONE !")
-                    print(chr(0xa))
+                if TARGET_ADDR == 'x':
+                    print(colored("Exiting ..."))
                     return HUNT3R()
-            
-            witcher() 
+                elif IP_COMPILE.search(TARGET_ADDR):
+                    print(f"{TARGET_ADDR} is a valid. Take a coffee break. It'll take some time ...")
+
+                SCANNER = nmap.PortScanner()
+
+                for ATTACK in range(PORT_MIN, PORT_MAX + 1):
+                    try:
+                        OUTPUT = SCANNER.scan(TARGET_ADDR, str(ATTACK))
+                        STATUS = (OUTPUT['scan'][TARGET_ADDR]['tcp'][ATTACK]['state'])
+                        print(f"Port: {ATTACK} Status: {STATUS}")
+                    
+                    except KeyboardInterrupt:
+                        import time
+                        print(colored("\nCtrl+C pressed. Exiting ...", "red"))
+                        time.sleep(1.25)
+                        print(chr(0xa))
+                        print(colored("Witcher done!", "cyan"))
+                        return HUNT3R()
+
+            witcher()
 
         elif choice == '2':
             def md5encrypt():
