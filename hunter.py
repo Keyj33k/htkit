@@ -118,7 +118,8 @@ def HUNT3R():
                     print(colored("Exiting ..."))
                     return HUNT3R()
                 elif IP_COMPILE.search(TARGET_ADDR):
-                    print(f"{TARGET_ADDR} is a valid. Take a coffee break. It'll take some time ...")
+                    print(f"{TARGET_ADDR} is valid.")
+                    print("Scanning ...")
 
                 SCANNER = nmap.PortScanner()
 
