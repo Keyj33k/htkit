@@ -129,25 +129,17 @@ class Hunter:
         def md5():
             print(chr(0xa))
             def encrypt(): 
-                hash_val = input("[*] TEXT TO HASH: ")
+                HASHVAL = input("Text: ")
                         
-                if hash_val == 'x':
+                if HASHVAL == 'x':
                     print(colored("[i] EXIT", "red"))
                     return Hunter()
                         
-                elif hash_val == 'exit':
-                    print(colored("[i] EXIT", "red"))
-                    return Hunter()
-                        
-                elif hash_val == 'clear':
+                elif HASHVAL == 'c':
                     os.system('clear')
                     return md5()
                         
-                elif hash_val == 'c':
-                    os.system('clear')
-                    return md5()
-                        
-                result = hashlib.md5(hash_val.encode())
+                result = hashlib.md5(HASHVAL.encode())
                 print("[+] RESULT: ", end ="")
                 print(result.hexdigest())
                 return Hunter()
@@ -155,44 +147,36 @@ class Hunter:
             encrypt()
                   
             def decrypt():
-                question_brute = input("[?] DECRYPT/BRUTEFORCE THE HASH? y/n: ")
+                question_brute = input("Decrypt/Bruteforce the value? y/n: ")
                         
                 if question_brute == 'y':
                     print("[i] USE THIS LINK: https://www.md5online.org/md5-decrypt.html ")## This program is using a big database to bruteforce the hash for you
                     return encrypt()
                         
                 elif question_brute == 'x':
-                    print(colored("[i] EXIT", "red"))
+                    print(colored("Exiting ...", "red"))
                     return Hunter()
-                        
-                elif question_brute == 'exit':
-                    print(colored("[i] EXIT", "red"))
-                    return Hunter()
-                        
-                elif question_brute == 'clear':
-                    os.system('clear')
-                    return decrypt()
                         
                 elif question_brute == 'c':
                     os.system('clear')
                     return decrypt()
                         
                 elif question_brute == 'n':
-                    question_exit = input("[?] EXIT? y/n ")
+                    question_exit = input("Exiting ...? y/n ")
                               
                     if question_exit == 'y':
-                        print(colored("[i] Exit", "red"))
+                        print(colored("Exiting ...", "red"))
                         return Hunter()
                            
                     elif question_exit == 'x':
-                        print(colored("[i] Exit", "red"))
+                        print(colored("Exiting ...", "red"))
                         return Hunter()
                               
                     elif question_exit == 'n':
                         return encrypt()
                               
                     else:
-                        print("[i] INVALID INPUT !")
+                        print(colored("Invalid Input!"))
                         return Hunter()
 
             decrypt()
@@ -222,26 +206,18 @@ class Hunter:
             """)
                 
             print(chr(0xa))
-            scanner = input('[*] IP: ')
+            SCANNER = input('Target: ')
                         
-            if scanner == 'x':
-                print(colored("[i] EXIT", "red"))
+            if SCANNER == 'x':
+                print(colored("Exiting ...", "red"))
                 return Hunter()
                         
-            elif scanner == 'exit':
-                print(colored("[i] EXIT", "red"))
-                return Hunter()
-                        
-            elif scanner == 'clear':
-                os.system('clear')
-                return ipeye()
-                        
-            elif scanner == 'c':
+            elif SCANNER == 'c':
                 os.system('clear')
                 return ipeye()
                         
             try:
-                response = requests.post("http://ip-api.com/batch", json=[{"query":scanner}]).json()
+                response = requests.post("http://ip-api.com/batch", json=[{"query":SCANNER}]).json()
                             
             except Exception:
                 print(colored("CAN'T CONNECT. AN ERROR WAS DEFINED !", "red"))
@@ -251,8 +227,8 @@ class Hunter:
                         
             os.system('clear')
                     
-            for ip in response:
-                for k, j in ip.items():
+            for LOOKUP in response:
+                for k, j in LOOKUP.items():
                     print(k,j)
                                 
             print(chr(0xa))
@@ -277,7 +253,6 @@ class Hunter:
  █   ▒█ █░ ▓█  █   █  █   █  ▓▓  █   █            ▒█░ ░█  █     █░ ▓█  █▓ ▓█
  █████░ ▒██▒█  █   █  █   █   ███▒   █             ▒███▒  █     ▒██▒█  █▓██
                                           ██████
-
         """, "cyan"))
         TARGET_ADDR = input("Target: ")
         TARGET_PORT = input("Port: ")
@@ -292,7 +267,6 @@ class Hunter:
 
         elif TARGET_PORT == 'h':
             print(colored("""
-
  - type 'h'     to show help
  ------------------------------------------
  - type 'x'     to exit the Banner Grabber
@@ -348,64 +322,64 @@ class Hunter:
         menu()
                
         def chse():
-            choice = input("[*] CHOICE: ")
+            CHOICE = input("[*] CHOICE: ")
                   
-            if choice == '1':
-                hash_value = input("[*] ENTER MESSAGE: ")
+            if CHOICE == '1':
+                HASH = input("[*] ENTER MESSAGE: ")
                         
-                if hash_value == 'x':
-                    exit_choice = input("[?] EXIT? y/n ")
+                if HASH == 'x':
+                    EXIT_CHOICE = input("[?] EXIT? y/n ")
                               
-                    if exit_choice == 'y':
+                    if EXIT_CHOICE == 'y':
                         print(colored("[i] Exit", "red"))
                         return Hunter()
                            
-                    elif exit_choice == 'n':
+                    elif EXIT_CHOICE == 'n':
                         return chse()
                            
                     else:
                         print(colored("[i] INVALID INPUT!", "red"))
                         return chse()
                               
-                elif hash_value == 'clear':
+                elif HASH == 'clear':
                     os.system('clear')
                     return Hunter.base64encode()
                         
-                elif hash_value == 'c':
+                elif HASH == 'c':
                     os.system('clear')
                     return Hunter.base64encode()
                         
-                m_bytes = choice.encode('ascii')
-                b64_e = base64.b64encode(m_bytes)
-                b64_hash = b64_e.decode('ascii')
-                print(b64_hash)
+                M_BYTES = CHOICE.encode('ascii')
+                B64_E = base64.b64encode(M_BYTES)
+                B64_HASH = B64_E.decode('ascii')
+                print(B64_HASH)
                 return chse()  
                      
-            elif choice == '2':
+            elif CHOICE == '2':
                 def b64_decrypt():
                     print(chr(0xa))
-                    b64_hash_val = input("[*] ENTER HASH TO DECODE: ")
+                    B64_VAL = input("[*] ENTER HASH TO DECODE: ")
                            
-                    if b64_hash_val == 'x':
+                    if B64_VAL == 'x':
                         print(colored("[i] EXIT", "red"))
                         return Hunter()
                               
-                    elif b64_hash_val == 'exit':
+                    elif B64_VAL == 'exit':
                         print(colored("[i] EXIT", "red"))
                         return Hunter()
                            
-                    elif b64_hash_val == 'clear':
+                    elif B64_VAL == 'clear':
                         os.system('clear')
                         return b64_decrypt()
                               
-                    elif b64_hash_val == 'c':
+                    elif B64_VAL == 'c':
                         os.system('clear')
                         return b64_decrypt()
                            
-                    b64_d = b64_hash_val.encode('ascii')
-                    m_bytes = base64.b64decode(b64_d)
-                    result = m_bytes.decode('ascii')
-                    print(result)
+                    B64_D = B64_VAL.encode('ascii')
+                    M_BYTE = base64.b64decode(B64_D)
+                    RESULT = M_BYTE.decode('ascii')
+                    print(RESULT)
                     return chse()
                            
                 b64_decrypt()
@@ -415,7 +389,6 @@ class Hunter:
     def number_tracker():
         def PhoneStalk():
             print(colored("""
-
         █                                                ███    █
  █████░ █                            ▓███▒   █             █    █
  █   ▓█ █                           █▓  ░█   █             █    █
@@ -427,21 +400,26 @@ class Hunter:
  █      █   █  █▓ ▓█  █   █  ▓▓  █  █░  ▓█   █░   █░ ▓█    █░   █ ░█
  █      █   █   ███   █   █   ███▒  ▒████░   ▒██  ▒██▒█    ▒██  █  ▒█
 
+ <by@keyjeek>  |  Follow the white rabbit...
+<contact:nomotikag33n@gmail.com>       
+[i] This Tool helps to find out some informations about a phonenumber. 
+[i] Type 'x' or 'exit' to exit PhoneStalk.
+[i] Type 'c' or 'clear' to clear the screen.
             """, "cyan"))
 
             while True:
                 print(chr(0xa))
-                number = input('PHONENUMBER: ')
+                TARGET_NUMBER = input('PHONENUMBER: ')
                         
-                if number == 'x':
+                if TARGET_NUMBER == 'x':
                     print(colored("[i] EXIT", "red"))
                     return Hunter()
                         
-                elif number == 'c':
+                elif TARGET_NUMBER == 'c':
                     os.system('clear')
                     return Hunter()
 
-                elif number == 'help':
+                elif TARGET_NUMBER == 'help':
                     print(colored("""
  HELP; WhoAreYou
 < ============= >
@@ -455,25 +433,25 @@ class Hunter:
                 print(chr(0xa))
                     
                 try:
-                    valid_check = phonenumbers.parse(number)
-                    is_valid = phonenumbers.is_valid_number(valid_check)
+                    VALID_CHECK = phonenumbers.parse(TARGET_NUMBER)
+                    IS_VALID = phonenumbers.is_valid_number(VALID_CHECK)
                     print(colored("Validation:", "yellow"))
-                    print(is_valid)
+                    print(IS_VALID)
                     print(chr(0xa))
                             
                     print(colored("Timezone:", "yellow"))
-                    timezone_number = phonenumbers.parse(number, "en")
-                    print(timezone.time_zones_for_number(timezone_number))
+                    TIMEZONE = phonenumbers.parse(TARGET_NUMBER, "en")
+                    print(timezone.time_zones_for_number(TIMEZONE))
                     print(chr(0xa))
                             
                     print(colored("Location:", "yellow"))
-                    target_number = phonenumbers.parse(number, "CH")
-                    print(geocoder.description_for_number(target_number, "en"))
+                    LOCATION = phonenumbers.parse(TARGET_NUMBER, "CH")
+                    print(geocoder.description_for_number(LOCATION, "en"))
 
                     try:
                         print(colored("Provider:", "yellow"))
-                        provider_info = phonenumbers.parse(number, "RO")
-                        print(carrier.name_for_number(provider_info, "en"))
+                        PROVIDER = phonenumbers.parse(TARGET_NUMBER, "RO")
+                        print(carrier.name_for_number(PROVIDER, "en"))
                         print(chr(0xa))
 
                     except Exception:
