@@ -1,4 +1,5 @@
 phonenumbers==8.12.44
+python-nmap==0.7.1 
 requests==2.27.1
 termcolor==1.1.0
 pandas==1.4.1
