@@ -37,7 +37,7 @@ class Hunter:
    
 <by@keyjeek>  |  Follow the white rabbit... 
 <contact:nomotikag33n@gmail.com>           
-[i] Hunter is a small toolkit to perform information gathering   
+[i] Hunter is a small toolkit to perform information gathering.   
 [i] Type x to exit Hunter.              
         """, "cyan"))
 
