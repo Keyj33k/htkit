@@ -1,4 +1,4 @@
-########## Hunter Ver.: 1.0.2 ############
+#!/usr/bin/env python3
 
 from phonenumbers import timezone
 from phonenumbers import geocoder
@@ -52,8 +52,7 @@ class Hunter:
 [x] EXIT
         """, "yellow"))
 
-    def witcher():
-               
+    def witcher():   
         print("""
           █                  █
 █     █          █           █
