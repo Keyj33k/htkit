@@ -30,13 +30,7 @@ B64crypt
 -------------------------------------------------------------------
 - A tool written vor base64 en- and decryption.
 
-WIFI-Stalker
--------------------------------------------------------------------
-- A tool which displays all available networks around your access point.
-
-- You need to set your wireless device in the monitor mode.
-
-WhereAreYou
+PhoneStalk
 -------------------------------------------------------------------
 - A simple tool for grabbing informations about a phonenumber like location etc.
 
