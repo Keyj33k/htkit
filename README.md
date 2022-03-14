@@ -1,4 +1,4 @@
-# Project - Hunter | Written In ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+# Project - Hunter | Written In <a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Twitter Badge"/></a>
 
 - Hunter-Toolkit >> A Collection Of Selfwritten Tools
 
