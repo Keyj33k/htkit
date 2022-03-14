@@ -1,4 +1,4 @@
-# Project - Hunter | Written In <a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Twitter Badge"/></a>
+# Project - Hunter | Written In <a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python Badge"/></a>
 
 - Hunter-Toolkit >> A Collection Of Selfwritten Tools
 
@@ -62,7 +62,7 @@ Note:
 # Thank you
 <div id="badges">
   <a href="https://www.instagram.com/keyjeek/">
-    <img src="https://img.shields.io/badge/instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white" alt="LinkedIn Badge"/>
+    <img src="https://img.shields.io/badge/instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white" alt="Instagram Badge"/>
   </a>
   <a href="https://github.com/Keyj33k">
     <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="Github Badge"/>
