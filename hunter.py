@@ -82,6 +82,7 @@ class Hunter:
         if TARGET_ADDR == 'x':
             print(colored("Exiting ..."))
             return Hunter()
+        
         elif IP_COMPILE.search(TARGET_ADDR):
             print(f"{TARGET_ADDR} is valid.")
             print("Scanning ...")
