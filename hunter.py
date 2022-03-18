@@ -68,7 +68,6 @@ class Hunter:
 <by@keyjeek>  |  Follow the white rabbit...
 <contact:nomotikag33n@gmail.com>      
 [i] Witcher is a simple port scanner.  
-[i] Type x to exit Witcher. 
                 """)
 
         from termcolor import colored
