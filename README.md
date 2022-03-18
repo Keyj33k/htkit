@@ -4,8 +4,6 @@
 
 - The hunter-toolkit is a python project for information gathering and en-/decryption with b64 and md5.
 
-- Haunt-Toolkit in progress. [ ... ]
-
 Witcher
 -------------------------------------------------------------------
 - A simple socket tcp portscanner.
