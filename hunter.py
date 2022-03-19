@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
 
+# # # # # # # # # # # # # # # # # # # # # #
+#                                         #
+#   Author  :   Keyj33k                   #
+#   Contact :   nomotikag33n@gmail.com    #
+#   Twitter :   @keyjeek                  #
+#   Github  :   @keyj33k                  #
+#   Version :   1.0.0                     #
+#                                         #
+# # # # # # # # # # # # # # # # # # # # # # 
+
 from phonenumbers import timezone
 from phonenumbers import geocoder
 from phonenumbers import carrier
