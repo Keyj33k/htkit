@@ -16,7 +16,7 @@ from phonenumbers import carrier
 from termcolor import colored
 from datetime import datetime
 from threading import Thread
-import banner_whereareyou
+# import banner_whereareyou
 from scapy.all import *
 from tqdm import tqdm
 import phonenumbers
