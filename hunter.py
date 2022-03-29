@@ -496,7 +496,7 @@ if __name__ == "__main__":
             Hunter.eye_main()
 
         elif CHOICE == '4':
-            Hunter.bannerGrabber
+            Hunter.bannerGrabber()
 
         elif CHOICE == '5':
             Hunter.base64encode()
