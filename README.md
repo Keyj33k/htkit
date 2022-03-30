@@ -45,7 +45,7 @@ cd Hunter
 ```
 Install python requirements:
 ```
-sudo pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 Run the script:
 ```
