@@ -51,10 +51,11 @@ class Hunter:
     [1] Witcher
     [2] MD5Crypt
     [3] IPEye
-    [4] Banner Grabber
+    [4] BannerGrabber
     [5] B64Crypt
     [6] PhoneStalk
-    [exit] EXIT
+    [7] SubdomainScanner
+    [exit] Exit
         """, "yellow"))
 
     def witcher():  
@@ -72,7 +73,7 @@ class Hunter:
         PORT_MAX = int(input("Max. Port: "))
         # PORT_MAX = 65535
         PORT_MIN = 0
-        TARGET_ADDR = input("Address: ")
+        TARGET_ADDR = input("Address(Type 'exit' to exit witcher): ")
 
         if TARGET_ADDR == "exit":
             print(cld("Exiting ..."))
@@ -83,6 +84,7 @@ class Hunter:
             print("Scanning ...")
 
         timestart = dtt.now()
+
         SCANNER = nmap.PortScanner()
 
         for ATTACK in range(PORT_MIN, PORT_MAX + 1):
@@ -104,6 +106,35 @@ class Hunter:
         time_result = timestop - timestart
         print(f"\nJob done in {time_result}!\n")
         input("Press any key ...")
+
+    def subdomain_scanner():
+        sds_banner = pfgt.figlet_format("Sub- domain- Scanner", font = "banner3-D")
+        print(f"""\n{sds_banner}
+\n<by@keyjeek>  |  Follow the white rabbit...
+<contact:nomotikag33n@gmail.com> 
+        """)
+        
+        FOUND_SD = []
+        TARGET_ADDR = input("Target: ")
+
+        with open("subdomains.txt") as FILE:
+            READFILE = FILE.read()
+            SUBDOMAIN = READFILE.splitlines()
+
+            for LIST_DOMAINS in SUBDOMAIN:
+                UniformResourceLocator = f"http://{LIST_DOMAINS}.{TARGET_ADDR}"
+
+                try:
+                    import requests
+                    requests.get(UniformResourceLocator)
+
+                except requests.ConnectionError:
+                    from termcolor import colored
+                    print(colored("Not available!", "red"))
+
+                else:
+                    print("Discovered:", UniformResourceLocator)
+                    FOUND_SD.append(UniformResourceLocator)
 
     def md5encrypt():
         md5_banner = pfgt.figlet_format("MD5C", font = "banner3-D")
@@ -429,6 +460,14 @@ if __name__ == "__main__":
                 Hunter.base64encode()
             elif CHOICE == "6":
                 Hunter.number_tracker()
+            elif CHOICE == "7":
+                timestart = dtt.now()
+                try:
+                    Hunter.subdomain_scanner()
+                except KeyboardInterrupt:
+                    print(cld("\nCtrl+C pressed, Exiting ...", "red"))
+                    input("Press any key ...")
+                    return hunter_main()
             elif CHOICE == "exit" or "x":
                 print(cld("Exiting ...", "red"))
                 sys.exit(0)
