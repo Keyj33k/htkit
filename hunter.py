@@ -418,6 +418,7 @@ class Hunter:
                     print(cld("Location:", "yellow"))
                     LOCATION = pnmb.parse(TARGET_NUMBER, "CH")
                     print(gc.description_for_number(LOCATION, "en"))
+                    print(chr(0xa))
 
                     print(cld("Provider:", "yellow"))
                     PROVIDER = pnmb.parse(TARGET_NUMBER, "RO")
