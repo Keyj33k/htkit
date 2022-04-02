@@ -15,6 +15,7 @@ from phonenumbers import timezone as tz
 from phonenumbers import geocoder as gc
 from phonenumbers import carrier as cr
 from termcolor import colored as cld
+from datetime import datetime as dtt
 import phonenumbers as pnmb
 import pyfiglet as pfgt
 import requests
@@ -68,7 +69,8 @@ class Hunter:
         import re
 
         IP_COMPILE = re.compile("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
-        PORT_MAX = 65535
+        PORT_MAX = int(input("Max. Port: "))
+        # PORT_MAX = 65535
         PORT_MIN = 0
         TARGET_ADDR = input("Address: ")
 
@@ -79,6 +81,8 @@ class Hunter:
         elif IP_COMPILE.search(TARGET_ADDR):
             print(f"{TARGET_ADDR} is valid.")
             print("Scanning ...")
+
+        timestart = dtt.now()
 
         SCANNER = nmap.PortScanner()
 
@@ -96,6 +100,11 @@ class Hunter:
                 print(chr(0xa))
                 input("Press any key ...")
                 return Hunter()
+
+        timestop = dtt.now()
+        time_result = timestop - timestart
+        print(f"\nJob done in {time_result}!\n")
+        input("Press any key ...")
 
     def md5encrypt():
         md5_banner = pfgt.figlet_format("MD5C", font = "banner3-D")
@@ -179,7 +188,9 @@ class Hunter:
             elif SCANNER == "clear":
                 os.system('clear')
                 return ipeye()
-                        
+
+            timestart = dtt.now()
+
             try:
                 response = requests.post("http://ip-api.com/batch", json=[{"query":SCANNER}]).json()
                             
@@ -194,9 +205,12 @@ class Hunter:
             for LOOKUP in response:
                 for k, j in LOOKUP.items():
                     print(k,j)
+
+            timestop = dtt.now()
+            time_result = timestop - timestart
                                 
             print(chr(0xa))
-            print("Scanner done!")
+            print(f"Scanner done in {time_result}!")
             print(chr(0xa))
             input("Press any key ...")
             return Hunter()
@@ -235,11 +249,16 @@ class Hunter:
             """, "yellow"))
             return Hunter.bannerGrabber()
 
+        timestart = dtt.now()
+
         try:
             socket_sock = socket.socket()
             socket_sock.connect((TARGET_ADDR, int(TARGET_PORT)))
             print(cld("Result: ", "yellow"))
             print(socket_sock.recv(1024))
+            timestop = dtt.now()
+            time_result = timestop - timestart
+            print(f"\nJob done in {time_result}!\n")
             input("Press any key ...")
             return Hunter.bannerGrabber()
 
@@ -257,7 +276,6 @@ class Hunter:
 [i] This Tool helps to encode and decode your text in base64.  
 [i] Type 'exit' or 'exit' to exit Base64encode.
 [i] Type 'clear' or 'clear' to clear the screen.
-
 \t[1] Encoder
 \t[2] Decoder
 \t[x] Exit 
@@ -352,6 +370,8 @@ class Hunter:
                     return Hunter()
                 
                 print(chr(0xa))
+
+                timestart = dtt.now()
                     
                 try:
                     VALID_CHECK = pnmb.parse(TARGET_NUMBER)
@@ -373,6 +393,10 @@ class Hunter:
                     PROVIDER = pnmb.parse(TARGET_NUMBER, "RO")
                     print(cr.name_for_number(PROVIDER, "en"))
                     print(chr(0xa))
+
+                    timestop = dtt.now()
+                    time_result = timestop - timestart
+                    print(f"Job done in {time_result}")
                             
                 except Exception as error:
                     print(cld("[i] AN ERROR WAS DEFINED !", "red"))
@@ -382,7 +406,7 @@ class Hunter:
                         
                 print(chr(0xa))
                 input('Press any key ...')
-                return PhoneStalk()
+                return Hunter()
 
         PhoneStalk()   
 
