@@ -1,4 +1,4 @@
-<a href="https://github.com/Keyj33k/Hunter/archive/refs/heads/main.zip"><img src="https://github.com/Keyj33k/profiles/blob/main/profile/hunter(1).png?raw=true" alt="banner"/></a>
+<a href="https://github.com/Keyj33k/Hunter/archive/refs/heads/main.zip"><img src="https://github.com/Keyj33k/profiles/blob/main/profile/Hunte.png?raw=true" alt="banner"/></a>
 
 # Project - Hunter | Written In <a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python Badge"/></a>
 
