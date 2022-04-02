@@ -83,7 +83,6 @@ class Hunter:
             print("Scanning ...")
 
         timestart = dtt.now()
-
         SCANNER = nmap.PortScanner()
 
         for ATTACK in range(PORT_MIN, PORT_MAX + 1):
