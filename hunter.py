@@ -344,24 +344,25 @@ class Hunter:
                 
                 print(chr(0xa))
                 time_start = dtt.now()
+
+                print("Request\t\tResponse\n------------------------------------\n")
                     
                 try:
                     valid_check = pnmb.parse(target_phonenumber)
                     finally_valid = pnmb.is_valid_number(valid_check)
-                    print(cld("Validation:", "yellow"))
-                    print(finally_valid) 
-                    print(cld("Timezone:", "yellow"))
+                    print(f"Validation:\t{finally_valid}")
                     phonenumbers_timezone = pnmb.parse(target_phonenumber, "en")
-                    print(tz.time_zones_for_number(phonenumbers_timezone))
-                    print(cld("Location:", "yellow"))
+                    final_timezone = tz.time_zones_for_number(phonenumbers_timezone)
+                    print(f"Timezone:\t{final_timezone}")
                     phonenumbers_location = pnmb.parse(target_phonenumber, "CH")
-                    print(gc.description_for_number(phonenumbers_location, "en"))
-                    print(cld("Provider:", "yellow"))
+                    final_phonenumbers_location = gc.description_for_number(phonenumbers_location, "en")
+                    print(f"Location:\t{final_phonenumbers_location}")
                     phonenumbers_provider = pnmb.parse(target_phonenumber, "RO")
-                    print(cr.name_for_number(phonenumbers_provider, "en"))
+                    final_phonenumbers_provider = cr.name_for_number(phonenumbers_provider, "en")
+                    print(f"Provider:\t{final_phonenumbers_provider}")
                     time_stop = dtt.now()
                     time_result = time_stop - time_start
-                    print(f"Job done in {time_result}")        
+                    print(f"\nJob done in {time_result}")        
                 except Exception as error:
                     print(cld("[i] AN ERROR WAS DEFINED !", "red"))
                     print(cld(error, "red"))
@@ -408,7 +409,8 @@ if __name__ == "__main__":
                     input("\nPress any key ...")
                     return hunter_main()
             elif hunter_choice == 0:
-                print(cld("Exiting ...", "red"))
+                ex_banner = pfgt.figlet_format("Exit", font = "digital")
+                print(cld(ex_banner, "red"))
                 sys.exit(0)
             else:
                 print(cld("Invalid Input!", "red"))
