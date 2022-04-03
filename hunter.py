@@ -164,6 +164,7 @@ class Hunter:
                     input("\nPress any key ...")
                     os.system('clear')
                     return Hunter()
+                
             encrypt()
                     
             def decrypt():
@@ -174,7 +175,9 @@ class Hunter:
                     return Hunter()     
                 elif question_brute == "n":
                     return Hunter()
+                
             decrypt()
+            
         md5()
 
     def eye_main():
@@ -217,6 +220,7 @@ class Hunter:
             print(chr(0xa))
             input("Press any key ...")
             return Hunter()
+        
         ipeye()
 
     def bannerGrabber():
@@ -371,6 +375,7 @@ class Hunter:
                 print(chr(0xa))
                 input("Press any key ...")
                 return Hunter()
+            
         PhoneStalk()   
 
 if __name__ == "__main__":
@@ -415,4 +420,5 @@ if __name__ == "__main__":
                 print(cld("Invalid Input!", "red"))
                 input("\nPress any key ...")
                 return hunter_main()
+            
     hunter_main()
