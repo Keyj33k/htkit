@@ -151,7 +151,6 @@ class Hunter:
         def md5():
             print(chr(0xa))
             def encrypt(): 
-                
                 HASHVAL = input("Text: ")           
                 if HASHVAL == "exit":
                     print(cld("Exit", "red"))
