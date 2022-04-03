@@ -164,8 +164,7 @@ class Hunter:
                 result = hashlib.md5(HASHVAL.encode())
                 print("Result: ", end ="")
                 print(result.hexdigest())
-                return Hunter()
-                            
+                return Hunter()         
             encrypt()
                     
             def decrypt():
@@ -176,23 +175,8 @@ class Hunter:
                     input("Press any key ...")
                     return Hunter()     
                 elif question_brute == "n":
-                    question_exit = input("Exiting ...? y/n ")
-                                
-                    if question_exit == "y":
-                        print(cld("Exiting ...", "red"))
-                        return Hunter()
-                        #break
-                    elif question_exit == "exit":
-                        print(cld("Exiting ...", "red"))
-                        return Hunter()        
-                    elif question_exit == "n":
-                        return encrypt()     
-                    else:
-                        print(cld("Invalid Input!"))
-                        return Hunter()
-
+                    return Hunter()
             decrypt()
-                    
         md5()
 
     def eye_main():
@@ -241,7 +225,6 @@ class Hunter:
             print(chr(0xa))
             input("Press any key ...")
             return Hunter()
-
         ipeye()
 
     def bannerGrabber():
@@ -309,9 +292,9 @@ class Hunter:
             
             CHOICE = input("Choice: ")
             if CHOICE == "1":
-                HASH = input("Text: ")     
+                HASH = input("Text: ") 
+
                 if HASH == "exit":
-                    
                     EXIT_CHOICE = input("Exit? y/n ")
                     
                     if EXIT_CHOICE == "y":
@@ -350,10 +333,8 @@ class Hunter:
                     M_BYTE = base64.b64decode(B64_D)
                     RESULT = M_BYTE.decode('ascii')
                     print(RESULT)
-                    return chse()
-                           
+                    return chse()   
                 b64_decrypt()
-
         chse()
 
     def number_tracker():
@@ -426,7 +407,6 @@ class Hunter:
                 print(chr(0xa))
                 input('Press any key ...')
                 return Hunter()
-
         PhoneStalk()   
 
 if __name__ == "__main__":
@@ -470,5 +450,4 @@ if __name__ == "__main__":
                 print(cld("Invalid Input!", "red"))
                 input("Press any key ...")
                 return hunter_main()
-
     hunter_main()
