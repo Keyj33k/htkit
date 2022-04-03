@@ -55,7 +55,7 @@ class Hunter:
     [5] B64Crypt
     [6] PhoneStalk
     [7] SubdomainScanner
-    [exit] Exit
+    [0] Exit
         """, "yellow"))
 
     def witcher():  
@@ -70,21 +70,27 @@ class Hunter:
         import re
 
         IP_COMPILE = re.compile("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
-        PORT_MAX = int(input("Max. Port: "))
-        # PORT_MAX = 65535
+        global PORT_MAX
+        
+        try:
+            PORT_MAX = int(input("Max. Port: "))
+            # PORT_MAX = 65535
+        except ValueError:
+            print(cld("You need to enter an integer!", "red"))
+            input("Press any key ...")
+            return Hunter.witcher()
+
         PORT_MIN = 0
         TARGET_ADDR = input("Address(Type 'exit' to exit witcher): ")
 
         if TARGET_ADDR == "exit":
             print(cld("Exiting ..."))
             return Hunter()
-        
         elif IP_COMPILE.search(TARGET_ADDR):
             print(f"{TARGET_ADDR} is valid.")
             print("Scanning ...")
 
         timestart = dtt.now()
-
         SCANNER = nmap.PortScanner()
 
         for ATTACK in range(PORT_MIN, PORT_MAX + 1):
@@ -127,11 +133,9 @@ class Hunter:
                 try:
                     import requests
                     requests.get(UniformResourceLocator)
-
                 except requests.ConnectionError:
                     from termcolor import colored
                     print(colored("Not available!", "red"))
-
                 else:
                     print("Discovered:", UniformResourceLocator)
                     FOUND_SD.append(UniformResourceLocator)
@@ -152,8 +156,7 @@ class Hunter:
                             
                 if HASHVAL == "exit":
                     print(cld("Exit", "red"))
-                    return Hunter()
-                            
+                    return Hunter()    
                 elif HASHVAL == "clear":
                     os.system('clear')
                     return md5()
@@ -171,8 +174,7 @@ class Hunter:
                 if question_brute == "y":
                     print("USE THIS LINK: https://www.md5online.org/md5-decrypt.html ")## This program is using a big database to bruteforce the hash for you
                     input("Press any key ...")
-                    return Hunter()
-                            
+                    return Hunter()     
                 elif question_brute == "n":
                     question_exit = input("Exiting ...? y/n ")
                                 
@@ -180,14 +182,11 @@ class Hunter:
                         print(cld("Exiting ...", "red"))
                         return Hunter()
                         #break
-                            
                     elif question_exit == "exit":
                         print(cld("Exiting ...", "red"))
-                        return Hunter()
-                                
+                        return Hunter()        
                     elif question_exit == "n":
-                        return encrypt()
-                            
+                        return encrypt()     
                     else:
                         print(cld("Invalid Input!"))
                         return Hunter()
@@ -213,8 +212,7 @@ class Hunter:
                         
             if SCANNER == "exit":
                 print(cld("Exiting ...", "red"))
-                return Hunter()
-                        
+                return Hunter()      
             elif SCANNER == "clear":
                 os.system('clear')
                 return ipeye()
@@ -222,8 +220,7 @@ class Hunter:
             timestart = dtt.now()
 
             try:
-                response = requests.post("http://ip-api.com/batch", json=[{"query":SCANNER}]).json()
-                            
+                response = requests.post("http://ip-api.com/batch", json=[{"query":SCANNER}]).json()   
             except Exception:
                 print(cld("An error was defined!", "red"))
                 input("Press any key ...")
@@ -264,11 +261,9 @@ class Hunter:
             print(cld("Exiting ...", "red"))
             time.sleep(1.25)
             return Hunter
-
         elif TARGET_PORT == "clear":
             os.system('clear')
             return Hunter.bannerGrabber()
-
         elif TARGET_PORT == "help":
             print(cld("""
  - type 'help'     to show help
@@ -291,7 +286,6 @@ class Hunter:
             print(f"\nJob done in {time_result}!\n")
             input("Press any key ...")
             return Hunter.bannerGrabber()
-
         except Exception as ERROR:
             print(cld("Connection failed due to an error:", "red"))
             print(ERROR)
@@ -312,27 +306,24 @@ class Hunter:
         """)
                
         def chse():
+            
             CHOICE = input("Choice: ")
-                  
             if CHOICE == "1":
-                HASH = input("Text: ")
-                        
+                HASH = input("Text: ")     
                 if HASH == "exit":
+                    
                     EXIT_CHOICE = input("Exit? y/n ")
-                              
+                    
                     if EXIT_CHOICE == "y":
                         print(cld("Exit", "red"))
                         time.sleep(1.25)
-                        return Hunter()
-                           
+                        return Hunter() 
                     elif EXIT_CHOICE == "n":
-                        return chse()
-                           
+                        return chse()    
                     else:
                         print(cld("Invalid input!", "red"))
                         input("Press any key ...")
-                        return chse()
-                              
+                        return chse()        
                 elif HASH == "clear":
                     os.system('clear')
                     return Hunter.base64encode()
@@ -345,12 +336,12 @@ class Hunter:
                      
             elif CHOICE == '2':
                 def b64_decrypt():
+                    
                     B64_VAL = input("Hash: ")
                               
                     if B64_VAL == 'exit':
                         print(cld("Exit", "red"))
-                        return Hunter()
-                           
+                        return Hunter()   
                     elif B64_VAL == 'clear':
                         os.system('clear')
                         return b64_decrypt()
@@ -382,12 +373,10 @@ class Hunter:
                         
                 if TARGET_NUMBER == "exit":
                     print(cld("Exit", "red"))
-                    return Hunter()
-                        
+                    return Hunter()    
                 elif TARGET_NUMBER == "clear":
                     os.system('clear')
                     return Hunter()
-
                 elif TARGET_NUMBER == "help":
                     print(cld("""
  HELP; WhoAreYou
@@ -400,7 +389,6 @@ class Hunter:
                     return Hunter()
                 
                 print(chr(0xa))
-
                 timestart = dtt.now()
                     
                 try:
@@ -447,29 +435,35 @@ if __name__ == "__main__":
 
             Hunter.banner()
             Hunter.menu()
-            CHOICE = input("Choice: ")
 
-            if CHOICE == "1":
+            try:
+                global CHOICE
+                CHOICE = int(input("Choice ~#: "))
+            except ValueError:
+                print(cld("You need to enter an integer!", "red"))
+                input("Press any key ...")
+                return hunter_main()
+
+            if CHOICE == 1:
                 Hunter.witcher()
-            elif CHOICE == "2":
+            elif CHOICE == 2:
                 Hunter.md5encrypt()
-            elif CHOICE == "3":
+            elif CHOICE == 3:
                 Hunter.eye_main()
-            elif CHOICE == "4":
+            elif CHOICE == 4:
                 Hunter.bannerGrabber()
-            elif CHOICE == "5":
+            elif CHOICE == 5:
                 Hunter.base64encode()
-            elif CHOICE == "6":
+            elif CHOICE == 6:
                 Hunter.number_tracker()
-            elif CHOICE == "7":
-                timestart = dtt.now()
+            elif CHOICE == 7:
                 try:
                     Hunter.subdomain_scanner()
                 except KeyboardInterrupt:
                     print(cld("\nCtrl+C pressed, Exiting ...", "red"))
                     input("Press any key ...")
                     return hunter_main()
-            elif CHOICE == "exit" or "x":
+            elif CHOICE == 0:
                 print(cld("Exiting ...", "red"))
                 sys.exit(0)
             else:
