@@ -89,12 +89,12 @@ class Hunter:
             print(f"{target_address} is valid.")
             print("Scanning ...")
 
-        timestart = dtt.now()
-        scanner = nmap.PortScanner()
+        time_start = dtt.now()
+        nmap_scanner = nmap.PortScanner()
 
         for attack in range(port_min, port_max + 1):
             try:
-                output = scanner.scan(target_address, str(attack))
+                output = nmap_scanner.scan(target_address, str(attack))
                 status = (output['scan'][target_address]['tcp'][attack]['state'])
                 print(f"Port: {attack} Status: {status}")
             except KeyboardInterrupt:
@@ -106,8 +106,8 @@ class Hunter:
                 input("Press any key ...")
                 return Hunter()
 
-        timestop = dtt.now()
-        time_result = timestop - timestart
+        time_stop = dtt.now()
+        time_result = time_stop - time_start
         print(f"\nJob done in {time_result}!\n")
         input("\nPress any key ...")
 
@@ -194,7 +194,7 @@ class Hunter:
                 print(cld("Exiting ...", "red"))
                 return Hunter()      
 
-            timestart = dtt.now()
+            time_start = dtt.now()
 
             try:
                 response = requests.post("http://ip-api.com/batch", json=[{"query":ipeye_scanner}]).json()   
@@ -210,8 +210,8 @@ class Hunter:
                 for k, j in lookup.items():
                     print(k,j)
 
-            timestop = dtt.now()
-            time_result = timestop - timestart              
+            time_stop = dtt.now()
+            time_result = time_stop - time_start              
             print(chr(0xa))
             print(f"Scanner done in {time_result}!")
             print(chr(0xa))
@@ -249,15 +249,15 @@ class Hunter:
             """, "yellow"))
             return Hunter.bannerGrabber()
 
-        timestart = dtt.now()
+        time_start = dtt.now()
 
         try:
             socket_sock = socket.socket()
             socket_sock.connect((target_address, target_port))
             print(cld("Getting Banner ... ", "yellow"))
             print(socket_sock.recv(1024))
-            timestop = dtt.now()
-            time_result = timestop - timestart
+            time_stop = dtt.now()
+            time_result = time_stop - time_start
             print(f"\nJob done in {time_result}!\n")
             input("\nPress any key ...")
             return Hunter.bannerGrabber()
@@ -343,24 +343,24 @@ class Hunter:
                     return Hunter()
                 
                 print(chr(0xa))
-                timestart = dtt.now()
+                time_start = dtt.now()
                     
                 try:
-                    VALID_CHECK = pnmb.parse(target_phonenumber)
-                    IS_VALID = pnmb.is_valid_number(VALID_CHECK)
+                    valid_check = pnmb.parse(target_phonenumber)
+                    finally_valid = pnmb.is_valid_number(valid_check)
                     print(cld("Validation:", "yellow"))
-                    print(IS_VALID) 
+                    print(finally_valid) 
                     print(cld("Timezone:", "yellow"))
-                    TIMEZONE = pnmb.parse(target_phonenumber, "en")
-                    print(tz.time_zones_for_number(TIMEZONE))
+                    phonenumbers_timezone = pnmb.parse(target_phonenumber, "en")
+                    print(tz.time_zones_for_number(phonenumbers_timezone))
                     print(cld("Location:", "yellow"))
-                    LOCATION = pnmb.parse(target_phonenumber, "CH")
-                    print(gc.description_for_number(LOCATION, "en"))
+                    phonenumbers_location = pnmb.parse(target_phonenumber, "CH")
+                    print(gc.description_for_number(phonenumbers_location, "en"))
                     print(cld("Provider:", "yellow"))
-                    PROVIDER = pnmb.parse(target_phonenumber, "RO")
-                    print(cr.name_for_number(PROVIDER, "en"))
-                    timestop = dtt.now()
-                    time_result = timestop - timestart
+                    phonenumbers_provider = pnmb.parse(target_phonenumber, "RO")
+                    print(cr.name_for_number(phonenumbers_provider, "en"))
+                    time_stop = dtt.now()
+                    time_result = time_stop - time_start
                     print(f"Job done in {time_result}")        
                 except Exception as error:
                     print(cld("[i] AN ERROR WAS DEFINED !", "red"))
