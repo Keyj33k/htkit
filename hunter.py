@@ -146,20 +146,17 @@ class Hunter:
 \n<by@keyjeek>  |  Follow the white rabbit...
 <contact:nomotikag33n@gmail.com>       
 [i] md5crypt is made to encrypt your string to an 128 bit hash value
-[i] Type 'exit' or 'exit' to exit md5crypt.
-[i] Type 'clear' or 'clear' to clear the screen.
+[i] Type 'exit' to exit md5crypt.
         """)
         def md5():
             print(chr(0xa))
             def encrypt(): 
+                
                 HASHVAL = input("Text: ")           
                 if HASHVAL == "exit":
                     print(cld("Exit", "red"))
                     return Hunter()    
-                elif HASHVAL == "clear":
-                    os.system('clear')
-                    return md5()
-                            
+    
                 result = hashlib.md5(HASHVAL.encode())
                 print("Result: ", end ="")
                 print(result.hexdigest())
@@ -185,8 +182,7 @@ class Hunter:
 <contact:nomotikag33n@gmail.com>       
 [i] IPEye is a Tool to find out
    --> some information about an IP.  
-[i] Type 'exit' or 'exit' to exit ipeye.
-[i] Type 'clear' or 'clear' to clear the screen.
+[i] Type 'exit' to exit ipeye.
             """)
                 
             print(chr(0xa))
@@ -194,9 +190,6 @@ class Hunter:
             if SCANNER == "exit":
                 print(cld("Exiting ...", "red"))
                 return Hunter()      
-            elif SCANNER == "clear":
-                os.system('clear')
-                return ipeye()
 
             timestart = dtt.now()
 
@@ -231,7 +224,6 @@ class Hunter:
 \n<by@keyjeek>  |  Follow the white rabbit...
 <contact:nomotikag33n@gmail.com>  
 [i] Type 'exit' or 'exit' to exit banner grabber.
-[i] Type 'clear' or 'clear' to clear the screen.
         """, "cyan")
         TARGET_ADDR = input("Target: ")
         TARGET_PORT = input("Port: ")
@@ -240,9 +232,6 @@ class Hunter:
             print(cld("Exiting ...", "red"))
             time.sleep(1.25)
             return Hunter
-        elif TARGET_PORT == "clear":
-            os.system('clear')
-            return Hunter.bannerGrabber()
         elif TARGET_PORT == "help":
             print(cld("""
  - type 'help'     to show help
@@ -277,8 +266,7 @@ class Hunter:
 \n<by@keyjeek>  |  Follow the white rabbit...
 <contact:nomotikag33n@gmail.com>       
 [i] This Tool helps to encode and decode your text in base64.  
-[i] Type 'exit' or 'exit' to exit Base64encode.
-[i] Type 'clear' or 'clear' to clear the screen.
+[i] Type 'exit' to exit Base64encode.
 \t[1] Encoder
 \t[2] Decoder
 \t[x] Exit 
@@ -301,9 +289,6 @@ class Hunter:
                         print(cld("Invalid input!", "red"))
                         input("Press any key ...")
                         return chse()        
-                elif HASH == "clear":
-                    os.system('clear')
-                    return Hunter.base64encode()
                         
                 M_BYTES = HASH.encode('ascii')
                 B64_E = base64.b64encode(M_BYTES)
@@ -317,9 +302,7 @@ class Hunter:
                     if B64_VAL == 'exit':
                         print(cld("Exit", "red"))
                         return Hunter()   
-                    elif B64_VAL == 'clear':
-                        os.system('clear')
-                        return b64_decrypt() 
+
                     B64_D = B64_VAL.encode('ascii')
                     M_BYTE = base64.b64decode(B64_D)
                     RESULT = M_BYTE.decode('ascii')
@@ -335,8 +318,7 @@ class Hunter:
 \n<by@keyjeek>  |  Follow the white rabbit...
 <contact:nomotikag33n@gmail.com>       
 [i] This Tool helps to find out some informations about a phonenumber. 
-[i] Type 'exit' or 'exit' to exit PhoneStalk.
-[i] Type 'clear' or 'clear' to clear the screen.
+[i] Type 'exit' to exit PhoneStalk.
             """)
 
             while True:
@@ -346,9 +328,6 @@ class Hunter:
                 if TARGET_NUMBER == "exit":
                     print(cld("Exit", "red"))
                     return Hunter()    
-                elif TARGET_NUMBER == "clear":
-                    os.system('clear')
-                    return Hunter()
                 elif TARGET_NUMBER == "help":
                     print(cld("""
  HELP; WhoAreYou
