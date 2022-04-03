@@ -166,7 +166,7 @@ class Hunter:
             def decrypt():
                 question_brute = input("Decrypt/Bruteforce the value? y/n: ")
                 if question_brute == "y":
-                    print("USE THIS LINK: https://www.md5online.org/md5-decrypt.html ")## This program is using a big database to bruteforce the hash for you
+                    print("USE THIS LINK: https://www.md5online.org/md5-decrypt.html ") # This program is using a big database to bruteforce the hash for you
                     input("Press any key ...")
                     return Hunter()     
                 elif question_brute == "n":
