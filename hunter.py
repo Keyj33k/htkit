@@ -344,7 +344,6 @@ class Hunter:
                 
                 print(chr(0xa))
                 time_start = dtt.now()
-
                 print("Request\t\tResponse\n------------------------------------\n")
                     
                 try:
