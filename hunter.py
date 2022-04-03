@@ -21,7 +21,7 @@ import os
 #   Twitter :   @keyjeek                  #
 #   Github  :   @keyj33k                  #
 #   Insta   :   @keyjeek                  #
-#   Version :   1.0.4                     #
+#   Version :   1.0.6                     #
 #                                         #
 # # # # # # # # # # # # # # # # # # # # # # 
 
