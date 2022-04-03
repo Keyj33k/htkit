@@ -217,7 +217,6 @@ class Hunter:
         ipeye()
 
     def bannerGrabber():
-
         import socket
         bg_banner = pfgt.figlet_format("Banner-Grabber", font = "banner3-D")
         print(f"""\n{bg_banner} 
@@ -225,8 +224,13 @@ class Hunter:
 <contact:nomotikag33n@gmail.com>  
 [i] Type 'exit' or 'exit' to exit banner grabber.
         """, "cyan")
+        global TARGET_PORT
         TARGET_ADDR = input("Target: ")
-        TARGET_PORT = input("Port: ")
+        try:
+            TARGET_PORT = int(input("Port: "))
+        except ValueError:
+            print(cld("You need to enter an integer!", "red"))
+            input("Press any key ...")
 
         if TARGET_PORT == "exit":
             print(cld("Exiting ...", "red"))
@@ -246,8 +250,8 @@ class Hunter:
 
         try:
             socket_sock = socket.socket()
-            socket_sock.connect((TARGET_ADDR, int(TARGET_PORT)))
-            print(cld("Result: ", "yellow"))
+            socket_sock.connect((TARGET_ADDR, TARGET_PORT))
+            print(cld("Getting Banner ... ", "yellow"))
             print(socket_sock.recv(1024))
             timestop = dtt.now()
             time_result = timestop - timestart
@@ -272,8 +276,7 @@ class Hunter:
 \t[x] Exit 
         """)
                
-        def chse():
-            
+        def chse():  
             CHOICE = input("Choice: ")
             if CHOICE == "1":
                 HASH = input("Text: ") 
@@ -385,9 +388,9 @@ if __name__ == "__main__":
 
             Hunter.banner()
             Hunter.menu()
+            global CHOICE
 
             try:
-                global CHOICE
                 CHOICE = int(input("Choice ~#: "))
             except ValueError:
                 print(cld("You need to enter an integer!", "red"))
