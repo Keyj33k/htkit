@@ -1,16 +1,5 @@
 #!/usr/bin/env python3
 
-# # # # # # # # # # # # # # # # # # # # # #
-#                                         #
-#   Author  :   Keyj33k                   #
-#   Contact :   nomotikag33n@gmail.com    #
-#   Twitter :   @keyjeek                  #
-#   Github  :   @keyj33k                  #
-#   Insta   :   @keyjeek                  #
-#   Version :   1.0.4                     #
-#                                         #
-# # # # # # # # # # # # # # # # # # # # # # 
-
 from phonenumbers import timezone as tz
 from phonenumbers import geocoder as gc
 from phonenumbers import carrier as cr
@@ -24,6 +13,17 @@ import base64
 import time
 import sys
 import os
+
+# # # # # # # # # # # # # # # # # # # # # #
+#                                         #
+#   Author  :   Keyj33k                   #
+#   Contact :   nomotikag33n@gmail.com    #
+#   Twitter :   @keyjeek                  #
+#   Github  :   @keyj33k                  #
+#   Insta   :   @keyjeek                  #
+#   Version :   1.0.4                     #
+#                                         #
+# # # # # # # # # # # # # # # # # # # # # # 
 
 class Hunter:
 
