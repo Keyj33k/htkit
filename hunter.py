@@ -152,8 +152,7 @@ class Hunter:
         def md5():
             print(chr(0xa))
             def encrypt(): 
-                HASHVAL = input("Text: ")
-                            
+                HASHVAL = input("Text: ")           
                 if HASHVAL == "exit":
                     print(cld("Exit", "red"))
                     return Hunter()    
@@ -169,7 +168,6 @@ class Hunter:
                     
             def decrypt():
                 question_brute = input("Decrypt/Bruteforce the value? y/n: ")
-                            
                 if question_brute == "y":
                     print("USE THIS LINK: https://www.md5online.org/md5-decrypt.html ")## This program is using a big database to bruteforce the hash for you
                     input("Press any key ...")
@@ -192,8 +190,7 @@ class Hunter:
             """)
                 
             print(chr(0xa))
-            SCANNER = input("IPEye Target: ")
-                        
+            SCANNER = input("IPEye Target: ")           
             if SCANNER == "exit":
                 print(cld("Exiting ...", "red"))
                 return Hunter()      
@@ -218,8 +215,7 @@ class Hunter:
                     print(k,j)
 
             timestop = dtt.now()
-            time_result = timestop - timestart
-                                
+            time_result = timestop - timestart              
             print(chr(0xa))
             print(f"Scanner done in {time_result}!")
             print(chr(0xa))
@@ -293,10 +289,8 @@ class Hunter:
             CHOICE = input("Choice: ")
             if CHOICE == "1":
                 HASH = input("Text: ") 
-
                 if HASH == "exit":
                     EXIT_CHOICE = input("Exit? y/n ")
-                    
                     if EXIT_CHOICE == "y":
                         print(cld("Exit", "red"))
                         time.sleep(1.25)
@@ -319,16 +313,13 @@ class Hunter:
                      
             elif CHOICE == '2':
                 def b64_decrypt():
-                    
-                    B64_VAL = input("Hash: ")
-                              
+                    B64_VAL = input("Hash: ")     
                     if B64_VAL == 'exit':
                         print(cld("Exit", "red"))
                         return Hunter()   
                     elif B64_VAL == 'clear':
                         os.system('clear')
-                        return b64_decrypt()
-                           
+                        return b64_decrypt() 
                     B64_D = B64_VAL.encode('ascii')
                     M_BYTE = base64.b64decode(B64_D)
                     RESULT = M_BYTE.decode('ascii')
