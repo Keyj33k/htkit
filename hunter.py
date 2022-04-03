@@ -68,42 +68,40 @@ class Hunter:
 
         import nmap
         import re
-
-        IP_COMPILE = re.compile("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
-        global PORT_MAX
+        ip_compile = re.compile("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
+        global port_max
         
         try:
-            PORT_MAX = int(input("Max. Port: "))
-            # PORT_MAX = 65535
+            port_max = int(input("Max. Port ~#: "))
+            # port_max = 65535
         except ValueError:
             print(cld("You need to enter an integer!", "red"))
-            input("Press any key ...")
+            input("\nPress any key ...")
             return Hunter.witcher()
 
-        PORT_MIN = 0
-        TARGET_ADDR = input("Address(Type 'exit' to exit witcher): ")
+        port_min = 0
+        target_address = input("Address(Type 'exit' to exit witcher) ~#: ")
 
-        if TARGET_ADDR == "exit":
+        if target_address == "exit":
             print(cld("Exiting ..."))
             return Hunter()
-        elif IP_COMPILE.search(TARGET_ADDR):
-            print(f"{TARGET_ADDR} is valid.")
+        elif ip_compile.search(target_address):
+            print(f"{target_address} is valid.")
             print("Scanning ...")
 
         timestart = dtt.now()
-        SCANNER = nmap.PortScanner()
+        scanner = nmap.PortScanner()
 
-        for ATTACK in range(PORT_MIN, PORT_MAX + 1):
+        for attack in range(port_min, port_max + 1):
             try:
-                OUTPUT = SCANNER.scan(TARGET_ADDR, str(ATTACK))
-                STATUS = (OUTPUT['scan'][TARGET_ADDR]['tcp'][ATTACK]['state'])
-                print(f"Port: {ATTACK} Status: {STATUS}")
-                    
+                output = scanner.scan(target_address, str(attack))
+                status = (output['scan'][target_address]['tcp'][attack]['state'])
+                print(f"Port: {attack} Status: {status}")
             except KeyboardInterrupt:
                 import time
-                print(cld("\nCtrl+C pressed. Exiting ...", "red"))
-                time.sleep(1.25)
-                print(cld("Witcher done!", "cyan"))
+                print(cld("\nCtrl+C pressed ...", "red"))
+                time.sleep(0.5)
+                print(cld("\nWitcher done!", "cyan"))
                 print(chr(0xa))
                 input("Press any key ...")
                 return Hunter()
@@ -111,7 +109,7 @@ class Hunter:
         timestop = dtt.now()
         time_result = timestop - timestart
         print(f"\nJob done in {time_result}!\n")
-        input("Press any key ...")
+        input("\nPress any key ...")
 
     def subdomain_scanner():
         sds_banner = pfgt.figlet_format("Sub- domain- Scanner", font = "banner3-D")
@@ -120,15 +118,15 @@ class Hunter:
 <contact:nomotikag33n@gmail.com> 
         """)
         
-        FOUND_SD = []
-        TARGET_ADDR = input("Target: ")
+        found_subdomain = []
+        target_address = input("Target ~#: ")
 
         with open("subdomains.txt") as FILE:
-            READFILE = FILE.read()
-            SUBDOMAIN = READFILE.splitlines()
+            read_file = FILE.read()
+            SUBDOMAIN = read_file.splitlines()
 
-            for LIST_DOMAINS in SUBDOMAIN:
-                UniformResourceLocator = f"http://{LIST_DOMAINS}.{TARGET_ADDR}"
+            for list_domains in SUBDOMAIN:
+                UniformResourceLocator = f"http://{list_domains}.{target_address}"
 
                 try:
                     import requests
@@ -138,7 +136,7 @@ class Hunter:
                     print(colored("Not available!", "red"))
                 else:
                     print("Discovered:", UniformResourceLocator)
-                    FOUND_SD.append(UniformResourceLocator)
+                    found_subdomain.append(UniformResourceLocator)
 
     def md5encrypt():
         md5_banner = pfgt.figlet_format("MD5C", font = "banner3-D")
@@ -151,22 +149,28 @@ class Hunter:
         def md5():
             print(chr(0xa))
             def encrypt(): 
-                HASHVAL = input("Text: ")           
-                if HASHVAL == "exit":
+                hash_value = input("Text ~#: ")           
+                if hash_value == "exit":
                     print(cld("Exit", "red"))
                     return Hunter()    
-    
-                result = hashlib.md5(HASHVAL.encode())
-                print("Result: ", end ="")
-                print(result.hexdigest())
-                return Hunter()         
+                try:
+                    result = hashlib.md5(hash_value.encode())
+                    print("Result: ", end ="")
+                    print(result.hexdigest())
+                    input("\nPress any key ...")
+                    return Hunter()         
+                except Exception as error:
+                    print(cld(f"An error was defined! {error}", "red"))
+                    input("\nPress any key ...")
+                    os.system('clear')
+                    return Hunter()
             encrypt()
                     
             def decrypt():
-                question_brute = input("Decrypt/Bruteforce the value? y/n: ")
+                question_brute = input("Decrypt/Bruteforce the value? y/n ~#: ")
                 if question_brute == "y":
                     print("USE THIS LINK: https://www.md5online.org/md5-decrypt.html ") # This program is using a big database to bruteforce the hash for you
-                    input("Press any key ...")
+                    input("\nPress any key ...")
                     return Hunter()     
                 elif question_brute == "n":
                     return Hunter()
@@ -185,25 +189,25 @@ class Hunter:
             """)
                 
             print(chr(0xa))
-            SCANNER = input("IPEye Target: ")           
-            if SCANNER == "exit":
+            ipeye_scanner = input("IPEye Target ~#: ")           
+            if ipeye_scanner == "exit":
                 print(cld("Exiting ...", "red"))
                 return Hunter()      
 
             timestart = dtt.now()
 
             try:
-                response = requests.post("http://ip-api.com/batch", json=[{"query":SCANNER}]).json()   
-            except Exception:
-                print(cld("An error was defined!", "red"))
-                input("Press any key ...")
+                response = requests.post("http://ip-api.com/batch", json=[{"query":ipeye_scanner}]).json()   
+            except Exception as error:
+                print(cld(f"An error was defined! {error}", "red"))
+                input("\nPress any key ...")
                 os.system('clear')
                 return Hunter()
                         
             os.system('clear')
                     
-            for LOOKUP in response:
-                for k, j in LOOKUP.items():
+            for lookup in response:
+                for k, j in lookup.items():
                     print(k,j)
 
             timestop = dtt.now()
@@ -223,25 +227,25 @@ class Hunter:
 <contact:nomotikag33n@gmail.com>  
 [i] Type 'exit' or 'exit' to exit banner grabber.
         """, "cyan")
-        global TARGET_PORT
-        TARGET_ADDR = input("Target: ")
+        global target_port
+        target_address = input("Target ~#: ")
+
         try:
-            TARGET_PORT = int(input("Port: "))
+            target_port = int(input("Port ~#: "))
         except ValueError:
             print(cld("You need to enter an integer!", "red"))
-            input("Press any key ...")
+            input("\nPress any key ...")
 
-        if TARGET_PORT == "exit":
+        if target_port == "exit":
             print(cld("Exiting ...", "red"))
-            time.sleep(1.25)
+            time.sleep(0.75)
             return Hunter
-        elif TARGET_PORT == "help":
+        elif target_port == "help":
             print(cld("""
  - type 'help'     to show help
  ------------------------------------------
  - type 'exit'     to exit the Banner Grabber
- - type 'clear'    to clear the screen
-                    
+ - type 'clear'    to clear the screen\n 
             """, "yellow"))
             return Hunter.bannerGrabber()
 
@@ -249,22 +253,22 @@ class Hunter:
 
         try:
             socket_sock = socket.socket()
-            socket_sock.connect((TARGET_ADDR, TARGET_PORT))
+            socket_sock.connect((target_address, target_port))
             print(cld("Getting Banner ... ", "yellow"))
             print(socket_sock.recv(1024))
             timestop = dtt.now()
             time_result = timestop - timestart
             print(f"\nJob done in {time_result}!\n")
-            input("Press any key ...")
+            input("\nPress any key ...")
             return Hunter.bannerGrabber()
-        except Exception as ERROR:
+        except Exception as error:
             print(cld("Connection failed due to an error:", "red"))
-            print(ERROR)
-            time.sleep(1.25)
+            print(cld(error, "red"))
+            time.sleep(0.75)
             return Hunter.bannerGrabber()
 
     def base64encode():   
-        b64_banner = pfgt.figlet_format("B64CRYPT", font = "banner3-D")
+        b64_banner = pfgt.figlet_format("B64-  CRYPT", font = "banner3-D")
         print(f"""\n{b64_banner} 
 \n<by@keyjeek>  |  Follow the white rabbit...
 <contact:nomotikag33n@gmail.com>       
@@ -275,43 +279,40 @@ class Hunter:
 \t[x] Exit 
         """)
                
-        def chse():  
-            CHOICE = input("Choice: ")
-            if CHOICE == "1":
-                HASH = input("Text: ") 
-                if HASH == "exit":
-                    EXIT_CHOICE = input("Exit? y/n ")
-                    if EXIT_CHOICE == "y":
-                        print(cld("Exit", "red"))
-                        time.sleep(1.25)
-                        return Hunter() 
-                    elif EXIT_CHOICE == "n":
-                        return chse()    
-                    else:
-                        print(cld("Invalid input!", "red"))
-                        input("Press any key ...")
-                        return chse()        
-                        
-                M_BYTES = HASH.encode('ascii')
-                B64_E = base64.b64encode(M_BYTES)
-                B64_HASH = B64_E.decode('ascii')
-                print(B64_HASH)
-                return chse()  
-                     
-            elif CHOICE == '2':
-                def b64_decrypt():
-                    B64_VAL = input("Hash: ")     
-                    if B64_VAL == 'exit':
-                        print(cld("Exit", "red"))
-                        return Hunter()   
+        choice = input("Choice ~#: ")
+        if choice == "1":
+            hash_value = input("Text: ") 
+            if hash_value == "exit":
+                return Hunter()     
 
-                    B64_D = B64_VAL.encode('ascii')
-                    M_BYTE = base64.b64decode(B64_D)
-                    RESULT = M_BYTE.decode('ascii')
-                    print(RESULT)
-                    return chse()   
-                b64_decrypt()
-        chse()
+            try:    
+                m_bytes = hash_value.encode('ascii')
+                b64_e = base64.b64encode(m_bytes)
+                b64_hash = b64_e.decode('ascii')
+                print(b64_hash)
+                input("\nPress any key ...")
+                return Hunter.base64encode()  
+            except Exception as error:
+                print(cld(f"An error was defined: {error}"))
+                input("\nPress any key ...")
+                return Hunter.base64encode()
+                     
+        elif choice == '2':
+            decode_hash = input("Hash ~#: ")     
+            if decode_hash == 'exit':
+                print(cld("Exit", "red"))
+                return Hunter()   
+            try:
+                b64_d = decode_hash.encode('ascii')
+                m_byte = base64.b64decode(b64_d)
+                result = m_byte.decode('ascii')
+                print(result)
+                input("\nPress any key ...")
+                return Hunter.base64encode()   
+            except Exception as error:
+                print(cld(f"An error was defined: {error}"))
+                input("\nPress any key ...")
+                return Hunter.base64encode()
 
     def number_tracker():
         def PhoneStalk():
@@ -325,18 +326,18 @@ class Hunter:
 
             while True:
                 print(chr(0xa))
-                TARGET_NUMBER = input('PhoneStalk Target: ')
+                target_phonenumber = input('PhoneStalk Target ~#: ')
                         
-                if TARGET_NUMBER == "exit":
+                if target_phonenumber == "exit":
                     print(cld("Exit", "red"))
                     return Hunter()    
-                elif TARGET_NUMBER == "help":
+                elif target_phonenumber == "help":
                     print(cld("""
  HELP; WhoAreYou
 < ============= >
 'exit'        Return Menu / Exit WhoAreYou
 'clear'       Clear Screen             
-                """, "yellow"))
+                    """, "yellow"))
                     print(chr(0xa))
                     input("Press any key ...")
                     return Hunter()
@@ -345,31 +346,22 @@ class Hunter:
                 timestart = dtt.now()
                     
                 try:
-                    VALID_CHECK = pnmb.parse(TARGET_NUMBER)
+                    VALID_CHECK = pnmb.parse(target_phonenumber)
                     IS_VALID = pnmb.is_valid_number(VALID_CHECK)
                     print(cld("Validation:", "yellow"))
-                    print(IS_VALID)
-                    print(chr(0xa))
-                            
+                    print(IS_VALID) 
                     print(cld("Timezone:", "yellow"))
-                    TIMEZONE = pnmb.parse(TARGET_NUMBER, "en")
+                    TIMEZONE = pnmb.parse(target_phonenumber, "en")
                     print(tz.time_zones_for_number(TIMEZONE))
-                    print(chr(0xa))
-                            
                     print(cld("Location:", "yellow"))
-                    LOCATION = pnmb.parse(TARGET_NUMBER, "CH")
+                    LOCATION = pnmb.parse(target_phonenumber, "CH")
                     print(gc.description_for_number(LOCATION, "en"))
-                    print(chr(0xa))
-
                     print(cld("Provider:", "yellow"))
-                    PROVIDER = pnmb.parse(TARGET_NUMBER, "RO")
+                    PROVIDER = pnmb.parse(target_phonenumber, "RO")
                     print(cr.name_for_number(PROVIDER, "en"))
-                    print(chr(0xa))
-
                     timestop = dtt.now()
                     time_result = timestop - timestart
-                    print(f"Job done in {time_result}")
-                            
+                    print(f"Job done in {time_result}")        
                 except Exception as error:
                     print(cld("[i] AN ERROR WAS DEFINED !", "red"))
                     print(cld(error, "red"))
@@ -377,7 +369,7 @@ class Hunter:
                     return Hunter()
                         
                 print(chr(0xa))
-                input('Press any key ...')
+                input("Press any key ...")
                 return Hunter()
         PhoneStalk()   
 
@@ -387,39 +379,39 @@ if __name__ == "__main__":
 
             Hunter.banner()
             Hunter.menu()
-            global CHOICE
+            global hunter_choice
 
             try:
-                CHOICE = int(input("Choice ~#: "))
+                hunter_choice = int(input("Choice ~#: "))
             except ValueError:
                 print(cld("You need to enter an integer!", "red"))
-                input("Press any key ...")
+                input("\nPress any key ...")
                 return hunter_main()
 
-            if CHOICE == 1:
+            if hunter_choice == 1:
                 Hunter.witcher()
-            elif CHOICE == 2:
+            elif hunter_choice == 2:
                 Hunter.md5encrypt()
-            elif CHOICE == 3:
+            elif hunter_choice == 3:
                 Hunter.eye_main()
-            elif CHOICE == 4:
+            elif hunter_choice == 4:
                 Hunter.bannerGrabber()
-            elif CHOICE == 5:
+            elif hunter_choice == 5:
                 Hunter.base64encode()
-            elif CHOICE == 6:
+            elif hunter_choice == 6:
                 Hunter.number_tracker()
-            elif CHOICE == 7:
+            elif hunter_choice == 7:
                 try:
                     Hunter.subdomain_scanner()
                 except KeyboardInterrupt:
                     print(cld("\nCtrl+C pressed, Exiting ...", "red"))
-                    input("Press any key ...")
+                    input("\nPress any key ...")
                     return hunter_main()
-            elif CHOICE == 0:
+            elif hunter_choice == 0:
                 print(cld("Exiting ...", "red"))
                 sys.exit(0)
             else:
                 print(cld("Invalid Input!", "red"))
-                input("Press any key ...")
+                input("\nPress any key ...")
                 return hunter_main()
     hunter_main()
