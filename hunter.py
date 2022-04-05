@@ -66,7 +66,7 @@ class Hunter:
 [i] Witcher is a simple port scanner.  
                 """)
 
-        import nmap
+        import nmap # you need nmap installed
         import re
         ip_compile = re.compile("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
         global port_max
