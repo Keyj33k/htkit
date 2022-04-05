@@ -28,7 +28,6 @@ import os
 class Hunter:
 
     def banner(): 
-        os.system('clear')
         print(cld("""
     █    █                 █
     █    █                 █
@@ -48,6 +47,7 @@ class Hunter:
 
     def menu():
         print(cld("""
+    [0] Clear Screen
     [1] Witcher
     [2] MD5Crypt
     [3] IPEye
@@ -55,60 +55,59 @@ class Hunter:
     [5] B64Crypt
     [6] PhoneStalk
     [7] SubdomainScanner
-    [0] Exit
+    [99] Exit
         """, "yellow"))
 
     def witcher():  
-        w_banner = pfgt.figlet_format("Witcher", font = "banner3-D")
-        print(f"""\n{w_banner}
-\n<by@keyjeek>  |  Follow the white rabbit...
-<contact:nomotikag33n@gmail.com>      
-[i] Witcher is a simple port scanner.  
-                """)
+        import socket
+        print(chr(0xa))
+        witcher_banner = pfgt.figlet_format("welcome", font="banner3-D")
+        print(cld(witcher_banner, "cyan"))
+        import time
+        time.sleep(1.05)
 
-        import nmap # you need nmap installed
-        import re
-        ip_compile = re.compile("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
-        global port_max
-        
+        os.system("clear")
+        witcher_banner = pfgt.figlet_format("witcher", font="banner3-D")
+        print(cld(witcher_banner, "cyan"))
+        print("*" * 18, "A python portscanner project ...", "*" * 18)
+        print("*" * 24, " *writtenby@Keyj33k ", "*" * 24)
+
         try:
-            port_max = int(input("Max. Port ~#: "))
-            # port_max = 65535
-        except ValueError:
-            print(cld("You need to enter an integer!", "red"))
-            input("\nPress any key ...")
-            return Hunter.witcher()
-
-        port_min = 0
-        target_address = input("Address(Type 'exit' to exit witcher) ~#: ")
-
-        if target_address == "exit":
-            print(cld("Exiting ..."))
-            return Hunter()
-        elif ip_compile.search(target_address):
-            print(f"{target_address} is valid.")
-            print("Scanning ...")
-
-        time_start = dtt.now()
-        nmap_scanner = nmap.PortScanner()
-
-        for attack in range(port_min, port_max + 1):
-            try:
-                output = nmap_scanner.scan(target_address, str(attack))
-                status = (output['scan'][target_address]['tcp'][attack]['state'])
-                print(f"Port: {attack} Status: {status}")
-            except KeyboardInterrupt:
-                import time
-                print(cld("\nCtrl+C pressed ...", "red"))
-                time.sleep(0.5)
-                print(cld("\nWitcher done!", "cyan"))
-                print(chr(0xa))
-                input("Press any key ...")
+            print(cld("\nTarget:", "yellow"))
+            target_address = input()
+            if target_address == "exit":
                 return Hunter()
+        except ValueError:
+            print(cld("\nYou need to enter a string!", "red"))
+            input("\nPress any key ...")
 
-        time_stop = dtt.now()
-        time_result = time_stop - time_start
-        print(f"\nJob done in {time_result}!\n")
+        print("-" * 70)
+        scan_start = dtt.now()
+        print(cld(f"Started scanning at:\t\t\t{scan_start}", "green"))
+        print("-" * 70)
+        time_start = dtt.now()
+
+        try:
+            for target in range(1, 65535):
+                socket_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
+                socket_sock.settimeout(1) 
+
+                final_result = socket_sock.connect_ex((target_address, target)) 
+                if final_result == 0: 
+                    print(cld("Port\t{}\t\t\t\t\t   open".format(target)))
+                socket_sock.close() 
+
+        except socket.error as socket_error:
+            print(cld(socket_error, "red"))
+
+        except KeyboardInterrupt:
+            print(cld("\nCtrl+C pressed. Exit.", "red"))
+            return Hunter()
+
+        time_stop = dtt.now() 
+        needed_time = time_stop - time_start
+        print("-" * 70)
+        print(cld(f"\nScanner done in {needed_time}!", "green"))
         input("\nPress any key ...")
 
     def subdomain_scanner():
@@ -412,10 +411,13 @@ if __name__ == "__main__":
                     print(cld("\nCtrl+C pressed, Exiting ...", "red"))
                     input("\nPress any key ...")
                     return hunter_main()
-            elif hunter_choice == 0:
+            elif hunter_choice == 99:
                 ex_banner = pfgt.figlet_format("Exit", font = "digital")
                 print(cld(ex_banner, "red"))
                 sys.exit(0)
+            elif hunter_choice == 0:
+                os.system("clear")
+                return hunter_main()
             else:
                 print(cld("Invalid Input!", "red"))
                 input("\nPress any key ...")
