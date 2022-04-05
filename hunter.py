@@ -405,12 +405,14 @@ if __name__ == "__main__":
             elif hunter_choice == 6:
                 Hunter.number_tracker()
             elif hunter_choice == 7:
+                
                 try:
                     Hunter.subdomain_scanner()
                 except KeyboardInterrupt:
                     print(cld("\nCtrl+C pressed, Exiting ...", "red"))
                     input("\nPress any key ...")
                     return hunter_main()
+                
             elif hunter_choice == 99:
                 ex_banner = pfgt.figlet_format("Exit", font = "digital")
                 print(cld(ex_banner, "red"))
