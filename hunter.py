@@ -73,7 +73,7 @@ class Hunter:
         print("*" * 24, " *writtenby@Keyj33k ", "*" * 24)
 
         try:
-            print(cld("\nTarget:", "yellow"))
+            print(cld("\nTarget ~#:", "yellow"))
             target_address = input()
             if target_address == "exit":
                 return Hunter()
@@ -239,12 +239,12 @@ class Hunter:
         email = links[2]
 
         while True:
-            print(cld("\n[*] Target (Type 'exit' to exit banner grabber):", "yellow"))
+            print(cld("\n[*] Target (Type 'exit' to exit banner grabber) ~#:", "yellow"))
             target_host = input()
             if target_host == "exit":
                 os.system("clear")
                 return Hunter()
-            print(cld("[*] Port (Type 'exit' to exit banner grabber):", "yellow"))
+            print(cld("[*] Port (Type 'exit' to exit banner grabber) ~#:", "yellow"))
             target_port = input()
             if target_port == "exit":
                 os.system("clear")
@@ -301,7 +301,7 @@ class Hunter:
                
         choice = input("Choice ~#: ")
         if choice == "1":
-            hash_value = input("Text: ") 
+            hash_value = input("Text ~#: ") 
             if hash_value == "exit":
                 return Hunter()     
 
