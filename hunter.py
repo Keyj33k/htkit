@@ -205,8 +205,6 @@ class Hunter:
                 input("\nPress any key ...")
                 os.system('clear')
                 return Hunter()
-                        
-            os.system('clear')
                     
             for lookup in response:
                 for k, j in lookup.items():
