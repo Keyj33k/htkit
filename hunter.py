@@ -94,7 +94,7 @@ class Hunter:
 
                 final_result = socket_sock.connect_ex((target_address, target)) 
                 if final_result == 0: 
-                    print(cld("Port\t{}\t\t\t\t\t   open".format(target)))
+                    print("Port\t{}\t\t\t\t\t   open".format(target))
                 socket_sock.close() 
 
         except socket.error as socket_error:
