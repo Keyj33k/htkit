@@ -108,7 +108,8 @@ class Hunter:
         needed_time = time_stop - time_start
         print("-" * 70)
         print(cld(f"\nScanner done in {needed_time}!", "green"))
-        input("\nPress any key ...")
+        print(chr(0xa))
+        input("Press any key ...")
 
     def subdomain_scanner():
         sds_banner = pfgt.figlet_format("Sub- domain- Scanner", font = "banner3-D")
@@ -277,8 +278,9 @@ class Hunter:
                 time_result = time_end - time_start
                 print(cld(f" Job done in:{tab3}{time_result}", "green"))
                 print(line)
-
-                input("\nPress any key ...")
+                
+                print(chr(0xa))
+                input("Press any key ...")
 
             except socket.error as sock_err:
                 os.system("clear")
