@@ -222,53 +222,70 @@ class Hunter:
         
         ipeye()
 
-    def bannerGrabber():
-        import socket
-        bg_banner = pfgt.figlet_format("Banner-Grabber", font = "banner3-D")
-        print(f"""\n{bg_banner} 
-\n<by@keyjeek>  |  Follow the white rabbit...
-<contact:nomotikag33n@gmail.com>  
-[i] Type 'exit' or 'exit' to exit banner grabber.
-        """, "cyan")
-        global target_port
-        target_address = input("Target ~#: ")
+    def banner_grabber():
+        import socket 
 
-        try:
-            target_port = int(input("Port ~#: "))
-        except ValueError:
-            print(cld("You need to enter an integer!", "red"))
-            input("\nPress any key ...")
+        tab2 = "\t" * 2
+        tab3 = "\t" * 3
+        line = "--" * 42
 
-        if target_port == "exit":
-            print(cld("Exiting ...", "red"))
-            time.sleep(0.75)
-            return Hunter
-        elif target_port == "help":
-            print(cld("""
- - type 'help'     to show help
- ------------------------------------------
- - type 'exit'     to exit the Banner Grabber
- - type 'clear'    to clear the screen\n 
-            """, "yellow"))
-            return Hunter.bannerGrabber()
+        info_array = ["@Keyj33k", "1.0.1", "06.04.22", "Python3"]
+        links = ["https://github.com/Keyj33k", "https://www.instagram.com/keyjeek/", "nomotikag33n@gmail.com"]
+        author_name = info_array[0]
+        version_num = info_array[1]
+        written_on = info_array[2]
+        progr_lang = info_array[3]
+        instagram = links[1]
+        github = links[0]
+        email = links[2]
 
-        time_start = dtt.now()
+        while True:
+            print(cld("\n[*] Target (Type 'exit' to exit banner grabber):", "yellow"))
+            target_host = input()
+            if target_host == "exit":
+                os.system("clear")
+                return Hunter()
+            print(cld("[*] Port (Type 'exit' to exit banner grabber):", "yellow"))
+            target_port = input()
+            if target_port == "exit":
+                os.system("clear")
+                return Hunter()
 
-        try:
-            socket_sock = socket.socket()
-            socket_sock.connect((target_address, target_port))
-            print(cld("Getting Banner ... ", "yellow"))
-            print(socket_sock.recv(1024))
-            time_stop = dtt.now()
-            time_result = time_stop - time_start
-            print(f"\nJob done in {time_result}!\n")
-            input("\nPress any key ...")
-            return Hunter.bannerGrabber()
-        except Exception as error:
-            print(cld("Connection failed due to an error:", "red"))
-            print(cld(error, "red"))
-            time.sleep(0.75)
-            return Hunter.bannerGrabber()
+            try:
+                socket_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                socket_sock.connect_ex((str(target_host), int(target_port)))
+                banner_result = socket_sock.recv(1024)
+                time_start = dtt.now()
+                bannergrab_banner = pfgt.figlet_format("Banner Grabber", font="alligator")
+                print(cld(bannergrab_banner, "cyan"))
+                print(line) 
+
+                print(cld(f"""
+    Auth.:\t{author_name}{tab2}Github: {github}
+    Date :\t{written_on}{tab2}Instagram: {instagram}
+    Lang.:\t{progr_lang}{tab3}Email: {email}
+    Vers.:\t{version_num}
+                """, "magenta"))
+
+                print(line) 
+                print(cld(f" Started at:{tab3}{time_start}", "yellow"))
+                print(line + "\n")
+                print(cld(f" Target Host:{tab3}{target_host}"))
+                print(cld(f" Target Port:{tab3}{target_port}"))
+                print(cld(f"\n Result:{tab3}{banner_result}", "green"))
+                print("\n" + line)
+
+                time_end = dtt.now()
+                time_result = time_end - time_start
+                print(cld(f" Job done in:{tab3}{time_result}", "green"))
+                print(line)
+
+                input("\nPress any key ...")
+
+            except socket.error as sock_err:
+                os.system("clear")
+                print(cld(f"\nAn error was defined: {sock_err}", "red"))
+                return Hunter.banner_grabber()
 
     def base64encode():   
         b64_banner = pfgt.figlet_format("B64-  CRYPT", font = "banner3-D")
@@ -399,7 +416,7 @@ if __name__ == "__main__":
             elif hunter_choice == 3:
                 Hunter.eye_main()
             elif hunter_choice == 4:
-                Hunter.bannerGrabber()
+                Hunter.banner_grabber()
             elif hunter_choice == 5:
                 Hunter.base64encode()
             elif hunter_choice == 6:
