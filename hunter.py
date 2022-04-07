@@ -415,7 +415,6 @@ if __name__ == "__main__":
 
     def hunter_main():
         while True:
-
             Hunter.banner()
             Hunter.menu()
             global hunter_choice
