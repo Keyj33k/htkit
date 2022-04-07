@@ -394,6 +394,25 @@ class Hunter:
         PhoneStalk()   
 
 if __name__ == "__main__":
+    def start():
+        os.system("clear")
+        time_now = dtt.now()
+        username = os.getlogin()
+        print(cld(f"Welcome {username}. Today is the {time_now}", "yellow"))
+        time.sleep(1.25)
+        start_hunter = input("\nDo you want to start hunter? y/n ")
+
+        if start_hunter == "y":
+            pass
+        elif start_hunter == "n":
+            sys.exit(0)
+        else:
+            print(cld("Invalid Input!", "red"))
+            input("\nPress any key ...")
+            return start()
+
+    start()
+
     def hunter_main():
         while True:
 
