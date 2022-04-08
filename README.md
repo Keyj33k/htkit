@@ -6,7 +6,7 @@
 
 ---
 
-- The hunter-toolkit is a python project for information gathering and en-/decryption with b64 and md5.
+- The hunter-toolkit is a python project for information gathering and en-/decryption using b64 and md5.
 
 Witcher
 -------------------------------------------------------------------
