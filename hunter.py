@@ -74,7 +74,7 @@ class Hunter:
         try:
             print(cld("\nTarget ~#:", "yellow"))
             target_address = input()
-            if target_address == "exit":
+            if target_address == 'exit' or target_address == 'x':
                 return Hunter()
         except ValueError:
             print(cld("\nYou need to enter a string!", "red"))
@@ -149,7 +149,7 @@ class Hunter:
             print(chr(0xa))
             def encrypt(): 
                 hash_value = input("Text ~#: ")           
-                if hash_value == "exit":
+                if hash_value == 'exit' or hash_value == 'x':
                     print(cld("Exit", "red"))
                     return Hunter()    
                 try:
@@ -168,11 +168,11 @@ class Hunter:
                     
             def decrypt():
                 question_brute = input("Decrypt/Bruteforce the value? y/n ~#: ")
-                if question_brute == "y":
+                if question_brute == 'y' or question_brute == 'Y':
                     print("USE THIS LINK: https://www.md5online.org/md5-decrypt.html ") # This program is using a big database to bruteforce the hash for you
                     input("\nPress any key ...")
                     return Hunter()     
-                elif question_brute == "n":
+                elif question_brute == 'n' or question_brute == 'N':
                     return Hunter()
                 
             decrypt()
@@ -192,7 +192,7 @@ class Hunter:
                 
             print(chr(0xa))
             ipeye_scanner = input("IPEye Target ~#: ")           
-            if ipeye_scanner == "exit":
+            if ipeye_scanner == 'exit' or ipeye_scanner == 'x':
                 print(cld("Exiting ...", "red"))
                 return Hunter()      
 
@@ -240,12 +240,12 @@ class Hunter:
         while True:
             print(cld("\n[*] Target (Type 'exit' to exit banner grabber) ~#:", "yellow"))
             target_host = input()
-            if target_host == "exit":
+            if target_host == 'exit' or target_host == 'x':
                 os.system("clear")
                 return Hunter()
             print(cld("[*] Port (Type 'exit' to exit banner grabber) ~#:", "yellow"))
             target_port = input()
-            if target_port == "exit":
+            if target_port == "exit" or target_host == 'x':
                 os.system("clear")
                 return Hunter()
 
@@ -301,7 +301,7 @@ class Hunter:
         choice = input("Choice ~#: ")
         if choice == "1":
             hash_value = input("Text ~#: ") 
-            if hash_value == "exit":
+            if hash_value == 'exit' or hash_value == 'x':
                 return Hunter()     
 
             try:    
@@ -318,7 +318,7 @@ class Hunter:
                      
         elif choice == '2':
             decode_hash = input("Hash ~#: ")     
-            if decode_hash == 'exit':
+            if decode_hash == 'exit' or decode_hash == 'x':
                 print(cld("Exit", "red"))
                 return Hunter()   
             try:
@@ -347,10 +347,10 @@ class Hunter:
                 print(chr(0xa))
                 target_phonenumber = input('PhoneStalk Target ~#: ')
                         
-                if target_phonenumber == "exit":
+                if target_phonenumber == 'exit' or target_phonenumber == 'x':
                     print(cld("Exit", "red"))
                     return Hunter()    
-                elif target_phonenumber == "help":
+                elif target_phonenumber == "help" or target_phonenumber == 'h':
                     print(cld("""
  HELP; WhoAreYou
 < ============= >
@@ -402,9 +402,9 @@ if __name__ == "__main__":
         time.sleep(1.25)
         start_hunter = input("\nDo you want to start hunter? y/n ")
 
-        if start_hunter == "y":
+        if start_hunter == 'y' or start_hunter == 'Y':
             pass
-        elif start_hunter == "n":
+        elif start_hunter == 'n' or start_hunter == 'N':
             sys.exit(0)
         else:
             print(cld("Invalid Input!", "red"))
