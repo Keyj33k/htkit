@@ -355,9 +355,9 @@ class Hunter:
                     return Hunter()    
                 elif target_phonenumber == "help" or target_phonenumber == 'h':
                     print(cld("""
- HELP; WhoAreYou
+ HELP; Phone-Stalk
 < ============= >
-'exit'        Return Menu / Exit WhoAreYou
+'exit'        Return Menu / Exit PhoneStalk
 'clear'       Clear Screen             
                     """, "yellow"))
                     print(chr(0xa))
@@ -366,7 +366,7 @@ class Hunter:
                 
                 print(chr(0xa))
                 time_start = dtt.now()
-                print("Request\t\tResponse\n------------------------------------\n")
+                print("Request\t\tResponse\n" + "-" * 55 + "\n")
                     
                 try:
                     valid_check = pnmb.parse(target_phonenumber)
