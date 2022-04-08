@@ -62,7 +62,6 @@ python3 hunter.py
 ![pypy](https://raw.githubusercontent.com/Keyj33k/profiles/main/profile/pypy.jpeg)
 ---
 Note:
-- you need nmap installed
 --------------------------
 - This tool is only for educational purposes. 
 - I'm not responsible for your actions. 
