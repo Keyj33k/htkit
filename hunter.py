@@ -352,9 +352,9 @@ class Hunter:
                     return Hunter()    
                 elif target_phonenumber == "help" or target_phonenumber == 'h':
                     print(cld("""
- HELP; WhoAreYou
-< ============= >
-'exit'        Return Menu / Exit WhoAreYou
+ HELP; PhoneStalk
+< =============== >
+'exit'        Return Menu / Exit PhoneStalk
 'clear'       Clear Screen             
                     """, "yellow"))
                     print(chr(0xa))
