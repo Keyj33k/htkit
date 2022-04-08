@@ -120,6 +120,9 @@ class Hunter:
         found_subdomain = []
         target_address = input("Target ~#: ")
 
+        if target_address == 'exit' or target_address == 'x':
+            return Hunter()
+
         with open("subdomains.txt") as FILE:
             read_file = FILE.read()
             SUBDOMAIN = read_file.splitlines()
@@ -352,9 +355,9 @@ class Hunter:
                     return Hunter()    
                 elif target_phonenumber == "help" or target_phonenumber == 'h':
                     print(cld("""
- HELP; PhoneStalk
-< =============== >
-'exit'        Return Menu / Exit PhoneStalk
+ HELP; WhoAreYou
+< ============= >
+'exit'        Return Menu / Exit WhoAreYou
 'clear'       Clear Screen             
                     """, "yellow"))
                     print(chr(0xa))
