@@ -22,8 +22,7 @@ IPEye
 
 Banner Grabber
 -------------------------------------------------------------------
-- A banner grabbing tool for open ports.
-
+- A banner grabbing tool for available banners behind open ports. <br>
 - You can use it in combi with the witcher portscanner.
 
 B64crypt
@@ -32,11 +31,11 @@ B64crypt
 
 PhoneStalk
 -------------------------------------------------------------------
-- A simple tool for grabbing informations about a phonenumber like location etc.
+- A simple tool for getting informations about a phonenumber.
 
 SubdomainScanner
 -------------------------------------------------------------------
-- Use this tool for finding subdomains of a website
+- Use this tool for finding subdomains of a website.
 
 ![example](https://github.com/Keyj33k/profiles/blob/main/profile/haunt.png?raw=true)
 
