@@ -34,6 +34,10 @@ PhoneStalk
 -------------------------------------------------------------------
 - A simple tool for grabbing informations about a phonenumber like location etc.
 
+SubdomainScanner
+-------------------------------------------------------------------
+- Use this tool for finding subdomains of a website
+
 ![example](https://github.com/Keyj33k/profiles/blob/main/profile/haunt.png?raw=true)
 
 USAGE of HUNTER:
