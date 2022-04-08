@@ -68,6 +68,12 @@ Note:
 - Don't hack anyone without their permissions.
 - With great force follows great responsibility.
 
+---
+  
+- Tested on 5.15.0-kali3-amd64, 5.13.0-39-genericUbuntu and Termux-7.9.227
+  
+---
+
 # Thank you
 <div id="badges">
   <a href="https://www.instagram.com/keyjeek/">
