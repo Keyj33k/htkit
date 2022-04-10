@@ -74,8 +74,10 @@ class Hunter:
         try:
             print(cld("\nTarget ~#:", "yellow"))
             target_address = input()
+            
             if target_address == 'exit' or target_address == 'x':
                 return Hunter()
+            
         except ValueError:
             print(cld("\nYou need to enter a string!", "red"))
             input("\nPress any key ...")
