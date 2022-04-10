@@ -90,8 +90,8 @@ class Hunter:
             for target in range(1, 65535):
                 socket_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
                 socket_sock.settimeout(1) 
-
                 final_result = socket_sock.connect_ex((target_address, target)) 
+                
                 if final_result == 0: 
                     print("Port\t{}\t\t\t\t\t   open".format(target))
                 socket_sock.close() 
@@ -150,11 +150,14 @@ class Hunter:
         """)
         def md5():
             print(chr(0xa))
+            
             def encrypt(): 
-                hash_value = input("Text ~#: ")           
+                hash_value = input("Text ~#: ")  
+                
                 if hash_value == 'exit' or hash_value == 'x':
                     print(cld("Exit", "red"))
                     return Hunter()    
+                
                 try:
                     result = hashlib.md5(hash_value.encode())
                     print("Result: ", end ="")
@@ -171,6 +174,7 @@ class Hunter:
                     
             def decrypt():
                 question_brute = input("Decrypt/Bruteforce the value? y/n ~#: ")
+                
                 if question_brute == 'y' or question_brute == 'Y':
                     print("USE THIS LINK: https://www.md5online.org/md5-decrypt.html ") # This program is using a big database to bruteforce the hash for you
                     input("\nPress any key ...")
@@ -194,7 +198,8 @@ class Hunter:
             """)
                 
             print(chr(0xa))
-            ipeye_scanner = input("IPEye Target ~#: ")           
+            ipeye_scanner = input("IPEye Target ~#: ")     
+            
             if ipeye_scanner == 'exit' or ipeye_scanner == 'x':
                 print(cld("Exiting ...", "red"))
                 return Hunter()      
@@ -243,11 +248,14 @@ class Hunter:
         while True:
             print(cld("\n[*] Target (Type 'exit' to exit banner grabber) ~#:", "yellow"))
             target_host = input()
+            
             if target_host == 'exit' or target_host == 'x':
                 os.system("clear")
                 return Hunter()
+            
             print(cld("[*] Port (Type 'exit' to exit banner grabber) ~#:", "yellow"))
             target_port = input()
+            
             if target_port == "exit" or target_host == 'x':
                 os.system("clear")
                 return Hunter()
@@ -260,14 +268,12 @@ class Hunter:
                 bannergrab_banner = pfgt.figlet_format("Banner Grabber", font="alligator")
                 print(cld(bannergrab_banner, "cyan"))
                 print(line) 
-
                 print(cld(f"""
     Auth.:\t{author_name}{tab2}Github: {github}
     Date :\t{written_on}{tab2}Instagram: {instagram}
     Lang.:\t{progr_lang}{tab3}Email: {email}
     Vers.:\t{version_num}
                 """, "magenta"))
-
                 print(line) 
                 print(cld(f" Started at:{tab3}{time_start}", "yellow"))
                 print(line + "\n")
@@ -275,12 +281,10 @@ class Hunter:
                 print(cld(f" Target Port:{tab3}{target_port}"))
                 print(cld(f"\n Result:{tab3}{banner_result}", "green"))
                 print("\n" + line)
-
                 time_end = dtt.now()
                 time_result = time_end - time_start
                 print(cld(f" Job done in:{tab3}{time_result}", "green"))
                 print(line)
-                
                 print(chr(0xa))
                 input("Press any key ...")
 
@@ -300,10 +304,11 @@ class Hunter:
 \t[2] Decoder
 \t[x] Exit 
         """)
-               
         choice = input("Choice ~#: ")
+        
         if choice == "1":
             hash_value = input("Text ~#: ") 
+            
             if hash_value == 'exit' or hash_value == 'x':
                 return Hunter()     
 
@@ -320,10 +325,12 @@ class Hunter:
                 return Hunter.base64encode()
                      
         elif choice == '2':
-            decode_hash = input("Hash ~#: ")     
+            decode_hash = input("Hash ~#: ") 
+            
             if decode_hash == 'exit' or decode_hash == 'x':
                 print(cld("Exit", "red"))
                 return Hunter()   
+            
             try:
                 b64_d = decode_hash.encode('ascii')
                 m_byte = base64.b64decode(b64_d)
