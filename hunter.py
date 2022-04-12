@@ -91,8 +91,8 @@ class Hunter:
         try:
             for target in range(1, 65535):
                 socket_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
-                socket_sock.settimeout(1) 
                 final_result = socket_sock.connect_ex((target_address, target)) 
+                socket_sock.settimeout(1) 
                 
                 if final_result == 0: 
                     print("Port\t{}\t\t\t\t\t   open".format(target))
@@ -264,8 +264,8 @@ class Hunter:
 
             try:
                 socket_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                socket_sock.settimeout(1)
                 socket_sock.connect_ex((str(target_host), int(target_port)))
+                socket_sock.settimeout(1)
                 banner_result = socket_sock.recv(1024).decode()
                 time_start = dtt.now()
                 bannergrab_banner = pfgt.figlet_format("Banner Grabber", font="alligator")
@@ -473,5 +473,4 @@ if __name__ == "__main__":
                 return hunter_main()
             
     hunter_main()
-    
     
