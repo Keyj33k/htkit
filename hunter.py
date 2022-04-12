@@ -264,8 +264,9 @@ class Hunter:
 
             try:
                 socket_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                socket_sock.settimeout(1)
                 socket_sock.connect_ex((str(target_host), int(target_port)))
-                banner_result = socket_sock.recv(1024)
+                banner_result = socket_sock.recv(1024).decode()
                 time_start = dtt.now()
                 bannergrab_banner = pfgt.figlet_format("Banner Grabber", font="alligator")
                 print(cld(bannergrab_banner, "cyan"))
@@ -472,3 +473,5 @@ if __name__ == "__main__":
                 return hunter_main()
             
     hunter_main()
+    
+    
