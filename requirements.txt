@@ -2,6 +2,4 @@ phonenumbers==8.12.45
 pyfiglet==0.8.post1 
 requests==2.27.1
 termcolor==1.1.0
-pandas==1.4.1
-scapy==2.4.5
-tqdm==4.63.1
+
