@@ -21,7 +21,7 @@ import os
 #   Twitter :   @keyjeek                  #
 #   Github  :   @keyj33k                  #
 #   Insta   :   @keyjeek                  #
-#   Version :   1.0.8                     #
+#   Version :   1.0.7                     #
 #                                         #
 # # # # # # # # # # # # # # # # # # # # # # 
 
@@ -123,13 +123,18 @@ class Hunter:
         input(cyan + "Press any key ...")
 
     def subdomain_scanner():
+        magenta = "\033[0;35m"
+        yellow = "\033[0;33m"
+        green = "\033[0;32m"
+        cyan = "\033[0;36m"
+        red = "\033[0;31m"
         sds_banner = pfgt.figlet_format("Sub- domain- Scanner", font = "banner3-D")
-        print(f"""\n{sds_banner}
+        print(yellow + f"""\n{sds_banner}
 \n<by@keyjeek>  |  Follow the white rabbit...
 <contact:nomotikag33n@gmail.com> 
         """)
         found_subdomain = []
-        target_address = input("Target ~#: ")
+        target_address = input(yellow + "Target ~#: ")
         if target_address == 'exit' or target_address == 'x':
             return Hunter()
 
@@ -145,12 +150,17 @@ class Hunter:
                     from termcolor import colored
                     print(colored("Not available!", "red"))
                 else:
-                    print("Discovered:", UniformResourceLocator)
+                    print(green + "Discovered:", UniformResourceLocator)
                     found_subdomain.append(UniformResourceLocator)
 
     def md5encrypt():
+        magenta = "\033[0;35m"
+        yellow = "\033[0;33m"
+        green = "\033[0;32m"
+        cyan = "\033[0;36m"
+        red = "\033[0;31m"
         md5_banner = pfgt.figlet_format("MD5C", font = "banner3-D")
-        print(f"""\n{md5_banner} 
+        print(yellow + f"""\n{md5_banner} 
 \n<by@keyjeek>  |  Follow the white rabbit...
 <contact:nomotikag33n@gmail.com>       
 [i] md5crypt is made to encrypt your string to an 128 bit hash value
@@ -160,29 +170,29 @@ class Hunter:
             print(chr(0xa))
             
             def encrypt(): 
-                hash_value = input("Text ~#: ")  
+                hash_value = input(red + "Text ~#: " + cyan)  
                 if hash_value == 'exit' or hash_value == 'x':
                     print(cld("Exit", "red"))
                     return Hunter()    
                 
                 try:
                     result = hashlib.md5(hash_value.encode())
-                    print("Result: ", end ="")
+                    print(cyan + "Result: " + green, end ="")
                     print(result.hexdigest())
-                    input("\nPress any key ...")
+                    input(cyan + "\nPress any key ...")
                     return Hunter()         
                 except Exception as error:
                     print(cld(f"An error was defined! {error}", "red"))
-                    input("\nPress any key ...")
+                    input(cyan + "\nPress any key ...")
                     os.system('clear')
                     return Hunter()
             encrypt()
                     
             def decrypt():
-                question_brute = input("Decrypt/Bruteforce the value? y/n ~#: ")
+                question_brute = input(green + "Decrypt/Bruteforce the value? y/n ~#: " + cyan)
                 if question_brute == 'y' or question_brute == 'Y':
-                    print("USE THIS LINK: https://www.md5online.org/md5-decrypt.html ") # This program is using a big database to bruteforce the hash for you
-                    input("\nPress any key ...")
+                    print(yellow + "USE THIS LINK: https://www.md5online.org/md5-decrypt.html ") # This program is using a big database to bruteforce the hash for you
+                    input(cyan + "\nPress any key ...")
                     return Hunter()     
                 elif question_brute == 'n' or question_brute == 'N':
                     return Hunter()
@@ -223,9 +233,15 @@ class Hunter:
             return Hunter.conditions()
 
     def eye_main():
+        magenta = "\033[0;35m"
+        yellow = "\033[0;33m"
+        green = "\033[0;32m"
+        cyan = "\033[0;36m"
+        red = "\033[0;31m"
+
         def ipeye():
             ipe_banner = pfgt.figlet_format("IPEYE", font = "banner3-D")
-            print(f"""\n{ipe_banner} 
+            print(yellow + f"""\n{ipe_banner} 
 \n<by@keyjeek>  |  Follow the white rabbit...
 <contact:nomotikag33n@gmail.com>       
 [i] IPEye is a Tool to find out
@@ -233,7 +249,7 @@ class Hunter:
 [i] Type 'exit' to exit ipeye.
             """)
             print(chr(0xa))
-            ipeye_scanner = input("IPEye Target ~#: ")     
+            ipeye_scanner = input(cyan + "IPEye Target ~#: " + red)     
             if ipeye_scanner == 'exit' or ipeye_scanner == 'x':
                 print(cld("Exiting ...", "red"))
                 return Hunter()      
@@ -243,7 +259,7 @@ class Hunter:
                 response = requests.post("http://ip-api.com/batch", json=[{"query":ipeye_scanner}]).json()   
             except Exception as error:
                 print(cld(f"An error was defined! {error}", "red"))
-                input("\nPress any key ...")
+                input(cyan + "\nPress any key ...")
                 os.system('clear')
                 return Hunter()
                     
@@ -254,9 +270,9 @@ class Hunter:
             time_stop = dtt.now()
             time_result = time_stop - time_start              
             print(chr(0xa))
-            print(f"Scanner done in {time_result}!")
+            print(green + f"Scanner done in {time_result}!")
             print(chr(0xa))
-            input("Press any key ...")
+            input(cyan + "Press any key ...")
             return Hunter()
         ipeye()
 
@@ -264,7 +280,7 @@ class Hunter:
         import socket 
         tab2 = "\t" * 2
         tab3 = "\t" * 3
-        line = "--" * 42
+        line = "==" * 42
         info_array = ["@Keyj33k", "1.0.1", "06.04.22", "Python3"]
         links = ["https://github.com/Keyj33k", "https://www.instagram.com/keyjeek/", "nomotikag33n@gmail.com"]
         author_name = info_array[0]
@@ -276,14 +292,12 @@ class Hunter:
         email = links[2]
 
         while True:
-            print(cld("\n[*] Target (Type 'exit' to exit banner grabber) ~#:", "yellow"))
-            target_host = input()
+            target_host = input(yellow + "\n[*] Target (Type 'exit' to exit banner grabber) ~#: " + red)
             if target_host == 'exit' or target_host == 'x':
                 os.system("clear")
                 return Hunter()
             
-            print(cld("[*] Port (Type 'exit' to exit banner grabber) ~#:", "yellow"))
-            target_port = input()
+            target_port = input(yellow + "[*] Port (Type 'exit' to exit banner grabber) ~#: " + red)
             if target_port == "exit" or target_host == 'x':
                 os.system("clear")
                 return Hunter()
@@ -322,8 +336,13 @@ class Hunter:
                 return Hunter.banner_grabber()
 
     def base64encode():   
+        magenta = "\033[0;35m"
+        yellow = "\033[0;33m"
+        green = "\033[0;32m"
+        cyan = "\033[0;36m"
+        red = "\033[0;31m"
         b64_banner = pfgt.figlet_format("B64-  CRYPT", font = "banner3-D")
-        print(f"""\n{b64_banner} 
+        print(green + f"""\n{b64_banner} 
 \n<by@keyjeek>  |  Follow the white rabbit...
 <contact:nomotikag33n@gmail.com>       
 [i] This Tool helps to encode and decode your text in base64.  
@@ -332,9 +351,9 @@ class Hunter:
 \t[2] Decoder
 \t[x] Exit 
         """)
-        choice = input("Choice ~#: ")
+        choice = input(yellow + "Choice ~#: " + red)
         if choice == "1":
-            hash_value = input("Text ~#: ") 
+            hash_value = input(green + "Text ~#: " + yellow) 
             if hash_value == 'exit' or hash_value == 'x':
                 return Hunter()     
 
@@ -343,15 +362,15 @@ class Hunter:
                 b64_e = base64.b64encode(m_bytes)
                 b64_hash = b64_e.decode('ascii')
                 print(b64_hash)
-                input("\nPress any key ...")
+                input(cyan + "\nPress any key ...")
                 return Hunter.base64encode()  
             except Exception as error:
                 print(cld(f"An error was defined: {error}"))
-                input("\nPress any key ...")
+                input(cyan + "\nPress any key ...")
                 return Hunter.base64encode()
                      
         elif choice == '2':
-            decode_hash = input("Hash ~#: ") 
+            decode_hash = input(yellow + "Hash ~#: " + red) 
             if decode_hash == 'exit' or decode_hash == 'x':
                 print(cld("Exit", "red"))
                 return Hunter()   
@@ -361,17 +380,17 @@ class Hunter:
                 m_byte = base64.b64decode(b64_d)
                 result = m_byte.decode('ascii')
                 print(result)
-                input("\nPress any key ...")
+                input(cyan + "\nPress any key ...")
                 return Hunter.base64encode()   
             except Exception as error:
                 print(cld(f"An error was defined: {error}"))
-                input("\nPress any key ...")
+                input(cyan + "\nPress any key ...")
                 return Hunter.base64encode()
 
     def number_tracker():
         def PhoneStalk():
             pnsk_banner = pfgt.figlet_format("Phone- Stalk", font = "banner3-D")
-            print(f"""\n{pnsk_banner} 
+            print(magenta + f"""\n{pnsk_banner} 
 \n<by@keyjeek>  |  Follow the white rabbit...
 <contact:nomotikag33n@gmail.com>       
 [i] This Tool helps to find out some informations about a phonenumber. 
@@ -380,7 +399,7 @@ class Hunter:
 
             while True:
                 print(chr(0xa))
-                target_phonenumber = input('PhoneStalk Target ~#: ') 
+                target_phonenumber = input(yellow + 'PhoneStalk Target ~#: ' + red) 
                 if target_phonenumber == 'exit' or target_phonenumber == 'x':
                     print(cld("Exit", "red"))
                     return Hunter()    
@@ -392,37 +411,37 @@ class Hunter:
 'clear'       Clear Screen             
                     """, "yellow"))
                     print(chr(0xa))
-                    input("Press any key ...")
+                    input(cyan + "Press any key ...")
                     return Hunter()
                 
                 print(chr(0xa))
                 time_start = dtt.now()
-                print("Request\t\tResponse\n" + "-" * 55 + "\n")
+                print(yellow + "Request\t\tResponse\n" + "-" * 55 + "\n")
                     
                 try:
                     valid_check = pnmb.parse(target_phonenumber)
                     finally_valid = pnmb.is_valid_number(valid_check)
-                    print(f"Validation:\t{finally_valid}")
+                    print(green + f"Validation:\t{finally_valid}")
                     phonenumbers_timezone = pnmb.parse(target_phonenumber, "en")
                     final_timezone = tz.time_zones_for_number(phonenumbers_timezone)
-                    print(f"Timezone:\t{final_timezone}")
+                    print(green + f"Timezone:\t{final_timezone}")
                     phonenumbers_location = pnmb.parse(target_phonenumber, "CH")
                     final_phonenumbers_location = gc.description_for_number(phonenumbers_location, "en")
-                    print(f"Location:\t{final_phonenumbers_location}")
+                    print(green + f"Location:\t{final_phonenumbers_location}")
                     phonenumbers_provider = pnmb.parse(target_phonenumber, "RO")
                     final_phonenumbers_provider = cr.name_for_number(phonenumbers_provider, "en")
-                    print(f"Provider:\t{final_phonenumbers_provider}")
+                    print(green + f"Provider:\t{final_phonenumbers_provider}")
                     time_stop = dtt.now()
                     time_result = time_stop - time_start
-                    print(f"\nJob done in {time_result}")        
+                    print(green + f"\nJob done in {time_result}")        
                 except Exception as error:
-                    print(cld("[i] AN ERROR WAS DEFINED !", "red"))
+                    print(cld("[i] An error was defined!", "red"))
                     print(cld(error, "red"))
-                    time.sleep(2)
+                    input(red + "Press any key ...")
                     return Hunter()
                         
                 print(chr(0xa))
-                input("Press any key ...")
+                input(cyan + "Press any key ...")
                 return Hunter()
         PhoneStalk()   
 
