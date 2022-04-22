@@ -276,7 +276,7 @@ class Hunter:
         tab2        = "\t" * 2
         tab3        = "\t" * 3
         line        = magenta + "==" * 42
-        info_array  = ["@Keyj33k", "1.0.1", "06.04.22", "Python3"]
+        info_array  = ["@Keyj33k", "1.0.1", "22.04.22", "Python3"]
         links       = ["https://github.com/Keyj33k", "https://www.instagram.com/keyjeek/", "nomotikag33n@gmail.com"]
         author_name = info_array[0]
         version_num = info_array[1]
