@@ -56,7 +56,7 @@ pip3 install -r requirements.txt
 ```
 Run the script:
 ```
-python3 hunter.py
+python3 gate.py
 ```
 ---
 ![pypy](https://raw.githubusercontent.com/Keyj33k/profiles/main/profile/pypy.jpeg)
