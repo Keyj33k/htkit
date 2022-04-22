@@ -209,14 +209,14 @@ class Hunter:
  \n Please note that actions like portscanning etc. can be illegal. 
  If you want to use this tool, follow the conditions:
 
- - This tool is made for ethical purposes only.
- - I'm not responsible for your actions.
- - With great force follows great responsibility.
+  - This tool is made for ethical purposes only.
+  - I'm not responsible for your actions.
+  - With great force follows great responsibility.
 
  If you accept the conditions type 'y' and 'n' for decline.
  Thank you and have a nice day!
 
- ~ Keyjeek\n
+  ~ Keyjeek\n
         """, "red"))
 
         choice = input(yellow + "$ " + cyan)
