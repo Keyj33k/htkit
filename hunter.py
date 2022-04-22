@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+from sysconfig import get_path
 from phonenumbers import timezone as tz
 from phonenumbers import geocoder as gc
 from phonenumbers import carrier as cr
@@ -9,16 +10,17 @@ import phonenumbers as pnmb
 import pyfiglet as pfgt
 import requests
 import hashlib
+import socket
 import base64
 import time
 import sys
 import os
 
 magenta = "\033[0;35m"
-yellow = "\033[0;33m"
-green = "\033[0;32m"
-cyan = "\033[0;36m"
-red = "\033[0;31m"
+yellow  = "\033[0;33m"
+green   = "\033[0;32m"
+cyan    = "\033[0;36m"
+red     = "\033[0;31m"
 
 # # # # # # # # # # # # # # # # # # # # # #
 #                                         #
@@ -33,7 +35,8 @@ red = "\033[0;31m"
 
 class Hunter:
 
-    def banner(): 
+    def banner():
+        os.system("clear")
         print(cld("""
     █    █                 █
     █    █                 █
@@ -60,10 +63,30 @@ class Hunter:
         print(cyan + "[" + red + "5" + cyan + "]" + yellow + " B64Crypt\t\t En- and Decryption used base64.")
         print(cyan + "[" + red + "6" + cyan + "]" + yellow + " PhoneStalk\t\t Get informations about a phonenumber")
         print(cyan + "[" + red + "7" + cyan + "]" + yellow + " SubdomainScanner\t Get subdomains from any url.")
+        print(cyan + "[" + red + "8" + cyan + "]" + yellow + " Whoami\t\t Get infos like current ip address etc.")
         print(cyan + "[" + red + "99" + cyan + "]" + yellow + " Exit")
 
+    def whoami_():
+        os.system("clear")
+        get_hostname = socket.gethostname()
+        get_host_ip  = socket.gethostbyname(get_hostname)
+        get_username = os.getlogin()
+        get_path     = os.path.abspath(os.getcwd())
+
+        print(cld(f"""
+ \t\tWhoami
+ < ================================= >
+ Username     :\t{get_username}
+ Hostname     :\t{get_hostname}
+ IPAddress    :\t{get_host_ip}
+ Current Path :\t{get_path}
+
+        """, "cyan"))
+
+        input(cyan + "Press any key to continue")
+        return Hunter()
+
     def witcher():  
-        import socket
         os.system("clear")
         witcher_banner = pfgt.figlet_format("witcher", font="banner3-D")
         print(cld(witcher_banner, "cyan"))
@@ -76,7 +99,7 @@ class Hunter:
                 return Hunter()
         except ValueError:
             print(cld("\nYou need to enter a string!", "red"))
-            input(cyan + "\nPress any key ...")
+            input(cyan + "Press any key to continue")
 
         try:
             target_port = int(input(yellow + "Max. Port (exit with '0'): " + red))
@@ -84,7 +107,7 @@ class Hunter:
                 return Hunter()
         except ValueError:
             print(cld("\nYou need to enter a integer!", "red"))
-            input(cyan + "\nPress any key ...")
+            input(cyan + "Press any key to continue")
 
         print(magenta + "=" * 70)
         scan_start = dtt.now()
@@ -94,7 +117,7 @@ class Hunter:
 
         try:
             for target in range(1, target_port):
-                socket_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
+                socket_sock  = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
                 final_result = socket_sock.connect_ex((target_address, target)) 
                 socket_sock.settimeout(1) 
                 if final_result == 0: 
@@ -106,13 +129,13 @@ class Hunter:
             print(cld("\nCtrl+C pressed. Exit.", "red"))
             return Hunter()
 
-        time_stop = dtt.now() 
+        time_stop   = dtt.now() 
         needed_time = time_stop - time_start
         print(magenta + "=" * 70)
         print(cld(f"Scanner done in {needed_time}!", "green"))
         print(magenta + "=" * 70)
         print(chr(0xa))
-        input(cyan + "Press any key ...")
+        input(cyan + "Press any key to continue")
 
     def subdomain_scanner():
         sds_banner = pfgt.figlet_format("Sub- domain- Scanner", font = "banner3-D")
@@ -121,7 +144,7 @@ class Hunter:
 <contact:nomotikag33n@gmail.com> 
         """)
         found_subdomain = []
-        target_address = input(yellow + "Target ~#: ")
+        target_address  = input(yellow + "Target ~#: ")
         if target_address == 'exit' or target_address == 'x':
             return Hunter()
 
@@ -139,6 +162,9 @@ class Hunter:
                 else:
                     print(green + "Discovered:", UniformResourceLocator)
                     found_subdomain.append(UniformResourceLocator)
+
+        input(cyan + "Press any key to continue")
+        return Hunter()
 
     def md5encrypt():
         md5_banner = pfgt.figlet_format("MD5C", font = "banner3-D")
@@ -161,11 +187,11 @@ class Hunter:
                     result = hashlib.md5(hash_value.encode())
                     print(cyan + "Result: " + green, end ="")
                     print(result.hexdigest())
-                    input(cyan + "\nPress any key ...")
+                    input(cyan + "Press any key to continue")
                     return Hunter()         
                 except Exception as error:
                     print(cld(f"An error was defined! {error}", "red"))
-                    input(cyan + "\nPress any key ...")
+                    input(cyan + "Press any key to continue")
                     os.system('clear')
                     return Hunter()
             encrypt()
@@ -233,7 +259,7 @@ class Hunter:
                 response = requests.post("http://ip-api.com/batch", json=[{"query":ipeye_scanner}]).json()   
             except Exception as error:
                 print(cld(f"An error was defined! {error}", "red"))
-                input(cyan + "\nPress any key ...")
+                input(cyan + "Press any key to continue")
                 os.system('clear')
                 return Hunter()
                     
@@ -241,37 +267,37 @@ class Hunter:
                 for k, j in lookup.items():
                     print(k,j)
 
-            time_stop = dtt.now()
+            time_stop   = dtt.now()
             time_result = time_stop - time_start              
             print(chr(0xa))
             print(green + f"Scanner done in {time_result}!")
             print(chr(0xa))
-            input(cyan + "Press any key ...")
+            input(cyan + "Press any key to continue")
             return Hunter()
         ipeye()
 
     def banner_grabber():
         import socket 
-        tab2 = "\t" * 2
-        tab3 = "\t" * 3
-        line = "==" * 42
-        info_array = ["@Keyj33k", "1.0.1", "06.04.22", "Python3"]
-        links = ["https://github.com/Keyj33k", "https://www.instagram.com/keyjeek/", "nomotikag33n@gmail.com"]
+        tab2        = "\t" * 2
+        tab3        = "\t" * 3
+        line        = magenta + "==" * 42
+        info_array  = ["@Keyj33k", "1.0.1", "06.04.22", "Python3"]
+        links       = ["https://github.com/Keyj33k", "https://www.instagram.com/keyjeek/", "nomotikag33n@gmail.com"]
         author_name = info_array[0]
         version_num = info_array[1]
-        written_on = info_array[2]
-        progr_lang = info_array[3]
-        instagram = links[1]
-        github = links[0]
-        email = links[2]
+        written_on  = info_array[2]
+        progr_lang  = info_array[3]
+        instagram   = links[1]
+        github      = links[0]
+        email       = links[2]
 
         while True:
-            target_host = input(yellow + "\n[*] Target (Type 'exit' to exit banner grabber) ~#: " + red)
+            target_host = input(red + "\n[" + cyan + "*" + red + "]" + cyan + " Target " + yellow + "(Exit with 'exit' or 'x'): " + red)
             if target_host == 'exit' or target_host == 'x':
                 os.system("clear")
                 return Hunter()
             
-            target_port = input(yellow + "[*] Port (Type 'exit' to exit banner grabber) ~#: " + red)
+            target_port = input(red + "[" + cyan + "*" + red + "]" + cyan + " Port " + yellow + "(Exit with 'exit' or 'x'): " + red)
             if target_port == "exit" or target_host == 'x':
                 os.system("clear")
                 return Hunter()
@@ -285,25 +311,24 @@ class Hunter:
                 bannergrab_banner = pfgt.figlet_format("Banner Grabber", font="alligator")
                 print(cld(bannergrab_banner, "cyan"))
                 print(line) 
-                print(cld(f"""
-    Auth.:\t{author_name}{tab2}Github: {github}
-    Date :\t{written_on}{tab2}Instagram: {instagram}
-    Lang.:\t{progr_lang}{tab3}Email: {email}
-    Vers.:\t{version_num}
-                """, "magenta"))
+                print(cyan + " Auth.:\t" + yellow + f"{author_name}{tab2}" + cyan + "Github: " + yellow + f"{github}")
+                print(cyan + " Date :\t" + yellow + f"{written_on}{tab2}" + cyan + "Instagram: " + yellow + f"{instagram}")
+                print(cyan + " Lang.:\t" + yellow + f"{progr_lang}{tab3}" + cyan + "Email: " + yellow + f"{email}")
+                print(cyan + " Vers.:\t" + yellow + f"{version_num}")
                 print(line) 
                 print(cld(f" Started at:{tab3}{time_start}", "yellow"))
                 print(line + "\n")
-                print(cld(f" Target Host:{tab3}{target_host}"))
-                print(cld(f" Target Port:{tab3}{target_port}"))
+                print(cld(f" Started at:{tab3}{time_start}", "yellow"))
+                print(cld(f" Target Host:{tab3}{target_host}", "yellow"))
+                print(cld(f" Target Port:{tab3}{target_port}", "yellow"))
                 print(cld(f"\n Result:{tab3}{banner_result}", "green"))
-                print("\n" + line)
-                time_end = dtt.now()
+                print(line)
+                time_end    = dtt.now()
                 time_result = time_end - time_start
                 print(cld(f" Job done in:{tab3}{time_result}", "green"))
                 print(line)
                 print(chr(0xa))
-                input("Press any key ...")
+                input(cyan + "Press any key to continue")
             except socket.error as sock_err:
                 os.system("clear")
                 print(cld(f"\nAn error was defined: {sock_err}", "red"))
@@ -327,15 +352,15 @@ class Hunter:
                 return Hunter()     
 
             try:    
-                m_bytes = hash_value.encode('ascii')
-                b64_e = base64.b64encode(m_bytes)
+                m_bytes  = hash_value.encode('ascii')
+                b64_e    = base64.b64encode(m_bytes)
                 b64_hash = b64_e.decode('ascii')
                 print(b64_hash)
-                input(cyan + "\nPress any key ...")
+                input(cyan + "Press any key to continue")
                 return Hunter.base64encode()  
             except Exception as error:
                 print(cld(f"An error was defined: {error}"))
-                input(cyan + "\nPress any key ...")
+                input(cyan + "Press any key to continue")
                 return Hunter.base64encode()
                      
         elif choice == '2':
@@ -345,15 +370,15 @@ class Hunter:
                 return Hunter()   
             
             try:
-                b64_d = decode_hash.encode('ascii')
+                b64_d  = decode_hash.encode('ascii')
                 m_byte = base64.b64decode(b64_d)
                 result = m_byte.decode('ascii')
                 print(result)
-                input(cyan + "\nPress any key ...")
+                input(cyan + "Press any key to continue")
                 return Hunter.base64encode()   
             except Exception as error:
                 print(cld(f"An error was defined: {error}"))
-                input(cyan + "\nPress any key ...")
+                input(cyan + "Press any key to continue")
                 return Hunter.base64encode()
 
     def number_tracker():
@@ -380,7 +405,7 @@ class Hunter:
 'clear'       Clear Screen             
                     """, "yellow"))
                     print(chr(0xa))
-                    input(cyan + "Press any key ...")
+                    input(cyan + "Press any key to continue")
                     return Hunter()
                 
                 print(chr(0xa))
@@ -430,7 +455,7 @@ if __name__ == "__main__":
             sys.exit(0)
         else:
             print(cld("Invalid Input!", "red"))
-            input("\nPress any key ...")
+            input(cyan + "Press any key to continue")
             return start()
     start()
 
@@ -444,7 +469,7 @@ if __name__ == "__main__":
                 hunter_choice = int(input(cyan + "\n~#" + magenta + "$ " + red))
             except ValueError:
                 print(cld("You need to enter an integer!", "red"))
-                input("\nPress any key ...")
+                input(cyan + "Press any key to continue")
                 return hunter_main()
 
             if hunter_choice == 1:
@@ -465,9 +490,11 @@ if __name__ == "__main__":
                     Hunter.subdomain_scanner()
                 except KeyboardInterrupt:
                     print(cld("\nCtrl+C pressed, Exiting ...", "red"))
-                    input("\nPress any key ...")
+                    input(cyan + "Press any key to continue")
                     return hunter_main()
 
+            elif hunter_choice == 8:
+                Hunter.whoami_()
             elif hunter_choice == 99:
                 ex_banner = pfgt.figlet_format("Exit", font = "digital")
                 print(cld(ex_banner, "red"))
@@ -477,6 +504,6 @@ if __name__ == "__main__":
                 return hunter_main()
             else:
                 print(cld("Invalid Input!", "red"))
-                input("\nPress any key ...")
+                input(cyan + "Press any key to continue")
                 return hunter_main()
     hunter_main()
