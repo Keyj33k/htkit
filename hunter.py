@@ -14,6 +14,12 @@ import time
 import sys
 import os
 
+magenta = "\033[0;35m"
+yellow = "\033[0;33m"
+green = "\033[0;32m"
+cyan = "\033[0;36m"
+red = "\033[0;31m"
+
 # # # # # # # # # # # # # # # # # # # # # #
 #                                         #
 #   Author  :   Keyj33k                   #
@@ -28,11 +34,6 @@ import os
 class Hunter:
 
     def banner(): 
-        magenta = "\033[0;35m"
-        yellow = "\033[0;33m"
-        green = "\033[0;32m"
-        cyan = "\033[0;36m"
-        red = "\033[0;31m"
         print(cld("""
     █    █                 █
     █    █                 █
@@ -50,9 +51,6 @@ class Hunter:
         print(cyan + "\n[" + red + "i" + cyan + "]" + yellow + "Hunter is a small toolkit to perform information gathering.")   
 
     def menu():
-        yellow = "\033[0;33m"
-        cyan = "\033[0;36m"
-        red = "\033[0;31m"
         print(magenta + "=" * 70)
         print(cyan + "\n[" + red + "0" + cyan + "]" + yellow + " Clear Screen")
         print(cyan + "[" + red + "1" + cyan + "]" + yellow + " Witcher\t\t A simple port scanner.")
@@ -65,12 +63,6 @@ class Hunter:
         print(cyan + "[" + red + "99" + cyan + "]" + yellow + " Exit")
 
     def witcher():  
-        magenta = "\033[0;35m"
-        yellow = "\033[0;33m"
-        green = "\033[0;32m"
-        cyan = "\033[0;36m"
-        red = "\033[0;31m"
-
         import socket
         os.system("clear")
         witcher_banner = pfgt.figlet_format("witcher", font="banner3-D")
@@ -123,11 +115,6 @@ class Hunter:
         input(cyan + "Press any key ...")
 
     def subdomain_scanner():
-        magenta = "\033[0;35m"
-        yellow = "\033[0;33m"
-        green = "\033[0;32m"
-        cyan = "\033[0;36m"
-        red = "\033[0;31m"
         sds_banner = pfgt.figlet_format("Sub- domain- Scanner", font = "banner3-D")
         print(yellow + f"""\n{sds_banner}
 \n<by@keyjeek>  |  Follow the white rabbit...
@@ -154,11 +141,6 @@ class Hunter:
                     found_subdomain.append(UniformResourceLocator)
 
     def md5encrypt():
-        magenta = "\033[0;35m"
-        yellow = "\033[0;33m"
-        green = "\033[0;32m"
-        cyan = "\033[0;36m"
-        red = "\033[0;31m"
         md5_banner = pfgt.figlet_format("MD5C", font = "banner3-D")
         print(yellow + f"""\n{md5_banner} 
 \n<by@keyjeek>  |  Follow the white rabbit...
@@ -201,8 +183,6 @@ class Hunter:
 
     def conditions():
         os.system("clear")
-        yellow = "\033[0;33m"
-        cyan = "\033[0;36m"
         print(cld("""
  \t\t\tWelcome To Hunter Toolkit!
  < =============================================================================== >
@@ -233,12 +213,6 @@ class Hunter:
             return Hunter.conditions()
 
     def eye_main():
-        magenta = "\033[0;35m"
-        yellow = "\033[0;33m"
-        green = "\033[0;32m"
-        cyan = "\033[0;36m"
-        red = "\033[0;31m"
-
         def ipeye():
             ipe_banner = pfgt.figlet_format("IPEYE", font = "banner3-D")
             print(yellow + f"""\n{ipe_banner} 
@@ -336,11 +310,6 @@ class Hunter:
                 return Hunter.banner_grabber()
 
     def base64encode():   
-        magenta = "\033[0;35m"
-        yellow = "\033[0;33m"
-        green = "\033[0;32m"
-        cyan = "\033[0;36m"
-        red = "\033[0;31m"
         b64_banner = pfgt.figlet_format("B64-  CRYPT", font = "banner3-D")
         print(green + f"""\n{b64_banner} 
 \n<by@keyjeek>  |  Follow the white rabbit...
@@ -446,11 +415,6 @@ class Hunter:
         PhoneStalk()   
 
 if __name__ == "__main__":
-    magenta = "\033[0;35m"
-    yellow = "\033[0;33m"
-    green = "\033[0;32m"
-    cyan = "\033[0;36m"
-    red = "\033[0;31m"
     Hunter.conditions()
     
     def start():
