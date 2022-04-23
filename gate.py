@@ -82,10 +82,10 @@ class Hunter:
 
     def witcher():  
         os.system("clear")
-        witcher_banner = pfgt.figlet_format("witcher", font="banner3-D")
+        witcher_banner          = pfgt.figlet_format("witcher", font="banner3-D")
         print(cld(witcher_banner, "cyan"))
-        print(magenta  + "#" * 17 + green, " A python portscanner project ... " + magenta, "#" * 17)
-        print("#" * 24 + green, " *writtenby@Keyj33k " + magenta, "#" * 24 + "\n")
+        print(magenta           + "#" * 17 + green, " A python portscanner project ... " + magenta, "#" * 17)
+        print("#" * 24          + green, " *writtenby@Keyj33k " + magenta, "#" * 24 + "\n")
 
         try:
             target_address      = str(input(yellow + "Target (Exit with 'exit' or 'x'): " + red))
