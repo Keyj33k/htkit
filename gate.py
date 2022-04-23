@@ -401,27 +401,27 @@ class Hunter:
                     return Hunter()
                 
                 print(chr(0xa))
-                time_start = dtt.now()
+                time_start    = dtt.now()
                 print(magenta + "=" * 55)
-                print(yellow + "Request\t\tResponse\n" + magenta + "=" * 55 + "\n")
+                print(yellow  + "Request\t\tResponse\n" + magenta + "=" * 55 + "\n")
                     
                 try:
                     valid_check   = pnmb.parse(target_phonenumber)
                     finally_valid = pnmb.is_valid_number(valid_check)
-                    print(green + f"Validation:\t{finally_valid}")
+                    print(green   + f"Validation:\t{finally_valid}")
                     phonenumbers_timezone = pnmb.parse(target_phonenumber, "en")
                     final_timezone = tz.time_zones_for_number(phonenumbers_timezone)
-                    print(green + f"Timezone:\t{final_timezone}")
+                    print(green    + f"Timezone:\t{final_timezone}")
                     phonenumbers_location = pnmb.parse(target_phonenumber, "CH")
                     final_phonenumbers_location = gc.description_for_number(phonenumbers_location, "en")
                     print(green + f"Location:\t{final_phonenumbers_location}")
                     phonenumbers_provider = pnmb.parse(target_phonenumber, "RO")
                     final_phonenumbers_provider = cr.name_for_number(phonenumbers_provider, "en")
                     print(green + f"Provider:\t{final_phonenumbers_provider}")
-                    time_stop = dtt.now()
+                    time_stop   = dtt.now()
                     time_result = time_stop - time_start
-                    print("\n" + magenta + "=" * 55)
-                    print(green + f"Job done in {time_result}") 
+                    print("\n"    + magenta + "=" * 55)
+                    print(green   + f"Job done in {time_result}") 
                     print(magenta + "=" * 55)
                 except Exception as error:
                     print(cld("[i] An error was defined!", "red"))
@@ -443,7 +443,7 @@ if __name__ == "__main__":
         username = os.getlogin()
         print(cld(f"Welcome {username}. Today is the {time_now}", "yellow"))
         time.sleep(1.25)
-        start_hunter = input(yellow + "\nDo you want to start hunter? (y/n) " + cyan)
+        start_hunter      = input(yellow + "\nDo you want to start hunter? (y/n) " + cyan)
         if start_hunter   == 'y' or start_hunter == 'Y':
             pass
         elif start_hunter == 'n' or start_hunter == 'N':
