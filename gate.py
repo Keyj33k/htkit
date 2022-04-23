@@ -84,7 +84,7 @@ class Hunter:
         os.system("clear")
         witcher_banner = pfgt.figlet_format("witcher", font="banner3-D")
         print(cld(witcher_banner, "cyan"))
-        print(magenta + "#" * 17 + green, " A python portscanner project ... " + magenta, "#" * 17)
+        print(magenta  + "#" * 17 + green, " A python portscanner project ... " + magenta, "#" * 17)
         print("#" * 24 + green, " *writtenby@Keyj33k " + magenta, "#" * 24 + "\n")
 
         try:
@@ -93,7 +93,7 @@ class Hunter:
                 return Hunter()
         except ValueError:
             print(cld("\nYou need to enter a string!", "red"))
-            input(cyan + "Press any key to continue")
+            input(cyan        + "Press any key to continue")
 
         try:
             target_port    = int(input(yellow + "Max. Port (exit with '0'): " + red))
@@ -101,7 +101,7 @@ class Hunter:
                 return Hunter()
         except ValueError:
             print(cld("\nYou need to enter a integer!", "red"))
-            input(cyan + "Press any key to continue")
+            input(cyan     + "Press any key to continue")
 
         print(magenta + "=" * 70)
         scan_start    = dtt.now()
@@ -301,8 +301,8 @@ class Hunter:
                 socket_sock   = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 socket_sock.connect_ex((str(target_host), int(target_port)))
                 socket_sock.settimeout(1)
-                banner_result = socket_sock.recv(1024).decode()
-                time_start    = dtt.now()
+                banner_result     = socket_sock.recv(1024).decode()
+                time_start        = dtt.now()
                 bannergrab_banner = pfgt.figlet_format("Banner Grabber", font="alligator")
                 print(cld(bannergrab_banner, "cyan"))
                 print(line) 
@@ -340,16 +340,16 @@ class Hunter:
         print(red     + "\t["   + cyan   + "2" + red + "] " + yellow + "Decoder")
         print(red     + "\t["   + cyan   + "x" + red + "] " + yellow + "Exit")
 
-        choice = input(cyan + "\nChoice " + magenta + "~#$ " + red)
-        if choice == "1":
+        choice            = input(cyan + "\nChoice " + magenta + "~#$ " + red)
+        if choice         == "1":
             hash_value    = input(cyan + "Text: " + magenta + "~#$ " + red) 
             if hash_value == 'exit' or hash_value == 'x':
                 return Hunter()     
 
             try:    
-                m_bytes  = hash_value.encode('ascii')
-                b64_e    = base64.b64encode(m_bytes)
-                b64_hash = b64_e.decode('ascii')
+                m_bytes    = hash_value.encode('ascii')
+                b64_e      = base64.b64encode(m_bytes)
+                b64_hash   = b64_e.decode('ascii')
                 print(b64_hash)
                 input(cyan + "Press any key to continue")
                 return Hunter.base64encode()  
@@ -357,9 +357,9 @@ class Hunter:
                 print(cld(f"An error was defined: {error}"))
                 input(cyan + "Press any key to continue")
                 return Hunter.base64encode()
-                     
-        elif choice == '2':
-            decode_hash = input(cyan + "Hash: " + magenta + "~#$ " + red) 
+                        
+        elif choice        == '2':
+            decode_hash    = input(cyan + "Hash: " + magenta + "~#$ " + red) 
             if decode_hash == 'exit' or decode_hash == 'x':
                 print(cld("Exit", "red"))
                 return Hunter()   
@@ -378,7 +378,7 @@ class Hunter:
 
     def number_tracker():
         def PhoneStalk():
-            pnsk_banner = pfgt.figlet_format("Phone- Stalk", font = "banner3-D")
+            pnsk_banner   = pfgt.figlet_format("Phone- Stalk", font = "banner3-D")
             print(cld(pnsk_banner, "magenta")) 
             print(magenta + "\n< " + green + "by@keyjeek" + magenta + " >" + cyan + " | " + yellow + "Follow the white rabbit...")
             print(magenta + "< "   + green + "contact:nomotikag33n@gmail.com" + magenta + " >")       
@@ -387,17 +387,17 @@ class Hunter:
 
             while True:
                 print(chr(0xa))
-                target_phonenumber    = input(yellow + "PhoneStalk Target " + magenta + "~#: " + red) 
-                if target_phonenumber == 'exit' or target_phonenumber == 'x':
+                target_phonenumber      = input(yellow + "PhoneStalk Target " + magenta + "~#: " + red) 
+                if target_phonenumber   == 'exit' or target_phonenumber == 'x':
                     print(cld("Exit", "red"))
                     return Hunter()    
                 elif target_phonenumber == "help" or target_phonenumber == 'h':
-                    print(cyan    + "\nHELP; "       + yellow + "Phone-Stalk")
-                    print(magenta + "< "             + green  + "=" * 15 + magenta + " >")
-                    print(red     + "'exit'        " + yellow + "Return Menu / Exit PhoneStalk")
-                    print(red     + "'clear'       " + yellow + "Clear Screen")             
+                    print(cyan          + "\nHELP; "       + yellow + "Phone-Stalk")
+                    print(magenta       + "< "             + green  + "=" * 15 + magenta + " >")
+                    print(red           + "'exit'        " + yellow + "Return Menu / Exit PhoneStalk")
+                    print(red           + "'clear'       " + yellow + "Clear Screen")             
                     print(chr(0xa))
-                    input(cyan + "Press any key to continue")
+                    input(cyan          + "Press any key to continue")
                     return Hunter()
                 
                 print(chr(0xa))
@@ -406,31 +406,31 @@ class Hunter:
                 print(yellow  + "Request\t\tResponse\n" + magenta + "=" * 55 + "\n")
                     
                 try:
-                    valid_check   = pnmb.parse(target_phonenumber)
-                    finally_valid = pnmb.is_valid_number(valid_check)
-                    print(green   + f"Validation:\t{finally_valid}")
+                    valid_check    = pnmb.parse(target_phonenumber)
+                    finally_valid  = pnmb.is_valid_number(valid_check)
+                    print(green    + f"Validation:\t{finally_valid}")
                     phonenumbers_timezone = pnmb.parse(target_phonenumber, "en")
                     final_timezone = tz.time_zones_for_number(phonenumbers_timezone)
                     print(green    + f"Timezone:\t{final_timezone}")
                     phonenumbers_location = pnmb.parse(target_phonenumber, "CH")
                     final_phonenumbers_location = gc.description_for_number(phonenumbers_location, "en")
-                    print(green + f"Location:\t{final_phonenumbers_location}")
+                    print(green    + f"Location:\t{final_phonenumbers_location}")
                     phonenumbers_provider = pnmb.parse(target_phonenumber, "RO")
                     final_phonenumbers_provider = cr.name_for_number(phonenumbers_provider, "en")
-                    print(green + f"Provider:\t{final_phonenumbers_provider}")
-                    time_stop   = dtt.now()
-                    time_result = time_stop - time_start
-                    print("\n"    + magenta + "=" * 55)
-                    print(green   + f"Job done in {time_result}") 
-                    print(magenta + "=" * 55)
+                    print(green    + f"Provider:\t{final_phonenumbers_provider}")
+                    time_stop      = dtt.now()
+                    time_result    = time_stop - time_start
+                    print("\n"     + magenta + "=" * 55)
+                    print(green    + f"Job done in {time_result}") 
+                    print(magenta  + "=" * 55)
                 except Exception as error:
                     print(cld("[i] An error was defined!", "red"))
                     print(cld(error, "red"))
-                    input(red + "Press any key ...")
+                    input(red      + "Press any key ...")
                     return Hunter()
                         
                 print(chr(0xa))
-                input(cyan + "Press any key ...")
+                input(cyan          + "Press any key ...")
                 return Hunter()
         PhoneStalk()   
 
@@ -463,11 +463,11 @@ if __name__ == "__main__":
             try:
                 hunter_choice = int(input(cyan + "\n~#" + magenta + "$ " + red))
             except KeyboardInterrupt:
-                print(red + "\nCtrl-C pressed. Exit")
+                print(red     + "\nCtrl-C pressed. Exit")
                 return Hunter()
             except ValueError:
                 print(cld("You need to enter an integer!", "red"))
-                input(cyan + "Press any key to continue")
+                input(cyan    + "Press any key to continue")
                 return hunter_main()
 
             if hunter_choice   == 1:
@@ -502,6 +502,6 @@ if __name__ == "__main__":
                 return hunter_main()
             else:
                 print(cld("Invalid Input!", "red"))
-                input(cyan + "Press any key to continue")
+                input(cyan     + "Press any key to continue")
                 return hunter_main()
     hunter_main()
