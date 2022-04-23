@@ -137,8 +137,8 @@ class Hunter:
         print(magenta                    + "\n< " + green + "by@keyjeek" + magenta + " >" + cyan + " | " + yellow + "Follow the white rabbit ...")
         print(magenta                    + "< " + green + "contact:nomotikag33n@gmail.com" + magenta + " >") 
 
-        found_subdomain   = []
-        target_address    = input(yellow + "\nTarget " + magenta + "~#$ " + red)
+        found_subdomain                  = []
+        target_address                   = input(yellow + "\nTarget " + magenta + "~#$ " + red)
         if target_address                == 'exit' or target_address == 'x':
             return Hunter()
 
@@ -146,7 +146,7 @@ class Hunter:
             read_file                    = FILE.read()
             SUBDOMAIN                    = read_file.splitlines()
             for list_domains in SUBDOMAIN:
-                UniformResourceLocator = f"http://{list_domains}.{target_address}"
+                UniformResourceLocator   = f"http://{list_domains}.{target_address}"
                 try:
                     import requests
                     requests.get(UniformResourceLocator)
@@ -154,14 +154,14 @@ class Hunter:
                     from termcolor import colored
                     print(colored("Not available!", "red"))
                 else:
-                    print(green + "Discovered:", UniformResourceLocator)
+                    print(green         + "Discovered:", UniformResourceLocator)
                     found_subdomain.append(UniformResourceLocator)
 
         input(cyan       + "Press any key to continue")
         return Hunter()
 
     def md5encrypt():
-        md5_banner = pfgt.figlet_format("MD5C", font = "banner3-D")
+        md5_banner    = pfgt.figlet_format("MD5C", font = "banner3-D")
         print(cld(md5_banner, "cyan")) 
         print(magenta + "\n< " + green + "by@keyjeek" + magenta + " >" + cyan + " | " + yellow + "Follow the white rabbit ...")
         print(magenta + "< "   + green + "contact:nomotikag33n@gmail.com" + magenta + " >")       
@@ -172,8 +172,8 @@ class Hunter:
             print(chr(0xa))
             
             def encrypt(): 
-                hash_value     = input(cyan + "Text " + magenta + "~#$ " + yellow)  
-                if hash_value  == 'exit' or hash_value == 'x':
+                hash_value          = input(cyan + "Text " + magenta + "~#$ " + yellow)  
+                if hash_value       == 'exit' or hash_value == 'x':
                     print(cld("Exit", "red"))
                     return Hunter()    
                 
@@ -219,7 +219,7 @@ class Hunter:
   ~ Keyjeek\n
         """, "red"))
 
-        choice      = input(yellow + "$ " + cyan)
+        choice      = input(yellow   + "$ " + cyan)
         if choice   == 'y' or choice == 'Y':
             pass
         elif choice == 'n' or choice == 'N':
@@ -234,13 +234,13 @@ class Hunter:
 
     def eye_main():
         def ipeye():
-            ipe_banner    = pfgt.figlet_format("IPEYE", font = "banner3-D")
+            ipe_banner       = pfgt.figlet_format("IPEYE", font = "banner3-D")
             print(cld(ipe_banner, "yellow"))
-            print(magenta + "\n< " + green   + "by@keyjeek"  + magenta + " >"   + cyan    + " | " + yellow + "Follow the white rabbit ...")
-            print(magenta + "< "   + green   + "contact:nomotikag33n@gmail.com" + magenta + " >")       
-            print(red     + "["    + cyan    + "i"  + red    + "]"     + yellow + "IPEye is a Tool to find out")
-            print(red     + "--"   + magenta + "> " + yellow + "some information about an IP Address.")  
-            print(red     + "["    + cyan    + "i"  + red    + "]"     + yellow + "Type 'exit' to exit ipeye.")
+            print(magenta    + "\n< " + green   + "by@keyjeek"  + magenta + " >"   + cyan    + " | " + yellow + "Follow the white rabbit ...")
+            print(magenta    + "< "   + green   + "contact:nomotikag33n@gmail.com" + magenta + " >")       
+            print(red        + "["    + cyan    + "i"  + red    + "]"     + yellow + "IPEye is a Tool to find out")
+            print(red        + "--"   + magenta + "> " + yellow + "some information about an IP Address.")  
+            print(red        + "["    + cyan    + "i"  + red    + "]"     + yellow + "Type 'exit' to exit ipeye.")
             print(chr(0xa))
             ipeye_scanner    = input(cyan + "IPEye Target " + magenta + "~#: " + red)     
             if ipeye_scanner == 'exit' or ipeye_scanner == 'x':
@@ -330,15 +330,15 @@ class Hunter:
                 return Hunter.banner_grabber()
 
     def base64encode():   
-        b64_banner = pfgt.figlet_format("B64-  CRYPT", font = "banner3-D")
+        b64_banner              = pfgt.figlet_format("B64-  CRYPT", font = "banner3-D")
         print(cld(b64_banner, "green")) 
-        print(magenta + "\n< "  + yellow + "by@keyjeek" + magenta + " >" + cyan + " | " + red + "Follow the white rabbit ...")
-        print(magenta + "< "    + green  + "contact:nomotikag33n@gmail.com" + magenta + " >")       
-        print(red     + "["     + cyan   + "i" + red + "] " + yellow + "This Tool helps to encode and decode your text in base64.")  
-        print(red     + "["     + cyan   + "i" + red + "] " + yellow + "Type 'exit' to exit Base64crypt.")
-        print(red     + "\n\t[" + cyan   + "1" + red + "] " + yellow + "Encoder")
-        print(red     + "\t["   + cyan   + "2" + red + "] " + yellow + "Decoder")
-        print(red     + "\t["   + cyan   + "x" + red + "] " + yellow + "Exit")
+        print(magenta           + "\n< "  + yellow + "by@keyjeek" + magenta + " >" + cyan + " | " + red + "Follow the white rabbit ...")
+        print(magenta           + "< "    + green  + "contact:nomotikag33n@gmail.com" + magenta + " >")       
+        print(red               + "["     + cyan   + "i" + red + "] " + yellow + "This Tool helps to encode and decode your text in base64.")  
+        print(red               + "["     + cyan   + "i" + red + "] " + yellow + "Type 'exit' to exit Base64crypt.")
+        print(red               + "\n\t[" + cyan   + "1" + red + "] " + yellow + "Encoder")
+        print(red               + "\t["   + cyan   + "2" + red + "] " + yellow + "Decoder")
+        print(red               + "\t["   + cyan   + "x" + red + "] " + yellow + "Exit")
 
         choice                  = input(cyan + "\nChoice " + magenta + "~#$ " + red)
         if choice               == "1":
@@ -426,11 +426,11 @@ class Hunter:
                 except Exception as error:
                     print(cld("[i] An error was defined!", "red"))
                     print(cld(error, "red"))
-                    input(red      + "Press any key ...")
+                    input(red      + "Press any key to continue")
                     return Hunter()
                         
                 print(chr(0xa))
-                input(cyan         + "Press any key ...")
+                input(cyan         + "Press any key to continue")
                 return Hunter()
         PhoneStalk()   
 
