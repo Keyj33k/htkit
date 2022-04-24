@@ -293,7 +293,7 @@ class Hunter:
                 return Hunter()
             
             target_port           = input(red + "[" + cyan + "*" + red + "]" + cyan + " Port " + yellow + "(Exit with 'exit' or 'x'): " + red)
-            if target_port        == "exit" or target_host == 'x':
+            if target_port        == 'exit' or target_host == 'x':
                 os.system("clear")
                 return Hunter()
 
