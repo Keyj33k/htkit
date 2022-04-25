@@ -37,7 +37,7 @@ SubdomainScanner
 -------------------------------------------------------------------
 - Use this tool for finding subdomains of a website.
 
-![example](https://github.com/Keyj33k/profiles/blob/main/profile/hunt3r.png?raw=true)
+![example](https://github.com/Keyj33k/profiles/blob/main/profile/hunter.png?raw=true)
 
 USAGE of HUNTER:
 -------------------------------------------------------------------
