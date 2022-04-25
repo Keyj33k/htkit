@@ -62,7 +62,7 @@ class Hunter:
         print(green   + "["   + red + "6"  + green + "]" + cyan + " PhoneStalk\t\t"      + yellow + " Get informations about a phonenumber")
         print(green   + "["   + red + "7"  + green + "]" + cyan + " SubdomainScanner\t"  + yellow + " Get subdomains from any url.")
         print(green   + "["   + red + "8"  + green + "]" + cyan + " Whoami\t\t"          + yellow + " Get infos like current ip address etc.")
-        print(green   + "["   + red + "9"  + green + "]" + cyan + " MySystem\t\t"        + yellow + " Get infos like cpu usage, disk usage etc.")
+        print(green   + "["   + red + "9"  + green + "]" + cyan + " MySystem\t\t"        + yellow + " Get infos like cpu usage, disk usage etc.\n")
         print(green   + "["   + red + "99" + green + "]" + cyan + " Exit\n")
         print(magenta + "="   * 70)
 
