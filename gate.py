@@ -525,12 +525,11 @@ class Hunter:
         print(cyan     + "In Use: "      + yellow + f"{show_size(swap.used)} ")
         print(cyan     + "Percentence: " + yellow + f"{swap.percent}%\n")
         print(magenta  + "=" * 40, "| Network Information |", "=" * 40, "\n")
-
         if_addrs       = psutil.net_if_addrs() 
+        
         for interface_name, interface_addresses in if_addrs.items():
             for address in interface_addresses:        
                 print(cyan     + "Interface: " + yellow + f"{interface_name}")
-
                 if str(address.family) == 'AddressFamily.AF_INET':
                     print(cyan + "IP: "            + yellow + f"{address.address}")
                     print(cyan + "Netmask: "       + yellow + f"{address.netmask}")
