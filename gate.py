@@ -67,7 +67,7 @@ class Hunter:
         print(magenta + "="   * 70)
 
     def whoami_():
-        import re, uuid
+        import uuid, re
         get_mac       = ':'.join(re.findall('..', '%012x' % uuid.getnode()))
         get_hostname  = socket.gethostname()
         get_host_ip   = socket.gethostbyname(get_hostname)
