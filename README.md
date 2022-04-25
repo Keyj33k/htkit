@@ -20,7 +20,6 @@ IPEye
 Banner Grabber
 -------------------------------------------------------------------
 - A banner grabbing tool for available banners behind open ports. <br>
-- You can use it in combi with the witcher portscanner.
 
 B64crypt
 -------------------------------------------------------------------
