@@ -53,7 +53,7 @@ class Hunter:
 
     def menu():
         print(magenta + "=" * 70)
-        print(green   + "\n[" + red + "0"  + green + "]" + cyan+ " Clear Screen")
+        print(green   + "\n[" + red + "0"  + green + "]" + cyan + " Clear Screen")
         print(green   + "["   + red + "1"  + green + "]" + cyan + " Witcher\t\t"         + yellow + " A simple port scanner.")
         print(green   + "["   + red + "2"  + green + "]" + cyan + " MD5Crypt\t\t"        + yellow + " MD5 encryption.")
         print(green   + "["   + red + "3"  + green + "]" + cyan + " IPEye\t\t"           + yellow + " Get informations about an ip address.")
