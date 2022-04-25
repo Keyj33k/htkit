@@ -4,9 +4,6 @@
 
 ### Hunter-Toolkit. A Collection Of Selfwritten Tools.
 
----
-
-- The hunter-toolkit is a python project for information gathering and en-/decryption using b64 and md5.
 
 Witcher
 -------------------------------------------------------------------
