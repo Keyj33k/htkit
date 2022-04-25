@@ -2,3 +2,4 @@ phonenumbers==8.12.45
 pyfiglet==0.8.post1 
 requests==2.27.1
 termcolor==1.1.0
+psutil==5.9.0 
