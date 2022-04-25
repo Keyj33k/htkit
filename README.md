@@ -61,7 +61,7 @@ Note:
 --------------------------
 - This tool is only for educational purposes. 
 - I'm not responsible for your actions. 
-- Don't hack anyone without their permissions.
+- Don't hack anyone without permissions.
 - With great force follows great responsibility.
 
 ---
