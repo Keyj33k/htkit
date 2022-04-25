@@ -49,7 +49,7 @@ class Hunter:
         """, "cyan"))
         print(magenta + " <"  + green + " by@keyjeek " + magenta + ">"     + cyan    + " | " + green + "Follow the white rabbit ...") 
         print(magenta + " <"  + green + " contact:nomotikag33n@gmail.com " + magenta + ">" + yellow + " Ver" + magenta + ".:" + red + "1.0.8")           
-        print(cyan    + "\n[" + red   + "i" + cyan + "] " + yellow         + "Hunter is a small toolkit to perform information gathering.")   
+        print(cyan    + "\n[" + red   + "i" + cyan + "] " + yellow + "Hunter is a small toolkit to perform information gathering.")   
 
     def menu():
         print(magenta + "=" * 70)
