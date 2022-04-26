@@ -3,38 +3,20 @@
 # Project - Hunter | Written In <a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python Badge"/></a>
 
 ### Hunter-Toolkit. A Collection Of Selfwritten Tools.
-
-
-Witcher
--------------------------------------------------------------------
-- A simple socket tcp portscanner.
-
-Md5crypt
--------------------------------------------------------------------
-- A md5 encryption tool.
-
-IPEye
--------------------------------------------------------------------
-- Tracking tool for the internet protocol.
-
-Banner Grabber
--------------------------------------------------------------------
-- A banner grabbing tool for available banners behind open ports. <br>
-
-B64crypt
--------------------------------------------------------------------
-- A tool written vor base64 en- and decryption.
-
-PhoneStalk
--------------------------------------------------------------------
-- A simple tool for getting informations about a phonenumber.
-
-SubdomainScanner
--------------------------------------------------------------------
-- Use this tool for finding subdomains of a website.
-
-![example](https://github.com/Keyj33k/profiles/blob/main/profile/hunter.png?raw=true)
-
+```
+Witcher               A simple port scanner.
+MD5Crypt              MD5 encryption.
+IPEye                 Get informations about an ip address.
+BannerGrabber         Get service behind a port.
+B64Crypt              En- and Decryption used base64.
+PhoneStalk            Get informations about a phonenumber
+SubdomainScanner      Get subdomains from any url.
+Whoami                Get infos like current ip address etc.
+MySystem              Get infos like cpu usage, disk usage etc.
+GetIPfromURL          Get the ip address of any url.
+AutoInfoGathering     Get infos like: open ports, location etc.
+PassGen               Generate a random password.
+```
 USAGE of HUNTER:
 -------------------------------------------------------------------
 
