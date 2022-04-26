@@ -75,9 +75,9 @@ class Hunter:
         print(magenta + "="   * 70)
 
     def get_ip_from_url():
-        passgen_banner = pfgt.figlet_format("url2ip", font="banner3-D")
+        passgen_banner  = pfgt.figlet_format("url2ip", font="banner3-D")
         print(cld(passgen_banner, "cyan"))
-        print(magenta + "#" * 24          + green, " *writtenby@Keyj33k " + magenta, "#" * 24 + "\n")
+        print(magenta   + "#" * 24          + green, " *writtenby@Keyj33k " + magenta, "#" * 24 + "\n")
         try:
             target_url  = str(input(red + "(" + cyan + "URL" + red + ") " + yellow))
             os.system("clear")
@@ -589,17 +589,17 @@ class Hunter:
         global tarad
         passgen_banner = pfgt.figlet_format("who$url", font="banner3-D")
         print(cld(passgen_banner, "cyan"))
-        print(magenta + "#" * 24          + green, " *writtenby@Keyj33k " + magenta, "#" * 24 + "\n")
+        print(magenta  + "#" * 24          + green, " *writtenby@Keyj33k " + magenta, "#" * 24 + "\n")
         try:
-            tarad = str(input(red + "(" + cyan + "URL: " + red + ")" + magenta + "$ " + yellow))
-            if tarad == 'x' or tarad == 'exit':
+            tarad      = str(input(red + "(" + cyan + "URL: " + red + ")" + magenta + "$ " + yellow))
+            if tarad   == 'x' or tarad == 'exit':
                 Hunter.return_haunt()
         except ValueError:
-            print(red + "You need to enter a address like: example.com!")
+            print(red  + "You need to enter a address like: example.com!")
             input(cyan + "Press any key to continue")
-        whs = whois.whois(tarad)
-        print(green + whs.text)
-        input(cyan + "Press any key to continue")
+        whs            = whois.whois(tarad)
+        print(green    + whs.text)
+        input(cyan     + "Press any key to continue")
 
     def information_gathering():
         try:
