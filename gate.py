@@ -523,21 +523,21 @@ class Hunter:
             except PermissionError:
                 continue
 
-            print(cyan + "Total Size: " + yellow + f"{show_size(part_usage.total)}")
-            print(cyan + "In Use: " + yellow + f"{show_size(part_usage.used)}")
-            print(cyan + "Free: " + yellow + f"{show_size(part_usage.free)}")
-            print(cyan + "Percentance: " + yellow + f"{part_usage.percent}%")
+            print(cyan + "Total Size: "         + yellow + f"{show_size(part_usage.total)}")
+            print(cyan + "In Use: "             + yellow + f"{show_size(part_usage.used)}")
+            print(cyan + "Free: "               + yellow + f"{show_size(part_usage.free)}")
+            print(cyan + "Percentance: "        + yellow + f"{part_usage.percent}%")
 
         disk_io        = psutil.disk_io_counters() 
-        print(cyan     + "Read Since Boot: " + yellow + f"{show_size(disk_io.read_bytes)}")
+        print(cyan     + "Read Since Boot: "    + yellow + f"{show_size(disk_io.read_bytes)}")
         print(cyan     + "Written Since Boot: " + yellow + f"{show_size(disk_io.write_bytes)} \n")
 
         print(magenta  + "=" * 40, "| CPU_Info |", "=" * 50)
-        print(cyan     + "\nCores: " + yellow + f"{psutil.cpu_count(logical=False)}")
-        print(cyan     + "Logical Cores: " + yellow + f"{psutil.cpu_count(logical=True)}")
-        print(cyan     + "Maximal Freq: " + yellow + f"{psutil.cpu_freq().max:.1f}Mhz")
-        print(cyan     + "Current Freq: " + yellow + f"{psutil.cpu_freq().current:.1f}Mhz")
-        print(cyan     + "CPU Usage: " + yellow + f"{psutil.cpu_percent()}%")
+        print(cyan     + "\nCores: "            + yellow + f"{psutil.cpu_count(logical=False)}")
+        print(cyan     + "Logical Cores: "      + yellow + f"{psutil.cpu_count(logical=True)}")
+        print(cyan     + "Maximal Freq: "       + yellow + f"{psutil.cpu_freq().max:.1f}Mhz")
+        print(cyan     + "Current Freq: "       + yellow + f"{psutil.cpu_freq().current:.1f}Mhz")
+        print(cyan     + "CPU Usage: "          + yellow + f"{psutil.cpu_percent()}%")
         print(cyan     + "\nCPU Core Usage: \n" + yellow)
 
         for core, percentance in enumerate(psutil.cpu_percent(percpu=True, interval=1)): # show percentence for all cores
