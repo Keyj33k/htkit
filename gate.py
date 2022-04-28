@@ -186,7 +186,7 @@ class Hunter:
                     final_result    = socket_sock.connect_ex((target_address, target)) 
                     socket_sock.settimeout(1) 
                     if final_result == 0: 
-                        print(green + "Port\t{}\t\t\t\t\t   open".format(target))
+                        print(green + f"Port\t{target}\t\t\t\t\t   open")
                     socket_sock.close() 
             except socket.error as socket_error:
                 print(cld(socket_error, "red"))
