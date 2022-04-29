@@ -6,10 +6,10 @@
 ```
 Witcher               A simple port scanner.
 MD5Crypt              MD5 encryption.
-WhoisIP               Get informations about an ipv4 address.
+WhoisForIP               Get informations about an ipv4 address.
 BannerGrabber         Get service behind a port.
 B64Crypt              En- and Decryption used base64.
-WhoisPhonenumber      Get informations about a phonenumber
+WhoisForPhonenumber   Get informations about a phonenumber
 SubdomainScanner      Get subdomains from any url.
 Whoami                Get infos like current ip address etc.
 MySystem              Get infos like cpu usage, disk usage etc.
