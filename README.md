@@ -44,7 +44,7 @@ python3 gate.py
 ---
 Note:
 --------------------------
-- This tool is only for educational purposes. 
+- This tool is only for ethical purposes. 
 - I'm not responsible for your actions. 
 - Don't hack anyone without permissions.
 - With great force follows great responsibility.
