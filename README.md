@@ -6,7 +6,7 @@
 ```
 Witcher               A simple port scanner.
 MD5Crypt              MD5 encryption.
-WhoisForIP               Get informations about an ipv4 address.
+WhoisForIP            Get informations about an ipv4 address.
 BannerGrabber         Get service behind a port.
 B64Crypt              En- and Decryption used base64.
 PhoneStalk            Get informations about a phonenumber
