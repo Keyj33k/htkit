@@ -9,7 +9,7 @@ MD5Crypt              MD5 encryption.
 WhoisForIP               Get informations about an ipv4 address.
 BannerGrabber         Get service behind a port.
 B64Crypt              En- and Decryption used base64.
-WhoisForPhonenumber   Get informations about a phonenumber
+PhoneStalk            Get informations about a phonenumber
 SubdomainScanner      Get subdomains from any url.
 Whoami                Get infos like current ip address etc.
 MySystem              Get infos like cpu usage, disk usage etc.
