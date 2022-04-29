@@ -77,7 +77,7 @@ class Hunter:
     def get_ip_from_url():
         passgen_banner  = pfgt.figlet_format("url2ip", font="banner3-D")
         print(cld(passgen_banner, "cyan"))
-        print(magenta   + "#" * 24          + green, " *writtenby@Keyj33k " + magenta, "#" * 24 + "\n")
+        print(magenta   + "#" * 24 + green, " *writtenby@Keyj33k " + magenta, "#" * 24 + "\n")
         try:
             target_url  = str(input(red + "(" + cyan + "URL" + red + ") " + yellow))
             os.system("clear")
@@ -659,8 +659,7 @@ class Hunter:
                         final_result    = socket_sock.connect_ex((target_address, target)) 
                         socket_sock.settimeout(1) 
                         if final_result == 0: 
-                            # print(green + "Port\t{}\t\t\t\t\t   open".format(target))
-                            res         = "\nPort\t{}\t\t\t\t\t   open\n".format(target) # , socket_sock.recv(1024).decode())
+                            res         = f"\nPort\t{target}\t\t\t\t\t   open\n" # , socket_sock.recv(1024).decode())
                         socket_sock.close() 
                     except socket.timeout:
                         continue
