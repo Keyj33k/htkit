@@ -75,9 +75,9 @@ class Hunter:
         print(magenta + "="   * 70)
 
     def get_ip_from_url():
-        passgen_banner = pfgt.figlet_format("url2ip", font="banner3-D")
+        passgen_banner  = pfgt.figlet_format("url2ip", font="banner3-D")
         print(cld(passgen_banner, "cyan"))
-        print(magenta + "#" * 24          + green, " *writtenby@Keyj33k " + magenta, "#" * 24 + "\n")
+        print(magenta   + "#" * 24          + green, " *writtenby@Keyj33k " + magenta, "#" * 24 + "\n")
         try:
             target_url  = str(input(red + "(" + cyan + "URL" + red + ") " + yellow))
             os.system("clear")
@@ -99,7 +99,7 @@ class Hunter:
 
         passgen_banner          = pfgt.figlet_format("passgen", font="banner3-D")
         print(cld(passgen_banner, "cyan"))
-        print(magenta + "#" * 24          + green, " *writtenby@Keyj33k " + magenta, "#" * 24 + "\n")
+        print(magenta           + "#" * 24 + green, " *writtenby@Keyj33k " + magenta, "#" * 24 + "\n")
         try:
             passw_length        = int(input(red + "(" + yellow + "Password length" + red + ")" + magenta + "$ "))
         except ValueError as ve:
