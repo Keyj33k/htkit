@@ -103,7 +103,7 @@ class Hunter:
         try:
             passw_length        = int(input(red + "(" + yellow + "Password length" + red + ")" + magenta + "$ "))
         except ValueError as ve:
-            print(red           + f"You need to enter a string!\n{ve}")
+            print(red           + f"You need to enter a integer!\n{ve}")
             Hunter.password_generator()
 
         numbers                 = "1234567890"
@@ -111,13 +111,9 @@ class Hunter:
         uppers                  = "ABVDEFGHIJKLMNOPQRSTUVWXYZ"
         special                 = "§$%&/()=}[{]?!_.,;:" 
         mixer                   = numbers + lowers + uppers + special
-
-        try:
-            passw_result        = random.sample(mixer, passw_length)
-        except ValueError as ve:
-            print(red           + f"You need to enter a string!\n{ve}")
-
+        passw_result            = random.sample(mixer, passw_length)
         finalp                  = ''.join(passw_result)
+        
         print(cyan              + "\nYour generated password: " + green + f"{finalp}\n" + white)
         input(yellow            + "Press any key to continue" )
 
