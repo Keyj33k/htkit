@@ -101,7 +101,7 @@ class Hunter:
         print(cld(passgen_banner, "cyan"))
         print(magenta           + "#" * 24 + green, " *writtenby@Keyj33k " + magenta, "#" * 24 + "\n")
         try:
-            passw_length        = int(input(red + "(" + yellow + "Password length" + red + ")" + magenta + "$ "))
+            passw_length        = int(input(red + "(" + yellow + "Password length(Use '0' to exit)" + red + ")" + magenta + "$ "))
         except ValueError as ve:
             print(red           + f"You need to enter a integer!\n{ve}")
             Hunter.password_generator()
