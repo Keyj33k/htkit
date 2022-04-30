@@ -312,10 +312,10 @@ class Hunter:
             os.system('clear')
             Hunter.eye_main() 
         
-        print(magenta    + "=" * 70)      
+        print(magenta    + "=" * 70 + "\n")      
         for lookup in response:
             for k, j in lookup.items():
-                print(yellow + "\n" + k,j)
+                print(yellow + k,j)
         time_stop        = dtt.now()
         time_result      = time_stop - time_start   
         print("\n"       + magenta + "=" * 70)
