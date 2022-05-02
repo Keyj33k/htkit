@@ -78,6 +78,7 @@ class Hunter:
         passgen_banner  = pfgt.figlet_format("url2ip", font="banner3-D")
         print(cld(passgen_banner, "cyan"))
         print(magenta   + "#" * 24          + green, " *writtenby@Keyj33k " + magenta, "#" * 24 + "\n")
+        
         try:
             target_url  = str(input(red + "(" + cyan + "URL" + red + ") " + yellow))
             os.system("clear")
@@ -100,6 +101,7 @@ class Hunter:
         passgen_banner          = pfgt.figlet_format("passgen", font="banner3-D")
         print(cld(passgen_banner, "cyan"))
         print(magenta           + "#" * 24 + green, " *writtenby@Keyj33k " + magenta, "#" * 24 + "\n")
+        
         try:
             passw_length        = int(input(red + "(" + yellow + "Password length(Use '0' to exit)" + red + ")" + magenta + "$ "))
         except ValueError as ve:
@@ -222,6 +224,7 @@ class Hunter:
                 SUBDOMAIN                    = read_file.splitlines()
                 for list_domains in SUBDOMAIN:
                     UniformResourceLocator   = f"http://{list_domains}.{target_address}"
+                    
                     try:
                         import requests
                         requests.get(UniformResourceLocator)
@@ -304,6 +307,7 @@ class Hunter:
             Hunter.return_haunt()   
         time_start       = dtt.now()
         print(green      + "\nResults:")
+        
         try:
             response     = requests.post("http://ip-api.com/batch", json=[{"query":ipeye_scanner}]).json()   
         except Exception as error:
@@ -395,7 +399,8 @@ class Hunter:
         if choice               == "1":
             hash_value          = input(cyan + "Text: " + magenta + "~#$ " + green) 
             if hash_value       == 'exit' or hash_value == 'x':
-                return Hunter.return_haunt()     
+                return Hunter.return_haunt()  
+            
             try:    
                 m_bytes         = hash_value.encode('ascii')
                 b64_e           = base64.b64encode(m_bytes)
@@ -592,6 +597,7 @@ class Hunter:
         passgen_banner = pfgt.figlet_format("who$url", font="banner3-D")
         print(cld(passgen_banner, "cyan"))
         print(magenta  + "#" * 24          + green, " *writtenby@Keyj33k " + magenta, "#" * 24 + "\n")
+        
         try:
             tarad      = str(input(red + "(" + cyan + "URL: " + red + ")" + magenta + "$ " + yellow))
             if tarad   == 'x' or tarad == 'exit':
@@ -599,6 +605,7 @@ class Hunter:
         except ValueError:
             print(red  + "You need to enter a address like: example.com!")
             input(cyan + "Press any key to continue")
+            
         whs = whois.whois(tarad)
         print(green    + whs.text)
         input(cyan     + "Press any key to continue")
@@ -610,6 +617,7 @@ class Hunter:
             global new_url
             global sd_r
             global res
+            
             try:
                 target_address    = str(input(cyan + "URL: " + yellow))
                 if target_address == 'x' or target_address == 'exit':
@@ -678,6 +686,7 @@ class Hunter:
             found_subdomains     = []
             for subdomain in sub_sp_subdomains:
                 url              = f"http://{subdomain}.{target_address}"
+                
                 try:
                     requests.get(url)
                 except requests.ConnectionError:
@@ -689,11 +698,13 @@ class Hunter:
                 for subdomain in found_subdomains:
                     print(subdomain, file=f)
             with open("results.txt", "a") as final_output:
+                
                 try:
                     final_output.write(locate())
                 except Exception as error:
                     print(cld(f"An error was defined! {error}", "red"))
                     Hunter.information_gathering()
+                    
                 try:
                     final_output.write(res)
                 except Exception as error:
