@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-from urllib import response
 from phonenumbers import timezone as tz
 from phonenumbers import geocoder as gc
 from phonenumbers import carrier as cr
@@ -603,7 +602,7 @@ class Hunter:
         print(cyan          + "Job Done In " + green + f"{needed_time}")
         input(cyan          + "Press Any Key To Continue")
 
-    def Whois_URL():
+    def whois_URL():
         import whois
         global tarad
         passgen_banner = pfgt.figlet_format("who$url", font="banner3-D")
@@ -793,7 +792,7 @@ if __name__ == "__main__":
             elif hunter_choice == 12:
                 Hunter.password_generator()
             elif hunter_choice == 13:
-                Hunter.Whois_URL()
+                Hunter.whois_URL()
             elif hunter_choice == 14:
                 Hunter.get_header()
             elif hunter_choice == 99:
