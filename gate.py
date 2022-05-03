@@ -30,7 +30,7 @@ red     = "\033[0;31m"
 #   Twitter :   @keyjeek                  #
 #   Github  :   @keyj33k                  #
 #   Insta   :   @keyjeek                  #
-#   Version :   1.0.9                     #
+#   Version :   1.1.0                     #
 #                                         #
 # # # # # # # # # # # # # # # # # # # # # # 
 
