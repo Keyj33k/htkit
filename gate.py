@@ -32,7 +32,7 @@ global target_port_witcher
 #   Twitter :   @keyjeek                  #
 #   Github  :   @keyj33k                  #
 #   Insta   :   @keyjeek                  #
-#   Version :   1.1.0                     #
+#   Version :   1.1.1                     #
 #                                         #
 # # # # # # # # # # # # # # # # # # # # # #
 
