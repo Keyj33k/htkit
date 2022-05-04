@@ -22,9 +22,6 @@ white = "\033[0;37m"
 cyan = "\033[0;36m"
 red = "\033[0;31m"
 
-global target_address_witcher
-global target_port_witcher
-
 # # # # # # # # # # # # # # # # # # # # # #
 #                                         #
 #   Author  :   Keyj33k                   #
@@ -225,9 +222,9 @@ def witcher():
                 socket_sock.settimeout(1)
                 if final_result == 0:
                     try:
-                        print(green + f"TCP\t\t{target}\t\topen\t", socket.getservbyport(target))
+                        print(green + f"TCP\t\t{target}  \t\topen\t", socket.getservbyport(target))
                     except:
-                        print(green + f"TCP\t\t{target}\t\topen\t Unknown")
+                        print(green + f"TCP\t\t{target}  \t\topen\t Unknown")
                 socket_sock.close()
         except socket.error as socket_error:
             print(cld(socket_error, "red"))
