@@ -177,11 +177,15 @@ def get_header():
     header_from = input(white + "Target: ")
     if header_from == 'x' or header_from == 'exit':
         return_haunt()
-    else:
-        request = urllib3.PoolManager()
-        req = request.urlopen("GET", header_from)
-        print(req.headers)
-        input(cyan + "\nPress any key to continue")
+
+    request = urllib3.PoolManager()
+    req1 = request.request("HEAD", header_from)
+    print("Date:\t", req1.headers['Date'])
+    print("Server:\t", req1.headers['Server'])
+    print("Content-Type:\t", req1.headers['Content-Type'])
+    print("Accept-Ranges:\t", req1.headers['Accept-Ranges'])
+    print("Vary:\t", req1.headers['Vary'])
+    input("\nPress any key to continue")
 
 def witcher():
     global target_port_witcher, target_address_witcher
