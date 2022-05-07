@@ -423,7 +423,6 @@ def banner_grabber():
             print(chr(0xa))
             input(cyan + "Press any key to continue")
         except socket.error as sock_err:
-            os.system("clear")
             print(cld(f"\nAn error was defined: {sock_err}", "red"))
             return banner_grabber()
 
