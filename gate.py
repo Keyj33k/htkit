@@ -10,6 +10,8 @@ import requests
 import hashlib
 import socket
 import base64
+import psutil
+import whois
 import json
 import time
 import sys
@@ -22,6 +24,21 @@ white = "\033[0;37m"
 cyan = "\033[0;36m"
 red = "\033[0;31m"
 
+
+target_address_witcher = ""
+target_port_witcher = ""
+target_address = ""
+hunter_choice = ""
+passw_length = ""
+passw_result = ""
+target_port = ""
+response = ""
+new_url = ""
+tarad = ""
+sd_r = ""
+res = ""
+
+
 # # # # # # # # # # # # # # # # # # # # # #
 #                                         #
 #   Author  :   Keyj33k                   #
@@ -29,12 +46,13 @@ red = "\033[0;31m"
 #   Twitter :   @keyjeek                  #
 #   Github  :   @keyj33k                  #
 #   Insta   :   @keyjeek                  #
-#   Version :   1.1.1                     #
+#   Version :   1.1.2                     #
 #                                         #
 # # # # # # # # # # # # # # # # # # # # # #
 
 def return_haunt():
     pass
+
 
 def banner():
     print(cld("""
@@ -47,7 +65,6 @@ def banner():
     █    █ █   █  █   █    █    █       █
     █    █ █▒ ▓█  █   █    █░   ▓▓  █   █
     █    █ ▒██▒█  █   █    ▒██   ███▒   █
-
     """, "cyan"))
     print(magenta + " <" + green + " by@keyjeek " + magenta + ">"
           + cyan + " | " + green + "Follow the white rabbit ...")
@@ -56,29 +73,30 @@ def banner():
     print(cyan + "\n[" + red + "i" + cyan + "] " + yellow
           + "Hunter is a small toolkit to perform information gathering.")
 
+
 def menu():
     print(magenta + "=" * 70)
     print(green + "\n{" + red + "0" + green + "} " + cyan + " Clear Screen")
     print(green + "{" + red + "1" + green + "} " + cyan + " Witcher\t\t\t" + yellow + " A simple port scanner.")
     print(green + "{" + red + "2" + green + "} " + cyan + " MD5Crypt\t\t\t" + yellow + " MD5 encryption.")
     print(green + "{" + red + "3" + green + "} " + cyan
-        + " WhoisForIP\t\t\t" + yellow + " Get informations about an ip address.")
+          + " WhoisForIP\t\t\t" + yellow + " Get informations about an ip address.")
     print(green + "{" + red + "4" + green + "} " + cyan
-        + " BannerGrabber\t\t" + yellow + " Get service behind a port.")
+          + " BannerGrabber\t\t" + yellow + " Get service behind a port.")
     print(green + "{" + red + "5" + green + "} " + cyan
-        + " B64Crypt\t\t\t" + yellow + " En- and Decryption used base64.")
+          + " B64Crypt\t\t\t" + yellow + " En- and Decryption used base64.")
     print(green + "{" + red + "6" + green + "} " + cyan
-        + " PhoneStalk\t\t\t" + yellow + " Get informations about a phonenumber")
+          + " PhoneStalk\t\t\t" + yellow + " Get informations about a phonenumber")
     print(green + "{" + red + "7" + green + "} " + cyan
-        + " SubdomainScanner\t" + yellow + " Get subdomains from any url.")
+          + " SubdomainScanner\t" + yellow + " Get subdomains from any url.")
     print(green + "{" + red + "8" + green + "} " + cyan
-        + " Whoami\t\t\t\t" + yellow + " Get infos like current ip address etc.")
+          + " Whoami\t\t\t\t" + yellow + " Get infos like current ip address etc.")
     print(green + "{" + red + "9" + green + "} " + cyan
-        + " MySystem\t\t\t" + yellow + " Get infos like cpu usage, disk usage etc.")
+          + " MySystem\t\t\t" + yellow + " Get infos like cpu usage, disk usage etc.")
     print(green + "{" + red + "10" + green + "}" + cyan
-        + " GetIPfromURL\t\t" + yellow + " Get the ip address of any url.")
+          + " GetIPfromURL\t\t" + yellow + " Get the ip address of any url.")
     print(green + "{" + red + "11" + green + "}" + cyan
-        + " AutoInfoGathering\t" + yellow + " Get infos like: open ports, location etc.")
+          + " AutoInfoGathering\t" + yellow + " Get infos like: open ports, location etc.")
     print(green + "{" + red + "12" + green + "}" + cyan
           + " PassGen\t\t\t" + yellow + " Generate a random password.")
     print(green + "{" + red + "13" + green + "}" + cyan
@@ -89,16 +107,16 @@ def menu():
           + " Exit\n")
     print(magenta + "=" * 70)
 
+
 def get_ip_from_url():
     passgen_banner = pfgt.figlet_format("url2ip", font="slant")
     print(cld(passgen_banner, "cyan"))
-    print(magenta + "#" * 24 + green, " *writtenby@Keyj33k " + magenta, "#" * 24 + "\n")
 
     try:
         target_url = str(input(red + "(" + cyan + "URL" + red + ") " + yellow))
         os.system("clear")
         print(green + "\n[" + red + "*" + green + "]" + cyan
-            + f" IP Address from {target_url}: " + green + socket.gethostbyname(target_url))
+              + f" IP Address from {target_url}: " + green + socket.gethostbyname(target_url))
         input(cyan + "\nPress any key to continue")
     except ValueError:
         print(red + "\nYou need to enter a value like: google.com in example.")
@@ -109,6 +127,7 @@ def get_ip_from_url():
         input(cyan + "Press any key to continue")
         get_ip_from_url()
 
+
 def password_generator():
     import random
     global passw_length
@@ -116,7 +135,6 @@ def password_generator():
 
     passgen_banner = pfgt.figlet_format("passgen", font="slant")
     print(cld(passgen_banner, "cyan"))
-    print(magenta + "#" * 24 + green, " *writtenby@Keyj33k " + magenta, "#" * 24 + "\n")
 
     try:
         passw_length = int(
@@ -141,6 +159,7 @@ def password_generator():
     finalp = ''.join(passw_result)
     print(cyan + "\nYour generated password: " + green + f"{finalp}\n" + white)
     input(yellow + "Press any key to continue")
+
 
 def whoami_():
     import uuid, re
@@ -168,12 +187,12 @@ def whoami_():
     print(cyan + "\tCurrent Path :" + yellow + f"\t{get_path}")
     input(cyan + "\nPress any key to continue")
 
+
 def get_header():
     import urllib3
 
     passgen_banner = pfgt.figlet_format("GHeader", font="slant")
     print(cld(passgen_banner, "cyan"))
-    print(magenta + "#" * 24 + green, " *writtenby@Keyj33k " + magenta, "#" * 24 + "\n")
     header_from = input(white + "Target: ")
     if header_from == 'x' or header_from == 'exit':
         return_haunt()
@@ -186,6 +205,7 @@ def get_header():
     print("Accept-Ranges:\t", req1.headers['Accept-Ranges'])
     print("Vary:\t", req1.headers['Vary'])
     input("\nPress any key to continue")
+
 
 def witcher():
     global target_port_witcher, target_address_witcher
@@ -244,13 +264,12 @@ def witcher():
         print(chr(0xa))
         input(cyan + "Press any key to continue")
 
+
 def subdomain_scanner():
+    import requests
     while True:
         sds_banner = pfgt.figlet_format("Sub- domain- Scanner", font="slant")
         print(yellow + sds_banner)
-        print(magenta + "\n< " + green + "by@keyjeek" + magenta + " >"
-            + cyan + " | " + yellow + "Follow the white rabbit ...")
-        print(magenta + "< " + green + "contact:nomotikag33n@gmail.com" + magenta + " >")
         found_subdomain = []
         target_address_sds = input(yellow + "\nTarget " + magenta + "~#$ " + red)
         if target_address_sds == 'exit' or target_address_sds == 'x':
@@ -263,7 +282,6 @@ def subdomain_scanner():
                 uniformresourcelocator = f"http://{list_domains}.{target_address_sds}"
 
                 try:
-                    import requests
                     requests.get(uniformresourcelocator)
                 except requests.ConnectionError:
                     from termcolor import colored
@@ -272,11 +290,13 @@ def subdomain_scanner():
                     print(green + "Discovered:", uniformresourcelocator)
                     found_subdomain.append(uniformresourcelocator)
         input(cyan + "Press any key to continue")
+
+
 def md5():
     md5_banner = pfgt.figlet_format("MD5C", font="slant")
     print(cld(md5_banner, "cyan"))
     print(cyan + "[" + red + "i" + cyan + "]"
-        + yellow + " md5crypt is made to encrypt your string to an 128 bit hash value")
+          + yellow + " md5crypt is made to encrypt your string to an 128 bit hash value")
     print(cyan + "[" + red + "i" + cyan + "]" + yellow + " Type 'exit' to exit md5crypt.")
     print(chr(0xa))
 
@@ -295,6 +315,8 @@ def md5():
         print(cld(f"An error was defined! {error}", "red"))
         input(cyan + "Press any key to continue")
         md5()  # https://www.md5online.org/md5-decrypt.html This program is using a big database to bruteforce the hash for you
+
+
 def conditions():
     os.system("clear")
     print(cld("""
@@ -302,14 +324,14 @@ def conditions():
  < =============================================================================== >
  \n Please note that actions like portscanning etc. can be illegal. 
  If you want to use this tool, follow the conditions:
- 
+
   - This tool is made for ethical purposes only.
   - I'm not responsible for your actions.
   - With great force follows great responsibility.
-  
+
  If you accept the conditions type 'y' and 'n' for decline.
  Thank you and have a nice day!
- 
+
   ~ Keyjeek\n
     """, "red"))
 
@@ -326,13 +348,11 @@ def conditions():
         os.system("clear")
         return conditions()
 
+
 def eye_main():
     global response
     ipe_banner = pfgt.figlet_format("IPEYE", font="slant")
     print(cld(ipe_banner, "yellow"))
-    print(magenta + "\n< " + green + "by@keyjeek"
-        + magenta + " >" + cyan + " | " + yellow + "Follow the white rabbit ...")
-    print(magenta + "< " + green + "contact:nomotikag33n@gmail.com" + magenta + " >")
     print(red + "[" + cyan + "i" + red + "]" + yellow + "IPEye is a Tool to find out")
     print(red + "--" + magenta + "> " + yellow + "some information about an IP Address.")
     print(red + "[" + cyan + "i" + red + "]" + yellow + "Type 'exit' to exit ipeye.")
@@ -365,6 +385,7 @@ def eye_main():
     print(green + f"Scanner done in {time_result}!")
     input(cyan + "Press any key to continue")
 
+
 def banner_grabber():
     tab2 = "\t" * 2
     tab3 = "\t" * 3
@@ -386,12 +407,12 @@ def banner_grabber():
             os.system("clear")
             break
 
-        target_port = input(red
+        target_p = input(red
                             + "[" + cyan + "*" + red + "]"
                             + cyan + " Port " + yellow
                             + "(Exit with 'exit' or 'x'): " + red)
 
-        if target_port == 'exit' or target_host == 'x':
+        if target_p == 'exit' or target_host == 'x':
             os.system("clear")
             break
 
@@ -425,6 +446,7 @@ def banner_grabber():
         except socket.error as sock_err:
             print(cld(f"\nAn error was defined: {sock_err}", "red"))
             return banner_grabber()
+
 
 def base64encode():
     b64_banner = pfgt.figlet_format("B64-  CRYPT", font="slant")
@@ -471,12 +493,12 @@ def base64encode():
             input(cyan + "Press any key to continue")
             return base64encode()
 
+
 def number_tracker():
     pnsk_banner = pfgt.figlet_format("Phone- Stalk", font="slant")
     print(cld(pnsk_banner, "magenta"))
-    print(magenta + "< " + green + "contact:nomotikag33n@gmail.com" + magenta + " >")
     print(red + "[" + cyan + "i" + red + "]" + yellow
-        + "This Tool helps to find out some informations\n about a phonenumber.")
+          + "This Tool helps to find out some informations\n about a phonenumber.")
     print(red + "[" + cyan + "i" + red + "]" + yellow + "Type 'exit' to exit PhoneStalk.")
 
     while True:
@@ -519,7 +541,7 @@ def number_tracker():
             print(magenta + "=" * 55)
         except Exception as error:
             print(cld("[i] An error was defined!", "red"))
-            print(cld(error, "red"))
+            print(error)
             input(red + "Press any key to continue")
             number_tracker()
 
@@ -527,10 +549,9 @@ def number_tracker():
         input(cyan + "Press any key to continue")
         break
 
+
 def my_system():
-    import pyfiglet as pfgt
     import platform
-    import psutil
 
     print(cyan + pfgt.figlet_format("sysinf", "slant"))
     continue_or_exit = input(yellow + "Press any key to continue ")
@@ -549,12 +570,12 @@ def my_system():
     print(cyan + "Processor: " + yellow + f"{get_system.processor} \n")
 
     def show_size(size):
-        format = 1024
-        for type in ["B", "KB", "MB", "GB", "TB"]:
-            if size > format:
-                size = size / format
+        f = 1024
+        for t in ["B", "KB", "MB", "GB", "TB"]:
+            if size > f:
+                size = size / f
             else:
-                return f"{size:.3f}{type}"  # output formatted to 3 decimal places
+                return f"{size:.3f}{t}"  # output formatted to 3 decimal places
 
     get_partitions = psutil.disk_partitions()
     print(magenta + "=" * 40, "| Disk_Information |", "=" * 42)
@@ -622,18 +643,19 @@ def my_system():
     boot_time = dtt.fromtimestamp(boot_time_timestamp)
     print(magenta + "=" * 40, "| Boot |", "=" * 55)
     print(cyan + "\nLast Boot: " + yellow
-        + f"{boot_time.day}.{boot_time.month}.{boot_time.year} {boot_time.hour}:{boot_time.minute}:{boot_time.second}\n")
+          + f"{boot_time.day}.{boot_time.month}.{boot_time.year} {boot_time.hour}:{boot_time.minute}:{boot_time.second}\n")
     end_time = dtt.now()  # get end time
     needed_time = end_time - start_time
     print(cyan + "Job Done In " + green + f"{needed_time}")
     input(cyan + "Press Any Key To Continue")
-def whois_URL():
+
+
+def whois_url():
     import whois
     global tarad
 
     passgen_banner = pfgt.figlet_format("who$url", font="slant")
     print(cld(passgen_banner, "cyan"))
-    print(magenta + "#" * 24 + green, " *writtenby@Keyj33k " + magenta, "#" * 24 + "\n")
 
     try:
         tarad = str(input(red + "(" + cyan + "URL: " + red + ")" + magenta + "$ " + yellow))
@@ -646,6 +668,7 @@ def whois_URL():
     whs = whois.whois(tarad)
     print(green + whs.text)
     input(cyan + "Press any key to continue")
+
 
 def information_gathering():
     try:
@@ -689,17 +712,18 @@ def information_gathering():
         def locate():
             try:
                 target_addr = socket.gethostbyname(target_address)
-                response = requests.get(f'https://ipapi.co/{target_address}/json/').json()
+                resp = requests.get(f'https://ipapi.co/{target_address}/json/').json()
                 d = {
                     "IP Address": target_addr,
-                    "Country": response.get("country_name"),
-                    "Region": response.get("region"),
-                    "City": response.get("city"),
+                    "Country": resp.get("country_name"),
+                    "Region": resp.get("region"),
+                    "City": resp.get("city"),
                 }
                 con_to_str = json.dumps(d)
                 return con_to_str
             except socket.timeout:
                 pass
+
         try:
             for target in range(1, target_port):
                 try:
@@ -756,8 +780,10 @@ def information_gathering():
         input(cyan + "Press any key to continue")
         return return_haunt()
 
+
 if __name__ == "__main__":
     conditions()
+
 
     def start():
         os.system("clear")
@@ -777,7 +803,9 @@ if __name__ == "__main__":
             input(cyan + "Press any key to continue")
             return start()
 
+
     start()
+
 
     def hunter_main():
         while True:
@@ -827,7 +855,7 @@ if __name__ == "__main__":
             elif hunter_choice == 12:
                 password_generator()
             elif hunter_choice == 13:
-                whois_URL()
+                whois_url()
             elif hunter_choice == 14:
                 get_header()
             elif hunter_choice == 99:
@@ -842,5 +870,5 @@ if __name__ == "__main__":
                 input(cyan + "Press any key to continue")
                 return hunter_main()
 
-    hunter_main()
 
+    hunter_main()
