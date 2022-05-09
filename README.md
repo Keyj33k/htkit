@@ -17,8 +17,6 @@ GetIPfromURL          Get the ip address of any url.
 AutoInfoGathering     Get infos like: open ports, location etc.
 PassGen               Generate a random password.
 ```
-## How it looks like:
-![hill](https://github.com/Keyj33k/profiles/blob/main/profile/hunterscsh.png?raw=true)
 
 USAGE of HUNTER:
 -------------------------------------------------------------------
