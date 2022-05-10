@@ -50,10 +50,6 @@ res = ""
 #                                         #
 # # # # # # # # # # # # # # # # # # # # # #
 
-def return_haunt():
-    pass
-
-
 def banner():
     print(cld("""
     █    █                 █
@@ -69,7 +65,7 @@ def banner():
     print(magenta + " <" + green + " by@keyjeek " + magenta + ">"
           + cyan + " | " + green + "Follow the white rabbit ...")
     print(magenta + " <" + green + " contact:nomotikag33n@gmail.com "
-          + magenta + ">" + yellow + " Ver" + magenta + ".:" + red + "1.0.9")
+          + magenta + ">" + yellow + " Ver" + magenta + ".:" + red + "1.1.2")
     print(cyan + "\n[" + red + "i" + cyan + "] " + yellow
           + "Hunter is a small toolkit to perform information gathering.")
 
@@ -109,23 +105,26 @@ def menu():
 
 
 def get_ip_from_url():
-    passgen_banner = pfgt.figlet_format("url2ip", font="slant")
-    print(cld(passgen_banner, "cyan"))
+    while True:
+        passgen_banner = pfgt.figlet_format("url2ip", font="slant")
+        print(cld(passgen_banner, "cyan"))
 
-    try:
-        target_url = str(input(red + "(" + cyan + "URL" + red + ") " + yellow))
-        os.system("clear")
-        print(green + "\n[" + red + "*" + green + "]" + cyan
-              + f" IP Address from {target_url}: " + green + socket.gethostbyname(target_url))
-        input(cyan + "\nPress any key to continue")
-    except ValueError:
-        print(red + "\nYou need to enter a value like: google.com in example.")
-        input(cyan + "Press any key to continue")
-        get_ip_from_url()
-    except socket.gaierror:
-        print(red + "\nYou need to enter a value like: google.com in example.")
-        input(cyan + "Press any key to continue")
-        get_ip_from_url()
+        try:
+            target_url = str(input(f"({os.getlogin()}@WhoisURL(use 'x' to exit))>> "))
+            if target_url == 'x' or target_url == 'exit':
+                break
+            os.system("clear")
+            print(green + "\n[" + red + "*" + green + "]" + cyan
+                  + f" IP Address from {target_url}: " + green + socket.gethostbyname(target_url))
+            input(cyan + "\nPress any key to continue")
+        except ValueError:
+            print(red + "\nYou need to enter a value like: google.com in example.")
+            input(cyan + "Press any key to continue")
+            get_ip_from_url()
+        except socket.gaierror:
+            print(red + "\nYou need to enter a value like: google.com in example.")
+            input(cyan + "Press any key to continue")
+            get_ip_from_url()
 
 
 def password_generator():
@@ -133,32 +132,33 @@ def password_generator():
     global passw_length
     global passw_result
 
-    passgen_banner = pfgt.figlet_format("passgen", font="slant")
-    print(cld(passgen_banner, "cyan"))
+    while True:
+        passgen_banner = pfgt.figlet_format("passgen", font="slant")
+        print(cld(passgen_banner, "cyan"))
 
-    try:
-        passw_length = int(
-            input(red + "(" + yellow + "Password length(Use '0' to exit)" + red + ")" + magenta + "$ "))
-    except ValueError as ve:
-        print(red + f"You need to enter a integer!\n{ve}")
-        password_generator()
+        try:
+            passw_length = int(
+                input(f"({os.getlogin()}@PassGen(use '0' to exit))>> "))
+        except ValueError as ve:
+            print(red + f"You need to enter a integer!\n{ve}")
+            password_generator()
 
-    if passw_length == 0:
-        return_haunt()
-    elif passw_length <= 7:
-        print(cld("Your password should be always bigger than eight characters.", "red"))
-        input(cyan + "\nPress any key to continue")
-        password_generator()
+        if passw_length == 0:
+            break
+        elif passw_length <= 7:
+            print(cld("Your password should be always bigger than eight characters.", "red"))
+            input(cyan + "\nPress any key to continue")
+            password_generator()
 
-    numbers = "1234567890"
-    lowers = "abcdefghijklmnopqrstuvwxyz"
-    uppers = "ABVDEFGHIJKLMNOPQRSTUVWXYZ"
-    special = "§$%&/()=}[{]?!_.,;:"
-    mixer = numbers + lowers + uppers + special
-    passw_result = random.sample(mixer, passw_length)
-    finalp = ''.join(passw_result)
-    print(cyan + "\nYour generated password: " + green + f"{finalp}\n" + white)
-    input(yellow + "Press any key to continue")
+        numbers = "1234567890"
+        lowers = "abcdefghijklmnopqrstuvwxyz"
+        uppers = "ABVDEFGHIJKLMNOPQRSTUVWXYZ"
+        special = "§$%&/()=}[{]?!_.,;:"
+        mixer = numbers + lowers + uppers + special
+        passw_result = random.sample(mixer, passw_length)
+        finalp = ''.join(passw_result)
+        print(cyan + "\nYour generated password: " + green + f"{finalp}\n" + white)
+        input(yellow + "Press any key to continue")
 
 
 def whoami_():
@@ -190,21 +190,21 @@ def whoami_():
 
 def get_header():
     import urllib3
+    while True:
+        passgen_banner = pfgt.figlet_format("GHeader", font="slant")
+        print(cld(passgen_banner, "cyan"))
+        header_from = input(f"({os.getlogin()}@GHeader(use '0' to exit))>> ")
+        if header_from == 'x' or header_from == 'exit':
+            break
 
-    passgen_banner = pfgt.figlet_format("GHeader", font="slant")
-    print(cld(passgen_banner, "cyan"))
-    header_from = input(white + "Target: ")
-    if header_from == 'x' or header_from == 'exit':
-        return_haunt()
-
-    request = urllib3.PoolManager()
-    req1 = request.request("HEAD", header_from)
-    print("Date:\t", req1.headers['Date'])
-    print("Server:\t", req1.headers['Server'])
-    print("Content-Type:\t", req1.headers['Content-Type'])
-    print("Accept-Ranges:\t", req1.headers['Accept-Ranges'])
-    print("Vary:\t", req1.headers['Vary'])
-    input("\nPress any key to continue")
+        request = urllib3.PoolManager()
+        req1 = request.request("HEAD", header_from)
+        print("Date:\t", req1.headers['Date'])
+        print("Server:\t", req1.headers['Server'])
+        print("Content-Type:\t", req1.headers['Content-Type'])
+        # print("Accept-Ranges:\t", req1.headers['Accept-Ranges'])
+        # print("Vary:\t", req1.headers['Vary'])
+        input("\nPress any key to continue")
 
 
 def witcher():
@@ -215,7 +215,7 @@ def witcher():
         print(cld(witcher_banner, "cyan"))
 
         try:
-            target_address_witcher = str(input(yellow + "Target (Exit with 'exit' or 'x'): " + red))
+            target_address_witcher = str(input(f"({os.getlogin()}@Witcher(Target, use 'x' to exit))>> "))
             if target_address_witcher == 'exit' or target_address_witcher == 'x':
                 break
         except ValueError:
@@ -224,8 +224,8 @@ def witcher():
             witcher()
 
         try:
-            target_port_witcher = int(input(yellow + "Max. Port (exit with '0'): " + red))
-            if target_port_witcher == 'exit' or target_port_witcher == 'x':
+            target_port_witcher = int(input(f"({os.getlogin()}@Witcher(Max. Port, use '0' to exit))>> "))
+            if target_port_witcher == 0:
                 break
         except ValueError:
             print(cld("\nYou need to enter a integer!", "red"))
@@ -271,7 +271,7 @@ def subdomain_scanner():
         sds_banner = pfgt.figlet_format("Sub- domain- Scanner", font="slant")
         print(yellow + sds_banner)
         found_subdomain = []
-        target_address_sds = input(yellow + "\nTarget " + magenta + "~#$ " + red)
+        target_address_sds = input(f"({os.getlogin()}@SDS(use 'x' to exit))>> ")
         if target_address_sds == 'exit' or target_address_sds == 'x':
             break
 
@@ -293,28 +293,29 @@ def subdomain_scanner():
 
 
 def md5():
-    md5_banner = pfgt.figlet_format("MD5C", font="slant")
-    print(cld(md5_banner, "cyan"))
-    print(cyan + "[" + red + "i" + cyan + "]"
-          + yellow + " md5crypt is made to encrypt your string to an 128 bit hash value")
-    print(cyan + "[" + red + "i" + cyan + "]" + yellow + " Type 'exit' to exit md5crypt.")
-    print(chr(0xa))
+    while True:
+        md5_banner = pfgt.figlet_format("MD5C", font="slant")
+        print(cld(md5_banner, "cyan"))
+        print(cyan + "[" + red + "i" + cyan + "]"
+              + yellow + " md5crypt is made to encrypt your string to an 128 bit hash value")
+        print(cyan + "[" + red + "i" + cyan + "]" + yellow + " Type 'exit' to exit md5crypt.")
+        print(chr(0xa))
 
-    hash_value = input(cyan + "Text " + magenta + "~#$ " + yellow)
-    if hash_value == 'exit' or hash_value == 'x':
-        print(cld("Exit", "red"))
-        return_haunt()
+        hash_value = input(f"({os.getlogin()}@MD5(use 'x' to exit))>> ")
+        if hash_value == 'exit' or hash_value == 'x':
+            print(cld("Exit", "red"))
+            break
 
-    try:
-        result = hashlib.md5(hash_value.encode())
-        print(cyan + "\nResult: " + green, end="")
-        print(result.hexdigest())
-        input(cyan + "\nPress any key to continue")
-        return_haunt()
-    except Exception as error:
-        print(cld(f"An error was defined! {error}", "red"))
-        input(cyan + "Press any key to continue")
-        md5()  # https://www.md5online.org/md5-decrypt.html This program is using a big database to bruteforce the hash for you
+        try:
+            result = hashlib.md5(hash_value.encode())
+            print(cyan + "\nResult: " + green, end="")
+            print(result.hexdigest())
+            input(cyan + "\nPress any key to continue")
+            return_haunt()
+        except Exception as error:
+            print(cld(f"An error was defined! {error}", "red"))
+            input(cyan + "Press any key to continue")
+            md5()  # https://www.md5online.org/md5-decrypt.html This program is using a big database to bruteforce the hash for you
 
 
 def conditions():
@@ -324,18 +325,18 @@ def conditions():
  < =============================================================================== >
  \n Please note that actions like portscanning etc. can be illegal. 
  If you want to use this tool, follow the conditions:
-
+ 
   - This tool is made for ethical purposes only.
   - I'm not responsible for your actions.
   - With great force follows great responsibility.
-
+  
  If you accept the conditions type 'y' and 'n' for decline.
  Thank you and have a nice day!
-
+ 
   ~ Keyjeek\n
     """, "red"))
 
-    choice = input(yellow + "$ " + cyan)
+    choice = input(f"({os.getlogin()}@Hunter)>> ")
     if choice == 'y' or choice == 'Y':
         pass
     elif choice == 'n' or choice == 'N':
@@ -351,39 +352,40 @@ def conditions():
 
 def eye_main():
     global response
-    ipe_banner = pfgt.figlet_format("IPEYE", font="slant")
-    print(cld(ipe_banner, "yellow"))
-    print(red + "[" + cyan + "i" + red + "]" + yellow + "IPEye is a Tool to find out")
-    print(red + "--" + magenta + "> " + yellow + "some information about an IP Address.")
-    print(red + "[" + cyan + "i" + red + "]" + yellow + "Type 'exit' to exit ipeye.")
-    print(chr(0xa))
+    while True:
+        ipe_banner = pfgt.figlet_format("IPWhois", font="slant")
+        print(cld(ipe_banner, "yellow"))
+        print(red + "[" + cyan + "i" + red + "]" + yellow + "IPEye is a Tool to find out")
+        print(red + "--" + magenta + "> " + yellow + "some information about an IP Address.")
+        print(red + "[" + cyan + "i" + red + "]" + yellow + "Type 'exit' to exit ipeye.")
+        print(chr(0xa))
 
-    ipeye_scanner = input(cyan + "IPEye Target " + magenta + "~#: " + red)
-    if ipeye_scanner == 'exit' or ipeye_scanner == 'x':
-        print(cld("Exiting ...", "red"))
-        return_haunt()
-    time_start = dtt.now()
-    print(green + "\nResults:")
+        ipeye_scanner = input(f"({os.getlogin()}@IPWhois(use 'x' to exit))>> ")
+        if ipeye_scanner == 'exit' or ipeye_scanner == 'x':
+            print(cld("Exiting ...", "red"))
+            break
+        time_start = dtt.now()
+        print(green + "\nResults:")
 
-    try:
-        response = requests.post("http://ip-api.com/batch", json=[{"query": ipeye_scanner}]).json()
-    except Exception as error:
-        print(cld(f"An error was defined! {error}", "red"))
+        try:
+            response = requests.post("http://ip-api.com/batch", json=[{"query": ipeye_scanner}]).json()
+        except Exception as error:
+            print(cld(f"An error was defined! {error}", "red"))
+            input(cyan + "Press any key to continue")
+            os.system('clear')
+            eye_main()
+        print(magenta + "=" * 70 + "\n")
+
+        for lookup in response:
+            for k, j in lookup.items():
+                print(yellow + k, j)
+
+        time_stop = dtt.now()
+        time_result = time_stop - time_start
+        print("\n" + magenta + "=" * 70)
+        print(chr(0xa))
+        print(green + f"Scanner done in {time_result}!")
         input(cyan + "Press any key to continue")
-        os.system('clear')
-        eye_main()
-    print(magenta + "=" * 70 + "\n")
-
-    for lookup in response:
-        for k, j in lookup.items():
-            print(yellow + k, j)
-
-    time_stop = dtt.now()
-    time_result = time_stop - time_start
-    print("\n" + magenta + "=" * 70)
-    print(chr(0xa))
-    print(green + f"Scanner done in {time_result}!")
-    input(cyan + "Press any key to continue")
 
 
 def banner_grabber():
@@ -401,8 +403,7 @@ def banner_grabber():
     email = links[2]
 
     while True:
-        target_host = input(
-            red + "\n[" + cyan + "*" + red + "]" + cyan + " Target " + yellow + "(Exit with 'exit' or 'x'): " + red)
+        target_host = input(f"({os.getlogin()}@GBanner(use 'x' to exit))>> ")
         if target_host == 'exit' or target_host == 'x':
             os.system("clear")
             break
@@ -449,49 +450,56 @@ def banner_grabber():
 
 
 def base64encode():
-    b64_banner = pfgt.figlet_format("B64-  CRYPT", font="slant")
-    print(cld(b64_banner, "green"))
-    print(red
-          + "[" + cyan + "i" + red + "] " + yellow + "This Tool encode and decode your text in base64.")
-    print(red + "[" + cyan + "i" + red + "] " + yellow + "Type 'exit' to exit Base64crypt.")
-    print(red + "\n\t[" + cyan + "1" + red + "] " + yellow + "Encoder")
-    print(red + "\t[" + cyan + "2" + red + "] " + yellow + "Decoder")
-    print(red + "\t[" + cyan + "x" + red + "] " + yellow + "Exit")
-    choice = input(cyan + "\nChoice " + magenta + "~#$ " + green)
-    if choice == "1":
-        hash_value = input(cyan + "Text: " + magenta + "~#$ " + green)
-        if hash_value == 'exit' or hash_value == 'x':
-            return return_haunt()
+    while True:
+        b64_banner = pfgt.figlet_format("B64-  CRYPT", font="slant")
+        print(cld(b64_banner, "green"))
+        print(red
+              + "[" + cyan + "i" + red + "] " + yellow + "This Tool encode and decode your text in base64.")
+        print(red + "[" + cyan + "i" + red + "] " + yellow + "Type 'exit' to exit Base64crypt.")
+        print(red + "\n\t[" + cyan + "1" + red + "] " + yellow + "Encoder")
+        print(red + "\t[" + cyan + "2" + red + "] " + yellow + "Decoder")
+        print(red + "\t[" + cyan + "x" + red + "] " + yellow + "Exit")
+        choice = input(cyan + "\nChoice " + magenta + "~#$ " + green)
+        if choice == "1":
+            hash_value = input(f"({os.getlogin()}@B64C(Length, use 'x' to exit))>> ")
+            if hash_value == 'exit' or hash_value == 'x':
+                break
 
-        try:
-            m_bytes = hash_value.encode('ascii')
-            b64_e = base64.b64encode(m_bytes)
-            b64_hash = b64_e.decode('ascii')
-            print(b64_hash)
-            input(cyan + "Press any key to continue")
-            return base64encode()
-        except Exception as error:
-            print(cld(f"An error was defined: {error}"))
-            input(cyan + "Press any key to continue")
-            return base64encode()
+            try:
+                m_bytes = hash_value.encode('ascii')
+                b64_e = base64.b64encode(m_bytes)
+                b64_hash = b64_e.decode('ascii')
+                print(b64_hash)
+                input(cyan + "Press any key to continue")
+                return base64encode()
+            except Exception as error:
+                print(cld(f"An error was defined: {error}"))
+                input(cyan + "Press any key to continue")
+                return base64encode()
 
-    elif choice == '2':
-        decode_hash = input(cyan + "Hash: " + magenta + "~#$ " + red)
-        if decode_hash == 'exit' or decode_hash == 'x':
-            print(cld("Exit", "red"))
-            return return_haunt()
+        elif choice == "2":
+            decode_hash = input(cyan + "Hash: " + magenta + "~#$ " + red)
+            if decode_hash == 'exit' or decode_hash == 'x':
+                print(cld("Exit", "red"))
+                break
 
-        try:
-            b64_d = decode_hash.encode('ascii')
-            m_byte = base64.b64decode(b64_d)
-            result = m_byte.decode('ascii')
-            print(result)
-            input(cyan + "Press any key to continue")
-            return base64encode()
-        except Exception as error:
-            print(cld(f"An error was defined: {error}"))
-            input(cyan + "Press any key to continue")
-            return base64encode()
+            try:
+                b64_d = decode_hash.encode('ascii')
+                m_byte = base64.b64decode(b64_d)
+                result = m_byte.decode('ascii')
+                print(result)
+                input(cyan + "Press any key to continue")
+                return base64encode()
+            except Exception as error:
+                print(cld(f"An error was defined: {error}"))
+                input(cyan + "Press any key to continue")
+                return base64encode()
+
+        elif choice == 'x' or choice == 'exit':
+            break
+
+        else:
+            print(red + "Invalid Input!")
 
 
 def number_tracker():
@@ -503,18 +511,17 @@ def number_tracker():
 
     while True:
         print(chr(0xa))
-        target_phonenumber = input(yellow + "PhoneStalk Target " + magenta + "~#: " + red)
+        target_phonenumber = input(f"({os.getlogin()}@PhonenumberWhois(use 'x' to exit))>> ")
         if target_phonenumber == 'exit' or target_phonenumber == 'x':
             print(cld("Exit", "red"))
             break
         elif target_phonenumber == "help" or target_phonenumber == 'h':
-            print(cyan + "\nHELP; " + yellow + "Phone-Stalk")
+            print(cyan + "\nHelp; " + yellow + "Phone-Stalk")
             print(magenta + "< " + green + "=" * 15 + magenta + " >")
             print(red + "'exit'        " + yellow + "Return Menu / Exit PhoneStalk")
             print(red + "'clear'       " + yellow + "Clear Screen")
             print(chr(0xa))
             input(cyan + "Press any key to continue")
-            break
 
         print(chr(0xa))
         time_start = dtt.now()
@@ -553,228 +560,232 @@ def number_tracker():
 def my_system():
     import platform
 
-    print(cyan + pfgt.figlet_format("sysinf", "slant"))
-    continue_or_exit = input(yellow + "Press any key to continue ")
-    start_time = dtt.now()
-    if continue_or_exit == 'exit' or continue_or_exit == 'x':
-        sys.exit(0)
+    while True:
+        print(cyan + pfgt.figlet_format("sysinf", "slant"))
+        continue_or_exit = input(yellow + "Press any key to continue, 'x' to exit ")
+        start_time = dtt.now()
+        if continue_or_exit == 'exit' or continue_or_exit == 'x':
+            break
 
-    os.system("clear")
-    get_system = platform.uname()
-    print(magenta + "=" * 45, "| Sys_Info |", "=" * 45)
-    print(cyan + "\nSystem: " + yellow + f"{get_system.system}")
-    print(cyan + "Name: " + yellow + f"{get_system.node}")
-    print(cyan + "Release: " + yellow + f"{get_system.release}")
-    print(cyan + "Version: " + yellow + f"{get_system.version}")
-    print(cyan + "Machine: " + yellow + f"{get_system.machine}")
-    print(cyan + "Processor: " + yellow + f"{get_system.processor} \n")
+        os.system("clear")
+        get_system = platform.uname()
+        print(magenta + "=" * 45, "| Sys_Info |", "=" * 45)
+        print(cyan + "\nSystem: " + yellow + f"{get_system.system}")
+        print(cyan + "Name: " + yellow + f"{get_system.node}")
+        print(cyan + "Release: " + yellow + f"{get_system.release}")
+        print(cyan + "Version: " + yellow + f"{get_system.version}")
+        print(cyan + "Machine: " + yellow + f"{get_system.machine}")
+        print(cyan + "Processor: " + yellow + f"{get_system.processor} \n")
 
-    def show_size(size):
-        f = 1024
-        for t in ["B", "KB", "MB", "GB", "TB"]:
-            if size > f:
-                size = size / f
-            else:
-                return f"{size:.3f}{t}"  # output formatted to 3 decimal places
+        def show_size(size):
+            f = 1024
+            for t in ["B", "KB", "MB", "GB", "TB"]:
+                if size > f:
+                    size = size / f
+                else:
+                    return f"{size:.3f}{t}"  # output formatted to 3 decimal places
 
-    get_partitions = psutil.disk_partitions()
-    print(magenta + "=" * 40, "| Disk_Information |", "=" * 42)
+        get_partitions = psutil.disk_partitions()
+        print(magenta + "=" * 40, "| Disk_Information |", "=" * 42)
 
-    for part in get_partitions:
-        print(cyan + "\nDevice: " + yellow + f"{part.device}")
-        print(cyan + "Mount At: " + yellow + f"{part.mountpoint}")
-        print(cyan + "Type: " + yellow + f"{part.fstype}")
+        for part in get_partitions:
+            print(cyan + "\nDevice: " + yellow + f"{part.device}")
+            print(cyan + "Mount At: " + yellow + f"{part.mountpoint}")
+            print(cyan + "Type: " + yellow + f"{part.fstype}")
 
-        try:
-            part_usage = psutil.disk_usage(part.mountpoint)
-        except PermissionError:
-            continue
+            try:
+                part_usage = psutil.disk_usage(part.mountpoint)
+            except PermissionError:
+                continue
 
-        print(cyan + "Total Size: " + yellow + f"{show_size(part_usage.total)}")
-        print(cyan + "In Use: " + yellow + f"{show_size(part_usage.used)}")
-        print(cyan + "Free: " + yellow + f"{show_size(part_usage.free)}")
-        print(cyan + "Percentance: " + yellow + f"{part_usage.percent}%")
+            print(cyan + "Total Size: " + yellow + f"{show_size(part_usage.total)}")
+            print(cyan + "In Use: " + yellow + f"{show_size(part_usage.used)}")
+            print(cyan + "Free: " + yellow + f"{show_size(part_usage.free)}")
+            print(cyan + "Percentance: " + yellow + f"{part_usage.percent}%")
 
-    disk_io = psutil.disk_io_counters()
-    print(cyan + "Read Since Boot: " + yellow + f"{show_size(disk_io.read_bytes)}")
-    print(cyan + "Written Since Boot: " + yellow + f"{show_size(disk_io.write_bytes)} \n")
-    print(magenta + "=" * 40, "| CPU_Info |", "=" * 50)
-    print(cyan + "\nCores: " + yellow + f"{psutil.cpu_count(logical=False)}")
-    print(cyan + "Logical Cores: " + yellow + f"{psutil.cpu_count(logical=True)}")
-    print(cyan + "Maximal Freq: " + yellow + f"{psutil.cpu_freq().max:.1f}Mhz")
-    print(cyan + "Current Freq: " + yellow + f"{psutil.cpu_freq().current:.1f}Mhz")
-    print(cyan + "CPU Usage: " + yellow + f"{psutil.cpu_percent()}%")
-    print(cyan + "\nCPU Core Usage: \n" + yellow)
-    for core, percentance in enumerate(
-            psutil.cpu_percent(percpu=True, interval=1)):  # show percentence for all cores # 1
-        print(f"Core {core}: {percentance}% ")
+        disk_io = psutil.disk_io_counters()
+        print(cyan + "Read Since Boot: " + yellow + f"{show_size(disk_io.read_bytes)}")
+        print(cyan + "Written Since Boot: " + yellow + f"{show_size(disk_io.write_bytes)} \n")
+        print(magenta + "=" * 40, "| CPU_Info |", "=" * 50)
+        print(cyan + "\nCores: " + yellow + f"{psutil.cpu_count(logical=False)}")
+        print(cyan + "Logical Cores: " + yellow + f"{psutil.cpu_count(logical=True)}")
+        print(cyan + "Maximal Freq: " + yellow + f"{psutil.cpu_freq().max:.1f}Mhz")
+        print(cyan + "Current Freq: " + yellow + f"{psutil.cpu_freq().current:.1f}Mhz")
+        print(cyan + "CPU Usage: " + yellow + f"{psutil.cpu_percent()}%")
+        print(cyan + "\nCPU Core Usage: \n" + yellow)
+        for core, percentance in enumerate(
+                psutil.cpu_percent(percpu=True, interval=1)):  # show percentence for all cores # 1
+            print(f"Core {core}: {percentance}% ")
 
-    virtual_mem = psutil.virtual_memory()
-    swap = psutil.swap_memory()
-    print(magenta + "=" * 40, "| Ram_Info |", "=" * 51)
-    print(cyan + "\nTotal: " + yellow + f"{show_size(virtual_mem.total)}")
-    print(cyan + "\nAvailable: " + yellow + f"{show_size(virtual_mem.available)}")
-    print(cyan + "In Use: " + yellow + f"{show_size(virtual_mem.used)}")
-    print(cyan + "Percentence: " + yellow + f"{show_size(virtual_mem.percent)}% \n")
-    print(magenta + "=" * 45, "| SWAP |", "=" * 50, "\n")
-    print(cyan + "Total: " + yellow + f"{show_size(swap.total)} ")
-    print(cyan + "Free: " + yellow + f"{show_size(swap.free)} ")
-    print(cyan + "In Use: " + yellow + f"{show_size(swap.used)} ")
-    print(cyan + "Percentence: " + yellow + f"{swap.percent}%\n")
-    print(magenta + "=" * 40, "| Network Information |", "=" * 40, "\n")
-    if_addrs = psutil.net_if_addrs()
+        virtual_mem = psutil.virtual_memory()
+        swap = psutil.swap_memory()
+        print(magenta + "=" * 40, "| Ram_Info |", "=" * 51)
+        print(cyan + "\nTotal: " + yellow + f"{show_size(virtual_mem.total)}")
+        print(cyan + "\nAvailable: " + yellow + f"{show_size(virtual_mem.available)}")
+        print(cyan + "In Use: " + yellow + f"{show_size(virtual_mem.used)}")
+        print(cyan + "Percentence: " + yellow + f"{show_size(virtual_mem.percent)}% \n")
+        print(magenta + "=" * 45, "| SWAP |", "=" * 50, "\n")
+        print(cyan + "Total: " + yellow + f"{show_size(swap.total)} ")
+        print(cyan + "Free: " + yellow + f"{show_size(swap.free)} ")
+        print(cyan + "In Use: " + yellow + f"{show_size(swap.used)} ")
+        print(cyan + "Percentence: " + yellow + f"{swap.percent}%\n")
+        print(magenta + "=" * 40, "| Network Information |", "=" * 40, "\n")
+        if_addrs = psutil.net_if_addrs()
 
-    for interface_name, interface_addresses in if_addrs.items():
-        for address in interface_addresses:
-            print(cyan + "Interface: " + yellow + f"{interface_name}")
-            if str(address.family) == 'AddressFamily.AF_INET':
-                print(cyan + "IP: " + yellow + f"{address.address}")
-                print(cyan + "Netmask: " + yellow + f"{address.netmask}")
-                print(cyan + "Broadcast IP: " + yellow + f"{address.broadcast}")
-            elif str(address.family) == 'AddressFamily.AF_PACKET':
-                print(cyan + "MAC: " + yellow + f"{address.address}")
-                print(cyan + "Netmask: " + yellow + f"{address.netmask}")
-                print(cyan + "Broadcast MAC: " + yellow + f"{address.broadcast}")
+        for interface_name, interface_addresses in if_addrs.items():
+            for address in interface_addresses:
+                print(cyan + "Interface: " + yellow + f"{interface_name}")
+                if str(address.family) == 'AddressFamily.AF_INET':
+                    print(cyan + "IP: " + yellow + f"{address.address}")
+                    print(cyan + "Netmask: " + yellow + f"{address.netmask}")
+                    print(cyan + "Broadcast IP: " + yellow + f"{address.broadcast}")
+                elif str(address.family) == 'AddressFamily.AF_PACKET':
+                    print(cyan + "MAC: " + yellow + f"{address.address}")
+                    print(cyan + "Netmask: " + yellow + f"{address.netmask}")
+                    print(cyan + "Broadcast MAC: " + yellow + f"{address.broadcast}")
 
-    net_io = psutil.net_io_counters()
-    print(cyan + "Total Bytes Sent: " + yellow + f"{show_size(net_io.bytes_sent)}")
-    print(cyan + "Total Bytes Received: " + yellow + f"{show_size(net_io.bytes_recv)}\n")
-    boot_time_timestamp = psutil.boot_time()
-    boot_time = dtt.fromtimestamp(boot_time_timestamp)
-    print(magenta + "=" * 40, "| Boot |", "=" * 55)
-    print(cyan + "\nLast Boot: " + yellow
-          + f"{boot_time.day}.{boot_time.month}.{boot_time.year} {boot_time.hour}:{boot_time.minute}:{boot_time.second}\n")
-    end_time = dtt.now()  # get end time
-    needed_time = end_time - start_time
-    print(cyan + "Job Done In " + green + f"{needed_time}")
-    input(cyan + "Press Any Key To Continue")
+        net_io = psutil.net_io_counters()
+        print(cyan + "Total Bytes Sent: " + yellow + f"{show_size(net_io.bytes_sent)}")
+        print(cyan + "Total Bytes Received: " + yellow + f"{show_size(net_io.bytes_recv)}\n")
+        boot_time_timestamp = psutil.boot_time()
+        boot_time = dtt.fromtimestamp(boot_time_timestamp)
+        print(magenta + "=" * 40, "| Boot |", "=" * 55)
+        print(cyan + "\nLast Boot: " + yellow
+              + f"{boot_time.day}.{boot_time.month}.{boot_time.year} {boot_time.hour}:{boot_time.minute}:{boot_time.second}\n")
+        end_time = dtt.now()  # get end time
+        needed_time = end_time - start_time
+        print(cyan + "Job Done In " + green + f"{needed_time}")
+        input(cyan + "Press Any Key To Continue")
 
 
 def whois_url():
     import whois
     global tarad
 
-    passgen_banner = pfgt.figlet_format("who$url", font="slant")
-    print(cld(passgen_banner, "cyan"))
+    while True:
+        passgen_banner = pfgt.figlet_format("who$url", font="slant")
+        print(cld(passgen_banner, "cyan"))
 
-    try:
-        tarad = str(input(red + "(" + cyan + "URL: " + red + ")" + magenta + "$ " + yellow))
-        if tarad == 'x' or tarad == 'exit':
-            return_haunt()
-    except ValueError:
-        print(red + "You need to enter a address like: example.com!")
+        try:
+            tarad = str(input(red + "(" + cyan + "URL: " + red + ")" + magenta + "$ " + yellow))
+            if tarad == 'x' or tarad == 'exit':
+                break
+        except ValueError:
+            print(red + "You need to enter a address like: example.com!")
+            input(cyan + "Press any key to continue")
+
+        whs = whois.whois(tarad)
+        print(green + whs.text)
         input(cyan + "Press any key to continue")
-
-    whs = whois.whois(tarad)
-    print(green + whs.text)
-    input(cyan + "Press any key to continue")
 
 
 def information_gathering():
     try:
-        os.system('clear')
-        global target_address, target_port
-        global new_url
-        global sd_r
-        global res
+        while True:
+            os.system('clear')
+            global target_address, target_port
+            global new_url
+            global sd_r
+            global res
 
-        try:
-            target_address = str(input(cyan + "URL: " + yellow))
-            if target_address == 'x' or target_address == 'exit':
-                return return_haunt()
-        except ValueError:
-            print(red + "You need to enter a string!")
-            input(cyan + "Press any key to continue")
-
-        try:
-            target_port = int(input(cyan + "Max. Port: " + yellow))
-            if target_port == 0:
-                return return_haunt()
-        except ValueError:
-            print(red + "You need to enter a integer!")
-            input(cyan + "Press any key to continue")
-            information_gathering()
-
-        os.system('clear')
-        print(yellow + "Time for a coffee break!")
-        time.sleep(0.5)
-        print(yellow + "(...)")
-        time.sleep(1.25)
-        date_n = dtt.now()
-
-        with open("results.txt", "w") as resf:
             try:
-                resf.write(f"Results from {target_address}/{socket.gethostbyname(target_address)} at {date_n}\n"
-                           + "=" * 75 + "\n")
-            except socket.gaierror:
-                print("Results:")
+                target_address = str(input(f"({os.getlogin()}@AIG(Length, use 'x' to exit))>> "))
+                if target_address == 'x' or target_address == 'exit':
+                    break
+            except ValueError:
+                print(red + "You need to enter a string!")
+                input(cyan + "Press any key to continue")
 
-        def locate():
             try:
-                target_addr = socket.gethostbyname(target_address)
-                resp = requests.get(f'https://ipapi.co/{target_address}/json/').json()
-                d = {
-                    "IP Address": target_addr,
-                    "Country": resp.get("country_name"),
-                    "Region": resp.get("region"),
-                    "City": resp.get("city"),
-                }
-                con_to_str = json.dumps(d)
-                return con_to_str
-            except socket.timeout:
-                pass
+                target_port = int(input(cyan + "Max. Port: " + yellow))
+                if target_port == 0:
+                    break
+            except ValueError:
+                print(red + "You need to enter a integer!")
+                input(cyan + "Press any key to continue")
+                information_gathering()
 
-        try:
-            for target in range(1, target_port):
+            os.system('clear')
+            print(yellow + "Time for a coffee break!")
+            time.sleep(0.5)
+            print(yellow + "(...)")
+            time.sleep(1.25)
+            date_n = dtt.now()
+
+            with open("results.txt", "w") as resf:
                 try:
-                    socket_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                    final_result = socket_sock.connect_ex((target_address, target))
-                    socket_sock.settimeout(1)
-                    if final_result == 0:
-                        res = f"\nPort\t{target}\t\t\t\t\t   open\n"  # , socket_sock.recv(1024).decode())
-                    socket_sock.close()
+                    resf.write(f"Results from {target_address}/{socket.gethostbyname(target_address)} at {date_n}\n"
+                               + "=" * 75 + "\n")
+                except socket.gaierror:
+                    print("Results:")
+
+            def locate():
+                try:
+                    target_addr = socket.gethostbyname(target_address)
+                    resp = requests.get(f'https://ipapi.co/{target_address}/json/').json()
+                    d = {
+                        "IP Address": target_addr,
+                        "Country": resp.get("country_name"),
+                        "Region": resp.get("region"),
+                        "City": resp.get("city"),
+                    }
+                    con_to_str = json.dumps(d)
+                    return con_to_str
                 except socket.timeout:
-                    continue
-        except socket.error as socket_error:
-            print(cld(socket_error, "red"))
-            information_gathering()
-        except KeyboardInterrupt:
-            return return_haunt()
+                    pass
 
-        subd_list_file = open("subdomains.txt")
-        file_content = subd_list_file.read()
-        sub_sp_subdomains = file_content.splitlines()
-        found_subdomains = []
-
-        for subdomain in sub_sp_subdomains:
-            url = f"http://{subdomain}.{target_address}"
             try:
-                requests.get(url)
-            except requests.ConnectionError:
-                pass
-            else:
-                found_subdomains.append(url)
-
-        with open("result_subdomains.txt", "w") as f:
-            for subdomain in found_subdomains:
-                print(subdomain, file=f)
-
-        with open("results.txt", "a") as final_output:
-            try:
-                final_output.write(locate())
-            except Exception as error:
-                print(cld(f"An error was defined! {error}", "red"))
+                for target in range(1, target_port):
+                    try:
+                        socket_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                        final_result = socket_sock.connect_ex((target_address, target))
+                        socket_sock.settimeout(1)
+                        if final_result == 0:
+                            res = f"\nPort\t{target}\t\t\t\t\t   open\n"  # , socket_sock.recv(1024).decode())
+                        socket_sock.close()
+                    except socket.timeout:
+                        continue
+            except socket.error as socket_error:
+                print(cld(socket_error, "red"))
                 information_gathering()
+            except KeyboardInterrupt:
+                return return_haunt()
 
-            try:
-                final_output.write(res)
-            except Exception as error:
-                print(cld(f"An error was defined! {error}", "red"))
-                information_gathering()
+            subd_list_file = open("subdomains.txt")
+            file_content = subd_list_file.read()
+            sub_sp_subdomains = file_content.splitlines()
+            found_subdomains = []
 
-        date_e = dtt.now()
-        needed_time = date_e - date_n
-        print(green + f"\nJob done in {needed_time}!")
+            for subdomain in sub_sp_subdomains:
+                url = f"http://{subdomain}.{target_address}"
+                try:
+                    requests.get(url)
+                except requests.ConnectionError:
+                    pass
+                else:
+                    found_subdomains.append(url)
+
+            with open("result_subdomains.txt", "w") as f:
+                for subdomain in found_subdomains:
+                    print(subdomain, file=f)
+
+            with open("results.txt", "a") as final_output:
+                try:
+                    final_output.write(locate())
+                except Exception as error:
+                    print(cld(f"An error was defined! {error}", "red"))
+                    information_gathering()
+
+                try:
+                    final_output.write(res)
+                except Exception as error:
+                    print(cld(f"An error was defined! {error}", "red"))
+                    information_gathering()
+
+            date_e = dtt.now()
+            needed_time = date_e - date_n
+            print(green + f"\nJob done in {needed_time}!")
+
     except KeyboardInterrupt:
         print(red + "Ctrl+C pressed. Exit.")
         input(cyan + "Press any key to continue")
@@ -814,9 +825,9 @@ if __name__ == "__main__":
             global hunter_choice
 
             try:
-                hunter_choice = int(input(cyan + "\n~#" + magenta + "$ " + red))
+                hunter_choice = int(input(cyan + f"(Hunter@{os.getlogin()})>> "))
             except KeyboardInterrupt:
-                print(red + "\nCtrl-C pressed. Exit")
+                print(red + "\nCtrl+C pressed. Exit")
                 sys.exit(0)
             except ValueError:
                 print(cld("You need to enter an integer!", "red"))
@@ -872,3 +883,6 @@ if __name__ == "__main__":
 
 
     hunter_main()
+
+
+
