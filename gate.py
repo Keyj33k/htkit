@@ -4,6 +4,7 @@ from phonenumbers import geocoder as gc
 from phonenumbers import carrier as cr
 from termcolor import colored as cld
 from datetime import datetime as dtt
+from bs4 import BeautifulSoup
 import phonenumbers as pnmb
 import pyfiglet as pfgt
 import requests
@@ -84,24 +85,41 @@ def menu():
     print(green + "{" + red + "6" + green + "} " + cyan
           + " PhoneStalk\t\t\t" + yellow + " Get informations about a phonenumber")
     print(green + "{" + red + "7" + green + "} " + cyan
-          + " SubdomainScanner\t" + yellow + " Get subdomains from any url.")
+          + " SubdomainScanner\t\t" + yellow + " Get subdomains from any url.")
     print(green + "{" + red + "8" + green + "} " + cyan
-          + " Whoami\t\t\t\t" + yellow + " Get infos like current ip address etc.")
+          + " Whoami\t\t\t" + yellow + " Get infos like current ip address etc.")
     print(green + "{" + red + "9" + green + "} " + cyan
           + " MySystem\t\t\t" + yellow + " Get infos like cpu usage, disk usage etc.")
     print(green + "{" + red + "10" + green + "}" + cyan
           + " GetIPfromURL\t\t" + yellow + " Get the ip address of any url.")
     print(green + "{" + red + "11" + green + "}" + cyan
-          + " AutoInfoGathering\t" + yellow + " Get infos like: open ports, location etc.")
+          + " AutoInfoGathering\t\t" + yellow + " Get infos like: open ports, location etc.")
     print(green + "{" + red + "12" + green + "}" + cyan
           + " PassGen\t\t\t" + yellow + " Generate a random password.")
     print(green + "{" + red + "13" + green + "}" + cyan
           + " WhoisForURL\t\t" + yellow + " Whois lookup for URL.")
     print(green + "{" + red + "14" + green + "}" + cyan
-          + " Header\t\t\t\t" + yellow + " Get header from url.\n")
+          + " Header\t\t\t" + yellow + " Get header from url.")
+    print(green + "{" + red + "15" + green + "}" + cyan
+          + " Links\t\t\t" + yellow + " Get links from any website.\n")
     print(green + "{" + red + "99" + green + "}" + cyan
           + " Exit\n")
     print(magenta + "=" * 70)
+
+
+def get_links():
+    while True:
+        passgen_banner = pfgt.figlet_format("GLinks", font="slant")
+        print(cld(passgen_banner, "cyan"))
+        target = input(f"({os.getlogin()}@GLinks(use 'x' to exit))>> ")
+        if target == 'x' or target == 'exit':
+            break
+
+        resp   = requests.get(target)
+        soup   = BeautifulSoup(resp.text, "html.parser")
+
+        for l in soup.find_all("a"):
+            print(l.get('href'))
 
 
 def get_ip_from_url():
@@ -193,7 +211,7 @@ def get_header():
     while True:
         passgen_banner = pfgt.figlet_format("GHeader", font="slant")
         print(cld(passgen_banner, "cyan"))
-        header_from = input(f"({os.getlogin()}@GHeader(use '0' to exit))>> ")
+        header_from = input(f"({os.getlogin()}@GHeader(use 'x' to exit))>> ")
         if header_from == 'x' or header_from == 'exit':
             break
 
@@ -516,7 +534,7 @@ def number_tracker():
             print(cld("Exit", "red"))
             break
         elif target_phonenumber == "help" or target_phonenumber == 'h':
-            print(cyan + "\nHelp; " + yellow + "Phone-Stalk")
+            print(cyan + "\nHELP; " + yellow + "Phone-Stalk")
             print(magenta + "< " + green + "=" * 15 + magenta + " >")
             print(red + "'exit'        " + yellow + "Return Menu / Exit PhoneStalk")
             print(red + "'clear'       " + yellow + "Clear Screen")
@@ -801,7 +819,7 @@ if __name__ == "__main__":
         time_now = dtt.now()
         username = os.getlogin()
         print(cld(f"Welcome {username}. Today is the {time_now}", "yellow"))
-        time.sleep(1.25)
+        time.sleep(0.75)
         start_hunter = input(
             yellow + "\nDo you want to start hunter? (" + green
             + "y" + yellow + "/" + red + "n" + yellow + ") " + cyan)
@@ -869,6 +887,8 @@ if __name__ == "__main__":
                 whois_url()
             elif hunter_choice == 14:
                 get_header()
+            elif hunter_choice == 15:
+                get_links()
             elif hunter_choice == 99:
                 ex_banner = pfgt.figlet_format("Exit", font="digital")
                 print(cld(ex_banner, "red"))
@@ -883,6 +903,11 @@ if __name__ == "__main__":
 
 
     hunter_main()
+
+
+
+
+
 
 
 
