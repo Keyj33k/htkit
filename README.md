@@ -16,6 +16,8 @@ MySystem              Get infos like cpu usage, disk usage etc.
 GetIPfromURL          Get the ip address of any url.
 AutoInfoGathering     Get infos like: open ports, location etc.
 PassGen               Generate a random password.
+Header                Get header from a webserver.
+Links                 Get links from a website.
 ```
 
 USAGE of HUNTER:
