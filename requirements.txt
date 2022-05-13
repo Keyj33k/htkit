@@ -1,5 +1,5 @@
 beautifulsoup4==4.11.1 
-phonenumbers==8.12.45
+phonenumbers==8.12.48
 pyfiglet==0.8.post1 
 python-whois==0.7.3 
 requests==2.27.1
