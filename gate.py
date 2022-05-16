@@ -902,14 +902,29 @@ def number_tracker():
             valid_check = pnmb.parse(target_phonenumber)
             finally_valid = pnmb.is_valid_number(valid_check)
             print(green + f"Validation:\t{finally_valid}")
-            phonenumbers_timezone = pnmb.parse(target_phonenumber, "en")
+            phonenumbers_timezone = pnmb.parse(
+                target_phonenumber, 
+                "en"
+            )
             final_timezone = tz.time_zones_for_number(phonenumbers_timezone)
             print(green + f"Timezone:\t{final_timezone}")
-            phonenumbers_location = pnmb.parse(target_phonenumber, "CH")
-            final_phonenumbers_location = gc.description_for_number(phonenumbers_location, "en")
+            phonenumbers_location = pnmb.parse(
+                target_phonenumber, 
+                "CH"
+            )
+            final_phonenumbers_location = gc.description_for_number(
+                phonenumbers_location, 
+                "en"
+            )
             print(green + f"Location:\t{final_phonenumbers_location}")
-            phonenumbers_provider = pnmb.parse(target_phonenumber, "RO")
-            final_phonenumbers_provider = cr.name_for_number(phonenumbers_provider, "en")
+            phonenumbers_provider = pnmb.parse(
+                target_phonenumber, 
+                "RO"
+            )
+            final_phonenumbers_provider = cr.name_for_number(
+                phonenumbers_provider, 
+                "en"
+            )
             print(green + f"Provider:\t{final_phonenumbers_provider}")
             time_stop = dtt.now()
             time_result = time_stop - time_start
