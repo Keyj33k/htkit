@@ -46,7 +46,7 @@ res = ""
 #   Twitter :   @keyjeek                  #
 #   Github  :   @keyj33k                  #
 #   Insta   :   @keyjeek                  #
-#   Version :   1.1.2                     #
+#   Version :   1.1.3                     #
 #                                         #
 # # # # # # # # # # # # # # # # # # # # # #
 
@@ -68,7 +68,7 @@ def banner():
     )
     print(
         magenta + " <" + green + " contact:nomotikag33n@gmail.com " +
-        magenta + ">" + yellow + " Ver" + magenta + ".:" + red + "1.1.2"
+        magenta + ">" + yellow + " Ver" + magenta + ".:" + red + "1.1.3"
     )
     print(
         cyan + "\n[" + red + "i" + cyan + "] " + yellow +
