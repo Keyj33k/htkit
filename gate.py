@@ -328,9 +328,18 @@ def get_header():
             "HEAD",
             header_from
         )
-        print("Date:\t", req1.headers['Date'])
-        print("Server:\t", req1.headers['Server'])
-        print("Content-Type:\t", req1.headers['Content-Type'])
+        print(
+            "Date:\t", 
+            req1.headers['Date']
+        )
+        print(
+            "Server:\t", 
+            req1.headers['Server']
+        )
+        print(
+            "Content-Type:\t", 
+            req1.headers['Content-Type']
+        )
         input("\nPress any key to continue")
 
 
@@ -386,12 +395,26 @@ def witcher():
             input(cyan + "Press any key to continue")
             witcher()
 
-        print(magenta + "=" * 70)
+        print(
+            magenta + 
+            "=" * 70
+        )
         scan_start = dtt.now()
-        print(green + f"Started scanning at:\t\t\t{scan_start}")
-        print(magenta + "=" * 70)
+        print(
+            green + 
+            f"Started scanning at:\t\t\t{scan_start}"
+        )
+        print(
+            magenta + 
+            "=" * 70
+        )
         time_start = dtt.now()
-        print(green + "Protocol\tPort\t\tStatus\t Service\n" + magenta + "-" * 70)
+        print(
+            green + 
+            "Protocol\tPort\t\tStatus\t Service\n" + 
+            magenta + 
+            "-" * 70
+        )
 
         try:
             for target in range(
@@ -525,11 +548,21 @@ def md5():
 
         try:
             result = hashlib.md5(hash_value.encode())
-            print(cyan + "\nResult: " + green, end="")
+            print(
+                cyan + 
+                "\nResult: " + 
+                green, 
+                end=""
+            )
             print(result.hexdigest())
             input(cyan + "\nPress any key to continue")
         except Exception as error:
-            print(cld(f"An error was defined! {error}", "red"))
+            print(
+                cld(
+                    f"An error was defined! {error}", 
+                    "red"
+                )
+            )
             input(cyan + "Press any key to continue")
             md5()  # https://www.md5online.org/md5-decrypt.html This program is using a big database to bruteforce the hash for you
 
@@ -647,8 +680,17 @@ def banner_grabber():
     tab2 = "\t" * 2
     tab3 = "\t" * 3
     line = magenta + "==" * 42
-    info_array = ["@Keyj33k", "1.0.1", "06.04.22", "Python3"]
-    links = ["https://github.com/Keyj33k", "https://www.instagram.com/keyjeek/", "nomotikag33n@gmail.com"]
+    info_array = [
+        "@Keyj33k", 
+        "1.0.1", 
+        "06.04.22", 
+        "Python3"
+    ]
+    links = [
+        "https://github.com/Keyj33k", 
+        "https://www.instagram.com/keyjeek/", 
+        "nomotikag33n@gmail.com"
+    ]
     author_name = info_array[0]
     version_num = info_array[1]
     written_on = info_array[2]
@@ -702,9 +744,18 @@ def banner_grabber():
                 )
             )
             print(line)
-            print(cyan + " Auth.:\t" + yellow + f"{author_name}{tab2}" + cyan + "Github: " + yellow + f"{github}")
-            print(cyan + " Date :\t" + yellow + f"{written_on}{tab2}" + cyan + "Instagram: " + yellow + f"{instagram}")
-            print(cyan + " Lang.:\t" + yellow + f"{progr_lang}{tab3}" + cyan + "Email: " + yellow + f"{email}")
+            print(
+                cyan + " Auth.:\t" + yellow + f"{author_name}{tab2}" + 
+                cyan + "Github: " + yellow + f"{github}"
+            )
+            print(
+                cyan + " Date :\t" + yellow + f"{written_on}{tab2}" + 
+                cyan + "Instagram: " + yellow + f"{instagram}"
+            )
+            print(
+                cyan + " Lang.:\t" + yellow + f"{progr_lang}{tab3}" + 
+                cyan + "Email: " + yellow + f"{email}"
+            )
             print(cyan + " Vers.:\t" + yellow + f"{version_num}")
             print(line)
             print(
@@ -928,9 +979,19 @@ def number_tracker():
             print(green + f"Provider:\t{final_phonenumbers_provider}")
             time_stop = dtt.now()
             time_result = time_stop - time_start
-            print("\n" + magenta + "=" * 55)
-            print(green + f"Job done in {time_result}")
-            print(magenta + "=" * 55)
+            print(
+                "\n" + 
+                magenta + 
+                "=" * 55
+            )
+            print(
+                green + 
+                f"Job done in {time_result}"
+            )
+            print(
+                magenta + 
+                "=" * 55
+            )
         except Exception as error:
             print(
                 cld(
@@ -962,20 +1023,46 @@ def my_system():
                 font="slant"
             )
         )
-        continue_or_exit = input(yellow + "Press any key to continue, 'x' to exit ")
+        continue_or_exit = input(
+            yellow + 
+            "Press any key to continue, 'x' to exit "
+        )
         start_time = dtt.now()
         if continue_or_exit == 'exit' or continue_or_exit == 'x':
             break
 
         os.system("clear")
         get_system = platform.uname()
-        print(magenta + "=" * 45, "| Sys_Info |", "=" * 45)
-        print(cyan + "\nSystem: " + yellow + f"{get_system.system}")
-        print(cyan + "Name: " + yellow + f"{get_system.node}")
-        print(cyan + "Release: " + yellow + f"{get_system.release}")
-        print(cyan + "Version: " + yellow + f"{get_system.version}")
-        print(cyan + "Machine: " + yellow + f"{get_system.machine}")
-        print(cyan + "Processor: " + yellow + f"{get_system.processor} \n")
+        print(
+            magenta + 
+            "=" * 45, 
+            "| Sys_Info |", 
+            "=" * 45
+        )
+        print(
+            cyan + "\nSystem: " + yellow +
+            f"{get_system.system}"
+        )
+        print(
+            cyan + "Name: " + yellow + 
+            f"{get_system.node}"
+        )
+        print(
+            cyan + "Release: " + yellow +
+            f"{get_system.release}"
+        )
+        print(
+            cyan + "Version: " + yellow +
+            f"{get_system.version}"
+        )
+        print(
+            cyan + "Machine: " + yellow +
+            f"{get_system.machine}"
+        )
+        print(
+            cyan + "Processor: " + yellow +
+            f"{get_system.processor} \n"
+        )
 
         def show_size(size):
             f = 1024
@@ -986,7 +1073,12 @@ def my_system():
                     return f"{size:.3f}{t}"  # output formatted to 3 decimal places
 
         get_partitions = psutil.disk_partitions()
-        print(magenta + "=" * 40, "| Disk_Information |", "=" * 42)
+        print(
+            magenta + 
+            "=" * 40, 
+            "| Disk_Information |", 
+            "=" * 42
+        )
 
         for part in get_partitions:
             print(cyan + "\nDevice: " + yellow + f"{part.device}")
@@ -998,63 +1090,194 @@ def my_system():
             except PermissionError:
                 continue
 
-            print(cyan + "Total Size: " + yellow + f"{show_size(part_usage.total)}")
-            print(cyan + "In Use: " + yellow + f"{show_size(part_usage.used)}")
-            print(cyan + "Free: " + yellow + f"{show_size(part_usage.free)}")
-            print(cyan + "Percentance: " + yellow + f"{part_usage.percent}%")
+            print(
+                cyan + "Total Size: " + yellow +
+                f"{show_size(part_usage.total)}"
+            )
+            print(
+                cyan + "In Use: " + yellow + 
+                f"{show_size(part_usage.used)}"
+            )
+            print(
+                cyan + "Free: " + yellow + 
+                f"{show_size(part_usage.free)}"
+            )
+            print(
+                cyan + "Percentance: " + yellow + 
+                f"{part_usage.percent}%"
+            )
 
         disk_io = psutil.disk_io_counters()
-        print(cyan + "Read Since Boot: " + yellow + f"{show_size(disk_io.read_bytes)}")
-        print(cyan + "Written Since Boot: " + yellow + f"{show_size(disk_io.write_bytes)} \n")
-        print(magenta + "=" * 40, "| CPU_Info |", "=" * 50)
-        print(cyan + "\nCores: " + yellow + f"{psutil.cpu_count(logical=False)}")
-        print(cyan + "Logical Cores: " + yellow + f"{psutil.cpu_count(logical=True)}")
-        print(cyan + "Maximal Freq: " + yellow + f"{psutil.cpu_freq().max:.1f}Mhz")
-        print(cyan + "Current Freq: " + yellow + f"{psutil.cpu_freq().current:.1f}Mhz")
-        print(cyan + "CPU Usage: " + yellow + f"{psutil.cpu_percent()}%")
-        print(cyan + "\nCPU Core Usage: \n" + yellow)
+        print(
+            cyan + "Read Since Boot: " + yellow + 
+            f"{show_size(disk_io.read_bytes)}"
+        )
+        print(
+            cyan + "Written Since Boot: " + yellow + 
+            f"{show_size(disk_io.write_bytes)} \n"
+        )
+        print(
+            magenta + 
+            "=" * 40, 
+            "| CPU_Info |", 
+            "=" * 50
+        )
+        print(
+            cyan + "\nCores: " + yellow + 
+            f"{psutil.cpu_count(logical=False)}"
+        )
+        print(
+            cyan + "Logical Cores: " + yellow + 
+            f"{psutil.cpu_count(logical=True)}"
+        )
+        print(
+            cyan + "Maximal Freq: " + yellow + 
+            f"{psutil.cpu_freq().max:.1f}Mhz"
+        )
+        print(
+            cyan + "Current Freq: " + yellow + 
+            f"{psutil.cpu_freq().current:.1f}Mhz"
+        )
+        print(
+            cyan + "CPU Usage: " + yellow + 
+            f"{psutil.cpu_percent()}%"
+        )
+        print(
+            cyan + 
+            "\nCPU Core Usage: \n" + 
+            yellow
+        )
         for core, percentance in enumerate(
-                psutil.cpu_percent(percpu=True, interval=1)):  # show percentence for all cores # 1
+                psutil.cpu_percent(
+                    percpu=True, 
+                    interval=1
+                )
+        ):  # show percentence for all cores # 1
             print(f"Core {core}: {percentance}% ")
 
         virtual_mem = psutil.virtual_memory()
         swap = psutil.swap_memory()
-        print(magenta + "=" * 40, "| Ram_Info |", "=" * 51)
-        print(cyan + "\nTotal: " + yellow + f"{show_size(virtual_mem.total)}")
-        print(cyan + "\nAvailable: " + yellow + f"{show_size(virtual_mem.available)}")
-        print(cyan + "In Use: " + yellow + f"{show_size(virtual_mem.used)}")
-        print(cyan + "Percentence: " + yellow + f"{show_size(virtual_mem.percent)}% \n")
-        print(magenta + "=" * 45, "| SWAP |", "=" * 50, "\n")
-        print(cyan + "Total: " + yellow + f"{show_size(swap.total)} ")
-        print(cyan + "Free: " + yellow + f"{show_size(swap.free)} ")
-        print(cyan + "In Use: " + yellow + f"{show_size(swap.used)} ")
-        print(cyan + "Percentence: " + yellow + f"{swap.percent}%\n")
-        print(magenta + "=" * 40, "| Network Information |", "=" * 40, "\n")
+        print(
+            magenta + 
+            "=" * 40, 
+            "| Ram_Info |", 
+            "=" * 51
+        )
+        print(
+            cyan + "\nTotal: " + yellow + 
+            f"{show_size(virtual_mem.total)}"
+        )
+        print(
+            cyan + "\nAvailable: " + yellow + 
+            f"{show_size(virtual_mem.available)}"
+        )
+        print(
+            cyan + "In Use: " + yellow + 
+            f"{show_size(virtual_mem.used)}"
+        )
+        print(
+            cyan + "Percentence: " + yellow + 
+            f"{show_size(virtual_mem.percent)}% \n"
+        )
+        print(
+            magenta + 
+            "=" * 45, 
+            "| SWAP |", 
+            "=" * 50, 
+            "\n"
+        )
+        print(
+            cyan + "Total: " + yellow + 
+            f"{show_size(swap.total)} "
+        )
+        print(
+            cyan + "Free: " + yellow + 
+            f"{show_size(swap.free)} "
+        )
+        print(
+            cyan + "In Use: " + yellow + 
+            f"{show_size(swap.used)} "
+        )
+        print(
+            cyan + "Percentence: " + yellow + 
+            f"{swap.percent}%\n"
+        )
+        print(
+            magenta + 
+            "=" * 40, 
+            "| Network Information |", 
+            "=" * 40, 
+            "\n"
+        )
         if_addrs = psutil.net_if_addrs()
 
         for interface_name, interface_addresses in if_addrs.items():
             for address in interface_addresses:
-                print(cyan + "Interface: " + yellow + f"{interface_name}")
+                print(
+                    cyan + 
+                    "Interface: " + 
+                    yellow + 
+                    f"{interface_name}"
+                )
                 if str(address.family) == 'AddressFamily.AF_INET':
-                    print(cyan + "IP: " + yellow + f"{address.address}")
-                    print(cyan + "Netmask: " + yellow + f"{address.netmask}")
-                    print(cyan + "Broadcast IP: " + yellow + f"{address.broadcast}")
+                    print(
+                        cyan + "IP: " + yellow + 
+                        f"{address.address}"
+                    )
+                    print(
+                        cyan + "Netmask: " + yellow + 
+                        f"{address.netmask}"
+                    )
+                    print(
+                        cyan + "Broadcast IP: " + yellow + 
+                        f"{address.broadcast}"
+                    )
                 elif str(address.family) == 'AddressFamily.AF_PACKET':
-                    print(cyan + "MAC: " + yellow + f"{address.address}")
-                    print(cyan + "Netmask: " + yellow + f"{address.netmask}")
-                    print(cyan + "Broadcast MAC: " + yellow + f"{address.broadcast}")
+                    print(
+                        cyan + "MAC: " + yellow + 
+                        f"{address.address}"
+                    )
+                    print(
+                        cyan + "Netmask: " + yellow + 
+                        f"{address.netmask}"
+                    )
+                    print(
+                        cyan + "Broadcast MAC: " + yellow + 
+                        f"{address.broadcast}"
+                    )
 
         net_io = psutil.net_io_counters()
-        print(cyan + "Total Bytes Sent: " + yellow + f"{show_size(net_io.bytes_sent)}")
-        print(cyan + "Total Bytes Received: " + yellow + f"{show_size(net_io.bytes_recv)}\n")
+        print(
+            cyan + "Total Bytes Sent: " + yellow + 
+            f"{show_size(net_io.bytes_sent)}"
+        )
+        print(
+            cyan + "Total Bytes Received: " + yellow + 
+            f"{show_size(net_io.bytes_recv)}\n"
+        )
         boot_time_timestamp = psutil.boot_time()
         boot_time = dtt.fromtimestamp(boot_time_timestamp)
-        print(magenta + "=" * 40, "| Boot |", "=" * 55)
-        print(cyan + "\nLast Boot: " + yellow
-              + f"{boot_time.day}.{boot_time.month}.{boot_time.year} {boot_time.hour}:{boot_time.minute}:{boot_time.second}\n")
+        print(
+            magenta + 
+            "=" * 40, 
+            "| Boot |", 
+            "=" * 55
+        )
+        print(
+            cyan + 
+            "\nLast Boot: " + 
+            yellow + 
+            f"{boot_time.day}.{boot_time.month}.{boot_time.year} " + 
+            f"{boot_time.hour}:{boot_time.minute}:{boot_time.second}\n"
+        )
         end_time = dtt.now()  # get end time
         needed_time = end_time - start_time
-        print(cyan + "Job Done In " + green + f"{needed_time}")
+        print(
+            cyan + 
+            "Job Done In " + 
+            green + 
+            f"{needed_time}"
+        )
         input(cyan + "Press Any Key To Continue")
 
 
@@ -1145,7 +1368,9 @@ def information_gathering():
             def locate():
                 try:
                     target_addr = socket.gethostbyname(target_address)
-                    resp = requests.get(f'https://ipapi.co/{target_address}/json/').json()
+                    resp = requests.get(
+                        f'https://ipapi.co/{target_address}/json/'
+                    ).json()
                     d = {
                         "IP Address": target_addr,
                         "Country": resp.get("country_name"),
