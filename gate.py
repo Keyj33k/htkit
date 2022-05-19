@@ -362,7 +362,7 @@ def witcher():
         try:
             target_address_witcher = str(
                 input(
-                    f"({os.getlogin()}@Witcher(Address, Target, use 'x' to exit))>> "
+                    f"({os.getlogin()}@Witcher(Address, use 'x' to exit))>> "
                 )
             )
             if target_address_witcher == 'exit' or target_address_witcher == 'x':
