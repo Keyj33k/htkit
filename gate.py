@@ -1317,7 +1317,7 @@ def whois_url():
 def information_gathering():
     try:
         while True:
-            os.system('clear')
+            # os.system('clear')
             global target_address, target_port
             global new_url
             global sd_r
@@ -1326,7 +1326,7 @@ def information_gathering():
             try:
                 target_address = str(
                     input(
-                        f"({os.getlogin()}@AIG(Length, use 'x' to exit))>> "
+                        f"({os.getlogin()}@AIG(Target, use 'x' to exit))>> "
                     )
                 )
                 if target_address == 'x' or target_address == 'exit':
