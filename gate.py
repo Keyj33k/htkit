@@ -160,7 +160,7 @@ def get_links():
                 "cyan"
             )
         )
-        target = input(f"({os.getlogin()}@GLinks(use 'x' to exit))>> ")
+        target = input(f"({os.getlogin()}@GLinks(URL, use 'x' to exit))>> ")
         if target == 'x' or target == 'exit':
             break
 
@@ -200,7 +200,7 @@ def get_ip_from_url():
         try:
             target_url = str(
                 input(
-                    f"({os.getlogin()}@WhoisURL(use 'x' to exit))>> "
+                    f"({os.getlogin()}@WhoisURL(URL, use 'x' to exit))>> "
                 )
             )
             if target_url == 'x' or target_url == 'exit':
@@ -242,7 +242,7 @@ def password_generator():
         try:
             passw_length = int(
                 input(
-                    f"({os.getlogin()}@PassGen(use '0' to exit))>> "
+                    f"({os.getlogin()}@PassGen(Length, use '0' to exit))>> "
                 )
             )
         except ValueError as ve:
@@ -319,7 +319,7 @@ def get_header():
                 "cyan"
             )
         )
-        header_from = input(f"({os.getlogin()}@GHeader(use 'x' to exit))>> ")
+        header_from = input(f"({os.getlogin()}@GHeader(Address, use 'x' to exit))>> ")
         if header_from == 'x' or header_from == 'exit':
             break
 
@@ -362,7 +362,7 @@ def witcher():
         try:
             target_address_witcher = str(
                 input(
-                    f"({os.getlogin()}@Witcher(Target, use 'x' to exit))>> "
+                    f"({os.getlogin()}@Witcher(Address, Target, use 'x' to exit))>> "
                 )
             )
             if target_address_witcher == 'exit' or target_address_witcher == 'x':
@@ -479,7 +479,7 @@ def subdomain_scanner():
         )
         print(yellow + sds_banner)
         found_subdomain = []
-        target_address_sds = input(f"({os.getlogin()}@SDS(use 'x' to exit))>> ")
+        target_address_sds = input(f"({os.getlogin()}@SDS(URL, use 'x' to exit))>> ")
         if target_address_sds == 'exit' or target_address_sds == 'x':
             break
 
@@ -631,7 +631,7 @@ def eye_main():
             )
         )
 
-        ipeye_scanner = input(f"({os.getlogin()}@IPWhois(use 'x' to exit))>> ")
+        ipeye_scanner = input(f"({os.getlogin()}@IPWhois(IP, use 'x' to exit))>> ")
         if ipeye_scanner == 'exit' or ipeye_scanner == 'x':
             print(
                 cld(
@@ -700,7 +700,7 @@ def banner_grabber():
     email = links[2]
 
     while True:
-        target_host = input(f"({os.getlogin()}@GBanner(use 'x' to exit))>> ")
+        target_host = input(f"({os.getlogin()}@GBanner(URL, use 'x' to exit))>> ")
         if target_host == 'exit' or target_host == 'x':
             os.system("clear")
             break
@@ -840,7 +840,7 @@ def base64encode():
         print(red + "\t[" + cyan + "x" + red + "] " + yellow + "Exit")
         choice = input(cyan + "\nChoice " + magenta + "~#$ " + green)
         if choice == "1":
-            hash_value = input(f"({os.getlogin()}@B64C(Length, use 'x' to exit))>> ")
+            hash_value = input(f"({os.getlogin()}@B64C(Value, use 'x' to exit))>> ")
             if hash_value == 'exit' or hash_value == 'x':
                 break
 
@@ -919,7 +919,7 @@ def number_tracker():
                 0xa
             )
         )
-        target_phonenumber = input(f"({os.getlogin()}@PhonenumberWhois(use 'x' to exit))>> ")
+        target_phonenumber = input(f"({os.getlogin()}@PhonenumberWhois(Phonenumber, use 'x' to exit))>> ")
         if target_phonenumber == 'exit' or target_phonenumber == 'x':
             print(
                 cld(
