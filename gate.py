@@ -1326,7 +1326,7 @@ def information_gathering():
             try:
                 target_address = str(
                     input(
-                        f"({os.getlogin()}@AIG(Target, use 'x' to exit))>> "
+                        f"({os.getlogin()}@AIG(URL, use 'x' to exit))>> "
                     )
                 )
                 if target_address == 'x' or target_address == 'exit':
