@@ -16,6 +16,7 @@ MySystem              Get infos like cpu usage, disk usage etc.
 GetIPfromURL          Get the ip address of any url.
 AutoInfoGathering     Get infos like: open ports, location etc.
 PassGen               Generate a random password.
+WhoisForURL           Whois lookup for URL.
 Header                Get header from a webserver(CUrl).
 Links                 Get links from a website.
 Ping                  Check host availability.
