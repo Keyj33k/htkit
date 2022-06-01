@@ -35,6 +35,11 @@ Install python requirements:
 ```
 pip3 install -r requirements.txt
 ```
+CUrl for ping:
+- Debian/-based:
+```
+sudo apt-get install curl 
+```
 Run the script:
 ```
 python3 gate.py
