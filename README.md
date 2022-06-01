@@ -37,7 +37,7 @@ pip3 install -r requirements.txt
 ```
 CUrl for ping:
 ```
-sudo apt-get install curl 
+sudo apt-get install -y curl 
 ```
 Run the script:
 ```
