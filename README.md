@@ -35,7 +35,7 @@ Install python requirements:
 ```
 pip3 install -r requirements.txt
 ```
-- Debian/-based:
+CUrl for ping:
 ```
 sudo apt-get install curl 
 ```
