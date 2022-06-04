@@ -2,7 +2,7 @@
 
 # Project - Hunter | Written In <a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python Badge"/></a>
 
-### What Hunter-Toolkit can do for you:
+### What Hunter-Toolkit can do for you:snake::
 ```
 Witcher               A simple port scanner.
 MD5Crypt              MD5 encryption.
