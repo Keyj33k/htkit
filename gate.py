@@ -469,11 +469,8 @@ def witcher():
             )
         )
         print(magenta + "=" * 70)
-        print(
-            chr(
-                0xa
-            )
-        )
+        print(chr(0xa))
+        
         input(cyan + "Press any key to continue")
 
 
@@ -485,7 +482,9 @@ def subdomain_scanner():
             "Sub- domain- Scanner",
             font="slant"
         )
+        
         print(yellow + sds_banner)
+        
         found_subdomain = []
         target_address_sds = input(
             cyan + "(" + yellow +
@@ -542,11 +541,7 @@ def md5():
             cyan + "[" + red + "i" + cyan + "]" +
             yellow + " Type 'exit' to exit md5crypt."
         )
-        print(
-            chr(
-                0xa
-            )
-        )
+        print(chr(0xa))
 
         hash_value = input(
             cyan + "(" + yellow +
@@ -645,11 +640,8 @@ def eye_main():
         print(red + "[" + cyan + "i" + red + "]" + yellow + "IPEye is a Tool to find out")
         print(red + "--" + magenta + "> " + yellow + "some information about an IP Address.")
         print(red + "[" + cyan + "i" + red + "]" + yellow + "Type 'exit' to exit ipeye.")
-        print(
-            chr(
-                0xa
-            )
-        )
+        
+        print(chr(0xa))
 
         ipeye_scanner = input(
             cyan + "(" + yellow +
@@ -664,6 +656,7 @@ def eye_main():
                 )
             )
             break
+            
         time_start = dtt.now()
         print(green + "\nResults:")
 
@@ -693,11 +686,7 @@ def eye_main():
         time_result = time_stop - time_start
         print("\n" + magenta + "=" * 70)
 
-        print(
-            chr(
-                0xa
-            )
-        )
+        print(chr(0xa))
 
         print(green + f"Scanner done in {time_result}!")
         input(cyan + "Press any key to continue")
@@ -832,12 +821,10 @@ def banner_grabber():
                     "green"
                 )
             )
+            
             print(line)
-            print(
-                chr(
-                    0xa
-                )
-            )
+            print(chr(0xa))
+            
             input(cyan + "Press any key to continue")
         except socket.error as sock_err:
             print(
@@ -953,11 +940,8 @@ def number_tracker():
     print(red + "[" + cyan + "i" + red + "]" + yellow + "Type 'exit' to exit PhoneStalk.")
 
     while True:
-        print(
-            chr(
-                0xa
-            )
-        )
+        print(chr(0xa))
+        
         target_phonenumber = input(
             cyan + "(" + yellow + f"{os.getlogin()}@PhonenumberWhois(Phonenumber, use 'x' to exit)"
             + cyan + ")>> "
@@ -975,18 +959,10 @@ def number_tracker():
             print(magenta + "< " + green + "=" * 15 + magenta + " >")
             print(red + "'exit'        " + yellow + "Return Menu / Exit PhoneStalk")
             print(red + "'clear'       " + yellow + "Clear Screen")
-            print(
-                chr(
-                    0xa
-                )
-            )
+            print(chr(0xa))
             input(cyan + "Press any key to continue")
 
-        print(
-            chr(
-                0xa
-            )
-        )
+        print(chr(0xa))
 
         time_start = dtt.now()
         print(magenta + "=" * 55)
@@ -1046,12 +1022,8 @@ def number_tracker():
             input(red + "Press any key to continue")
             number_tracker()
 
-        print(
-            chr(
-                0xa
-            )
-        )
-
+        print(chr(0xa))
+        
         input(cyan + "Press any key to continue")
 
         break
@@ -1552,7 +1524,9 @@ if __name__ == "__main__":
         time_now = dtt.now()
         username = os.getlogin()
         print(cld(f"Welcome {username}. Today is the {time_now}", "yellow"))
+        
         time.sleep(0.75)
+        
         start_hunter = input(
             yellow + "Do you want to start hunter? (" + green +
             "y" + yellow + "/" + red + "n" + yellow + ") " + cyan
