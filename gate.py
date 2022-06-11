@@ -43,7 +43,7 @@ res = ""
 
 # # # # # # # # # # # # # # # # # # # # # #
 #                                         #
-#   Author  :   Keyj33k                   #
+#   Author  :   Keyjeek                   #
 #   Contact :   nomotikag33n@gmail.com    #
 #   Github  :   @Keyj33k                  #
 #   Version :   1.1.3                     #
