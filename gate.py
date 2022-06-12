@@ -753,6 +753,7 @@ def banner_grabber():
                     target_port
                 )
             ))
+            
             socket_sock.settimeout(1)
             banner_result = socket_sock.recv(1024).decode()
             time_start = dtt.now()
@@ -760,58 +761,71 @@ def banner_grabber():
                 "Banner Grabber",
                 font="slant"
             )
+            
             print(
                 cld(
                     bannergrab_banner,
                     "cyan"
                 )
             )
+            
             print(line)
+            
             print(
                 cyan + " Auth.:\t" + yellow + f"{author_name}{tab2}" + 
                 cyan + "Github: " + yellow + f"{github}"
             )
+            
             print(
                 cyan + " Date :\t" + yellow + f"{written_on}{tab2}" + 
                 cyan + "Instagram: " + yellow + f"{instagram}"
             )
+            
             print(
                 cyan + " Lang.:\t" + yellow + f"{progr_lang}{tab3}" + 
                 cyan + "Email: " + yellow + f"{email}"
             )
+            
             print(cyan + " Vers.:\t" + yellow + f"{version_num}")
             print(line)
+            
             print(
                 cld(
                     f" Started at:{tab3}{time_start}",
                     "yellow"
                 )
             )
+            
             print(line + "\n")
+            
             print(
                 cld(
                     f" Started at:{tab3}{time_start}",
                     "yellow"
                 )
             )
+            
             print(
                 cld(
                     f" Target Host:{tab3}{target_host}",
                     "yellow"
                 )
             )
+            
             print(
                 cld(
                     f" Target Port:{tab3}{target_port}",
                     "yellow"
                 )
             )
+            
             print(
                 cld(
                     f"\n Result:{tab3}{banner_result}",
                     "green"
                 )
             )
+            
             print(line)
             time_end = dtt.now()
             time_result = time_end - time_start
@@ -826,6 +840,7 @@ def banner_grabber():
             print(chr(0xa))
             
             input(cyan + "Press any key to continue")
+            
         except socket.error as sock_err:
             print(
                 cld(
@@ -833,6 +848,7 @@ def banner_grabber():
                     "red"
                 )
             )
+            
             return banner_grabber()
 
 
@@ -842,20 +858,24 @@ def base64encode():
             "B64-  CRYPT",
             font="slant"
         )
+        
         print(
             cld(
                 b64_banner,
                 "green"
             )
         )
+        
         print(
             red + "[" + cyan + "i" + red + "] " +
             yellow + "This Tool encode and decode your text in base64."
         )
+        
         print(
             red + "[" + cyan + "i" + red + "] " +
             yellow + "Type 'exit' to exit Base64crypt."
         )
+        
         print(red + "\n\t[" + cyan + "1" + red + "] " + yellow + "Encoder")
         print(red + "\t[" + cyan + "2" + red + "] " + yellow + "Decoder")
         print(red + "\t[" + cyan + "x" + red + "] " + yellow + "Exit")
@@ -875,14 +895,18 @@ def base64encode():
                 b64_e = base64.b64encode(m_bytes)
                 b64_hash = b64_e.decode('ascii')
                 print(b64_hash)
+                
                 input(cyan + "Press any key to continue")
+                
                 return base64encode()
+            
             except Exception as error:
                 print(
                     cld(
                         f"An error was defined: {error}"
                     )
                 )
+                
                 input(cyan + "Press any key to continue")
                 return base64encode()
 
@@ -899,6 +923,7 @@ def base64encode():
                         "red"
                     )
                 )
+                
                 break
 
             try:
@@ -914,6 +939,7 @@ def base64encode():
                         f"An error was defined: {error}"
                     )
                 )
+                
                 input(cyan + "Press any key to continue")
                 return base64encode()
 
@@ -929,12 +955,14 @@ def number_tracker():
         "Phone- Stalk",
         font="slant"
     )
+    
     print(
         cld(
             pnsk_banner,
             "magenta"
         )
     )
+    
     print(red + "[" + cyan + "i" + red + "]" + yellow
           + "This Tool helps to find out some informations\n about a phonenumber.")
     print(red + "[" + cyan + "i" + red + "]" + yellow + "Type 'exit' to exit PhoneStalk.")
@@ -946,6 +974,7 @@ def number_tracker():
             cyan + "(" + yellow + f"{os.getlogin()}@PhonenumberWhois(Phonenumber, use 'x' to exit)"
             + cyan + ")>> "
         )
+        
         if target_phonenumber == 'exit' or target_phonenumber == 'x':
             print(
                 cld(
@@ -972,45 +1001,56 @@ def number_tracker():
             valid_check = pnmb.parse(target_phonenumber)
             finally_valid = pnmb.is_valid_number(valid_check)
             print(green + f"Validation:\t{finally_valid}")
+            
             phonenumbers_timezone = pnmb.parse(
                 target_phonenumber, 
                 "en"
             )
+            
             final_timezone = tz.time_zones_for_number(phonenumbers_timezone)
             print(green + f"Timezone:\t{final_timezone}")
+            
             phonenumbers_location = pnmb.parse(
                 target_phonenumber, 
                 "CH"
             )
+            
             final_phonenumbers_location = gc.description_for_number(
                 phonenumbers_location, 
                 "en"
             )
+            
             print(green + f"Location:\t{final_phonenumbers_location}")
             phonenumbers_provider = pnmb.parse(
                 target_phonenumber, 
                 "RO"
             )
+            
             final_phonenumbers_provider = cr.name_for_number(
                 phonenumbers_provider, 
                 "en"
             )
+            
             print(green + f"Provider:\t{final_phonenumbers_provider}")
             time_stop = dtt.now()
             time_result = time_stop - time_start
+            
             print(
                 "\n" + 
                 magenta + 
                 "=" * 55
             )
+            
             print(
                 green + 
                 f"Job done in {time_result}"
             )
+            
             print(
                 magenta + 
                 "=" * 55
             )
+            
         except Exception as error:
             print(
                 cld(
@@ -1018,6 +1058,7 @@ def number_tracker():
                     "red"
                 )
             )
+            
             print(error)
             input(red + "Press any key to continue")
             number_tracker()
@@ -1040,42 +1081,51 @@ def my_system():
                 font="slant"
             )
         )
+        
         continue_or_exit = input(
             yellow + 
             "Press any key to continue, 'x' to exit "
         )
+        
         start_time = dtt.now()
         if continue_or_exit == 'exit' or continue_or_exit == 'x':
             break
 
         os.system("clear")
         get_system = platform.uname()
+        
         print(
             magenta + 
             "=" * 45, 
             "| Sys_Info |", 
             "=" * 45
         )
+        
         print(
             cyan + "\nSystem: " + yellow +
             f"{get_system.system}"
         )
+        
         print(
             cyan + "Name: " + yellow + 
             f"{get_system.node}"
         )
+        
         print(
             cyan + "Release: " + yellow +
             f"{get_system.release}"
         )
+        
         print(
             cyan + "Version: " + yellow +
             f"{get_system.version}"
         )
+        
         print(
             cyan + "Machine: " + yellow +
             f"{get_system.machine}"
         )
+        
         print(
             cyan + "Processor: " + yellow +
             f"{get_system.processor} \n"
@@ -1090,6 +1140,7 @@ def my_system():
                     return f"{size:.3f}{t}"  # output formatted to 3 decimal places
 
         get_partitions = psutil.disk_partitions()
+        
         print(
             magenta + 
             "=" * 40, 
@@ -1111,59 +1162,72 @@ def my_system():
                 cyan + "Total Size: " + yellow +
                 f"{show_size(part_usage.total)}"
             )
+            
             print(
                 cyan + "In Use: " + yellow + 
                 f"{show_size(part_usage.used)}"
             )
+            
             print(
                 cyan + "Free: " + yellow + 
                 f"{show_size(part_usage.free)}"
             )
+            
             print(
                 cyan + "Percentance: " + yellow + 
                 f"{part_usage.percent}%"
             )
 
         disk_io = psutil.disk_io_counters()
+        
         print(
             cyan + "Read Since Boot: " + yellow + 
             f"{show_size(disk_io.read_bytes)}"
         )
+        
         print(
             cyan + "Written Since Boot: " + yellow + 
             f"{show_size(disk_io.write_bytes)} \n"
         )
+        
         print(
             magenta + 
             "=" * 40, 
             "| CPU_Info |", 
             "=" * 50
         )
+        
         print(
             cyan + "\nCores: " + yellow + 
             f"{psutil.cpu_count(logical=False)}"
         )
+        
         print(
             cyan + "Logical Cores: " + yellow + 
             f"{psutil.cpu_count(logical=True)}"
         )
+        
         print(
             cyan + "Maximal Freq: " + yellow + 
             f"{psutil.cpu_freq().max:.1f}Mhz"
         )
+        
         print(
             cyan + "Current Freq: " + yellow + 
             f"{psutil.cpu_freq().current:.1f}Mhz"
         )
+        
         print(
             cyan + "CPU Usage: " + yellow + 
             f"{psutil.cpu_percent()}%"
         )
+        
         print(
             cyan + 
             "\nCPU Core Usage: \n" + 
             yellow
         )
+        
         for core, percentance in enumerate(
                 psutil.cpu_percent(
                     percpu=True, 
@@ -1174,28 +1238,34 @@ def my_system():
 
         virtual_mem = psutil.virtual_memory()
         swap = psutil.swap_memory()
+        
         print(
             magenta + 
             "=" * 40, 
             "| Ram_Info |", 
             "=" * 51
         )
+        
         print(
             cyan + "\nTotal: " + yellow + 
             f"{show_size(virtual_mem.total)}"
         )
+        
         print(
             cyan + "\nAvailable: " + yellow + 
             f"{show_size(virtual_mem.available)}"
         )
+        
         print(
             cyan + "In Use: " + yellow + 
             f"{show_size(virtual_mem.used)}"
         )
+        
         print(
             cyan + "Percentence: " + yellow + 
             f"{show_size(virtual_mem.percent)}% \n"
         )
+        
         print(
             magenta + 
             "=" * 45, 
@@ -1203,22 +1273,27 @@ def my_system():
             "=" * 50, 
             "\n"
         )
+        
         print(
             cyan + "Total: " + yellow + 
             f"{show_size(swap.total)} "
         )
+        
         print(
             cyan + "Free: " + yellow + 
             f"{show_size(swap.free)} "
         )
+        
         print(
             cyan + "In Use: " + yellow + 
             f"{show_size(swap.used)} "
         )
+        
         print(
             cyan + "Percentence: " + yellow + 
             f"{swap.percent}%\n"
         )
+        
         print(
             magenta + 
             "=" * 40, 
@@ -1226,6 +1301,7 @@ def my_system():
             "=" * 40, 
             "\n"
         )
+        
         if_addrs = psutil.net_if_addrs()
 
         for interface_name, interface_addresses in if_addrs.items():
@@ -1241,45 +1317,55 @@ def my_system():
                         cyan + "IP: " + yellow + 
                         f"{address.address}"
                     )
+                    
                     print(
                         cyan + "Netmask: " + yellow + 
                         f"{address.netmask}"
                     )
+                    
                     print(
                         cyan + "Broadcast IP: " + yellow + 
                         f"{address.broadcast}"
                     )
+                    
                 elif str(address.family) == 'AddressFamily.AF_PACKET':
                     print(
                         cyan + "MAC: " + yellow + 
                         f"{address.address}"
                     )
+                    
                     print(
                         cyan + "Netmask: " + yellow + 
                         f"{address.netmask}"
                     )
+                    
                     print(
                         cyan + "Broadcast MAC: " + yellow + 
                         f"{address.broadcast}"
                     )
 
         net_io = psutil.net_io_counters()
+        
         print(
             cyan + "Total Bytes Sent: " + yellow + 
             f"{show_size(net_io.bytes_sent)}"
         )
+        
         print(
             cyan + "Total Bytes Received: " + yellow + 
             f"{show_size(net_io.bytes_recv)}\n"
         )
+        
         boot_time_timestamp = psutil.boot_time()
         boot_time = dtt.fromtimestamp(boot_time_timestamp)
+        
         print(
             magenta + 
             "=" * 40, 
             "| Boot |", 
             "=" * 55
         )
+        
         print(
             cyan + 
             "\nLast Boot: " + 
@@ -1287,14 +1373,17 @@ def my_system():
             f"{boot_time.day}.{boot_time.month}.{boot_time.year} " + 
             f"{boot_time.hour}:{boot_time.minute}:{boot_time.second}\n"
         )
+        
         end_time = dtt.now()  # get end time
         needed_time = end_time - start_time
+        
         print(
             cyan + 
             "Job Done In " + 
             green + 
             f"{needed_time}"
         )
+        
         input(cyan + "Press Any Key To Continue")
 
 
@@ -1306,6 +1395,7 @@ def whois_url():
             "who$url",
             font="slant"
         )
+        
         print(
             cld(
                 passgen_banner,
@@ -1328,6 +1418,7 @@ def whois_url():
 
         whs = whois.whois(tarad)
         print(green + whs.text)
+        
         input(cyan + "Press any key to continue")
 
 
@@ -1493,6 +1584,7 @@ def information_gathering():
                             "red"
                         )
                     )
+                    
                     information_gathering()
 
                 try:
@@ -1504,6 +1596,7 @@ def information_gathering():
                             "red"
                         )
                     )
+                    
                     information_gathering()
 
             date_e = dtt.now()
@@ -1516,6 +1609,10 @@ def information_gathering():
 
 
 if __name__ == "__main__":
+    if "SUDO_UID" not in os.environ.keys():
+        print(red + "[-] " + white + "You need to run this program with root permission.")
+        sys.exit(1)
+        
     conditions()
 
 
@@ -1568,6 +1665,7 @@ if __name__ == "__main__":
                     )
                 )
                 input(cyan + "Press any key to continue")
+                
                 return hunter_main()
 
             if hunter_choice == 1:
@@ -1593,7 +1691,9 @@ if __name__ == "__main__":
                             "red"
                         )
                     )
+                    
                     input(cyan + "Press any key to continue")
+                    
                     return hunter_main()
 
             elif hunter_choice == 8:
@@ -1625,7 +1725,9 @@ if __name__ == "__main__":
                         "red"
                     )
                 )
+                
                 sys.exit(0)
+                
             elif hunter_choice == 0:
                 os.system("clear")
                 return hunter_main()
@@ -1636,7 +1738,9 @@ if __name__ == "__main__":
                         "red"
                     )
                 )
+                
                 input(cyan + "Press any key to continue")
+                
                 return hunter_main()
 
 
