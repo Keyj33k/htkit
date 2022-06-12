@@ -1609,10 +1609,6 @@ def information_gathering():
 
 
 if __name__ == "__main__":
-    if "SUDO_UID" not in os.environ.keys():
-        print(red + "[-] " + white + "You need to run this program with root permission.")
-        sys.exit(1)
-        
     conditions()
 
 
