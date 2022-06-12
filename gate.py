@@ -1664,6 +1664,7 @@ if __name__ == "__main__":
                         "red"
                     )
                 )
+                
                 input(cyan + "Press any key to continue")
                 
                 return hunter_main()
