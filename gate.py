@@ -1013,19 +1013,19 @@ def number_tracker():
             break
             
         elif target_phonenumber == "help" or target_phonenumber == 'h':
-            print(cyan + "\nHELP; " + yellow + "Phone-Stalk")
+            print(cyan    + "\nHELP; " + yellow + "Phone-Stalk")
             print(magenta + "< " + green + "=" * 15 + magenta + " >")
-            print(red + "'exit'        " + yellow + "Return Menu / Exit PhoneStalk")
-            print(red + "'clear'       " + yellow + "Clear Screen")
+            print(red     + "'exit'        " + yellow + "Return Menu / Exit PhoneStalk")
+            print(red     + "'clear'       " + yellow + "Clear Screen")
             print(chr(0xa))
-            input(cyan + "Press any key to continue")
+            input(cyan    + "Press any key to continue")
 
-        time_start = dtt.now()
+        time_start    = dtt.now()
         print(magenta + "=" * 55)
-        print(yellow + "Request\t\t\tResponse\n" + magenta + "=" * 55 + "\n")
+        print(yellow  + "Request\t\t\tResponse\n" + magenta + "=" * 55 + "\n")
 
         try:
-            valid_check = pnmb.parse(target_phonenumber)
+            valid_check   = pnmb.parse(target_phonenumber)
             finally_valid = pnmb.is_valid_number(valid_check)
             print(cyan + "[" + red + "+" + cyan + "] " + green + f"Validation:\t{finally_valid}")
             
