@@ -147,6 +147,7 @@ def menu():
         " Ping " + magenta + ">> " + yellow + " Check host availability."
     )
     print(green + "{" + red + "99" + green + "}" + green + " Exit\n")
+    
     print(magenta + "=" * 70)
 
 
@@ -220,11 +221,11 @@ def get_ip_from_url():
             )
             input(cyan + "\nPress any key to continue")
         except ValueError:
-            print(red + "\nYou need to enter a value like: google.com in example.")
+            print(red  + "\nYou need to enter a value like: google.com in example.")
             input(cyan + "Press any key to continue")
             get_ip_from_url()
         except socket.gaierror:
-            print(red + "\nYou need to enter a value like: google.com in example.")
+            print(red  + "\nYou need to enter a value like: google.com in example.")
             input(cyan + "Press any key to continue")
             get_ip_from_url()
 
@@ -239,6 +240,7 @@ def password_generator():
             "passgen",
             font="slant"
         )
+        
         print(
             cld(
                 passgen_banner,
@@ -270,11 +272,11 @@ def password_generator():
 
             password_generator()
 
-        numbers = "1234567890"
-        lowers = "abcdefghijklmnopqrstuvwxyz"
-        uppers = "ABVDEFGHIJKLMNOPQRSTUVWXYZ"
-        special = "§$%&/()=}[{]?!_;:"
-        mixer = numbers + lowers + uppers + special
+        numbers      = "1234567890"
+        lowers       = "abcdefghijklmnopqrstuvwxyz"
+        uppers       = "ABVDEFGHIJKLMNOPQRSTUVWXYZ"
+        special      = "§$%&/()=}[{]?!_;:"
+        mixer        = numbers + lowers + uppers + special
         passw_result = random.sample(
             mixer,
             passw_length
@@ -297,10 +299,10 @@ def whoami_():
         )
     )
     get_hostname = socket.gethostname()
-    get_host_ip = socket.gethostbyname(get_hostname)
+    get_host_ip  = socket.gethostbyname(get_hostname)
     get_username = os.getlogin()
-    get_path = os.path.abspath(os.getcwd())
-    get_time = dtt.now()
+    get_path     = os.path.abspath(os.getcwd())
+    get_time     = dtt.now()
 
     def check_root():
         if "SUDO_UID" in os.environ.keys():
@@ -308,16 +310,16 @@ def whoami_():
         else:
             print(cyan + "\tType         :" + yellow + "\tNormal User")
 
-    print(cyan + "\t\t\tWhoami")
+    print(cyan    + "\t\t\tWhoami")
     print(magenta + "< " + green + "=" * 66 + magenta + " >")
-    print(cyan + "\tDate         :" + yellow + f"\t{get_time}")
-    print(cyan + "\tUsername     :" + yellow + f"\t{get_username}")
+    print(cyan    + "\tDate         :" + yellow + f"\t{get_time}")
+    print(cyan    + "\tUsername     :" + yellow + f"\t{get_username}")
     check_root()
-    print(cyan + "\tHostname     :" + yellow + f"\t{get_hostname}")
-    print(cyan + "\tIPAddress    :" + yellow + f"\t{get_host_ip}")
-    print(cyan + "\tMACAddress   :" + yellow + f"\t{get_mac}")
-    print(cyan + "\tCurrent Path :" + yellow + f"\t{get_path}")
-    input(cyan + "\nPress any key to continue")
+    print(cyan    + "\tHostname     :" + yellow + f"\t{get_hostname}")
+    print(cyan    + "\tIPAddress    :" + yellow + f"\t{get_host_ip}")
+    print(cyan    + "\tMACAddress   :" + yellow + f"\t{get_mac}")
+    print(cyan    + "\tCurrent Path :" + yellow + f"\t{get_path}")
+    input(cyan    + "\nPress any key to continue")
 
 
 def get_header():
@@ -406,6 +408,7 @@ def witcher():
                 )
             )
             input(cyan + "Press any key to continue")
+            
             witcher()
 
         print(
@@ -466,6 +469,7 @@ def witcher():
 
         time_stop = dtt.now()
         needed_time = time_stop - time_start
+        
         print(magenta + "=" * 70)
         print(
             cld(
@@ -490,7 +494,7 @@ def subdomain_scanner():
         
         print(magenta + sds_banner)
         
-        found_subdomain = []
+        found_subdomain    = []
         target_address_sds = input(
             cyan + "(" + yellow +
             f"{os.getlogin()}@SDS(URL, use 'x' to exit)"
@@ -567,6 +571,7 @@ def md5():
                 end=""
             )
             print(result.hexdigest())
+            
             input(cyan + "\nPress any key to continue")
         except Exception as error:
             print(
@@ -575,12 +580,22 @@ def md5():
                     "red"
                 )
             )
+            
             input(cyan + "Press any key to continue")
-            md5()  # https://www.md5online.org/md5-decrypt.html This program is using a big database to bruteforce the hash for you
+            
+            md5()  
+            
+            """
+            
+            https://www.md5online.org/md5-decrypt.html 
+            This program is using a big database to bruteforce the hash for you
+            
+            """
 
 
 def conditions():
     os.system("clear")
+    
     print(cld("""
  \t\t\tWelcome To Hunter Toolkit!
  < =============================================================================== >
@@ -621,7 +636,9 @@ def conditions():
             )
         )
         input(cyan + "Press any key to continue")
+        
         os.system("clear")
+        
         return conditions()
 
 
@@ -656,6 +673,7 @@ def eye_main():
                     "red"
                 )
             )
+            
             break
             
         time_start = dtt.now()
@@ -674,7 +692,9 @@ def eye_main():
                 )
             )
             input(cyan + "Press any key to continue")
+            
             os.system('clear')
+            
             eye_main()
 
         print(magenta + "=" * 70 + "\n")
@@ -713,11 +733,11 @@ def banner_grabber():
 
     author_name = info_array[0]
     version_num = info_array[1]
-    written_on = info_array[2]
-    progr_lang = info_array[3]
-    instagram = links[1]
-    github = links[0]
-    email = links[2]
+    written_on  = info_array[2]
+    progr_lang  = info_array[3]
+    instagram   = links[1]
+    github      = links[0]
+    email       = links[2]
 
     while True:
         target_host = input(
@@ -756,8 +776,9 @@ def banner_grabber():
             ))
             
             socket_sock.settimeout(1)
-            banner_result = socket_sock.recv(1024).decode()
-            time_start = dtt.now()
+            
+            banner_result     = socket_sock.recv(1024).decode()
+            time_start        = dtt.now()
             bannergrab_banner = pfgt.figlet_format(
                 "Banner Grabber",
                 font="slant"
@@ -828,8 +849,10 @@ def banner_grabber():
             )
             
             print(line)
-            time_end = dtt.now()
+            
+            time_end    = dtt.now()
             time_result = time_end - time_start
+            
             print(
                 cld(
                     f" Job done in:{tab3}{time_result}",
@@ -986,7 +1009,9 @@ def number_tracker():
                     "red"
                 )
             )
+            
             break
+            
         elif target_phonenumber == "help" or target_phonenumber == 'h':
             print(cyan + "\nHELP; " + yellow + "Phone-Stalk")
             print(magenta + "< " + green + "=" * 15 + magenta + " >")
@@ -1377,7 +1402,7 @@ def my_system():
             f"{boot_time.hour}:{boot_time.minute}:{boot_time.second}\n"
         )
         
-        end_time = dtt.now()  # get end time
+        end_time    = dtt.now()  # get end time
         needed_time = end_time - start_time
         
         print(
@@ -1493,6 +1518,7 @@ def information_gathering():
             except ValueError:
                 print(red + "You need to enter a integer!")
                 input(cyan + "Press any key to continue")
+                
                 information_gathering()
 
             os.system('clear')
@@ -1500,6 +1526,7 @@ def information_gathering():
             time.sleep(0.5)
             print(yellow + "(...)")
             time.sleep(1.25)
+            
             date_n = dtt.now()
 
             with open("results.txt", "w") as resf:
@@ -1514,7 +1541,7 @@ def information_gathering():
             def locate():
                 try:
                     target_addr = socket.gethostbyname(target_address)
-                    resp = requests.get(
+                    resp        = requests.get(
                         f'https://ipapi.co/{target_address}/json/'
                     ).json()
                     d = {
@@ -1557,9 +1584,9 @@ def information_gathering():
                 pass
 
             with open("subdomains.txt") as subd_list_file:
-                file_content = subd_list_file.read()
+                file_content      = subd_list_file.read()
                 sub_sp_subdomains = file_content.splitlines()
-                found_subdomains = []
+                found_subdomains  = []
 
             for subdomain in sub_sp_subdomains:
                 url = f"http://{subdomain}.{target_address}"
@@ -1603,12 +1630,12 @@ def information_gathering():
                     
                     information_gathering()
 
-            date_e = dtt.now()
+            date_e      = dtt.now()
             needed_time = date_e - date_n
             print(green + f"\nJob done in {needed_time}!")
 
     except KeyboardInterrupt:
-        print(red + "Ctrl+C pressed. Exit.")
+        print(red  + "Ctrl+C pressed. Exit.")
         input(cyan + "Press any key to continue")
 
 
@@ -1720,6 +1747,7 @@ if __name__ == "__main__":
                     "Exit",
                     font="digital"
                 )
+                
                 print(
                     cld(
                         ex_banner,
