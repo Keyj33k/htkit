@@ -46,7 +46,7 @@ res = ""
 #   Author  :   Keyjeek                   #
 #   Contact :   nomotikag33n@gmail.com    #
 #   Github  :   @Keyj33k                  #
-#   Version :   1.1.3                     #
+#   Version :   1.1.4                     #
 #                                         #
 # # # # # # # # # # # # # # # # # # # # # #
 
