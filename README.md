@@ -57,7 +57,7 @@ Note:
 
 ---
   
-- Tested on 5.15.0-kali3-amd64, 5.13.0-39-genericUbuntu and Termux-7.9.227
+- Tested on 5.15.0-kali3-amd64, 5.13.0-39-genericUbuntu
   
 ---
 
