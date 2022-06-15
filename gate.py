@@ -68,7 +68,7 @@ def banner():
     )
     print(
         magenta + " <" + green + " contact:nomotikag33n@gmail.com " +
-        magenta + ">" + yellow + " Ver" + magenta + ".:" + red + "1.1.3"
+        magenta + ">" + yellow + " Ver" + magenta + ".:" + red + "1.1.4"
     )
     print(
         cyan + "\n[" + red + "i" + cyan + "] " + yellow +
