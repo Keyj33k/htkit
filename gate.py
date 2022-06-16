@@ -219,7 +219,7 @@ def get_ip_from_url():
                 green + "\n[" + red + "*" + green + "]" + cyan +
                 f" IP Address from {target_url}: " + green + socket.gethostbyname(target_url)
             )
-            input(cyan + "\nPress any key to continue")
+            input(cyan + "\nPress enter key to continue")
         except ValueError:
             print(red  + "\nYou need to enter a value like: google.com in example.")
             input(cyan + "Press any key to continue")
@@ -268,7 +268,7 @@ def password_generator():
                 )
             )
 
-            input(cyan + "\nPress any key to continue")
+            input(cyan + "\nPress enter key to continue")
 
             password_generator()
 
@@ -288,7 +288,7 @@ def password_generator():
             "Your generated password: " + cyan + f"{finalp}\n" + white
         )
 
-        input(yellow + "Press any key to continue")
+        input(yellow + "Press enter key to continue")
 
 
 def whoami_():
@@ -319,7 +319,8 @@ def whoami_():
     print(cyan    + "\tIPAddress    :" + yellow + f"\t{get_host_ip}")
     print(cyan    + "\tMACAddress   :" + yellow + f"\t{get_mac}")
     print(cyan    + "\tCurrent Path :" + yellow + f"\t{get_path}")
-    input(cyan    + "\nPress any key to continue")
+    
+    input(cyan    + "\nPress enter key to continue")
 
 
 def get_header():
@@ -355,7 +356,7 @@ def get_header():
                 f"Failed getting header from {header_from}\n\n"
             )
 
-        input(magenta + "\nPress any key to continue")
+        input(magenta + "\nPress enter key to continue")
 
 
 def witcher():
@@ -407,7 +408,7 @@ def witcher():
                     "red"
                 )
             )
-            input(cyan + "Press any key to continue")
+            input(cyan + "Press enter key to continue")
             
             witcher()
 
@@ -480,7 +481,7 @@ def witcher():
         print(magenta + "=" * 70)
         print(chr(0xa))
         
-        input(cyan + "Press any key to continue")
+        input(cyan + "Press enter key to continue")
 
 
 def subdomain_scanner():
@@ -523,7 +524,7 @@ def subdomain_scanner():
                         uniformresourcelocator
                     )
 
-        input(cyan + "Press any key to continue")
+        input(cyan + "Press enter key to continue")
 
 
 def md5():
@@ -572,7 +573,7 @@ def md5():
             )
             print(result.hexdigest())
             
-            input(cyan + "\nPress any key to continue")
+            input(cyan + "\nPress enter key to continue")
         except Exception as error:
             print(
                 cld(
@@ -581,7 +582,7 @@ def md5():
                 )
             )
             
-            input(cyan + "Press any key to continue")
+            input(cyan + "Press enter key to continue")
             
             md5()  
             
@@ -635,7 +636,7 @@ def conditions():
                 "red"
             )
         )
-        input(cyan + "Press any key to continue")
+        input(cyan + "Press enter key to continue")
         
         os.system("clear")
         
@@ -644,6 +645,7 @@ def conditions():
 
 def eye_main():
     global response
+    
     while True:
         ipe_banner = pfgt.figlet_format(
             "IPWhois",
@@ -691,7 +693,7 @@ def eye_main():
                     "red"
                 )
             )
-            input(cyan + "Press any key to continue")
+            input(cyan + "Press enter key to continue")
             
             os.system('clear')
             
@@ -710,7 +712,8 @@ def eye_main():
         print(chr(0xa))
 
         print(green + f"Scanner done in {time_result}!")
-        input(cyan + "Press any key to continue")
+        
+        input(cyan + "Press enter key to continue")
 
 
 def banner_grabber():
@@ -863,7 +866,7 @@ def banner_grabber():
             print(line)
             print(chr(0xa))
             
-            input(cyan + "Press any key to continue")
+            input(cyan + "Press enter key to continue")
             
         except socket.error as sock_err:
             print(
@@ -920,7 +923,7 @@ def base64encode():
                 b64_hash = b64_e.decode('ascii')
                 print(cyan + "[" + red + "+" + cyan + "]" + green + b64_hash)
                 
-                input(cyan + "Press any key to continue")
+                input(cyan + "Press enter key to continue")
                 
                 return base64encode()
             
@@ -931,7 +934,7 @@ def base64encode():
                     )
                 )
                 
-                input(cyan + "Press any key to continue")
+                input(cyan + "Press enter key to continue")
 
                 return base64encode()
 
@@ -957,7 +960,7 @@ def base64encode():
                 result = m_byte.decode('ascii')
                 print(cyan + "[" + red + "+" + cyan + "]" + green + result)
 
-                input(cyan + "Press any key to continue")
+                input(cyan + "Press enter key to continue")
 
                 return base64encode()
             except Exception as error:
@@ -967,7 +970,7 @@ def base64encode():
                     )
                 )
                 
-                input(cyan + "Press any key to continue")
+                input(cyan + "Press enter key to continue")
 
                 return base64encode()
 
@@ -1017,10 +1020,13 @@ def number_tracker():
             print(magenta + "< " + green + "=" * 15 + magenta + " >")
             print(red     + "'exit'        " + yellow + "Return Menu / Exit PhoneStalk")
             print(red     + "'clear'       " + yellow + "Clear Screen")
+            
             print(chr(0xa))
-            input(cyan    + "Press any key to continue")
+            
+            input(cyan    + "Press enter key to continue")
 
         time_start    = dtt.now()
+        
         print(magenta + "=" * 55)
         print(yellow  + "Request\t\t\tResponse\n" + magenta + "=" * 55 + "\n")
 
@@ -1088,12 +1094,12 @@ def number_tracker():
             )
             
             print(error)
-            input(red + "Press any key to continue")
+            input(red + "Press enter key to continue")
             number_tracker()
 
         print(chr(0xa))
         
-        input(cyan + "Press any key to continue")
+        input(cyan + "Press enter key to continue")
 
         break
 
@@ -1113,7 +1119,7 @@ def my_system():
 
             continue_or_exit = input(
                 yellow +
-                "Press any key to continue, 'x' to exit "
+                "Press enter key to continue, 'x' to exit "
             )
 
             start_time = dtt.now()
@@ -1415,7 +1421,7 @@ def my_system():
     except PermissionError:
         print(red + "Your device needs to be root for this function!\n")
         
-    input(cyan + "Press Any Key To Continue")
+    input(cyan + "Press enter key to continue")
 
 
 def whois_url():
@@ -1450,7 +1456,7 @@ def whois_url():
         whs = whois.whois(tarad)
         print(green + whs.text)
         
-        input(cyan + "Press any key to continue")
+        input(cyan + "Press enter key to continue")
 
 
 def check_host_availability():
@@ -1484,7 +1490,7 @@ def check_host_availability():
                     "]" + green + f" Host {paddr} is alive!\n"
                 )
 
-            input(cyan + "Press any key to continue ...")
+            input(cyan + "Press enter key to continue ...")
         except subprocess.CalledProcessError as scpe:
             print(f"\n{scpe}")
 
@@ -1507,7 +1513,8 @@ def information_gathering():
                     break
             except ValueError:
                 print(red + "You need to enter a string!")
-                input(cyan + "Press any key to continue")
+                
+                input(cyan + "Press enter key to continue")
 
             try:
                 target_port = int(
@@ -1520,7 +1527,8 @@ def information_gathering():
                     break
             except ValueError:
                 print(red + "You need to enter a integer!")
-                input(cyan + "Press any key to continue")
+                
+                input(cyan + "Press enter key to continue")
                 
                 information_gathering()
 
@@ -1639,7 +1647,8 @@ def information_gathering():
 
     except KeyboardInterrupt:
         print(red  + "Ctrl+C pressed. Exit.")
-        input(cyan + "Press any key to continue")
+        
+        input(cyan + "Press enter key to continue")
 
 
 if __name__ == "__main__":
@@ -1664,7 +1673,9 @@ if __name__ == "__main__":
             sys.exit(0)
         else:
             print(cld("Invalid Input!", "red"))
-            input(cyan + "Press any key to continue")
+            
+            input(cyan + "Press enter key to continue")
+            
             return start()
 
 
@@ -1695,7 +1706,7 @@ if __name__ == "__main__":
                     )
                 )
                 
-                input(cyan + "Press any key to continue")
+                input(cyan + "Press enter key to continue")
                 
                 return hunter_main()
 
@@ -1723,7 +1734,7 @@ if __name__ == "__main__":
                         )
                     )
                     
-                    input(cyan + "Press any key to continue")
+                    input(cyan + "Press enter key to continue")
                     
                     return hunter_main()
 
@@ -1771,7 +1782,7 @@ if __name__ == "__main__":
                     )
                 )
                 
-                input(cyan + "Press any key to continue")
+                input(cyan + "Press enter key to continue")
                 
                 return hunter_main()
 
