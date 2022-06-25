@@ -29,19 +29,17 @@ Cloning the repo:
 ```
 git clone https://github.com/Keyj33k/Hunter.git
 ```
-After cloning:
-```
-cd Hunter
-```
-Install python requirements:
+- 1. Now you need to navigate to the Hunter directory.
+- 2. There is a file called requirements.txt.
+- 3. Install the requirements using this command:
 ```
 pip3 install -r requirements.txt
 ```
-CUrl for ping:
+Installing CUrl for ping:
 ```
 sudo apt-get install -y curl 
 ```
-Run the script:
+Run Hunter:
 ```
 python3 gate.py
 ```
