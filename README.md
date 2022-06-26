@@ -14,7 +14,7 @@ MD5Crypt              >>    MD5 encryption tool.
 IPv4-lookup           >>    Get informations about an IPv4 address.
 Banner-Grabber        >>    Get service behind a port.
 B64Crypt              >>    En- and decryption used Base64.
-Phonenuumber-Whois    >>    Get informations about a phonenumber
+Phonenumber-Whois     >>    Get informations about a phonenumber
 Subdomain-Scanner     >>    Get subdomains from any URL.
 Whoami                >>    Get infos like current IPv4 address etc.
 MySystem              >>    Get infos like CPU usage, disk usage etc.
