@@ -19,6 +19,15 @@ except ImportError:
 
 
     """)
+    
+# # # # # # # # # # # # # # # # # # # # # #
+#                                         #
+#   Author  :   Keyjeek                   #
+#   Contact :   nomotikag33n@gmail.com    #
+#   Github  :   @Keyj33k                  #
+#   Version :   1.1.5                     #
+#                                         #
+# # # # # # # # # # # # # # # # # # # # # #
 
 
 class IPv4Lookup:
