@@ -21,7 +21,7 @@ LinkCollector         Get links from a website.
 Ping                  Check host availability.
 ```
 
-USAGE OF HUNTER:
+### USAGE OF HUNTER:
 -------------------------------------------------------------------
 
 Cloning the repo:
