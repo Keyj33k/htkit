@@ -22,16 +22,15 @@ Ping                  Check host availability.
 ```
 
 ### USAGE OF HUNTER:
--------------------------------------------------------------------
 
-Cloning the repo:
+- Cloning the repo:
 ```
 git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 ```
-- 1. Now you need to navigate to the Hunter directory.
-- 2. Change the current directory to the req directory.
-- 3. There is a file called INSTALLATION.txt.
-- 4. Open the file and follow the installation steps.
+- 1 )  Now you need to navigate to the Hunter directory.
+- 2 )  Change the current directory to the req directory.
+- 3 )  There is a file called INSTALLATION.txt.
+- 4 )  Open the file and follow the installation steps.
 
 ---
 
