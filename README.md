@@ -45,7 +45,7 @@ The following isn't some silly blah blah or anything. It's a serious warning.
 Always remember that port scanning etc. can be illegal if you don't have any
 permissions to do that. You can end up in jail for being a blackhat.
     
-Make the internet a safer place.
+### Make the internet a safer place.
     
     
 - This tool is only for ethical purposes. 
