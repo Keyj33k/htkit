@@ -1,6 +1,6 @@
 <a href="https://github.com/Keyj33k/Hunter/archive/refs/heads/main.zip"><img src="https://github.com/Keyj33k/profiles/blob/main/profile/HunteR(2).png?raw=true" alt="banner"/></a>
 
-# Project - Hunter | Written In <a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python Badge"/></a>
+# Project - Hunter:snake: | Ver.:1.1.5
 
 ### What Hunter-Toolkit can do for you:snake::
 ```
@@ -14,40 +14,40 @@ SubdomainScanner      Get subdomains from any url.
 Whoami                Get infos like current ip address etc.
 MySystem              Get infos like cpu usage, disk usage etc.
 GetIPfromURL          Get the ip address of any url.
-AutoInfoGathering     Get infos like: open ports, location etc.
 PassGen               Generate a random password.
 WhoisForURL           Whois lookup for URL.
 Header                Get header from a webserver(CUrl).
-Links                 Get links from a website.
+LinkCollector         Get links from a website.
 Ping                  Check host availability.
 ```
 
-USAGE of HUNTER:
+USAGE OF HUNTER:
 -------------------------------------------------------------------
 
 Cloning the repo:
 ```
-git clone https://github.com/Keyj33k/Hunter.git
+git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 ```
 - 1. Now you need to navigate to the Hunter directory.
-- 2. There is a file called requirements.txt.
-- 3. Install the requirements using this command:
-```
-pip3 install -r requirements.txt
-```
-Installing CUrl for ping:
-```
-sudo apt-get install -y curl 
-```
-Run Hunter:
-```
-python3 gate.py
-```
+- 2. Change the current directory to the req directory.
+- 3. There is a file called INSTALLATION.txt.
+- 4. Open the file and follow the installation steps.
+
 ---
-![pypy](https://raw.githubusercontent.com/Keyj33k/profiles/main/profile/pypy.jpeg)
+<div id="profile">
+  <a href="https://www.python.org/">
+    <img src="https://github.com/Keyj33k/profiles/blob/main/profile/pypy.jpeg?raw=true" alt="prfl1"/>
 ---
-Note:
+
+NOTE:
 --------------------------
+The following isn't some silly blah blah or anything. It's a serious warning.
+Always remember that port scanning etc. can be illegal if you don't have any
+permissions to do that. You can end up in jail for being a blackhat.
+    
+Make the internet a safer place.
+    
+    
 - This tool is only for ethical purposes. 
 - I'm not responsible for your actions. 
 - Don't hack anyone without permissions.
@@ -55,7 +55,7 @@ Note:
 
 ---
   
-- Tested on 5.15.0-kali3-amd64, 5.13.0-39-genericUbuntu
+- Tested on 5.16.0-kali7-amd64, 5.15.0-40-genericUbuntu
   
 ---
 
