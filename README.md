@@ -40,8 +40,7 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
     
 ---
 
-NOTE:
---------------------------
+# NOTE:
 The following isn't some silly blah blah or anything. It's a serious warning.
 Always remember that port scanning etc. can be illegal if you don't have any
 permissions to do that. You can end up in jail for being a blackhat.
