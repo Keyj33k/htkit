@@ -7,21 +7,21 @@
 
 ### What Hunter-Toolkit can do for you?
 ```
-Witcher               A simple port scanner.
-MD5Crypt              MD5 encryption.
-WhoisForIP            Get informations about an ipv4 address.
-BannerGrabber         Get service behind a port.
-B64Crypt              En- and Decryption used base64.
-PhoneStalk            Get informations about a phonenumber
-SubdomainScanner      Get subdomains from any url.
-Whoami                Get infos like current ip address etc.
-MySystem              Get infos like cpu usage, disk usage etc.
-GetIPfromURL          Get the ip address of any url.
-PassGen               Generate a random password.
-WhoisForURL           Whois lookup for URL.
-Header                Get header from a webserver(CUrl).
-LinkCollector         Get links from a website.
-Ping                  Check host availability.
+Witcher               >>    A port scanner for status and service.
+MD5Crypt              >>    MD5 encryption tool.
+IPv4-lookup           >>    Get informations about an IPv4 address.
+Banner-Grabber        >>    Get service behind a port.
+B64Crypt              >>    En- and decryption used Base64.
+Phonenuumber-Whois    >>    Get informations about a phonenumber
+Subdomain-Scanner     >>    Get subdomains from any URL.
+Whoami                >>    Get infos like current IPv4 address etc.
+MySystem              >>    Get infos like CPU usage, disk usage etc.
+Get-IPv4-from-URL     >>    Get the IPv4 address of any URL.
+Password-Generator    >>    Generate a random password.
+Whois-lookup          >>    Whois lookup for URL.
+Get-HTTP-Header       >>    Get HTTP header from a webserver(CUrl).
+HREF-Collector        >>    Get all href attributes from a website.
+Ping-Request          >>    Check remote host availability.
 ```
 
 ### USAGE OF HUNTER:
