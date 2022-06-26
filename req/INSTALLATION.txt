@@ -1,0 +1,83 @@
+##########################################
+# Thank you for choosing Hunter-Toolkit! #
+##########################################
+
+------------
+| Details: |
+------------
+Author: Keyjeek
+Since: June, 21
+Date: 26.06.22
+PyVer: 3.10.4
+Description:
+    This project contains my most frequently used
+    self-written tools and some standard tools like Curl,
+    which should automatically help to get as much
+    information as possible about a target and should
+    be very easy to use.
+
+    What can Hunter Toolkit do for you?
+    -----------------------------------
+    1) Simple port scanning.
+    2) MD5 encryption.
+    3) IPv4 whois.
+    4) Banner grabber.
+    5) Phonenumber whois.
+    6) Subdomain scanner.
+    7) System overview.
+    8) Get IPv4 from URL.
+    9) Simple password generator.
+    10) URL whois.
+    11) Get HTTP header.
+    12) Collect href from html page.
+    13) Check host availability.
+
+-----------------------
+| INSTALLATION/USAGE: |
+-----------------------
+
+1) Make sure you have CURL installed:
+    -> We need curl to check if a target is available or not
+    -> If curl is not installed, use this command:
+
+    # sudo apt-get update && sudo apt-get full-upgrade -y
+    # sudo apt-get install curl
+
+2) Make sure you have PYTHON3 installed
+    -> We need python3 to run this toolkit
+    -> If python3 is not installed, use this command:
+
+    # sudo apt-get update && sudo apt-get full-upgrade -y
+    # sudo apt-get install python3 python3-pip
+
+3) Now you need to install the needed python modules/requirements
+    # pip install -r requirements.txt
+
+4) If the steps above are done, then you are ready for running Hunter-Toolkit
+    # python3 gate.py
+
+---------------
+| DISCLAIMER: |
+---------------
+
+    The following isn't some silly blah blah or anything. It's a serious warning.
+    Always remember that port scanning etc. can be illegal if you don't have any
+    permissions to do that. You can end up in jail for being a blackhat.
+    Make the internet a safer place.
+
+    -> This tool is for ethical purposes only.
+    -> I'm not responsible for your actions.
+    -> Don't hack anyone without permissions.
+    -> With great force follows great responsibility.
+
+-----------
+| TESTED: |
+-----------
+
+    -> Tested on 5.16.0-kali7-amd64, 5.15.0-40-genericUbuntu
+
+
+        --------------------------------------------
+            2021-2022 Hunter-Toolkit by @Keyj33k
+
+
