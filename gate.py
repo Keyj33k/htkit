@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import sys
 
 try:
     from termcolor import colored as cld
@@ -12,6 +11,7 @@ try:
     import psutil
     import socket
     import uuid
+    import sys
     import re
     import os
 except ImportError:
@@ -28,6 +28,15 @@ except ImportError:
 
 
     """)
+    
+# # # # # # # # # # # # # # # # # # # # # #
+#                                         #
+#   Author  :   Keyjeek                   #
+#   Contact :   nomotikag33n@gmail.com    #
+#   Github  :   @Keyj33k                  #
+#   Version :   1.1.5                     #
+#                                         #
+# # # # # # # # # # # # # # # # # # # # # #
 
 magenta = "\033[0;35m"
 yellow = "\033[0;33m"
