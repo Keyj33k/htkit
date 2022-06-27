@@ -9,12 +9,6 @@ Author: Keyjeek
 Since: June, 21
 Date: 26.06.22
 PyVer: 3.10.4
-Description:
-    This project contains my most frequently used
-    self-written tools and some standard tools like Curl,
-    which should automatically help to get as much
-    information as possible about a target and should
-    be very easy to use.
 
     What can Hunter Toolkit do for you?
     -----------------------------------
