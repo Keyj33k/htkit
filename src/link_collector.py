@@ -29,6 +29,7 @@ except ImportError:
 #                                         #
 # # # # # # # # # # # # # # # # # # # # # #
 
+
 class LinkCollector:
 
     def __init__(
