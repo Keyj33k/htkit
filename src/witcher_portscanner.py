@@ -68,9 +68,9 @@ class WitcherPortscanner:
                     socket_sock.settimeout(1)
                     if final_result == 0:
                         try:
-                            print(f"TCP\t\t\t{target}  \t\topen\t", socket.getservbyport(target))
+                            print(f"TCP\t\t{target}  \t\topen\t", socket.getservbyport(target))
                         except:
-                            print(f"TCP\t\t\t{target}  \t\topen\t Unknown")
+                            print(f"TCP\t\t{target}  \t\topen\t Unknown")
                     socket_sock.close()
             except socket.error as socket_error:
                 print(cld(
