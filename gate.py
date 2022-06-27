@@ -673,7 +673,7 @@ class HunterToolkit:
             else:
                 print("Invalid Input!")
         except KeyboardInterrupt:
-            print("You pressed Ctrl+C. QUITTING!")
+            print("You pressed Ctrl+C. EXIT!")
         except Exception:
             raise ValueError("Invalid Input!")
 
@@ -729,7 +729,7 @@ Thank you and have a nice day!
             hunter_toolkit = HunterToolkit(hunter_choice)
             hunter_toolkit.hunter_gate()
         except KeyboardInterrupt:
-            print("You pressed Ctrl+C.QUITTING!")
+            print("You pressed Ctrl+C.EXIT!")
         except ValueError:
             print("You need to enter a integer value!")
 
