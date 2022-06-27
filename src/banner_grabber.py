@@ -57,7 +57,7 @@ class BannerGrabber:
                     socket_sock.settimeout(1)
                     service = socket_sock.recv(1024).decode()
 
-                print(f"[*] Start scanning {self.target_address} at {dtt.now()}")
+                print(f"[+] Start scanning {self.target_address} at {dtt.now()}")
 
                 time.sleep(1.5)
 
