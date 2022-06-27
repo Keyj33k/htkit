@@ -424,7 +424,7 @@ class HunterToolkit:
                 )))
 
                 ip_gipv4u = str(input("[*] (IPv4)>> "))
-                mp_gipv4u = int(input("[*] (Max. Port, use '0' to exit)>> "))
+                mp_gipv4u = int(input("[*] (Max. Port)>> "))
                 extract_ipv4 = WitcherPortscanner(
                     ip_gipv4u,
                     mp_gipv4u
