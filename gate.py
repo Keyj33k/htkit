@@ -601,6 +601,7 @@ class HunterToolkit:
                 get_username = os.getlogin()
                 get_path = os.path.abspath(os.getcwd())
                 get_time = dtt.now()
+                public_ipv4 = requests.get("https://api.ipify.org").text
 
                 def check_root():
                     if "SUDO_UID" in os.environ.keys():
@@ -615,6 +616,7 @@ class HunterToolkit:
                 check_root()
                 print(cyan + "\tHostname     :" + yellow + f"\t{get_hostname}")
                 print(cyan + "\tIPAddress    :" + yellow + f"\t{get_host_ip}")
+                print(cyan + "\tPublic IPv4  :" + yellow + f"\t{public_ipv4}")
                 print(cyan + "\tMACAddress   :" + yellow + f"\t{get_mac}")
                 print(cyan + "\tCurrent Path :" + yellow + f"\t{get_path}")
                 input(cyan + "\nPress enter key to continue")
