@@ -60,7 +60,7 @@ permissions to do that. You can end up in jail for being a blackhat.
 
 ---
   
-- Tested on 5.16.0-kali7-amd64, 5.15.0-40-genericUbuntu
+- Tested on 5.16.0-kali7-amd64, 5.15.0-40-genericUbuntu and Termux-0.118.0
   
 ---
 
