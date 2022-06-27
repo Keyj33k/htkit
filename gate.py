@@ -45,6 +45,7 @@ white = "\033[0;37m"
 cyan = "\033[0;36m"
 red = "\033[0;31m"
 
+
 class HunterToolkit:
 
     def __init__(
