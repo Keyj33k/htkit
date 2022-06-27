@@ -423,7 +423,7 @@ class HunterToolkit:
                     font="bulbhead"
                 )))
 
-                ip_gipv4u = str(input("[*] (IPv4, use 'x' to exit)>> "))
+                ip_gipv4u = str(input("[*] (IPv4)>> "))
                 mp_gipv4u = int(input("[*] (Max. Port, use '0' to exit)>> "))
                 extract_ipv4 = WitcherPortscanner(
                     ip_gipv4u,
@@ -672,6 +672,8 @@ class HunterToolkit:
                 sys.exit(0)
             else:
                 print("Invalid Input!")
+        except KeyboardInterrupt:
+            print("You pressed Ctrl+C. QUITTING!")
         except Exception:
             raise ValueError("Invalid Input!")
 
@@ -726,7 +728,8 @@ Thank you and have a nice day!
             ))
             hunter_toolkit = HunterToolkit(hunter_choice)
             hunter_toolkit.hunter_gate()
-
+        except KeyboardInterrupt:
+            print("You pressed Ctrl+C.QUITTING!")
         except ValueError:
             print("You need to enter a integer value!")
 
