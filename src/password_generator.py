@@ -28,6 +28,7 @@ except ImportError:
 #                                         #
 # # # # # # # # # # # # # # # # # # # # # #
 
+
 class PasswordGenerator:
 
     def __init__(
