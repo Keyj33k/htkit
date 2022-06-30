@@ -791,7 +791,7 @@ Thank you and have a nice day!
             hunter_toolkit = HunterToolkit(hunter_choice)
             hunter_toolkit.hunter_gate()
         except KeyboardInterrupt:
-            print("You pressed Ctrl+C.EXIT!")
+            print("You pressed Ctrl+C.EXIT! (Use '99' to exit Hunter)")
         except ValueError:
             print("You need to enter a integer value!")
 
