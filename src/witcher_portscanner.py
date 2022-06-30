@@ -104,7 +104,7 @@ class WitcherPortscanner:
                 f"Scanner done in {needed_time}!",
                 "green"
             ))
-            print("=" * 70)
+            print("\033[0;37m=" * 70)
             print(chr(0xa))
             input("Press enter key to continue")
             
