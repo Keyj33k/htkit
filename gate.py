@@ -742,7 +742,8 @@ if __name__ == "__main__":
 < =============================================================================== >
 
 \n Please note that actions like portscanning etc. can be illegal. 
-If you want to use this tool, follow the conditions:
+ If you want to use this tool, follow the conditions:
+ 
 - This tool is made for ethical purposes only.
 - I'm not responsible for your actions.
 - With great force follows great responsibility.
