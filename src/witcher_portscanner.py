@@ -45,6 +45,7 @@ class WitcherPortscanner:
         while True:
             if self.target_ipv4 == 'x' or self.target_ipv4 == 'exit':
                 break
+                
             elif self.maximum_port == 0:
                 break
 
@@ -69,23 +70,30 @@ class WitcherPortscanner:
                         target
                     ))
                     socket_sock.settimeout(1)
+                    
                     if final_result == 0:
                         try:
                             print(f"TCP\t\t\t{target}  \t\topen\t", socket.getservbyport(target))
+                            
                         except:
                             print(f"TCP\t\t\t{target}  \t\topen\t Unknown")
+                            
                     socket_sock.close()
+                    
             except socket.error as socket_error:
                 print(cld(
                     socket_error,
                     "red"
                 ))
+                
                 break
+                
             except KeyboardInterrupt:
                 print(cld(
                     "\nCtrl+C pressed. Exit.",
                     "red"
                 ))
+                
                 break
 
             time_stop = dtt.now()
@@ -99,4 +107,5 @@ class WitcherPortscanner:
             print("=" * 70)
             print(chr(0xa))
             input("Press enter key to continue")
+            
             break
