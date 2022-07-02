@@ -61,5 +61,6 @@ class IPv4Sweep:
                 print(f"[-] Host {remove_last_octet + str(icmp_request)} is not reachable")
 
         print("[*] Done")
+        input("\nPress any key to continue")
 
 
