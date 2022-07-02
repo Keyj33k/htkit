@@ -43,6 +43,8 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 - 3 )  There is a file called INSTALLATION.txt.
 - 4 )  Open the file and follow the installation steps.
 
+- For exit: use Ctrl+C
+
 ---
 
 <div id="profile">
