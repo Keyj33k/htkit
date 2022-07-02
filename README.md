@@ -24,6 +24,7 @@ Whois-lookup          >>    Whois lookup for URL.
 Get-HTTP-Header       >>    Get HTTP header from a webserver(CUrl).
 HREF-Collector        >>    Get all href attributes from a website.
 Ping-Request          >>    Check remote host availability.
+IPSweep               >>    Check host range for active devices.
 ```
 
 ### USAGE OF HUNTER:
