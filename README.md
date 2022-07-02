@@ -26,6 +26,11 @@ HREF-Collector        >>    Get all href attributes from a website.
 Ping-Request          >>    Check remote host availability.
 IPSweep               >>    Check host range for active devices.
 ```
+I: If you have trouble with Get-HTTP-Header: 
+- Maybe you does not have curl installed:
+```
+sudo apt-get install curl
+```
 
 ### USAGE OF HUNTER:
 
