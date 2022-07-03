@@ -5,6 +5,7 @@ try:
     import socket
     from termcolor import colored as cld
     from pyfiglet import figlet_format
+    
 except ImportError:
     raise RuntimeError("""
     Oops,
