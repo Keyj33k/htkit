@@ -6,6 +6,7 @@ try:
     from pyfiglet import figlet_format
     from bs4 import BeautifulSoup
     import requests
+    
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -46,9 +47,10 @@ class MD5Encrypt:
 
             try:
                 encrypted_string = hashlib.md5(self.input_data.encode())
+                
                 print(encrypted_string.hexdigest())
-
                 input("\nPress enter key to continue")
+                
                 break
 
             except Exception as excerr:
