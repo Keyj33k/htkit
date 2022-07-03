@@ -5,6 +5,7 @@ try:
     from termcolor import colored as cld
     import requests
     import os
+    
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -66,6 +67,7 @@ class IPv4Lookup:
                 input("Press enter key to continue")
 
                 break
+                
             except Exception as error:
                 print(cld(
                     f"An error was defined! {error}",
@@ -75,6 +77,7 @@ class IPv4Lookup:
                 input("Press enter key to continue")
 
                 os.system('clear')
+                
                 break
 
 
