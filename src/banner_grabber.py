@@ -63,7 +63,7 @@ class BannerGrabber:
                 time.sleep(1.5)
 
                 print("=" * 65)
-                print(f"Service behind port {self.target_port}:\t\t{service}")
+                print(f"Service behind port {self.target_port} -> {service}")
 
                 input("Press any key to continue")
 
