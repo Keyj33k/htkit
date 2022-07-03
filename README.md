@@ -8,23 +8,24 @@
 
 ### What the Hunter-Toolkit can do for you?
 ```
--------------------{ Hunter-Toolkit Services }-------------------------
-Witcher               >>    A port scanner for status and service.
-MD5Crypt              >>    MD5 encryption tool.
-IPv4-lookup           >>    Get informations about an IPv4 address.
-Banner-Grabber        >>    Get service behind a port.
-B64Crypt              >>    En- and decryption used Base64.
-Phonenumber-Whois     >>    Get informations about a phonenumber
-Subdomain-Scanner     >>    Get subdomains from any URL.
-Whoami                >>    Get infos like current IPv4 address etc.
-MySystem              >>    Get infos like CPU usage, disk usage etc.
-Get-IPv4-from-URL     >>    Get the IPv4 address of any URL.
-Password-Generator    >>    Generate a random password.
-Whois-lookup          >>    Whois lookup for URL.
-Get-HTTP-Header       >>    Get HTTP header from a webserver(CUrl).
-HREF-Collector        >>    Get all href attributes from a website.
-Ping-Request          >>    Check remote host availability.
-IPSweep               >>    Check host range for active devices.
+                    [  Hunter-Toolkit Services  ]   
+==========================================================================
+Witcher                   >>     A port scanner for status and service.
+MD5Crypt                  >>     MD5 encryption tool.
+IPv4-lookup               >>     Get informations about an IPv4 address.
+Banner-Grabber            >>     Get service behind a port.
+B64Crypt                  >>     En- and decryption used Base64.
+Phonenumber-Whois         >>     Get informations about a phonenumber
+Subdomain-Scanner         >>     Get subdomains from any URL.
+Whoami                    >>     Get infos like current IPv4 address etc.
+MySystem                  >>     Get infos like CPU usage, disk usage etc.
+Get-IPv4-from-URL         >>     Get the IPv4 address of any URL.
+Password-Generator        >>     Generate a random password.
+Whois-lookup              >>     Whois lookup for URL.
+Get-HTTP-Header           >>     Get HTTP header from a webserver(CUrl).
+HREF-Collector            >>     Get all href attributes from a website.
+Ping-Request              >>     Check remote host availability.
+IPSweep                   >>     Check host range for active devices.
 ```
 I: If you have trouble with Get-HTTP-Header: 
 - Maybe you does not have curl installed:
