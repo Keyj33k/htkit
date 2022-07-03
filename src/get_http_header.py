@@ -2,6 +2,7 @@
 
 try:
     import subprocess
+    
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -42,11 +43,12 @@ class GetHTTPHeader:
 
             try:
                 subprocess.call([
-                    "curl",
-                    "-I",
+                    "curl", "-I",
                     self.uniformresourcelocator
                 ])
+                
                 break
+                
             except subprocess.CalledProcessError:
                 print(f"Failed getting header from {self.uniformresourcelocator}\n\n")
 
