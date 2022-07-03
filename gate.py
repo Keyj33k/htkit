@@ -432,7 +432,7 @@ class HunterToolkit:
                 print(cyan + "Job Done In " + green + f"{needed_time}")
 
         except PermissionError:
-            print(red + "Your device needs to be root for this function!\n")
+            print(red + "Cannot get system informations: PermissionError!\n")
 
         input("\nPress enter key to continue")
 
