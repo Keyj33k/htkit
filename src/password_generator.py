@@ -4,6 +4,7 @@ try:
     from termcolor import colored as cld
     import random
     import os
+    
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -41,6 +42,7 @@ class PasswordGenerator:
         while True:
             if self.password_length == 0:
                 break
+                
             elif self.password_length <= 7:
                 print(cld(
                     "Your password should be always bigger than eight characters.",
