@@ -502,7 +502,7 @@ class HunterToolkit:
 
                 ipv4_address = str(input(
                     white + "[" + red + "*" + white +
-                    f"] ({os.getlogin()}" + red + "@" + white + "Hunter, IPv4)>> "
+                    f"] ({os.getlogin()}" + red + "@" + white + "Hunter, Address)>> "
                 ))
                 target_port = int(input(
                     white + "[" + red + "*" + white +
