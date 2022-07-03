@@ -92,7 +92,7 @@ class HunterToolkit:
             magenta + ">" + yellow + " Ver" + magenta + ".:" + red + "1.1.5"
         )
         print(
-            cyan + "\n[" + red + "i" + cyan + "] " + yellow +
+            cyan + "\n[" + red + "*" + cyan + "] " + yellow +
             "Hunter is a small toolkit to perform information gathering."
         )
 
