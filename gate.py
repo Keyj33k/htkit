@@ -93,7 +93,7 @@ class HunterToolkit:
         )
         print(
             cyan + "\n[" + red + "*" + cyan + "] " + yellow +
-            "Hunter is a small toolkit to perform information gathering."
+            "Hunter - Penetration Testing Assistant, Information Gathering and more."
         )
 
     @staticmethod
