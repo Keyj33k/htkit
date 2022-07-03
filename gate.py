@@ -448,7 +448,7 @@ class HunterToolkit:
 
                 ip_gipv4u = str(input(
                     white + "[" + red + "*" + white +
-                    f"] ({os.getlogin()}" + red + "@" + white + "Hunter, IPv4)>> "
+                    f"] ({os.getlogin()}" + red + "@" + white + "Hunter, Address)>> "
                 ))
                 sp_gipv4u = int(input(
                     white + "[" + red + "*" + white +
