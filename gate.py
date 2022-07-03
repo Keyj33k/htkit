@@ -1,6 +1,20 @@
 #!/usr/bin/env python3
 
 try:
+    from src.witcher_portscanner import WitcherPortscanner
+    from src.md5encrypt import MD5Encrypt
+    from src.ipv4_whois import IPv4Lookup
+    from src.banner_grabber import BannerGrabber
+    from src.phonenumber_lookup import PhonenumberWhois
+    from src.subdomain_scanner import SubdomainScanner
+    from src.url2ip import GetIPv4fromURL
+    from src.password_generator import PasswordGenerator
+    from src.whois_lookup_for_url import WhoisLookupForURL
+    from src.get_http_header import GetHTTPHeader
+    from src.link_collector import LinkCollector
+    from src.check_host_availability import CheckHostAvailability
+    from src.ipsweep import IPv4Sweep
+    
     from termcolor import colored as cld
     from datetime import datetime as dtt
     from pyfiglet import figlet_format
@@ -427,8 +441,6 @@ class HunterToolkit:
             if self.menu_option_choice == 0:
                 call(["clear"])
             elif self.menu_option_choice == 1:
-                from src.witcher_portscanner import WitcherPortscanner
-
                 print(cld(figlet_format(
                     "Witcher",
                     font="bulbhead"
@@ -455,8 +467,6 @@ class HunterToolkit:
                 extract_ipv4.main()
 
             elif self.menu_option_choice == 2:
-                from src.md5encrypt import MD5Encrypt
-
                 print(cld(figlet_format(
                     "MD5Crypt",
                     font="bulbhead"
@@ -471,8 +481,6 @@ class HunterToolkit:
                 md5crypt.main()
 
             elif self.menu_option_choice == 3:
-                from src.ipv4_whois import IPv4Lookup
-
                 print(cld(figlet_format(
                     "IPv4Whois",
                     font="bulbhead"
@@ -487,8 +495,6 @@ class HunterToolkit:
                 ipv4_lookup.main()
 
             elif self.menu_option_choice == 4:
-                from src.banner_grabber import BannerGrabber
-
                 print(cld(figlet_format(
                     "Port\nService",
                     font="bulbhead"
@@ -574,8 +580,6 @@ class HunterToolkit:
                         print(cld("Invalid Input!"))
 
             elif self.menu_option_choice == 6:
-                from src.phonenumber_lookup import PhonenumberWhois
-
                 print(cld(figlet_format(
                     "PhoneStalk",
                     font="bulbhead"
@@ -590,8 +594,6 @@ class HunterToolkit:
                 phon_inf.main()
 
             elif self.menu_option_choice == 7:
-                from src.subdomain_scanner import SubdomainScanner
-
                 print(cld(figlet_format(
                     "Subdomain\nScanner",
                     font="bulbhead"
@@ -639,8 +641,6 @@ class HunterToolkit:
             elif self.menu_option_choice == 9:
                 HunterToolkit.my_system()
             elif self.menu_option_choice == 10:
-                from src.url2ip import GetIPv4fromURL
-
                 print(cld(figlet_format(
                     "URL2IPv4",
                     font="bulbhead"
@@ -655,8 +655,6 @@ class HunterToolkit:
                 extract_ipv4.main()
 
             elif self.menu_option_choice == 11:
-                from src.password_generator import PasswordGenerator
-
                 print(cld(figlet_format(
                     "PassGen",
                     font="bulbhead"
@@ -671,8 +669,6 @@ class HunterToolkit:
                 extract_ipv4.main()
 
             elif self.menu_option_choice == 12:
-                from src.whois_lookup_for_url import WhoisLookupForURL
-
                 print(cld(figlet_format(
                     "URLWhois",
                     font="bulbhead"
@@ -687,8 +683,6 @@ class HunterToolkit:
                 get_lookup.main()
 
             elif self.menu_option_choice == 13:
-                from src.get_http_header import GetHTTPHeader
-
                 print(cld(figlet_format(
                     "GetHTTP\nHeader",
                     font="bulbhead"
@@ -703,8 +697,6 @@ class HunterToolkit:
                 gethttpheader.main()
 
             elif self.menu_option_choice == 14:
-                from src.link_collector import LinkCollector
-
                 print(cld(figlet_format(
                     "LinkCollect",
                     font="bulbhead"
@@ -719,8 +711,6 @@ class HunterToolkit:
                 linkcollector.main()
 
             elif self.menu_option_choice == 15:
-                from src.check_host_availability import CheckHostAvailability
-
                 print(cld(figlet_format(
                     "CheckAvail",
                     font="bulbhead"
@@ -735,8 +725,6 @@ class HunterToolkit:
                 check.main()
 
             elif self.menu_option_choice == 16:
-                from src.ipsweep import IPv4Sweep
-
                 print(cld(figlet_format(
                     "IPSweep",
                     font="bulbhead"
@@ -805,17 +793,21 @@ Thank you and have a nice day!
         )
         if choice == 'y' or choice == 'Y':
             break
+            
         elif choice == 'n' or choice == 'N':
             print(cld(
                 "You need to accept the terms above to use Hunter. Exit.",
                 "red"
             ))
+            
             sys.exit(1)
+            
         else:
             print(cld(
                 "Invalid Input!",
                 "red"
             ))
+            
             pass
 
     while True:
@@ -828,10 +820,13 @@ Thank you and have a nice day!
                 red + "Hunter" + cyan + ")>> " + magenta
             ))
             hunter_toolkit = HunterToolkit(hunter_choice)
+            
             hunter_toolkit.hunter_gate()
+            
         except KeyboardInterrupt:
             print("\nYou pressed Ctrl+C.EXIT!")
             sys.exit(1)
+            
         except ValueError:
             print("You need to enter a integer value!")
 
