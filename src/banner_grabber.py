@@ -64,7 +64,6 @@ class BannerGrabber:
 
                 print("=" * 65)
                 print(f"Service behind port {self.target_port} -> {service}")
-
                 input("Press any key to continue")
 
                 break
