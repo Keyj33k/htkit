@@ -93,7 +93,7 @@ class HunterToolkit:
         )
         print(
             cyan + "\n[" + red + "*" + cyan + "] " + yellow +
-            "Hunter - Penetration Testing Assistant,\n\t\tInformation Gathering and more."
+            "Hunter - Penetration Testing Assistant,\n\t\tInformation Gathering And More."
         )
 
     @staticmethod
