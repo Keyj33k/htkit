@@ -2,6 +2,7 @@
 
 try:
     import subprocess
+    
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -41,14 +42,13 @@ class CheckHostAvailability:
                 break
 
             ping_request = subprocess.check_output([
-                "ping",
-                "-c",
-                "3",
+                "ping", "-c", "3",
                 self.target_address
             ])
 
             if not ping_request:
                 print(f"Host {self.target_address} seems to be dead ...")
+                
             else:
                 print(f"Host {self.target_address} is alive!")
 
