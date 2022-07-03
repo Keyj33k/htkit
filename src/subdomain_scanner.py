@@ -4,6 +4,7 @@ try:
     import requests
     import time
     import os
+    
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -47,30 +48,39 @@ class SubdomainScanner:
                 with open("subdomains.txt", "r") as FILE:
                     read_file = FILE.read()
                     subdomain = read_file.splitlines()
+                    
                     for list_domains in subdomain:
                         uniformresourcelocator = f"http://{list_domains}.{self.uniformresourcelocator}"
                         time.sleep(1)
 
                         try:
                             requests.get(uniformresourcelocator)
+                            
                         except requests.ConnectionError:
                             pass
+                        
                         else:
                             print(
                                 "Discovered:",
                                 uniformresourcelocator
                             )
+                            
                             found_subdomain.append(
                                 uniformresourcelocator
                             )
 
                 input("Press enter key to continue")
+                
                 break
+                
             except FileNotFoundError:
                 print("You need the subdomain file in the current directory to run this tool.")
+                
                 break
+                
             except KeyboardInterrupt:
                 print("You need the subdomain file in the current directory to run this tool.")
+                
                 break
 
 
