@@ -431,8 +431,8 @@ class HunterToolkit:
 
                 print(cyan + "Job Done In " + green + f"{needed_time}")
 
-        except PermissionError:
-            print(red + "Cannot get system informations: PermissionError!\n")
+        except PermissionError as permerr:
+            print(permerr)
 
         input("\nPress enter key to continue")
 
