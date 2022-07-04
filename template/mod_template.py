@@ -56,10 +56,16 @@ class HunterModule:
 
     def your_function_name(self):
         while True:
-            # STRING: if self.any_param1 == 'x' or self.any_param1 == 'exit':
-                # break
-            # Integer: if self.any_param1 == 0:
-                # break
+            # STRING:
+            # ---------
+            if self.any_param1 == 'x' or self.any_param1 == 'exit':
+                break
+                
+               
+            # INTEGER:
+            # ---------
+            if self.any_param1 == 0:
+                break
 
             # YOUR CODE HERE
             # YOUR CODE HERE
