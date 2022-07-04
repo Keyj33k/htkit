@@ -9,7 +9,7 @@ good overview is essential for activities like penetration
 testing etc.
 
 Because of this, I want to make it easier for you to
-expand this project, with your automation scripts.
+expand this project with your automation scripts.
 In this folder I have stored
 a small template that you can use for your own Hunter
 module to extend this toolkit. But that's not a must, if
