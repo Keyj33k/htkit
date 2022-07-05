@@ -1,7 +1,7 @@
 # Project - Hunter:snake: | Ver.:1.1.6
 
 - A easy to use pentesting toolkit for information gathering and more.
-- Written with Python 3.10.4 for Linux.
+- Written with Python 3 for Linux.
 
 ### Hacking Made Easier.
 
