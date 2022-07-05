@@ -1,7 +1,8 @@
-# Project - Hunter:snake: | Ver.:1.1.5
+# Project - Hunter:snake: | Ver.:1.1.6
 
 - A easy to use pentesting toolkit for information gathering and more.
 - Written with Python 3.10.4 for Linux.
+
 ### Hacking Made Easier.
 
 <a href="https://github.com/Keyj33k/Hunter/archive/refs/heads/main.zip"><img src="https://github.com/Keyj33k/profiles/blob/main/profile/HunteR(2).png?raw=true" alt="banner"/></a>
@@ -50,6 +51,9 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 
 # What's New?
 
+- 05.07.22
+### Update To Version 1.1.6 (Better Design, More Efficienz)
+<p>
 - 04.07.22
 ### - Create Your Own Hunter-Module: Hunter-Toolkit -> template -> mod_template.py
 ### - Fixed Issue -> stuck in loop
