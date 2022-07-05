@@ -53,7 +53,6 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 - 04.07.22
 ### - Create Your Own Hunter-Module: Hunter-Toolkit -> template -> mod_template.py
 ### - Fixed Issue -> stuck in loop
-### - Beautifyed UI
 
 ---
 
