@@ -32,12 +32,6 @@ IPSweep                   >>     Check host range for active devices.
 ---
 ![menu](https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/menu.png?raw=true)
 
-I: If you have trouble with Get-HTTP-Header: 
-- Maybe you does not have curl installed:
-```
-sudo apt-get install curl
-```
-
 ### USAGE OF HUNTER:
 
 - Cloning the repo:
@@ -50,6 +44,12 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 - 4 )  Open the file and follow the installation steps.
 
 - For exit: use Ctrl+C
+
+I: If you have trouble with Get-HTTP-Header: 
+- Maybe you does not have curl installed:
+```
+sudo apt-get install curl
+```
 
 ---
 
