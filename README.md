@@ -29,7 +29,6 @@ Ping-Request              >>     Check remote host availability.
 IPSweep                   >>     Check host range for active devices.
 ```
 ### How It Looks Like?
----
 ![menu](https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/menu.png?raw=true)
 
 ### USAGE OF HUNTER:
