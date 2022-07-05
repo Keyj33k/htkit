@@ -51,11 +51,13 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 
 # What's New?
 
-- 05.07.22
+- 05.07.22 <br>
+
 ### Update To Version 1.1.6 (Better Design, More Efficienz)
 
 <br>
-- 04.07.22
+- 04.07.22 <br>
+
 ### - Create Your Own Hunter-Module: Hunter-Toolkit -> template -> mod_template.py
 ### - Fixed Issue -> stuck in loop
 
