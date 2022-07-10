@@ -93,3 +93,8 @@ permissions to do that. You can end up in jail for being a blackhat.
   
 ---
 
+# Feel free and let me know if you have any ideas to make the Hunter-Toolkit better.
+
+Thank You For Your Time!
+~ Keyjeek
+
