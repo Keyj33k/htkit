@@ -25,17 +25,18 @@ PyVer: 3.10.4
     11) Get HTTP header.
     12) Collect href from html page.
     13) Check host availability.
+    14) Check host range for active devices.
 
 -----------------------
 | INSTALLATION/USAGE: |
 -----------------------
 
 1) Make sure you have CURL installed:
-    -> We need curl to check if a target is available or not
+    -> We need curl to get the http header from the server.
     -> If curl is not installed, use this command:
 
     # sudo apt-get update && sudo apt-get full-upgrade -y
-    # sudo apt-get install curl
+    # sudo apt-get install -y curl
 
 2) Make sure you have PYTHON3 installed
     -> We need python3 to run this toolkit
