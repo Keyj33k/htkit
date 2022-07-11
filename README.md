@@ -50,23 +50,6 @@ I: If you have trouble with Get-HTTP-Header:
 sudo apt-get install curl
 ```
 
----
-
-# What's New?
-
-- 05.07.22: <br>
-
-### Update To Version 1.1.6 (Better Design, More Efficienz)
-
-<br>
-
-- 04.07.22: <br>
-
-### - Create Your Own Hunter-Module: Hunter-Toolkit -> template -> mod_template.py
-### - Fixed Issue -> stuck in loop
-
----
-
 
 <div id="profile">
   <a href="https://www.python.org/">
