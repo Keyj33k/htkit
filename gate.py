@@ -621,7 +621,15 @@ class HunterToolkit:
                     white + "[" + red + "*" + white +
                     f"] ({os.getlogin()}" + red + "@" + white + "Hunter, URL)>> "
                 ))
-                bruteforce_subdomains = SubdomainScanner(url_sds)
+                wordl = str(input(
+                    white + "[" + red + "*" + white +
+                    f"] ({os.getlogin()}" + red + "@" + white + "Hunter, Wordlist[empty for default wordlist])>> "
+                ))
+
+                bruteforce_subdomains = SubdomainScanner(
+                    url_sds,
+                    wordl
+                )
 
                 bruteforce_subdomains.main()
 
