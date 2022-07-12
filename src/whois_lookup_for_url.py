@@ -45,7 +45,7 @@ class WhoisLookupForURL:
                 whois_url = whois.whois(self.uniformresourcelocator)
                 print("\033[0;37m[\033[0;32m+\033[0;37m] Results:")
                 print("=" * 70)
-                # print(whois_url.text)
+                print(whois_url.text)
                 print(whois_url)
                 print("=" * 70)
 
