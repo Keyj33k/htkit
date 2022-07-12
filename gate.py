@@ -745,6 +745,8 @@ class HunterToolkit:
                 print("\033[0;34m[\033[0;31mRedHawk\033[0;34m]\033[0;37m https://github.com/Tuhinshubhra/RED_HAWK")
                 print("\033[0;34m[\033[0;31mTheHarvester\033[0;34m]\033[0;37m https://github.com/laramies/theHarvester")
                 print("\033[0;34m[\033[0;31mSherlockProject\033[0;34m]\033[0;37m https://github.com/sherlock-project/sherlock")
+                print("\033[0;34m[\033[0;31mBurpSuite\033[0;34m]\033[0;37m https://portswigger.net/burp/communitydownload")
+                print("\033[0;34m[\033[0;31mWireshark\033[0;34m]\033[0;37m https://www.wireshark.org/")
 
                 print(chr(0xa))
                 input("\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
