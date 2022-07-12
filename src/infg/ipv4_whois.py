@@ -64,19 +64,15 @@ class IPv4Lookup:
 
                 print("=" * 70)
                 print(f"\033[0;37m[\033[0;32m+\033[0;37m] Scanner done in {time_result}!")
-
                 print(chr(0xa))
                 input("\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
-
                 break
-                
             except Exception as error:
                 print(cld(
                     f"An error was defined! {error}",
                     "red"
                 ))
                 input("\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
-                
                 break
 
 
