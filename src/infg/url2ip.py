@@ -50,18 +50,13 @@ class GetIPv4fromURL:
                 print("\033[0;37m=" * 70)
                 print(chr(0xa))
                 input("\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
-
                 break
-
             except ValueError:
                 print("\033[0;37m[\033[0;33m-\033[0;37m] You need to enter a value like: google.com in example.")
-
                 print(chr(0xa))
                 input("\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
-
             except socket.gaierror:
                 print("\n\033[0;37m[\033[0;33m-\033[0;37m] You need to enter a value like: google.com in example.")
-
                 print(chr(0xa))
                 input("\033[0;37m[\033[0;31m*\033[0;37m] Press any key to continue")
 
