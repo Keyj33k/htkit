@@ -54,17 +54,17 @@ class PhonenumberWhois:
             try:
                 valid_check = pnmb.parse(self.target_phonenumber)
                 finally_valid = pnmb.is_valid_number(valid_check)
-
+                
                 print(f"\033[0;37m[\033[0;32m+\033[0;37m] Validation:\t{finally_valid}")
-
+                
                 phonenumbers_timezone = pnmb.parse(
                     self.target_phonenumber,
                     "en"
                 )
                 final_timezone = tz.time_zones_for_number(phonenumbers_timezone)
-
+                
                 print(f"\033[0;37m[\033[0;32m+\033[0;37m] Timezone:\t{final_timezone}")
-
+                
                 phonenumbers_location = pnmb.parse(
                     self.target_phonenumber,
                     "CH"
@@ -73,9 +73,9 @@ class PhonenumberWhois:
                     phonenumbers_location,
                     "en"
                 )
-
+                
                 print(f"\033[0;37m[\033[0;32m+\033[0;37m] Location:\t{final_phonenumbers_location}")
-
+                
                 phonenumbers_provider = pnmb.parse(
                     self.target_phonenumber,
                     "RO"
@@ -84,28 +84,23 @@ class PhonenumberWhois:
                     phonenumbers_provider,
                     "en"
                 )
-
+                
                 print(f"\033[0;37m[\033[0;32m+\033[0;37m] Provider:\t{final_phonenumbers_provider}")
-
+                
                 time_stop = dtt.now()
                 time_result = time_stop - time_start
 
                 print("=" * 55)
                 print(f"\033[0;37m[\033[0;32m+\033[0;37m] Job done in {time_result}")
                 print("=" * 55)
-
                 print(chr(0xa))
                 input("\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
-
                 break
-
             except Exception as error:
                 print(cld(
                     "An error was defined!",
                     "red"
                 ))
-
                 print(error)
                 input("\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
-
                 break
