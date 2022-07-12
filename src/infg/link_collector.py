@@ -63,9 +63,7 @@ class LinkCollector:
                 print("=" * 70)
                 print(chr(0xa))
                 input("\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
-
                 break
-
             except requests.exceptions.MissingSchema:
                 request = requests.get(f"http://{self.uniformresourcelocator}/")
                 soup = BeautifulSoup(
@@ -82,6 +80,5 @@ class LinkCollector:
                 print("=" * 70)
                 print(chr(0xa))
                 input("\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
-
                 break
 
