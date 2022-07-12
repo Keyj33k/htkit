@@ -60,17 +60,13 @@ class BannerGrabber:
                     service = socket_sock.recv(1024).decode()
 
                 print(f"\n\033[0;37m[\033[0;32m+\033[0;37m] Start scanning {self.target_address} at {dtt.now()}")
-
                 time.sleep(1.5)
-
                 print("=" * 65)
                 print(f"\033[0;37m[\033[0;32m+\033[0;37m] Port {self.target_port} -> {service}")
                 input("\n\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
-
+                
                 break
-
             except socket.error as sockerr:
                 print(sockerr)
-
                 break
 
