@@ -99,8 +99,9 @@ class HunterToolkit:
     @staticmethod
     def menu():
         print(magenta + "=" * 70)
+        
         print(
-            green + "\n{" + red + "0" + green +
+            green + "{" + red + "0" + green +
             "} " + green + " Clear Screen"
         )
         print(
@@ -172,7 +173,7 @@ class HunterToolkit:
             " ExternalTools " + magenta + ">> " + yellow + " Most used tools."
         )
 
-        print(green + "{" + red + "99" + green + "}" + green + " Exit\n")
+        print(green + "{" + red + "99" + green + "}" + green + " Exit")
 
         print(magenta + "=" * 70)
 
