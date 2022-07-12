@@ -53,15 +53,12 @@ class GetHTTPHeader:
                 print("\033[0;37m=" * 70)
                 print(chr(0xa))
                 input("\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
-
-                break
                 
+                break
             except subprocess.CalledProcessError:
                 print(f"\033[0;37m[\033[0;31m*\033[0;37m] Failed getting header from {self.uniformresourcelocator}")
-
                 print(chr(0xa))
                 input("\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
-
                 break
 
 
