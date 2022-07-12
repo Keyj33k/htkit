@@ -67,12 +67,9 @@ class IPv4Sweep:
                 ])
 
                 print(f"\033[0;37m[\033[0;32m+\033[0;37m] Host {remove_last_octet + str(icmp_request)} is reachable")
-
             except KeyboardInterrupt:
                 print("\033[0;37m[\033[0;33m-\033[0;37m] You pressed Ctrl+C.INTERRUPTED!")
-
                 break
-
             except CalledProcessError:
                 print(
                     f"\033[0;37m[\033[0;33m-\033[0;37m] Host {remove_last_octet + str(icmp_request)} is not reachable"
@@ -83,7 +80,6 @@ class IPv4Sweep:
         print("=" * 70)
         print(f"\033[0;37m[\033[0;32m+\033[0;37m] Scanner done in {end - start}!")
         print("\033[0;37m=" * 70)
-
         print(chr(0xa))
         input("\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
 
