@@ -114,6 +114,8 @@ What can Hunter Toolkit do for you?
     	      	∟► - RedHawk
     	      	∟► - SherlockProject
                 ∟► - TheHarvester
+                ∟► - BurpSuite
+                ∟► - Wireshark
     
     
 ---------------
