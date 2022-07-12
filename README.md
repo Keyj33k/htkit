@@ -27,6 +27,7 @@ Get-HTTP-Header           >>     Get HTTP header from a webserver(CUrl).
 HREF-Collector            >>     Get all href attributes from a website.
 Ping-Request              >>     Check remote host availability.
 IPSweep                   >>     Check host range for active devices.
+ExternalTools             >>     Most used tools.
 ```
 ### How It Looks Like?
 ![menu](https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/menu.png?raw=true)
