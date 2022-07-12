@@ -42,13 +42,11 @@ class PasswordGenerator:
         while True:
             if self.password_length == 0:
                 break
-                
             elif self.password_length <= 7:
                 print(cld(
                     "Your password should be always bigger than eight characters.",
                     "red"
                 ))
-
                 break
 
             numbers = "1234567890"
@@ -65,10 +63,8 @@ class PasswordGenerator:
             print("=" * 70)
             print(f"\033[0;37m[\033[0;32m+\033[0;37m] Your generated password: {finalpassword}")
             print("=" * 70)
-
             print(chr(0xa))
             input("\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
-
             break
 
 
