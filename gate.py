@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import time
 
 try:
     from src.net.witcher_portscanner import WitcherPortscanner
@@ -26,6 +25,7 @@ try:
     import platform
     import psutil
     import socket
+    import time
     import uuid
     import sys
     import re
@@ -100,7 +100,6 @@ class HunterToolkit:
     @staticmethod
     def menu():
         print(magenta + "=" * 70)
-        
         print(
             green + "{" + red + "0" + green +
             "} " + green + " Clear Screen"
@@ -173,9 +172,7 @@ class HunterToolkit:
             green + "{" + red + "17" + green + "}" + cyan +
             " ExternalTools " + magenta + ">> " + yellow + " Most used tools."
         )
-
         print(green + "{" + red + "99" + green + "}" + green + " Exit")
-
         print(magenta + "=" * 70)
 
     @staticmethod
@@ -469,9 +466,7 @@ class HunterToolkit:
                     sp_gipv4u,
                     mp_gipv4u
                 )
-
                 extract_ipv4.main()
-
             elif self.menu_option_choice == 2:
                 print(cld(figlet_format(
                     "MD5Crypt",
@@ -483,9 +478,7 @@ class HunterToolkit:
                     f"] ({os.getlogin()}" + red + "@" + white + "Hunter, String)>> "
                 ))
                 md5crypt = MD5Encrypt(string_to_encrypt)
-
                 md5crypt.main()
-
             elif self.menu_option_choice == 3:
                 print(cld(figlet_format(
                     "IPv4Whois",
@@ -497,9 +490,7 @@ class HunterToolkit:
                     f"] ({os.getlogin()}" + red + "@" + white + "Hunter, IPv4)>> "
                 ))
                 ipv4_lookup = IPv4Lookup(ipv4_address)
-
                 ipv4_lookup.main()
-
             elif self.menu_option_choice == 4:
                 print(cld(figlet_format(
                     "Port\nService",
@@ -515,9 +506,7 @@ class HunterToolkit:
                     f"] ({os.getlogin()}" + red + "@" + white + "Hunter, Port)>> "
                 ))
                 get_service = BannerGrabber(ipv4_address, target_port)
-
                 get_service.main()
-
             elif self.menu_option_choice == 5:
                 while True:
                     print(cld(figlet_format(
@@ -529,12 +518,12 @@ class HunterToolkit:
                     print("\t\033[0;37m[\033[0;31mx\033[0;37m] Exit")
 
                     b64_choice = input("\n\033[0;37m[\033[0;31m*\033[0;37m] Choice >> ")
-
                     if b64_choice == "1":
                         hash_value = str(input(
                             white + "[" + red + "*" + white +
                             f"] ({os.getlogin()}" + red + "@" + white + "Hunter, Value)>> "
                         ))
+                        
                         if hash_value == 'exit' or hash_value == 'x':
                             break
 
@@ -576,10 +565,8 @@ class HunterToolkit:
                             print("=" * 70)
                             print(f"\033[0;37m[\033[0;32m+\033[0;37m] {decode_hash} -> {result}")
                             print("=" * 70)
-
                             print(chr(0xa))
                             input("\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
-
                         except Exception as error:
                             print(cld(
                                 f"An error was defined: {error}",
@@ -588,16 +575,13 @@ class HunterToolkit:
 
                             print(chr(0xa))
                             input("\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
-
                     elif b64_choice == 'x' or b64_choice == 'exit':
                         break
-
                     else:
                         print(cld(
                             "Invalid Input!",
                             "red"
                         ))
-
             elif self.menu_option_choice == 6:
                 print(cld(figlet_format(
                     "PhoneStalk",
@@ -609,9 +593,7 @@ class HunterToolkit:
                     f"] ({os.getlogin()}" + red + "@" + white + "Hunter, Phonenumber)>> "
                 ))
                 phon_inf = PhonenumberWhois(url_ps)
-
                 phon_inf.main()
-
             elif self.menu_option_choice == 7:
                 print(cld(figlet_format(
                     "Subdomain\nScanner",
@@ -626,14 +608,11 @@ class HunterToolkit:
                     white + "[" + red + "*" + white +
                     f"] ({os.getlogin()}" + red + "@" + white + "Hunter, Wordlist[empty for default wordlist])>> "
                 ))
-
                 bruteforce_subdomains = SubdomainScanner(
                     url_sds,
                     wordl
                 )
-
                 bruteforce_subdomains.main()
-
             elif self.menu_option_choice == 8:
                 get_mac = ':'.join(
                     re.findall(
@@ -657,17 +636,17 @@ class HunterToolkit:
                 print(magenta + "< " + green + "=" * 66 + magenta + " >")
                 print("\033[0;37m[\033[0;32m+\033[0;37m] Date         :" + yellow + f"\t{get_time}")
                 print("\033[0;37m[\033[0;32m+\033[0;37m] Username     :" + yellow + f"\t{get_username}")
+                
                 check_root()
+                
                 print("\033[0;37m[\033[0;32m+\033[0;37m] Hostname     :" + yellow + f"\t{get_hostname}")
                 print("\033[0;37m[\033[0;32m+\033[0;37m] IPAddress    :" + yellow + f"\t{get_host_ip}")
                 print("\033[0;37m[\033[0;32m+\033[0;37m] Public IPv4  :" + yellow + f"\t{public_ipv4}")
                 print("\033[0;37m[\033[0;32m+\033[0;37m] MACAddress   :" + yellow + f"\t{get_mac}")
                 print("\033[0;37m[\033[0;32m+\033[0;37m] Current Path :" + yellow + f"\t{get_path}")
                 print(magenta + "< " + green + "=" * 66 + magenta + " >")
-
                 print(chr(0xa))
                 input("\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
-
             elif self.menu_option_choice == 9:
                 HunterToolkit.my_system()
             elif self.menu_option_choice == 10:
@@ -681,9 +660,7 @@ class HunterToolkit:
                     f"] ({os.getlogin()}" + red + "@" + white + "Hunter, URL)>> "
                 ))
                 extract_ipv4 = GetIPv4fromURL(url_gipv4u)
-
                 extract_ipv4.main()
-
             elif self.menu_option_choice == 11:
                 print(cld(figlet_format(
                     "PassGen",
@@ -695,9 +672,7 @@ class HunterToolkit:
                     f"] ({os.getlogin()}" + red + "@" + white + "Hunter, Password length)>> "
                 ))
                 extract_ipv4 = PasswordGenerator(passw_length)
-
                 extract_ipv4.main()
-
             elif self.menu_option_choice == 12:
                 print(cld(figlet_format(
                     "URLWhois",
@@ -709,9 +684,7 @@ class HunterToolkit:
                     f"] ({os.getlogin()}" + red + "@" + white + "Hunter, URL)>> "
                 ))
                 get_lookup = WhoisLookupForURL(url_whois)
-
                 get_lookup.main()
-
             elif self.menu_option_choice == 13:
                 print(cld(figlet_format(
                     "GetHTTP\nHeader",
@@ -723,66 +696,55 @@ class HunterToolkit:
                     f"] ({os.getlogin()}" + red + "@" + white + "Hunter, URL)>> "
                 ))
                 gethttpheader = GetHTTPHeader(url_ghttph)
-
                 gethttpheader.main()
-
             elif self.menu_option_choice == 14:
                 print(cld(figlet_format(
                     "LinkCollect",
                     font="bulbhead"
                 )))
-
+                
                 url_lc = str(input(
                     white + "[" + red + "*" + white +
                     f"] ({os.getlogin()}" + red + "@" + white + "Hunter, URL)>> "
                 ))
                 linkcollector = LinkCollector(url_lc)
-
                 linkcollector.main()
-
             elif self.menu_option_choice == 15:
                 print(cld(figlet_format(
                     "Ping",
                     font="bulbhead"
                 )))
-
+                
                 addr = str(input(
                     white + "[" + red + "*" + white +
                     f"] ({os.getlogin()}" + red + "@" + white + "Hunter, Address)>> "
                 ))
                 check = CheckHostAvailability(addr)
-
                 check.main()
-
             elif self.menu_option_choice == 16:
                 print(cld(figlet_format(
                     "IPSweep",
                     font="bulbhead"
                 )))
-
+                
                 ipv4 = str(input(
                     white + "[" + red + "*" + white +
                     f"] ({os.getlogin()}" + red + "@" + white + "Hunter, Address)>> "
                 ))
-
                 start_range = int(input(
                     white + "[" + red + "*" + white +
                     f"] ({os.getlogin()}" + red + "@" + white + "Hunter, Start Range)>> "
                 ))
-
                 last_range = int(input(
                     white + "[" + red + "*" + white +
                     f"] ({os.getlogin()}" + red + "@" + white + "Hunter, Last Range)>> "
                 ))
-
                 ipsweep = IPv4Sweep(
                     ipv4,
                     start_range,
                     last_range
                 )
-
                 ipsweep.get_status()
-
             elif self.menu_option_choice == 17:
                 print("\n\033[0;37m[\033[0;31m*\033[0;37m] Most Used Tools:")
                 print("-" * 25)
@@ -796,17 +758,14 @@ class HunterToolkit:
 
                 print(chr(0xa))
                 input("\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
-
             elif self.menu_option_choice == 99:
                 print(f"\n\033[0;37mGoodbye, {os.getlogin()}. Follow the white rabbit ...\n")
                 sys.exit(0)
-                
             else:
                 print("Invalid Input!")
                 
         except KeyboardInterrupt:
             print("\nYou pressed Ctrl+C. EXIT!")
-        
         except Exception:
             raise ValueError("Invalid Input!")
 
@@ -814,7 +773,6 @@ class HunterToolkit:
 if __name__ == "__main__":
     while True:
         call(["clear"])
-
         print(f"Welcome, {os.getlogin()}!")
 
         from time import sleep
@@ -853,23 +811,20 @@ Thank you and have a nice day!
             cyan + "(" + yellow + f"{os.getlogin()}@" +
             red + "Hunter" + cyan + ")>> "
         )
+        
         if choice == 'y' or choice == 'Y':
             break
-            
         elif choice == 'n' or choice == 'N':
             print(cld(
                 "You need to accept the terms above to use Hunter. Exit.",
                 "red"
             ))
-            
             sys.exit(1)
-            
         else:
             print(cld(
                 "Invalid Input!",
                 "red"
             ))
-            
             pass
 
     while True:
@@ -882,7 +837,6 @@ Thank you and have a nice day!
                 red + "Hunter" + cyan + ")>> " + magenta
             ))
             hunter_toolkit = HunterToolkit(hunter_choice)
-            
             hunter_toolkit.hunter_gate()
             
         except KeyboardInterrupt:
