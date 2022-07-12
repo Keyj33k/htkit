@@ -47,20 +47,15 @@ class MD5Encrypt:
 
             try:
                 encrypted_string = hashlib.md5(self.input_data.encode())
-
                 print("\033[0;37m=" * 70)
                 print(f"\033[0;37m[\033[0;32m+\033[0;37m] {self.input_data} -> {encrypted_string.hexdigest()}")
                 print("\033[0;37m=" * 70)
                 input("\n\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
-
                 break
-
             except Exception as excerr:
                 print(cld(f"{excerr}", "red"))
-
                 print(chr(0xa))
                 input("\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
-
                 break
 
                 # https://www.md5online.org/md5-decrypt.html
