@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 
 try:
-    from src.witcher_portscanner import WitcherPortscanner
-    from src.md5encrypt import MD5Encrypt
-    from src.ipv4_whois import IPv4Lookup
-    from src.banner_grabber import BannerGrabber
-    from src.phonenumber_lookup import PhonenumberWhois
-    from src.subdomain_scanner import SubdomainScanner
-    from src.url2ip import GetIPv4fromURL
-    from src.password_generator import PasswordGenerator
-    from src.whois_lookup_for_url import WhoisLookupForURL
-    from src.get_http_header import GetHTTPHeader
-    from src.link_collector import LinkCollector
-    from src.check_host_availability import CheckHostAvailability
-    from src.ipsweep import IPv4Sweep
+    from src.net.witcher_portscanner import WitcherPortscanner
+    from src.crypto.md5encrypt import MD5Encrypt
+    from src.infg.ipv4_whois import IPv4Lookup
+    from src.infg.banner_grabber import BannerGrabber
+    from src.infg.phonenumber_lookup import PhonenumberWhois
+    from src.infg.subdomain_scanner import SubdomainScanner
+    from src.infg.url2ip import GetIPv4fromURL
+    from src.crypto.password_generator import PasswordGenerator
+    from src.infg.whois_lookup_for_url import WhoisLookupForURL
+    from src.infg.get_http_header import GetHTTPHeader
+    from src.infg.link_collector import LinkCollector
+    from src.net.check_host_availability import CheckHostAvailability
+    from src.net.ipsweep import IPv4Sweep
     
     from termcolor import colored as cld
     from datetime import datetime as dtt
