@@ -775,7 +775,7 @@ class HunterToolkit:
                 ipsweep.get_status()
 
             elif self.menu_option_choice == 17:
-                print("\033[0;37m[\033[0;31m*\033[0;37m] Most Used Tools:")
+                print("\n\033[0;37m[\033[0;31m*\033[0;37m] Most Used Tools:")
                 print("-" * 25)
 
                 print("\033[0;34m[\033[0;31mFindEmailAddresses\033[0;34m]\033[0;37m https://hunter.io/")
