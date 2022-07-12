@@ -26,6 +26,7 @@ PyVer: 3.10.4
     12) Collect href from html page.
     13) Check host availability.
     14) Check host range for active devices.
+    15) Most used tools.
 
 -----------------------
 | INSTALLATION/USAGE: |
