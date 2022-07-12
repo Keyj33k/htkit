@@ -2,16 +2,21 @@
 |What's New?|
 =============
 
-04.07.22:
+12.07.22:
 ---------
-- Create Your Own Hunter-Module: Hunter-Toolkit -> template -> mod_template.py
-- Fixed Issue -> stuck in loop
-
-05.07.22:
----------
-- Update To Version 1.1.6 (Better Design, More Efficienz)
+- Ping: detailed output.
+- Added my most used (online) tools.
 
 11.07.22:
 ---------
 - Whois-lookup: Remove .text for a better output overview.
 - New subdomain list for increased probability of hitting.
+
+05.07.22:
+---------
+- Update To Version 1.1.6 (Better Design, More Efficienz)
+
+04.07.22:
+---------
+- Create Your Own Hunter-Module: Hunter-Toolkit -> template -> mod_template.py
+- Fixed Issue -> stuck in loop
