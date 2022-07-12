@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 try:
-    import subprocess
+    from subprocess import call
     
 except ImportError:
     raise RuntimeError("""
@@ -44,16 +44,10 @@ class CheckHostAvailability:
             print("\033[0;37m[\033[0;32m+\033[0;37m] Result:")
             print("=" * 70)
 
-            ping_request = subprocess.check_output([
+            call([
                 "ping", "-c", "3",
                 self.target_address
             ])
-
-            if not ping_request:
-                print(f"\033[0;37m[\033[0;33m-\033[0;37m] Host {self.target_address} seems to be dead ...")
-                
-            else:
-                print(f"\033[0;37m[\033[0;32m+\033[0;37m] Host {self.target_address} is alive!")
 
             print("=" * 70)
 
