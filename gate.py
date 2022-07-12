@@ -169,7 +169,7 @@ class HunterToolkit:
         )
         print(
             green + "{" + red + "17" + green + "}" + cyan +
-            " ExternalTools " + magenta + ">> " + yellow + " Most used Tools."
+            " ExternalTools " + magenta + ">> " + yellow + " Most used tools."
         )
 
         print(green + "{" + red + "99" + green + "}" + green + " Exit\n")
