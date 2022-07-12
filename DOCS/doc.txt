@@ -1,0 +1,143 @@
+----------------------------------------------
+| Thank You For Choosing The Hunter Toolkit! |
+----------------------------------------------
+
+
+D O C U M E N T A T I O N
+=========================
+
+►► Hunter Toolkit is a penetration testing assistant for automate annoying 
+    tasks and faster progress. Leave it open while you're working 
+    and use it if you need.
+    
+
+------------
+| Details: |
+------------
+Author: Keyjeek
+Since: June, 21
+Date: 26.06.22
+PyVer: 3.10.4
+
+
+What can Hunter Toolkit do for you?
+-----------------------------------
+    1) [Witcher] Simple port scanning.
+    	∟► - This port scanner is using the transmittion
+    	      control protocol for getting informations 
+    	      from the target like: 
+    	    	-> open ports
+    	    	-> service behind open ports
+    	    	BUT: - This is a SIMPLE port scanner for a quick check
+    	    	     - For detailed informations it is recommendet to 
+    	    	       use the nmap portscanner: "nmap --help"
+    2) [MD5Crypt] MD5 encryption.
+    	∟► - The message digest algorithm is a widley used hash function
+    	      producing a 128bit hash value.
+    	      It can't be decrypt, but bruteforced using this link:
+    	    	∟► "https://www.md5online.org/md5-decrypt.html"
+    3) [IPv4-lookup] IPv4 whois.
+    	∟► - IPv4 whois will send a request to the ip-api.com api
+    	      for getting informations about a given ipv4 address 
+    	      like region, isp, lat, lon and more.
+    	    - You can get some more informations using: 
+    	      	∟► "https://github.com/Keyj33k/Hatake"
+    4) [Banner-Grabber] Banner grabber.
+    	∟► - Banner grabber using the transmission control protocol
+    	      for getting informations about the service behind 
+    	      a given port.
+    5) [Phonenumber-Whois] Phonenumber whois.
+    	∟► - With the phonenumber whois tool you can get informations
+    	      like validation, the timezone, location and the provider.
+    	    - It may helps for a social engineering attack.
+    6) [Subdomain-Scanner] Subdomain scanner.
+    	∟► - The subdomain scanner uses a wordlist for bruteforcing 
+    	      a target site to tell the red teamer about possible
+    	      subdomains.
+    	    - You can easily choose your own wordlist by entering 
+    	      the /path/to/wordlist or you can leave it empty 
+    	      for the default wordlist
+    7) [MySystem] System overview.
+    	∟► - Sometimes it is necessery to know how much a cpu or ram is utilized
+    	    - This function can give you informations about the most needed 
+    	      system informations like disk, cpu or ram usage
+    	    - Use "x" or ctrl+c to exit system overview or let the magic happen 
+    	      by hitting the enter key  
+    8) [Get-IPv4-from-URL] Get IPv4 from URL.
+    	∟► - Easily get the ipv4 address from the given url
+    	    - DESCRIPTION: Translate a host name to IPv4 address format. The IPv4 address is 
+    	      returned as a string. If the host name is an IPv4 address itself it
+    	      is returned unchanged. 
+    9) [Password-Generator] Simple password generator.
+    	∟► - This tool will help you to create a strong password
+    	    - The password contains the following characters:
+    	    	∟► "1234567890"
+    	    	∟► "abcdefghijklmnopqrstuvwxyz"
+    	    	∟► "ABVDEFGHIJKLMNOPQRSTUVWXYZ"
+    	    	∟► "§$%&/()=}[{]?!_;:" 
+    	    	(Some Websites will not allow some of
+    	    	these characters, so you need to remove the invalid ones.)
+    10) [Whois-lookup] URL whois.
+    	∟► - Whois informations are important for a successfully information 
+    	      gathering progress. So you can use this function for getting 
+    	      some informations about any target. This toolkit uses a module called 
+    	      python-whois which is an amazing (very)easy to use python module:
+    	      	∟► "https://pypi.org/project/python-whois/"
+    11) [Get-HTTP-Header] Get HTTP header.
+    	∟► - Thanks to the curl tool: Let's combine it with python and the result is 
+    	      a simple and easy to use automation tool for getting the http header 
+    	      from any website
+    	    - A header normally contains the status code, the service (version) and 
+    	      the content type
+    	    - Just enter the target url and curl will do the job for us
+    12) [HREF-Collector] Collect href from html page.
+    	∟► - Sometimes it is useful to know what href attributes a website contains
+    	    - So we use the amazing request module: This function will send a 
+    	      get request and the beautifulsoup4 module will evaluates the result and 
+    	      will filter all the href attributes from the response. 
+    13) [Ping-Request] Check host availability.
+    	∟► - There are many reasons to check if the target host is available or not
+    	    - Because this script using ping, we have detailed informations about the icmp 
+    	      request. What would we do without ping
+    14) [IPSweep] Check host range for active devices.
+    	∟► - IPSweep is a famous kind of tools for checking if a host is live or not
+    	    - Just enter the ipv4 address and this script will scan a range of possible
+    	      ip addresses in the local network for the reachability
+    15) [ExternalTools] Most used tools.
+    	∟► - This toolkit was not written to replace other amazing tools. Hunter is 
+    	      an ASSISTANT for penetration tests. Annoying tasks that you have 
+    	      to repeat over and over again can be completed faster with this. For 
+    	      this reason I have included links for quick access to other tools to this 
+    	      toolkit, which I also use regularly:
+    	      	∟► - HaveIBeenPwnd
+    	      	∟► - Hunter.io
+    	      	∟► - RedHawk
+    	      	∟► - SherlockProject
+    
+    
+---------------
+| DISCLAIMER: |
+---------------
+
+    The following isn't some silly blah blah or anything. It's a serious warning.
+    Always remember that port scanning etc. can be illegal if you don't have any
+    permissions to do that. You can end up in jail for being a blackhat.
+    Make the internet a safer place.
+
+    -> This toolkit is for ethical purposes only.
+    -> I'm not responsible for your actions.
+    -> Don't hack anyone without permissions.
+    -> With great force follows great responsibility.
+
+
+-----------
+| TESTED: |
+-----------
+
+    -> Tested on 5.16.0-kali7-amd64, 5.15.0-40-genericUbuntu and Termux-0.118.0
+
+
+
+
+        --------------------------------------------
+            2021-2022 Hunter-Toolkit by @Keyj33k
