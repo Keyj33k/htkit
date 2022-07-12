@@ -4,6 +4,7 @@
 
 12.07.22:
 ---------
+- Updated Hunter-Toolkit from version 1.0.6 to version 1.0.7
 - Ping: detailed output.
 - Added my most used (online) tools.
 - Reordered filesystem
