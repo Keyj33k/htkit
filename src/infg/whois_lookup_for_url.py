@@ -48,15 +48,11 @@ class WhoisLookupForURL:
                 print(whois_url.text)
                 print(whois_url)
                 print("=" * 70)
-
                 print(chr(0xa))
                 input("\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
-
                 break
-
             except Exception as excerr:
                 print(excerr)
-
                 break
 
 
