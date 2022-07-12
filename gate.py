@@ -732,7 +732,7 @@ class HunterToolkit:
 
             elif self.menu_option_choice == 15:
                 print(cld(figlet_format(
-                    "CheckAvail",
+                    "Ping",
                     font="bulbhead"
                 )))
 
