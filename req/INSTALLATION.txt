@@ -10,24 +10,6 @@ Since: June, 21
 Date: 26.06.22
 PyVer: 3.10.4
 
-    What can Hunter Toolkit do for you?
-    -----------------------------------
-    1) Simple port scanning.
-    2) MD5 encryption.
-    3) IPv4 whois.
-    4) Banner grabber.
-    5) Phonenumber whois.
-    6) Subdomain scanner.
-    7) System overview.
-    8) Get IPv4 from URL.
-    9) Simple password generator.
-    10) URL whois.
-    11) Get HTTP header.
-    12) Collect href from html page.
-    13) Check host availability.
-    14) Check host range for active devices.
-    15) Most used tools.
-
 -----------------------
 | INSTALLATION/USAGE: |
 -----------------------
