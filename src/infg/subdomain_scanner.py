@@ -58,16 +58,13 @@ class SubdomainScanner:
 
                             try:
                                 requests.get(uniformresourcelocator)
-
                             except requests.ConnectionError:
                                 pass
-
                             else:
                                 print(
                                     "\033[0;37m[\033[0;32m+\033[0;37m] Discovered -> ",
                                     uniformresourcelocator
                                 )
-
                                 found_subdomain.append(
                                     uniformresourcelocator
                                 )
@@ -82,32 +79,24 @@ class SubdomainScanner:
 
                             try:
                                 requests.get(uniformresourcelocator)
-
                             except requests.ConnectionError:
                                 pass
-
                             else:
                                 print(
                                     "\033[0;37m[\033[0;32m+\033[0;37m] Discovered -> ",
                                     uniformresourcelocator
                                 )
-
                                 found_subdomain.append(
                                     uniformresourcelocator
                                 )
 
                 input("\033[0;37m[\033[0;31m*\033[0;37m] Press enter key to continue")
-                
                 break
-                
             except FileNotFoundError:
                 print("\033[0;37m[\033[0;33m-\033[0;37m] You need the subdomain file in the current directory to run this tool.")
-                
                 break
-                
             except KeyboardInterrupt:
                 print("\033[0;37m[\033[0;31m*\033[0;37m] You pressed Ctrl+C. Exit.")
-                
                 break
 
 
