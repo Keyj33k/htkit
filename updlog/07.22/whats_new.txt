@@ -6,6 +6,7 @@
 ---------
 - Ping: detailed output.
 - Added my most used (online) tools.
+- Reordered filesystem
 
 11.07.22:
 ---------
