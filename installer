@@ -9,16 +9,16 @@ printf "[*] Starting the installer ...\n"
 sleep 1.25
 
 if ! command -v pip &> /dev/null; then
-	sudo apt-get update && sudo apt-get install python3 python3-pip 
-fi
+        sudo apt-get update && sudo apt-get install python3 python3-pip 
 
-if ! command -v curl &> /dev/null; then
-	sudo apt-get install curl
+elif ! command -v curl &> /dev/null; then
+        sudo apt-get update && sudo apt-get install curl
 fi
 
 if [ -f "req/requirements.txt" ]; then
-	pip install -r req/requirements.txt
+        pip install -r req/requirements.txt
 fi
+
 
 printf "[*] Hunter-Toolkit is now ready to use ...\n"
 
