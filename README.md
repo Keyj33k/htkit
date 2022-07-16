@@ -63,6 +63,11 @@ bash updater
 <p>
 - The installer and the updater will do all work for you.
 
+### Start the Hunter-Toolkit:
+```
+python3 gate.py
+```
+
 - For exit: use Ctrl+C
 
 I: If you have trouble with Get-HTTP-Header: 
