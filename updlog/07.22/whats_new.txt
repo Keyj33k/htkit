@@ -6,6 +6,7 @@
 ---------
 - Added a installer and a updater script.
 - Refactored PhoneStalk source code.
+- Colorized installer and updater.
 
 13.07.22:
 ---------
