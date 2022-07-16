@@ -43,6 +43,18 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 - 3 )  There is a file called INSTALLATION.txt.
 - 4 )  Open the file and follow the installation steps.
 
+### OR
+
+- 1 ) Navigate to the Hunter-Toolkit directory.
+- 2 ) Type following command: "bash installer"
+
+### Want to update the Hunter-Toolkit?
+- 1 ) Navigate to the Hunter-Toolkit directory
+- 2 ) Type following command: "bash updater"
+
+<p>
+- The installer and the updater will do all work for you.
+
 - For exit: use Ctrl+C
 
 I: If you have trouble with Get-HTTP-Header: 
