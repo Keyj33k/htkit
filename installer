@@ -19,7 +19,6 @@ if [ -f "req/requirements.txt" ]; then
         pip install -r req/requirements.txt
 fi
 
-
 printf "[*] Hunter-Toolkit is now ready to use ...\n"
 
 sleep 1.25
@@ -27,7 +26,6 @@ sleep 1.25
 printf "[*] Do you want to start the Hunter-Toolkit? y/n "
 
 read CHOICE
-
 
 if [[ $CHOICE == "y" || $CHOICE == "Y" ]]; then
 	printf "[*] Starting the Hunter-Toolkit ...\n"
@@ -37,6 +35,7 @@ if [[ $CHOICE == "y" || $CHOICE == "Y" ]]; then
 	python3 gate.py
 
 	exit 0
+	
 elif [[ $CHOICE == "n" || $CHOICE == "N" ]]; then
 	printf "[*] All right, thank you for choosing the Hunter-Toolkit!\n"
 
@@ -46,7 +45,6 @@ else
 
 	exit 1
 fi
-
 
 exit 0
 
