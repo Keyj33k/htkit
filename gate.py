@@ -52,7 +52,7 @@ except ImportError:
 #   Author  :   Keyjeek                   #
 #   Contact :   nomotikag33n@gmail.com    #
 #   Github  :   @Keyj33k                  #
-#   Version :   1.1.7                     #
+#   Version :   1.1.8                     #
 #                                         #
 # # # # # # # # # # # # # # # # # # # # # #
 
@@ -81,7 +81,7 @@ class HunterToolkit:
         )
         print(
             magenta + " <" + green + " contact:nomotikag33n@gmail.com " +
-            magenta + ">" + yellow + " Ver" + magenta + ".:" + red + "1.1.7"
+            magenta + ">" + yellow + " Ver" + magenta + ".:" + red + "1.1.8"
         )
         print(
             cyan + "\n[" + red + "*" + cyan + "] " + yellow +
