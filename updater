@@ -1,0 +1,65 @@
+#!/bin/bash
+
+cd ..
+
+printf "\033[0;37m[\033[0;31m*\033[0;37m] Welcome to Hunter-Toolkit updater!\n"
+
+sleep 1.25
+
+printf "\033[0;37m[\033[0;31m*\033[0;37m] Removing Hunter-Toolkit ...\n"
+
+sleep 1.25
+
+if [ -d "Hunter-Toolkit" ]; then
+	rm -rf Hunter-Toolkit
+fi
+
+printf "\033[0;37m[\033[0;32m+\033[0;37m] Done.\n"
+
+sleep 1.25
+
+printf "\033[0;37m[\033[0;31m*\033[0;37m] Check if git is installed ...\n"
+
+sleep 1.25
+
+if ! command -v git &> /dev/null; then
+	sudo apt-get update && sudo apt-get install git
+fi
+
+printf "\033[0;37m[\033[0;32m+\033[0;37m] Done.\n"
+
+sleep 1.25
+
+printf "\033[0;37m[\033[0;31m*\033[0;37m] Getting Hunter-Toolkit ...\n"
+
+git clone https://github.com/Keyj33k/Hunter-Toolkit.git || (printf "Failed getting Hunter-Toolkit!" && exit 1)
+
+printf "\033[0;37m[\033[0;32m+\033[0;37m] Done.\n"
+
+sleep 1.25
+
+printf "\033[0;37m[\033[0;31m*\033[0;37m] Do you want to start the Hunter-Toolkit? y/n "
+
+read CHOICE
+
+if [[ $CHOICE == "y" || $CHOICE == "Y" ]]; then
+        printf "\033[0;37m[\033[0;31m*\033[0;37m] Starting the Hunter-Toolkit ...\n"
+
+        sleep 1.25
+
+        cd Hunter-Toolkit && python3 gate.py
+
+        exit 0
+	
+elif [[ $CHOICE == "n" || $CHOICE == "N" ]]; then
+        printf "\033[0;37m[\033[0;31m*\033[0;37m] All right, thank you for choosing the Hunter-Toolkit!\n"
+
+        exit 0
+	
+else
+        printf "\033[0;37m[\033[0;33m-\033[0;37m] Invalid Input!\n"
+
+        exit 1
+fi
+
+exit 0
