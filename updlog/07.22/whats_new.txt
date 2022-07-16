@@ -2,6 +2,10 @@
 |What's New?|
 =============
 
+17.07.22:
+---------
+- Updated Hunter-Toolkit Version from 1.1.7 to 1.1.8
+
 16.07.22:
 ---------
 - Added a installer and a updater script.
