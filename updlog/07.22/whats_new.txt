@@ -2,16 +2,21 @@
 |What's New?|
 =============
 
+16.07.22:
+---------
+- Added a installer and a updater script.
+- Refactored PhoneStalk source code.
+
 13.07.22:
 ---------
-- PhoneStalk: more informations
+- PhoneStalk: more informations.
 
 12.07.22:
 ---------
 - Updated Hunter-Toolkit from version 1.0.6 to version 1.0.7
 - Ping: detailed output.
 - Added my most used (online) tools.
-- Reordered filesystem
+- Reordered filesystem.
 
 11.07.22:
 ---------
@@ -20,9 +25,9 @@
 
 05.07.22:
 ---------
-- Update To Version 1.1.6 (Better Design, More Efficienz)
+- Update To Version 1.1.6 (Better Design, More Efficienz).
 
 04.07.22:
 ---------
-- Create Your Own Hunter-Module: Hunter-Toolkit -> template -> mod_template.py
+- Create Your Own Hunter-Module: Hunter-Toolkit -> template -> mod_template.py.
 - Fixed Issue -> stuck in loop
