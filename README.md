@@ -46,11 +46,19 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 ### OR
 
 - 1 ) Navigate to the Hunter-Toolkit directory.
-- 2 ) Type following command: "bash installer"
+- 2 ) Type following command: 
+
+```
+bash installer
+```
 
 ### Want to update the Hunter-Toolkit?
 - 1 ) Navigate to the Hunter-Toolkit directory
-- 2 ) Type following command: "bash updater"
+- 2 ) Type following command: 
+
+```
+bash updater
+```
 
 <p>
 - The installer and the updater will do all work for you.
