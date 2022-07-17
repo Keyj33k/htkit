@@ -42,14 +42,17 @@ ExternalTools             >>     Most used tools.
 
 # USAGE OF HUNTER:
 
-- 1 ) Cloning the repo:
+- Cloning the repo:
 ```
 git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 ```
-- 2 )  Now you need to navigate to the Hunter directory.
-- 3 )  Change the current directory to the req directory.
-- 4 )  There is a file called INSTALLATION.txt.
-- 5 )  Open the file and follow the installation steps.
+
+### Now you need to ...
+
+- 1 )  Navigate to the Hunter directory.
+- 2 )  Change the current directory to the req directory.
+- 3 )  There is a file called INSTALLATION.txt.
+- 4 )  Open the file and follow the installation steps.
 
 ### OR
 
