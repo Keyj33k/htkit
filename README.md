@@ -51,16 +51,25 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 
 ---
 
-- 1 )  Navigate to the Hunter directory.
-- 2 )  Change the current directory to the req directory.
-- 3 )  There is a file called INSTALLATION.txt.
-- 4 )  Open the file and follow the installation steps.
+- 1 )  Navigate to the req directory.
+
+```
+cd Hunter-Toolkit/req/
+```
+
+- 2 )  There is a file called INSTALLATION.txt.
+- 3 )  Open the file and follow the installation steps.
 
 ### OR
 
 ---
 
 - 1 ) Navigate to the Hunter-Toolkit directory.
+
+```
+cd Hunter-Toolkit
+```
+
 - 2 ) Type following command: 
 
 ```
@@ -72,6 +81,11 @@ bash installer
 ---
 
 - 1 ) Navigate to the Hunter-Toolkit directory
+
+```
+cd Hunter-Toolkit
+```
+
 - 2 ) Type following command: 
 
 ```
