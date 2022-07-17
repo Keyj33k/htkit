@@ -5,9 +5,14 @@
 
 ### Hacking Made Easier.
 
+---
+
 <a href="https://github.com/Keyj33k/Hunter/archive/refs/heads/main.zip"><img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/hunter1.0.7.png?raw=true" alt="banner"/></a>
 
 ### What the Hunter-Toolkit can do for you?
+
+---
+
 ```
                     [  Hunter-Toolkit Services  ]   
 ==========================================================================
@@ -30,20 +35,25 @@ IPSweep                   >>     Check host range for active devices.
 ExternalTools             >>     Most used tools.
 ```
 ### How It Looks Like?
+
+---
+
 ![menu](https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/meu.png?raw=true)
 
-### USAGE OF HUNTER:
+# USAGE OF HUNTER:
 
-- Cloning the repo:
+- 1 ) Cloning the repo:
 ```
 git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 ```
-- 1 )  Now you need to navigate to the Hunter directory.
-- 2 )  Change the current directory to the req directory.
-- 3 )  There is a file called INSTALLATION.txt.
-- 4 )  Open the file and follow the installation steps.
+- 2 )  Now you need to navigate to the Hunter directory.
+- 3 )  Change the current directory to the req directory.
+- 4 )  There is a file called INSTALLATION.txt.
+- 5 )  Open the file and follow the installation steps.
 
 ### OR
+
+---
 
 - 1 ) Navigate to the Hunter-Toolkit directory.
 - 2 ) Type following command: 
@@ -53,6 +63,9 @@ bash installer
 ```
 
 ### Want to update the Hunter-Toolkit?
+
+---
+
 - 1 ) Navigate to the Hunter-Toolkit directory
 - 2 ) Type following command: 
 
@@ -60,37 +73,42 @@ bash installer
 bash updater
 ```
 
-<p>
-- The installer and the updater will do all work for you.
+## The installer and the updater will do all work for you.
 
 ### Start the Hunter-Toolkit:
+
+---
+
 ```
 python3 gate.py
 ```
 
-- For exit: use Ctrl+C
+### Info:
 
-I: If you have trouble with Get-HTTP-Header: 
-- Maybe you does not have curl installed:
+---
+
+- For exit: use Ctrl+C
+- If you have trouble with Get-HTTP-Header, maybe you does not have curl installed:
 ```
 sudo apt-get install curl
 ```
 
+---
 
 <div id="profile">
   <a href="https://www.python.org/">
-    <img src="https://github.com/Keyj33k/profiles/blob/main/profile/pypy.jpeg?raw=true" alt="prfl1"/>
+    <img src="https://github.com/Keyj33k/profiles/blob/main/profile/pypy.jpeg?raw=true" alt="prfl1">
     
 ---
 
 # NOTE:
+
 The following isn't some silly blah blah or anything. It's a serious warning.
 Always remember that port scanning etc. can be illegal if you don't have any
 permissions to do that. You can end up in jail for being a blackhat.
     
 ### Make the internet a safer place.
-    
-    
+
 - This tool is only for ethical purposes. 
 - I'm not responsible for your actions. 
 - Don't hack anyone without permissions.
@@ -102,8 +120,9 @@ permissions to do that. You can end up in jail for being a blackhat.
   
 ---
 
-# Feel free and let me know if you have any ideas to make the Hunter-Toolkit better.
+Something is missing? Suggestions for improvement? Please let me know about your ideas! You can help to make the Hunter-Toolkit better.
 
 Thank You For Your Time!<br>
-~ Keyjeek
 
+
+~ Keyjeek
