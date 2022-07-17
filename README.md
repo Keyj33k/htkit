@@ -42,6 +42,8 @@ ExternalTools             >>     Most used tools.
 
 # USAGE OF HUNTER:
 
+<img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/hunterhill.gif?raw=true"/>
+
 - Cloning the repo:
 ```
 git clone https://github.com/Keyj33k/Hunter-Toolkit.git
