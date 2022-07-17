@@ -49,6 +49,8 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 
 ### Now you need to ...
 
+---
+
 - 1 )  Navigate to the Hunter directory.
 - 2 )  Change the current directory to the req directory.
 - 3 )  There is a file called INSTALLATION.txt.
