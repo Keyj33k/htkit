@@ -34,11 +34,6 @@ Ping-Request              >>     Check remote host availability.
 IPSweep                   >>     Check host range for active devices.
 ExternalTools             >>     Most used tools.
 ```
-### How It Looks Like?
-
----
-
-![menu](https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/meu.png?raw=true)
 
 # USAGE OF HUNTER:
 
