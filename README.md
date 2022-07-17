@@ -73,7 +73,7 @@ bash installer
 bash updater
 ```
 
-## The installer and the updater will do all work for you.
+- The installer and the updater will do all work for you.
 
 ### Start the Hunter-Toolkit:
 
