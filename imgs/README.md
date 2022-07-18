@@ -6,7 +6,7 @@
 
 <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/hunterhill.gif?raw=true"/>
 
-- Information Gathering, Identifying Port Services:
+- Information Gathering, Identifying Services Behind An Open Port:
 
 ---
 
