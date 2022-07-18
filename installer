@@ -1,0 +1,54 @@
+#!/bin/bash
+
+W="\033[0;37m"
+G="\033[0;32m"
+R="\033[0;31m"
+Y="\033[0;33m"
+
+printf "$W[$R*$W] Welcome to the Hunter-Toolkit!\n"
+
+sleep 1.25
+
+printf "$W[$R*$W] Starting the installer ...\n"
+
+sleep 1.25
+
+if ! command -v pip &> /dev/null; then
+        sudo apt-get update && sudo apt-get install python3 python3-pip 
+
+elif ! command -v curl &> /dev/null; then
+        sudo apt-get update && sudo apt-get install curl
+fi
+
+if [ -f "req/requirements.txt" ]; then
+        pip install -r req/requirements.txt
+fi
+
+printf "$W[$G+$W] Hunter-Toolkit is now ready to use ...\n"
+
+sleep 1.25
+
+printf "$W[$R*$W] Do you want to start the Hunter-Toolkit? y/n "
+
+read CHOICE
+
+if [[ $CHOICE == "y" || $CHOICE == "Y" ]]; then
+	printf "$W[$R*$W] Starting the Hunter-Toolkit ...\n"
+
+	sleep 1.25
+
+	python3 gate.py
+
+	exit 0
+
+elif [[ $CHOICE == "n" || $CHOICE == "N" ]]; then
+	printf "$W[$R*$W] All right, thank you for choosing the Hunter-Toolkit!\n"
+
+	exit 0
+else
+	printf "$W[$Y-$W] Invalid Input!\n"
+
+	exit 1
+fi
+
+exit 0
