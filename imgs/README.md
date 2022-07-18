@@ -6,7 +6,7 @@
 
 <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/hunterhill.gif?raw=true"/>
 
-- Information Gathering, Identifying Services Behind An Open Port:
+- Identifying Services Behind An Open Port:
 
 ---
 
@@ -22,3 +22,11 @@ https://www.md5online.org/md5-decrypt.html
 ```
 
 <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/md5dec.gif?raw=true"/>
+
+- Subdomain Scanner:
+
+---
+
+<img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/subdsc.png?raw=true"/>
+
+
