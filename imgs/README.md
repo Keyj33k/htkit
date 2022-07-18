@@ -11,3 +11,9 @@
 ---
 
 <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/idport.gif?raw=true"/>
+
+- Decrypt A String Easily Using MD5:
+
+---
+
+<img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/md5dec.gif?raw=true"/>
