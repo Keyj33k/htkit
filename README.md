@@ -16,23 +16,23 @@
 ```
                     [  Hunter-Toolkit Services  ]   
 ==========================================================================
-Witcher                   >>     A port scanner for status and service.
-MD5Crypt                  >>     MD5 encryption tool.
-IPv4-lookup               >>     Get informations about an IPv4 address.
-Banner-Grabber            >>     Get service behind a port.
-B64Crypt                  >>     En- and decryption used Base64.
-Phonenumber-Whois         >>     Get informations about a phonenumber
-Subdomain-Scanner         >>     Get subdomains from any URL.
-Whoami                    >>     Get infos like current IPv4 address etc.
-MySystem                  >>     Get infos like CPU usage, disk usage etc.
-Get-IPv4-from-URL         >>     Get the IPv4 address of any URL.
-Password-Generator        >>     Generate a random password.
-Whois-lookup              >>     Whois lookup for URL.
-Get-HTTP-Header           >>     Get HTTP header from a webserver(CUrl).
-HREF-Collector            >>     Get all href attributes from a website.
-Ping-Request              >>     Check remote host availability.
-IPSweep                   >>     Check host range for active devices.
-ExternalTools             >>     Most used tools.
+Witcher                   >>     Port Scanner
+MD5Crypt                  >>     MD5 Encryption
+IPv4-lookup               >>     IPv4 Whois Lookup
+Banner-Grabber            >>     Get Service Behind An Open Port
+B64Crypt                  >>     En- and Decryption Used Base64
+Phonenumber-Whois         >>     Phonenumber Whois Lookup
+Subdomain-Scanner         >>     Scan For Subdomains From URL
+Whoami                    >>     Display Private IPv4 Address, MAC Address etc
+MySystem                  >>     Display System Informations
+Get-IPv4-from-URL         >>     Extract IPv4 Address From URL
+Password-Generator        >>     Generate Random Password
+Whois-lookup              >>     URL Whois Lookup
+Get-HTTP-Header           >>     Display Remote Server HTTP Header
+HREF-Collector            >>     Extract HREF Attribute
+Ping-Request              >>     Send ICMP Packets For Getting Server Status
+IPSweep                   >>     Scan Host Range For Active Devices
+ExternalTools             >>     Most Used Tools
 ```
 
 ### How the Hunter-Toolkit looks like?
