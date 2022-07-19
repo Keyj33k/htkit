@@ -108,7 +108,7 @@ python3 gate.py
 
 ---
 
-<img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/idps.gif?raw=true"/>
+<img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/bannerhaunting.gif?raw=true"/>
 
 
 ### Info:
