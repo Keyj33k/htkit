@@ -7,6 +7,7 @@
 - Renamed Services
 - Changed Service Descriptions 
 - Refactored, redesigned and upgrade to 1.1.9
+- Added service: GetStat
 
 16.07.22:
 ---------
