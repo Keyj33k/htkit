@@ -18,19 +18,19 @@
 ==========================================================================
 Witcher                   >>     Port Scanner
 MD5Crypt                  >>     MD5 Encryption
-IPv4-lookup               >>     IPv4 Whois Lookup
-Banner-Grabber            >>     Get Service Behind An Open Port
+WhoisIPv4                 >>     IPv4 Whois Lookup
+BannerGrabber             >>     Get Service Behind An Open Port
 B64Crypt                  >>     En- and Decryption Used Base64
-Phonenumber-Whois         >>     Phonenumber Whois Lookup
-Subdomain-Scanner         >>     Scan For Subdomains From URL
+WhoisPhonenumber          >>     Phonenumber Whois Lookup
+SubdomainScanner          >>     Scan For Subdomains From URL
 Whoami                    >>     Display Private IPv4 Address, MAC Address etc
 MySystem                  >>     Display System Informations
-Get-IPv4-from-URL         >>     Extract IPv4 Address From URL
-Password-Generator        >>     Generate Random Password
-Whois-lookup              >>     URL Whois Lookup
-Get-HTTP-Header           >>     Display Remote Server HTTP Header
-HREF-Collector            >>     Extract HREF Attribute
-Ping-Request              >>     Send ICMP Packets For Getting Server Status
+URL2IPv4                  >>     Extract IPv4 Address From URL
+PasswordGenerator         >>     Generate Random Password
+URLWhois                  >>     URL Whois Lookup
+HTTPHeader                >>     Display Remote Server HTTP Header
+HREFCollector             >>     Extract HREF Attribute
+Ping                      >>     Send ICMP Packets For Getting Server Status
 IPSweep                   >>     Scan Host Range For Active Devices
 ExternalTools             >>     Most Used Tools
 ```
