@@ -3,7 +3,7 @@
 - A easy to use pentesting toolkit for information gathering and more.
 - Written with Python3 for Linux.
 
-### Hacking Made Easier.
+### Information Gathering Made Easier.
 
 ---
 
