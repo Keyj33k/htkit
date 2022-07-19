@@ -4,7 +4,8 @@
 
 19.07.22:
 ---------
-- refactored, redesigned and upgrade to 1.1.9
+- Changed Service Descriptions 
+- Refactored, redesigned and upgrade to 1.1.9
 
 16.07.22:
 ---------
