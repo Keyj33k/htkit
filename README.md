@@ -104,6 +104,13 @@ bash updater
 python3 gate.py
 ```
 
+### Usage example: Identifying service behind an open port:
+
+---
+
+<img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/idps.gif?raw=true"/>
+
+
 ### Info:
 
 ---
