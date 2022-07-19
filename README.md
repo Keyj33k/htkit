@@ -44,7 +44,7 @@ ExternalTools             >>     Most Used Tools
 
 # USAGE OF HUNTER:
 
-<img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/huntertoolkitkali.gif?raw=true"/>
+<img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/haunt1.1.9.gif?raw=true"/>
 
 - Cloning the repo:
 ```
