@@ -86,18 +86,18 @@ class HunterToolkit:
         print(f"{r}[{w}0{r}]{w} Clear Screen")
         print(f"{r}[{w}1{r}]{w} Witcher {r}>>{w} Port Scanner")
         print(f"{r}[{w}2{r}]{w} MD5Crypt {r}>>{w} MD5 Encryption")
-        print(f"{r}[{w}3{r}]{w} WhoisForIP {r}>>{w} IPv4 Whois Lookup")
+        print(f"{r}[{w}3{r}]{w} WhoisIPv4 {r}>>{w} IPv4 Whois Lookup")
         print(f"{r}[{w}4{r}]{w} BannerGrabber {r}>>{w} Get Service Behind An Open Port")
         print(f"{r}[{w}5{r}]{w} B64Crypt {r}>>{w} En- and Decryption Used Base64")
-        print(f"{r}[{w}6{r}]{w} PhoneStalk {r}>>{w} Phonenumber Whois Lookup")
+        print(f"{r}[{w}6{r}]{w} WhoisPhonenumber {r}>>{w} Phonenumber Whois Lookup")
         print(f"{r}[{w}7{r}]{w} SubdomainScanner {r}>>{w} Scan For Subdomains From URL")
         print(f"{r}[{w}8{r}]{w} Whoami {r}>>{w} Display Private IPv4 Address, MAC Address etc")
         print(f"{r}[{w}9{r}]{w} MySystem {r}>>{w} Display System Informations")
-        print(f"{r}[{w}10{r}]{w} GetIPfromURL {r}>>{w} Extract IPv4 Address From URL")
-        print(f"{r}[{w}11{r}]{w} PassGen {r}>>{w} Generate Random Password")
-        print(f"{r}[{w}12{r}]{w} WhoisForURL {r}>>{w} URL Whois Lookup")
-        print(f"{r}[{w}13{r}]{w} GetHeader {r}>>{w} Display Remote Server HTTP Header")
-        print(f"{r}[{w}14{r}]{w} LinkCollector {r}>>{w} Extract HREF Attributes")
+        print(f"{r}[{w}10{r}]{w} URL2IPv4 {r}>>{w} Extract IPv4 Address From URL")
+        print(f"{r}[{w}11{r}]{w} PasswordGenerator {r}>>{w} Generate Random Password")
+        print(f"{r}[{w}12{r}]{w} URLWhois {r}>>{w} URL Whois Lookup")
+        print(f"{r}[{w}13{r}]{w} HTTPHeader {r}>>{w} Display Remote Server HTTP Header")
+        print(f"{r}[{w}14{r}]{w} HREFCollector {r}>>{w} Extract HREF Attributes")
         print(f"{r}[{w}15{r}]{w} Ping {r}>>{w} Send ICMP Packets For Getting Server Status")
         print(f"{r}[{w}16{r}]{w} IPSweep {r}>>{w} Scan Host Range For Active Devices")
         print(f"{r}[{w}17{r}]{w} ExternalTools {r}>>{w} Most Used Tools")
@@ -335,7 +335,7 @@ class HunterToolkit:
                         print(cld("Invalid Input!", "red"))
             elif self.menu_option_choice == 6:
                 print(cld(figlet_format(
-                    "PhoneStalk",
+                    "Whois\nPhonenumber",
                     font="bulbhead"
                 ), "cyan"))
 
@@ -405,7 +405,7 @@ class HunterToolkit:
                 extract_ipv4.main()
             elif self.menu_option_choice == 11:
                 print(cld(figlet_format(
-                    "PassGen",
+                    "Password\nGenerator",
                     font="bulbhead"
                 ), "cyan"))
 
@@ -425,7 +425,7 @@ class HunterToolkit:
                 get_lookup.main()
             elif self.menu_option_choice == 13:
                 print(cld(figlet_format(
-                    "GetHTTP\nHeader",
+                    "HTTPHeader",
                     font="bulbhead"
                 ), "cyan"))
 
@@ -435,7 +435,7 @@ class HunterToolkit:
                 gethttpheader.main()
             elif self.menu_option_choice == 14:
                 print(cld(figlet_format(
-                    "LinkCollect",
+                    "Link\nCollector",
                     font="bulbhead"
                 ), "cyan"))
                 
