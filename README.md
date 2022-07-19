@@ -33,6 +33,7 @@ HREFCollector             >>     Extract HREF Attribute
 Ping                      >>     Send ICMP Packets For Getting Server Status
 IPSweep                   >>     Scan Host Range For Active Devices
 ExternalTools             >>     Most Used Tools
+GetStat                   >>     Get remote server status code
 ```
 
 ### How the Hunter-Toolkit looks like?
