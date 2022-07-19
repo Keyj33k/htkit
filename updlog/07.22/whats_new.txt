@@ -4,6 +4,7 @@
 
 19.07.22:
 ---------
+- Renamed Services
 - Changed Service Descriptions 
 - Refactored, redesigned and upgrade to 1.1.9
 
