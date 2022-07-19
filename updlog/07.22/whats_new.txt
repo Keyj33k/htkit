@@ -8,6 +8,7 @@
 - Changed Service Descriptions 
 - Refactored, redesigned and upgrade to 1.1.9
 - Added service: GetStat
+- Redefined Source Code
 
 16.07.22:
 ---------
