@@ -39,7 +39,7 @@ ExternalTools             >>     Most Used Tools
 
 ---
 
-![hill](https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/hunter1.1.8.png?raw=true)
+![hill](https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/haunt1.1.9.png?raw=true)
 
 
 # USAGE OF HUNTER:
