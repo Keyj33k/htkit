@@ -486,7 +486,7 @@ class HunterToolkit:
                 input(f"\n{w}[{r}*{w}] Press enter key to continue")
             elif self.menu_option_choice == 18:
                 print(cld(figlet_format(
-                    "StatusCode",
+                    "GetStat",
                     font="bulbhead"
                 ), "cyan"))
 
