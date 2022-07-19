@@ -175,7 +175,7 @@ class HunterToolkit:
                             percpu=True,
                             interval=1
                         )
-                ):  # show percentence for all cores # 1
+                ):  
                     print(f"{c}Core {core} {m}-> {y}{percentance}% ")
 
                 virtual_mem = psutil.virtual_memory()
@@ -218,7 +218,7 @@ class HunterToolkit:
                 print(f"{m}=" * 27, f"{c}|{m} Boot {c}|{m}", "=" * 25)
                 print(f"\n{c}Last Boot {m}-> {y}{boot_time.day}.{boot_time.month}.{boot_time.year}{boot_time.hour}:{boot_time.minute}:{boot_time.second}\n")
 
-                end_time = dtt.now()  # get end time
+                end_time = dtt.now() 
                 needed_time = end_time - start_time
 
                 print(f"{c}Job Done In {g}{needed_time}")
