@@ -45,7 +45,7 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
     ``` 
    
 3) Now you need to install the needed python modules/requirements
-    - Change to the Hunter-Toolkit Directory:
+    - Change path to the Hunter-Toolkit Directory:
     
     ```
     cd Hunter-Toolkit/req/
@@ -59,7 +59,7 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
    
 ### Automated Installation
 
-- Change to the Hunter-Toolkit Directory:
+- Change path to the Hunter-Toolkit Directory:
     
     ```
     cd Hunter-Toolkit
@@ -81,7 +81,7 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
   
 ## Update the pentesting assistant:
 
-- Change to the Hunter-Toolkit Directory and type:
+- Change path to the Hunter-Toolkit Directory and type:
 
     ```
     bash updater
