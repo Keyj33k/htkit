@@ -1,9 +1,9 @@
 # Project - Hunter:snake: | Ver.:1.1.9
 
-- A easy to use pentesting toolkit for information gathering and more.
-- Written with Python3 for Linux.
+- An Easy To Use Pentesting Assistant For Information Gathering And More.
+- Written With Python3 For Linux.
 
-### Information Gathering Made Easier.
+### You Are One Keystroke Away From The Informations.
 
 ---
 
