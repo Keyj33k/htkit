@@ -1,5 +1,18 @@
 #!/usr/bin/env python3
 
+#
+# 誰も隠すことはできません
+#
+# 	   /|	|\
+# ▓▓ __\«\_/»/__ ▓▓
+# ▓▓------☼------▓▓
+# //{(*)>-v-<(*)}\
+# |||(○_/•|•\_○)|||
+# |||\((▼▼▼▼▼))/|||
+# /|||\\▼▲▲▲▼//|||\
+#
+#
+
 try:
     from src.net.check_host_availability import CheckHostAvailability
     from src.crypto.password_generator import PasswordGenerator
