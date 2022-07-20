@@ -3,6 +3,17 @@
 - An Easy To Use Pentesting Assistant For Information Gathering And More.
 - Written With Python3 For Linux.
 
+### Why using the Hunter-Toolkit?
+
+---
+
+- Sometimes you need just one quick answer, But they are often reachable using scanners which need some time for many results.
+- If you want just one quick information, The Hunter-Toolkit is for you.
+- You have quick access to many resources like whois lookups, networking stuff and more.
+- Once in the menu: one Keystroke, copy and paste the target address and the pentesting assistant will show you the result quickly!
+- In a nutshell: Clear menu, quick access to many resources and an easy usage.
+- Maybe you are something missing, Then you can easily add your own service using the template or let me know about your ideas.
+
 ### You Are One Keystroke Away From The Informations.
 
 ---
