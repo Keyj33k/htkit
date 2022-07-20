@@ -5,6 +5,7 @@
 ------------
 | Details: |
 ------------
+
 Author: Keyjeek
 Since: June, 21
 Date: 26.06.22
@@ -14,25 +15,68 @@ PyVer: 3.10.4
 | INSTALLATION/USAGE: |
 -----------------------
 
-1) Make sure you have CURL installed:
-    -> We need curl to get the http header from the server.
-    -> If curl is not installed, use this command:
+# USAGE OF HUNTER:
 
-    # sudo apt-get update && sudo apt-get full-upgrade -y
-    # sudo apt-get install -y curl
+<img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/haunt1.1.9.gif?raw=true"/>
 
-2) Make sure you have PYTHON3 installed
-    -> We need python3 to run this toolkit
-    -> If python3 is not installed, use this command:
+- Cloning the repo:
+```
+git clone https://github.com/Keyj33k/Hunter-Toolkit.git
+```
 
-    # sudo apt-get update && sudo apt-get full-upgrade -y
-    # sudo apt-get install python3 python3-pip
+### Now you need to ...
 
-3) Now you need to install the needed python modules/requirements
-    # pip install -r requirements.txt
+---
 
-4) If the steps above are done, then you are ready for running Hunter-Toolkit
-    # python3 gate.py
+- 1 )  Navigate to the req directory.
+
+```
+cd Hunter-Toolkit/req/
+```
+
+- 2 )  There is a file called INSTALLATION.txt.
+- 3 )  Open the file and follow the installation steps.
+
+### OR
+
+---
+
+- 1 ) Navigate to the Hunter-Toolkit directory.
+
+```
+cd Hunter-Toolkit
+```
+
+- 2 ) Type following command: 
+
+```
+bash installer
+```
+
+### Want to update the Hunter-Toolkit?
+
+---
+
+- 1 ) Navigate to the Hunter-Toolkit directory
+
+```
+cd Hunter-Toolkit
+```
+
+- 2 ) Type following command: 
+
+```
+bash updater
+```
+
+### Start the Hunter-Toolkit:
+
+---
+
+```
+python3 gate.py
+```
+
 
 ---------------
 | DISCLAIMER: |
