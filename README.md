@@ -54,7 +54,7 @@ GetStat                   >>     Get remote server status code
 ![hill](https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/haunt1.1.9.png?raw=true)
 
 
-# USAGE OF HUNTER:
+# USAGE OF HUNTER-TOOLKIT:
 
 <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/haunt1.1.9.gif?raw=true"/>
 
