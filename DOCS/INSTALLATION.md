@@ -86,6 +86,8 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
     ```
     bash updater
     ```
+    
+- Use Ctrl+C to return to the menu or exit the Hunter-Toolkit.
 
 ### DISCLAIMER: 
 
