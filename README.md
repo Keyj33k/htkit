@@ -122,17 +122,6 @@ python3 gate.py
 
 <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/bannerhaunting.gif?raw=true"/>
 
-
-### Info:
-
----
-
-- For exit: use Ctrl+C
-- If you have trouble with Get-HTTP-Header, maybe you does not have curl installed:
-```
-sudo apt-get install curl
-```
-
 ---
 
 <div id="profile">
