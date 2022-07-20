@@ -60,12 +60,11 @@ GetStat                   >>     Get remote server status code
 
 <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/bannerhaunting.gif?raw=true"/>
 
-
-### Info:
-
----
-
-- For exit: use Ctrl+C
+### Getting started:
+- Use the installation tutorial:
+```
+cat /reg/INSTALLATION.txt
+```
 
 ---
 
