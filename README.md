@@ -66,10 +66,6 @@ GetStat                   >>     Get remote server status code
 ---
 
 - For exit: use Ctrl+C
-- If you have trouble with Get-HTTP-Header, maybe you does not have curl installed:
-```
-sudo apt-get install curl
-```
 
 ---
 
