@@ -2,6 +2,11 @@
 |What's New?|
 =============
 
+21.07.22:
+---------
+- Upgraded gate.py and subdomain_scanner.py (define exiting method)
+- Moved Tutorial to DOCS
+
 19.07.22:
 ---------
 - Renamed Services
