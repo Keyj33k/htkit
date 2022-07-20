@@ -47,12 +47,6 @@ ExternalTools             >>     Most Used Tools
 GetStat                   >>     Get remote server status code
 ```
 
-### How the Hunter-Toolkit looks like?
-
----
-
-![hill](https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/haunt1.1.9.png?raw=true)
-
 ### Usage example: Identifying service behind an open port:
 
 ---
