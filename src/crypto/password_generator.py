@@ -56,7 +56,7 @@ class PasswordGenerator:
             numbers = "1234567890"
             lowers = "abcdefghijklmnopqrstuvwxyz"
             uppers = "ABVDEFGHIJKLMNOPQRSTUVWXYZ"
-            special = "§$%&/()=}[{]?!_;:"
+            special = "!$%&/()?{}][-_"
             mixer = numbers + lowers + uppers + special
             passw_result = random.sample(
                 mixer,
