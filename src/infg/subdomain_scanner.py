@@ -59,7 +59,7 @@ class SubdomainScanner:
 
                         for list_domains in subdomain:
                             uniformresourcelocator = f"http://{list_domains}.{self.uniformresourcelocator}"
-                            time.sleep(1)
+                            time.sleep(0.5)
 
                             try:
                                 requests.get(uniformresourcelocator)
@@ -75,7 +75,7 @@ class SubdomainScanner:
 
                         for list_domains in subdomain:
                             uniformresourcelocator = f"http://{list_domains}.{self.uniformresourcelocator}"
-                            time.sleep(1)
+                            time.sleep(0.5)
 
                             try:
                                 requests.get(uniformresourcelocator)
