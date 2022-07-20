@@ -116,6 +116,8 @@ bash updater
 python3 gate.py
 ```
 
+- Use Ctrl+C to return to the menu or exit the Hunter-Toolkit.
+
 ### Usage example: Identifying service behind an open port:
 
 ---
