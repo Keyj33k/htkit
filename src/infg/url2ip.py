@@ -60,8 +60,10 @@ class GetIPv4fromURL:
                 print(f"{w}[{y}-{w}] You need to enter a value like: google.com in example.")
                 print(chr(0xa))
                 input(f"{w}[{r}*{w}] Press enter key to continue")
+                break
             except socket.gaierror:
                 print(f"\n{w}[{y}-{w}] You need to enter a value like: google.com in example.")
                 print(chr(0xa))
                 input(f"{w}[{r}*{w}] Press any key to continue")
+                break
 
