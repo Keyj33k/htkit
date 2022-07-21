@@ -60,7 +60,7 @@ class BannerGrabber:
                         self.target_address,
                         self.target_port
                     ))
-                    socket_sock.settimeout(1)
+                    socket_sock.settimeout(5)
                     service = socket_sock.recv(1024).decode()
 
                 print(f"\n{w}[{g}+{w}] Start scanning {self.target_address} at {dtt.now()}")
