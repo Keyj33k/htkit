@@ -73,7 +73,7 @@ class WitcherPortscanner:
                         self.target_ipv4,
                         target
                     ))
-                    socket_sock.settimeout(1)
+                    socket_sock.settimeout(5)
                     
                     if final_result == 0:
                         try:
