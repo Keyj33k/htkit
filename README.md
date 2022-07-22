@@ -3,7 +3,6 @@
 # Project - Hunter - Toolkit:snake: 
 
 - An Easy To Use Pentesting Assistant For Information Gathering And More.
-- Written With Python3 For Linux.
 
 ### You Are One Keystroke Away From The Informations.
 
