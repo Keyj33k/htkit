@@ -1,4 +1,6 @@
-# Project - Hunter - Toolkit:snake: | Ver.:1.1.9
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;![version](https://img.shields.io/badge/Version-1.1.9-informational?style=flat&logo=&logoColor=white&color=blue) ![stars](https://img.shields.io/github/stars/Keyj33k/Hunter-Toolkit?style=social) ![forks](https://img.shields.io/github/forks/Keyj33k/Hunter-Toolkit?label=Forks&logo=&logoColor=white&color=blue) ![languages](https://img.shields.io/github/languages/count/Keyj33k/Hunter-Toolkit?style=social&logo=&logoColor=white&color=blue) 
+
+# Project - Hunter - Toolkit:snake: 
 
 - An Easy To Use Pentesting Assistant For Information Gathering And More.
 - Written With Python3 For Linux.
