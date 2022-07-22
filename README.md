@@ -11,7 +11,7 @@
 
 <a href="https://github.com/Keyj33k/Hunter/archive/refs/heads/main.zip"><img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/hunter1.0.7.png?raw=true" alt="banner"/></a>
 
-### Why using the Hunter-Toolkit?
+### :question: Why using the Hunter-Toolkit?
 
 ---
 
@@ -23,7 +23,7 @@
 - Maybe you are something missing, Then you can easily add your own service using the template or let me know about your ideas.
 
 
-### What the Hunter-Toolkit can do for you?
+### :sparkles: What the Hunter-Toolkit can do for you?
 
 ---
 
