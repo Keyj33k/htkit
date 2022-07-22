@@ -49,11 +49,11 @@ GetStat                   >>     Get remote server status code
 ```
 
 
-### Getting started:
+### :rocket:Getting started:
 
 ---
 
-- Please read the ![docs](https://github.com/Keyj33k/Hunter-Toolkit/blob/main/DOCS/INSTALLATION.md) to have full instructions for this project
+- :book:Please read the ![docs](https://github.com/Keyj33k/Hunter-Toolkit/blob/main/DOCS/INSTALLATION.md) to have full instructions for this project
 
 
 ### Usage example: Identifying service behind an open port:
@@ -62,7 +62,7 @@ GetStat                   >>     Get remote server status code
 
 <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/bannerhaunting.gif?raw=true"/>
 
-# NOTE:
+# :warning:NOTE:
 
 The following isn't some silly blah blah or anything. It's a serious warning.
 Always remember that port scanning etc. can be illegal if you don't have any
