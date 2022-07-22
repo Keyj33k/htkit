@@ -48,6 +48,11 @@ ExternalTools             >>     Most Used Tools
 GetStat                   >>     Get remote server status code
 ```
 
+
+### Getting started:
+- Please read the ![docs](https://github.com/Keyj33k/Hunter-Toolkit/blob/main/DOCS/INSTALLATION.md) to have full instructions for this project
+
+
 ### Usage example: Identifying service behind an open port:
 
 ---
