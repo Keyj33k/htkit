@@ -22,7 +22,7 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 
 ---
 
-### Manually Installation
+### Manually Installation (Debian-/based)
 
 1) Make sure you have CURL installed:<br>
     -> We need curl to get the http header from the server.<br>
@@ -56,8 +56,37 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
     ``` 
     pip install -r requirements.txt
     ```
+    
+### Installation (Termux)
+
+1) Make sure you have CURL installed:<br>
+    -> We need curl to get the http header from the server.<br>
+    -> If curl is not installed, use the following commands:
+    ``` 
+    pkg update -y && pkg install curl -y
+    ```
+
+2) Make sure you have PYTHON3 installed<br>
+    -> We need python3 to run this toolkit<br>
+    -> If python3 is not installed, use the following commands:
+    ``` 
+    pkg update -y && pkg install python3 -y
+    ``` 
    
-### Automated Installation
+3) Now you need to install the needed python modules/requirements
+    - Change path to the Hunter-Toolkit directory:
+    
+    ```
+    cd Hunter-Toolkit/req/
+    ```
+
+    - Install the requirements:   
+
+    ``` 
+    pip install -r requirements.txt
+    ```
+   
+### Automated Installation (Debian-/based)
 
 - Change path to the Hunter-Toolkit directory:
     
@@ -108,5 +137,6 @@ NOTE: Use Ctrl+C to return to the menu or exit the Hunter-Toolkit.
     -> I'm not responsible for your actions.
     -> Don't hack anyone without permissions.
     -> With great force follows great responsibility.
+
 
 
