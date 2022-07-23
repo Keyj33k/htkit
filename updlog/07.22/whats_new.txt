@@ -4,7 +4,7 @@
 
 23.07.22:
 ---------
-- added input option: ping count
+- IPSweep: added input option -> ping count
 
 21.07.22:
 ---------
