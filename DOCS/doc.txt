@@ -74,6 +74,8 @@ PyVer: 3.10.4
     	      is returned unchanged. 
               
     9) [PasswordGenerator] Generate Random Password
+        ∟► - Most pentesting techniques requires a test account. 
+           - For this reason the Hunter-Toolkit can help you to create a strong random password 
     	∟► - This tool will help you to create a strong password
     	    - The password contains the following characters:
     	    	∟► "1234567890"
