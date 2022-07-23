@@ -4,7 +4,6 @@ try:
     from datetime import datetime as dtt
     import time
     import socket
-
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -63,11 +62,13 @@ class BannerGrabber:
                     socket_sock.settimeout(5)
                     service = socket_sock.recv(1024).decode()
 
-                print(f"\n{w}[{g}+{w}] Start scanning {self.target_address} at {dtt.now()}")
+                print(f"\n{w}[{r}*{w}] Start scanning {self.target_address} at {dtt.now()}")
                 time.sleep(1.5)
                 print("=" * 65)
                 print(f"{w}[{g}+{w}] Port {self.target_port} -> {service}")
-                input(f"\n{w}[{r}*{w}] Press enter key to continue")
+                print("=" * 65)
+                print(chr(0xa))
+                input(f"{w}[{r}*{w}] Press enter key to continue")
                 break
             except socket.error as sockerr:
                 print(sockerr)
