@@ -47,7 +47,7 @@ class LinkCollector:
             if self.uniformresourcelocator == 'x' or self.uniformresourcelocator == 'exit':
                 break
 
-            print(f"{w}[{r}*{w}] Results:")
+            print(f"\n{w}[{r}*{w}] Results:")
             print("=" * 70)
 
             try:
