@@ -7,7 +7,6 @@ try:
     from phonenumbers import carrier as cr
     import phonenumbers as pnmb
     from termcolor import colored as cld
-    
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -53,7 +52,7 @@ class PhonenumberWhois:
             time_start = dtt.now()
 
             print("=" * 55)
-            print(f"{w}[{g}+{w}] Request\t\tResponse\n" + "=" * 55)
+            print(f"{w}[{r}*{w}] Request\t\tResponse\n" + "=" * 55)
 
             try:
                 phonenumber_val = pnmb.is_valid_number(pnmb.parse(self.target_phonenumber))
@@ -90,7 +89,7 @@ class PhonenumberWhois:
                 time_result = time_stop - time_start
 
                 print("=" * 55)
-                print(f"{w}[{g}+{w}] Job done in {time_result}")
+                print(f"{w}[{r}*{w}] Job done in {time_result}")
                 print("=" * 55)
                 print(chr(0xa))
                 input(f"{w}[{r}*{w}] Press enter key to continue")
