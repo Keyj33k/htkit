@@ -51,8 +51,7 @@ class PhonenumberWhois:
 
             time_start = dtt.now()
 
-            print("=" * 55)
-            print(f"{w}[{r}*{w}] Request\t\tResponse\n" + "=" * 55)
+            print(f"\n{w}[{r}*{w}] Request\t\tResponse\n" + "=" * 55)
 
             try:
                 phonenumber_val = pnmb.is_valid_number(pnmb.parse(self.target_phonenumber))
@@ -90,7 +89,6 @@ class PhonenumberWhois:
 
                 print("=" * 55)
                 print(f"{w}[{r}*{w}] Job done in {time_result}")
-                print("=" * 55)
                 print(chr(0xa))
                 input(f"{w}[{r}*{w}] Press enter key to continue")
                 break
