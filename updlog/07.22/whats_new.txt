@@ -2,6 +2,10 @@
 |What's New?|
 =============
 
+23.07.22:
+---------
+- added input option: ping count
+
 21.07.22:
 ---------
 - Upgraded gate.py and subdomain_scanner.py (define exiting method)
