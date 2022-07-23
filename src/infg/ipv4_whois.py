@@ -48,7 +48,7 @@ class IPv4Lookup:
                 break
 
             time_start = dtt.now()
-            print(f"{w}[{r}*{w}] Results:")
+            print(f"\n{w}[{r}*{w}] Results:")
 
             try:
                 response = requests.post(
