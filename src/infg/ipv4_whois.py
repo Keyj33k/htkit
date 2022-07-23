@@ -5,7 +5,6 @@ try:
     from termcolor import colored as cld
     import requests
     import os
-    
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -61,7 +60,7 @@ class IPv4Lookup:
 
                 for lookup in response:
                     for k, j in lookup.items():
-                        print(f"{w}[{g}+{w}]" + k, j)
+                        print(f"{w}[{g}+{w}] " + k, j)
 
                 time_stop = dtt.now()
                 time_result = time_stop - time_start
