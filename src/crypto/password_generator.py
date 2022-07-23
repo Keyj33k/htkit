@@ -4,7 +4,6 @@ try:
     from termcolor import colored as cld
     import random
     import os
-    
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -68,7 +67,7 @@ class PasswordGenerator:
             print(f"{w}[{g}+{w}] Your generated password: {finalpassword}")
             print("=" * 70)
             print(chr(0xa))
-            input(f"\n{w}[{g}+{w}] Press enter key to continue")
+            input(f"\n{w}[{r}*{w}] Press enter key to continue")
             break
 
 
