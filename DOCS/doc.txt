@@ -39,8 +39,6 @@ PyVer: 3.10.4
     	∟► - IPv4 whois will send a request to the ip-api.com api
     	      for getting informations about a given ipv4 address 
     	      like region, isp, lat, lon and more.
-    	    - You can get some more informations using: 
-    	      	∟► "https://github.com/Keyj33k/Hatake"
                 
     4) [BannerGrabber] Get Service Behind An Open Port
     	∟► - Banner grabber using the transmission control protocol
@@ -58,14 +56,14 @@ PyVer: 3.10.4
     	      subdomains.
     	    - You can easily choose your own wordlist by entering 
     	      the /path/to/wordlist or you can leave it empty 
-    	      for the default wordlist
+    	      for the default wordlist.
               
     7) [MySystem] Display System Informations
-    	∟► - Sometimes it is necessery to know how much a cpu or ram is utilized
+    	∟► - Sometimes it is necessery to know how much a cpu or ram is utilized.
     	    - This function can give you informations about the most needed 
-    	      system informations like disk, cpu or ram usage
+    	      system informations like disk, cpu or ram usage.
     	    - Use "x" or ctrl+c to exit system overview or let the magic happen 
-    	      by hitting the enter key  
+    	      by hitting the enter key.  
               
     8) [URL2IPv4] Extract IPv4 Address From URL
     	∟► - Easily get the ipv4 address from the given url
@@ -74,8 +72,8 @@ PyVer: 3.10.4
     	      is returned unchanged. 
               
     9) [PasswordGenerator] Generate Random Password
-        ∟► - Most pentesting techniques requires a test account. 
-           - For this reason the Hunter-Toolkit can help you to create a strong random password 
+        ∟► - Most pentesting techniques requires a test account. For this reason the 
+             Hunter-Toolkit can help you to create a strong random password.
     	∟► - This tool will help you to create a strong password
     	    - The password contains the following characters:
     	    	∟► "1234567890"
@@ -95,26 +93,26 @@ PyVer: 3.10.4
     11) [HTTPHeader] Display Remote Server HTTP Header
     	∟► - Thanks to the curl tool: Let's combine it with python and the result is 
     	      a simple and easy to use automation tool for getting the http header 
-    	      from any website
+    	      from any website.
     	    - A header normally contains the status code, the service (version) and 
-    	      the content type
-    	    - Just enter the target url and curl will do the job for us
+    	      the content type.
+    	    - Just enter the target url and curl will do the job for us.
             
     12) [HREFCollector] Extract HREF Attributes
-    	∟► - Sometimes it is useful to know what href attributes a website contains
+    	∟► - Sometimes it is useful to know what href attributes a website contains.
     	    - So we use the amazing request module: This function will send a 
     	      get request and the beautifulsoup4 module will evaluates the result and 
     	      will filter all the href attributes from the response. 
               
     13) [Ping] Send ICMP Packets For Getting Server Status
-    	∟► - There are many reasons to check if the target host is available or not
+    	∟► - There are many reasons to check if the target host is available or not.
     	    - Because this script using ping, we have detailed informations about the icmp 
-    	      request. What would we do without ping
+    	      request. What would we do without ping.
               
     14) [IPSweep] Scan Host Range For Active Devices
-    	∟► - IPSweep is a famous kind of tools for checking if a host is live or not
+    	∟► - IPSweep is a famous kind of tools for checking if a host is live or not.
     	    - Just enter the ipv4 address and this script will scan a range of possible
-    	      ip addresses in the local network for the reachability
+    	      ip addresses in the local network for the reachability.
               
     15) [ExternalTools] Most used tools.
     	∟► - This toolkit was not written to replace other amazing tools. Hunter is 
