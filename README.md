@@ -61,7 +61,7 @@ GetStat                   >>     Get remote server status code
 
 ---
 
-<img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/bannerhaunting.gif?raw=true"/>
+<img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/ipsdemo.gif?raw=true"/>
 
 # :warning: NOTE:
 
