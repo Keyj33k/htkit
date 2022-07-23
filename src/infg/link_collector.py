@@ -5,7 +5,6 @@ try:
     from pyfiglet import figlet_format
     from bs4 import BeautifulSoup
     import requests
-    
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -60,7 +59,7 @@ class LinkCollector:
 
                 for collected_links in soup.find_all("a"):
                     print(
-                        f" {w}[{g}+{w}] Href found -> ",
+                        f"{w}[{g}+{w}] Href found -> ",
                         collected_links.get('href')
                     )
 
@@ -77,7 +76,7 @@ class LinkCollector:
 
                 for collected_links in soup.find_all("a"):
                     print(
-                        f" {w}[{g}+{w}]Href found -> ",
+                        f"{w}[{g}+{w}] Href found -> ",
                         collected_links.get('href')
                     )
 
