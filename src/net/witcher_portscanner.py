@@ -4,7 +4,6 @@ try:
     from datetime import datetime as dtt
     from termcolor import colored as cld
     import socket
-    
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -53,9 +52,8 @@ class WitcherPortscanner:
             elif self.maximum_port == 0:
                 break
 
-            print("=" * 70)
             scan_start = dtt.now()
-            print(f"{w}[{g}+{w}] Started scanning at:\t{scan_start}")
+            print(f"\n{w}[{r}*{w}] Started scanning at:\t{scan_start}")
             print("=" * 70)
             time_start = dtt.now()
             print("Protocol\tPort\t\tStatus\t Service\n" + "-" * 70)
@@ -99,8 +97,7 @@ class WitcherPortscanner:
             needed_time = time_stop - time_start
 
             print("=" * 70)
-            print(f"{w}[{g}+{w}] Scanner done in {needed_time}!")
-            print(f"{w}=" * 70)
+            print(f"{w}[{r}*{w}] Scanner done in {needed_time}!")
             print(chr(0xa))
             input(f"{w}[{r}*{w}] Press enter key to continue")
             break
