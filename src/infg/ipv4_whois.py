@@ -48,7 +48,7 @@ class IPv4Lookup:
                 break
 
             time_start = dtt.now()
-            print(f"{w}[{g}+{w}] Results:")
+            print(f"{w}[{r}*{w}] Results:")
 
             try:
                 response = requests.post(
@@ -66,7 +66,7 @@ class IPv4Lookup:
                 time_result = time_stop - time_start
 
                 print("=" * 70)
-                print(f"{w}[{g}+{w}] Scanner done in {time_result}!")
+                print(f"{w}[{r}*{w}] Scanner done in {time_result}!")
                 print(chr(0xa))
                 input(f"{w}[{r}*{w}] Press enter key to continue")
                 break
