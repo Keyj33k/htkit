@@ -488,10 +488,15 @@ class HunterToolkit:
 
                 start_range = int(input(f"{w}[{r}*{w}] ({pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter, Start Range)>> "))
                 last_range = int(input(f"{w}[{r}*{w}] ({pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter, Last Range)>> "))
+                ping_count = str(input(f"{w}[{r}*{w}] ({pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter, Ping Count)>> "))
+                if ping_count == 'x' or ping_count == 'exit':
+                    print(f"{w}[{o}-{w}] Sorry, But command '{ping_count}' is invalid. Please use Ctrl+C to exit IPSweep!")
+
                 ipsweep = IPv4Sweep(
                     ipv4,
                     start_range,
-                    last_range
+                    last_range,
+                    ping_count
                 )
 
                 ipsweep.get_status()
