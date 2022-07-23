@@ -6,7 +6,6 @@ try:
     from pyfiglet import figlet_format
     from datetime import datetime
     import os
-    
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -58,7 +57,7 @@ class IPv4Sweep:
                             mod_ipv4_address[1] + "." + \
                             mod_ipv4_address[2] + "."
 
-        print(f"\n{w}[{g}+{w}] Started scanning at:\t{datetime.now()}")
+        print(f"\n{w}[{r}*{w}] Started scanning at:\t{datetime.now()}")
         print("=" * 70)
 
         start = datetime.now()
@@ -83,7 +82,7 @@ class IPv4Sweep:
         end = datetime.now()
 
         print("=" * 70)
-        print(f"{w}[{g}+{w}] Scanner done in {end - start}!")
+        print(f"{w}[{r}*{w}] Scanner done in {end - start}!")
         print("\033[0;37m=" * 70)
         print(chr(0xa))
         input(f"{w}[{r}*{w}] Press enter key to continue")
