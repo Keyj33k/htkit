@@ -99,6 +99,20 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
     ```
     bash installer
     ```
+    
+### Automated Installation (Termux)
+
+- Change path to the Hunter-Toolkit directory:
+    
+    ```
+    cd Hunter-Toolkit
+    ```
+
+- Run the installer:
+
+    ```
+    bash installer-termux
+    ```
 
 ### If the steps above are done, then you are ready for running the Hunter-Toolkit
 
@@ -108,7 +122,7 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
     python3 gate.py
     ``` 
   
-## Update the pentesting assistant:
+## Update the pentesting assistant (Debian-/based):
 
 - Change path to the Hunter-Toolkit directory and type:
 
@@ -120,6 +134,20 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 
     ```
     bash updater
+    ```
+    
+## Update the pentesting assistant (Termux):
+
+- Change path to the Hunter-Toolkit directory and type:
+
+    ```
+    cd Hunter-Toolkit
+    ```
+    
+- Run the updater
+
+    ```
+    bash updater-termux
     ```
 
 NOTE: Use Ctrl+C to return to the menu or exit the Hunter-Toolkit.
