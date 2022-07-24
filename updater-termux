@@ -1,0 +1,65 @@
+#!/bin/bash
+
+W="\033[0;37m"
+G="\033[0;32m"
+R="\033[0;31m"
+Y="\033[0;33m"
+
+cd ..
+
+printf "$W[$R*$W] Welcome to Hunter-Toolkit updater for Termux!\n"
+sleep 1.25
+printf "$W[$R*$W] Do you want to start the updater? y/n "
+read START
+
+if [[ $START == "y" || $START == "Y" ]]; then
+	printf "$W[$R*$W] Starting the updater ...\n"
+	sleep 1.25
+elif [[ $START == "n" || $START == "N" ]]; then
+	printf "$W[$R*$W] All right, thank you for choosing the Hunter-Toolkit!\n"
+	exit 0
+else
+	printf "$W[$R*$W] Invalid input, try again!\n"
+	exit 1
+fi
+
+printf "$W[$R*$W] Removing Hunter-Toolkit ...\n"
+sleep 1.25
+
+if [ -d "Hunter-Toolkit" ]; then
+	rm -rf Hunter-Toolkit
+fi
+
+printf "$W[$G+$W] Done.\n"
+sleep 1.25
+printf "$W[$R*$W] Check if git is installed ...\n"
+sleep 1.25
+
+if ! command -v git &> /dev/null; then
+	pkg update -y && pkg install git -y
+fi
+
+printf "$W[$G+$W] Done.\n"
+sleep 1.25
+printf "$W[$R*$W] Getting Hunter-Toolkit ...\n"
+
+git clone https://github.com/Keyj33k/Hunter-Toolkit.git || (printf "$W[$Y-$W] Failed getting Hunter-Toolkit!" && exit 1)
+
+printf "$W[$G+$W] Done.\n"
+sleep 1.25
+printf "$W[$R*$W] Do you want to start the Hunter-Toolkit? y/n "
+read CHOICE
+
+if [[ $CHOICE == "y" || $CHOICE == "Y" ]]; then
+        printf "$W[$R*$W] Starting the Hunter-Toolkit ...\n"
+        sleep 1.25
+        cd Hunter-Toolkit && python3 gate.py
+        exit 0
+elif [[ $CHOICE == "n" || $CHOICE == "N" ]]; then
+        printf "$W[$R*$W] All right, thank you for choosing the Hunter-Toolkit!\n"
+        exit 0
+else
+        printf "$W[$Y-$W] Invalid Input!\n"
+        exit 1
+fi
+
