@@ -57,7 +57,7 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
     pip install -r requirements.txt
     ```
     
-### Installation (Termux)
+### Manually Installation (Termux)
 
 1) Make sure you have CURL installed:<br>
     -> We need curl to get the http header from the server.<br>
