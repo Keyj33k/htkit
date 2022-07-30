@@ -6,12 +6,6 @@
 
 <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/installation.gif?raw=true"/>
 
-- Identifying Services Behind An Open Port:
-
----
-
-<img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/bannerhaunting.gif?raw=true"/>
-
 - Decrypt A String Easily Using MD5:
 
 ---
