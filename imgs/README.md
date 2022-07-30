@@ -29,5 +29,13 @@ https://www.md5online.org/md5-decrypt.html
 
 <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/hunterkali.png?raw=true"/>
 
+- The Hunter-Toolkit running on Termux:
+
+---
+
+<img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/huntermux.jpg?raw=true"/>
+
+
+
 
 
