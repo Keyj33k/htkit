@@ -14,9 +14,8 @@
 
 ---
 
-- Sometimes you need just one quick answer, But they are often reachable using scanners which need some time for many results.
+- Sometimes you just need a quick answer, but they are often reachable using scanners that take some time for many results. For quick access to many resources, the Hunter Toolkit can be your reliable assistant.
 - You have quick access to many resources like whois lookups, networking stuff and more.
-- Once in the menu: one Keystroke, copy and paste the target address and the pentesting assistant will show you the result quickly!
 - In a nutshell: Clear menu, quick access to many resources and an easy usage.
 - Maybe you are something missing, Then you can easily add your own service using the template or let me know about your ideas.
 
