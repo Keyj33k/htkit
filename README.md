@@ -79,12 +79,11 @@ permissions to do that. You can end up in jail for being a blackhat.
   <a href="https://www.python.org/">
     <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/pypy.jpeg?raw=true" alt="prfl1">
 
-### Tested on 5.16.0-kali7-amd64, 5.15.0-40-genericUbuntu and Termux-0.118.0  
+## Tested on 5.16.0-kali7-amd64, 5.15.0-40-genericUbuntu and Termux-0.118.0  
     
-```
-Something is missing? Suggestions for improvement? 
-Please let me know about your ideas! You can help to make the Hunter-Toolkit better.
+### Something is missing? Suggestions for improvement? 
+### Please let me know about your ideas! You can help to make the Hunter-Toolkit better.
 
-Thank You For Your Time!
-~ Keyjeek
-```
+### Thank You For Your Time!
+### ~ Keyjeek
+
