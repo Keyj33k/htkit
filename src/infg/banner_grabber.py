@@ -64,9 +64,9 @@ class BannerGrabber:
 
                 print(f"\n{w}[{r}*{w}] Start scanning {self.target_address} at {dtt.now()}")
                 time.sleep(1.5)
-                print(f"{r}=" * 65)
+                print(f"{r}=" * 70)
                 print(f"{w}[{g}+{w}] Port {self.target_port} {r}->{w} {service}")
-                print(f"{r}=" * 65)
+                print(f"{r}=" * 70)
                 print(chr(0xa))
                 input(f"{w}[{r}*{w}] Press enter key to continue")
                 break
