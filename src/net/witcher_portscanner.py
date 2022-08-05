@@ -53,10 +53,11 @@ class WitcherPortscanner:
             elif self.maximum_port == 0:
                 break
 
-            scan_start = dtt.now()
-            print(f"\n{w}[{r}*{w}] Started scanning at{r}:{w}\t{scan_start}")
+            print(f"\n{w}[{r}*{w}] Started scanning at{r}:{w}\t{dtt.now()}")
             print(f"{r}=" * 70)
+            
             time_start = dtt.now()
+            
             print(f"{w}Protocol\tPort\t\tStatus\t Service\n" + "-" * 70)
 
             try:
