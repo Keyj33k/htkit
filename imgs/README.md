@@ -10,7 +10,7 @@
 
 ---
 
-<img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/huntdemo.gif?raw=true" alt="htdemo"/></a>
+<img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/dem.gif?raw=true" alt="htdemo"/></a>
 
 ### :iphone: HT On Termux:
 
