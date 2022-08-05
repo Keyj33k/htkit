@@ -133,6 +133,13 @@ PyVer: 3.10.4
              any remote server.
         ∟► - All you need to do is to enter the target address and GetStat will display 
              you the status code from the given address.
+             
+    16) [GetMail] Extract email addresses from URL
+        ∟► - GetMail will help you to extract all email addresses from a website 
+             using a given url
+        ∟► - This service will send a request for the url content and will extract 
+             the email addresses from the response (source code) and list them in the output 
+        
     
     
 ---------------
