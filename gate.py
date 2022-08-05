@@ -66,7 +66,7 @@ except ImportError:
 #   Author  :   Keyjeek                   #
 #   Contact :   nomotikag33n@gmail.com    #
 #   Github  :   @Keyj33k                  #
-#   Version :   1.1.9                     #
+#   Version :   1.1.10                    #
 #                                         #
 # # # # # # # # # # # # # # # # # # # # # #
 
@@ -91,32 +91,22 @@ class HunterToolkit:
     def banner():
         print(cld(pfgt.figlet_format("Hunter", font="poison"), "white"))
         print(f" {r}<{w} by{r}@{w}keyjeek {r}> {o}Happy Hunting!")
-        print(f" {r}<{w} contact{r}:{w}nomotikag33n{r}@{w}gmail{r}.{w}com {r}>{w} Ver{r}.:{w}1{r}.{w}1{r}.{w}9")
+        print(f" {r}<{w} contact{r}:{w}nomotikag33n{r}@{w}gmail{r}.{w}com {r}>{w} Ver{r}.:{w}1{r}.{w}1{r}.{w}10")
         print(f"\n {r}[{w}*{r}] {w}Hunter {r}-{w} Penetration Testing Assistant{r},\n\t\t{w}Information Gathering And More{r}.")
 
     @staticmethod
     def menu():
         print(f"{r}=" * 70)
-        print(f"{r}[{w}0{r}]{w} Clear Screen")
-        print(f"{r}[{w}1{r}]{w} Witcher {r}>>{w} Port Scanner")
-        print(f"{r}[{w}2{r}]{w} MD5Crypt {r}>>{w} MD5 Encryption")
-        print(f"{r}[{w}3{r}]{w} WhoisIPv4 {r}>>{w} IPv4 Whois Lookup")
-        print(f"{r}[{w}4{r}]{w} BannerGrabber {r}>>{w} Get Service Behind An Open Port")
-        print(f"{r}[{w}5{r}]{w} B64Crypt {r}>>{w} En{r}-{w} and Decryption Used Base64")
-        print(f"{r}[{w}6{r}]{w} WhoisPhonenumber {r}>>{w} Phonenumber Whois Lookup")
-        print(f"{r}[{w}7{r}]{w} SubdomainScanner {r}>>{w} Scan For Subdomains From URL")
-        print(f"{r}[{w}8{r}]{w} Whoami {r}>>{w} Display Private IPv4 Address{r},{w} MAC Address etc")
-        print(f"{r}[{w}9{r}]{w} MySystem {r}>>{w} Display System Informations")
-        print(f"{r}[{w}10{r}]{w} URL2IPv4 {r}>>{w} Extract IPv4 Address From URL")
-        print(f"{r}[{w}11{r}]{w} PasswordGenerator {r}>>{w} Generate Random Password")
-        print(f"{r}[{w}12{r}]{w} URLWhois {r}>>{w} URL Whois Lookup")
-        print(f"{r}[{w}13{r}]{w} HTTPHeader {r}>>{w} Display Remote Server HTTP Header")
-        print(f"{r}[{w}14{r}]{w} HREFCollector {r}>>{w} Extract HREF Attributes")
-        print(f"{r}[{w}15{r}]{w} Ping {r}>>{w} Send ICMP Packets For Getting Server Status")
-        print(f"{r}[{w}16{r}]{w} IPSweep {r}>>{w} Scan Host Range For Active Devices")
-        print(f"{r}[{w}17{r}]{w} ExternalTools {r}>>{w} Most Used Tools")
-        print(f"{r}[{w}18{r}]{w} GetStat {r}>>{w} Get Remote Server Status Code")
-        print(f"{r}[{w}19{r}]{w} GetMail {r}>>{w} Extract Email Addresses From URL")
+        print(f"{r}[{w}0{r}]{w} Clear Screen\t\t{r}[{w}10{r}]{w} Extract IPv4 From URL")
+        print(f"{r}[{w}1{r}]{w} Port Scanner\t\t{r}[{w}11{r}]{w} Password Generator")
+        print(f"{r}[{w}2{r}]{w} MD5 Encryption\t\t{r}[{w}12{r}]{w} Whois URL")
+        print(f"{r}[{w}3{r}]{w} Whois IPv4\t\t\t{r}[{w}13{r}]{w} Get HTTP Header")
+        print(f"{r}[{w}4{r}]{w} Banner Grabber\t\t{r}[{w}14{r}]{w} HREF Collector")
+        print(f"{r}[{w}5{r}]{w} B64 En-/Decrypt\t\t{r}[{w}15{r}]{w} Ping")
+        print(f"{r}[{w}6{r}]{w} Whois Phonenumber\t\t{r}[{w}16{r}]{w} IPSweep")
+        print(f"{r}[{w}7{r}]{w} Subdomain Scanner\t\t{r}[{w}17{r}]{w} External Tools")
+        print(f"{r}[{w}8{r}]{w} Whoami\t\t\t{r}[{w}18{r}]{w} Get Status Code")
+        print(f"{r}[{w}9{r}]{w} System Overview\t\t{r}[{w}19{r}]{w} Extract Email Addresses from URL")
         print(f"{r}[{w}99{r}]{w} Exit")
         print(f"{r}=" * 70)
 
