@@ -91,7 +91,7 @@ class HunterToolkit:
     def banner():
         print(cld(pfgt.figlet_format("Hunter", font="poison"), "white"))
         print(f" {r}<{w} by{r}@{w}keyjeek {r}> {o}Happy Hunting!")
-        print(f" {r}<{w} contact{r}:{w}nomotikag33n{r}@{w}gmail{r}.{w}com {r}>{w} Ver{r}.:{w}1.1.9")
+        print(f" {r}<{w} contact{r}:{w}nomotikag33n{r}@{w}gmail{r}.{w}com {r}>{w} Ver{r}.:{w}1{r}.{w}1{r}.{w}9")
         print(f"\n {r}[{w}*{r}] {w}Hunter {r}-{w} Penetration Testing Assistant{r},\n\t\t{w}Information Gathering And More{r}.")
 
     @staticmethod
