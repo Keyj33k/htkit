@@ -2,6 +2,11 @@
 |What's New?|
 =============
 
+06.08.22:
+---------
+- Redesigned menu for a clearer UI
+- Updated HT from version 1.1.9 to 1.1.10
+
 05.08.22:
 ---------
 - The Hunter-Toolkit received a new service: GetMail!
