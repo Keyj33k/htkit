@@ -2,7 +2,7 @@
 
 # Project - Hunter - Toolkit:snake: 
 
-- An Easy To Use Pentesting Assistant For Information Gathering And More.
+- An Easy To Use, Reliable And Practical Assistant For A Stress-Free Working Process.
 
 ### You Are One Keystroke Away From The Informations.
 
