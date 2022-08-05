@@ -82,6 +82,15 @@ permissions to do that. You can end up in jail for being a blackhat.
 --- 
 ### Tested on 5.18.0-kali7-amd64, 5.15.0-43-genericUbuntu, Termux-4.9.227 and WSL1-4.4.0 
 ---
+
+## :rocket: Stay up to date on Twitter and support the Hunter-Toolkit:
+
+<div id="badges">
+  <a href="https://twitter.com/Keyj33k/media">
+    <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter Badge"/>
+  </a>
+</div>
+
     
 Something is missing? Suggestions for improvement? 
 Please let me know about your ideas! You can help to make the Hunter-Toolkit better.
