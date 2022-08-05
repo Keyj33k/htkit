@@ -91,7 +91,8 @@ permissions to do that. You can end up in jail for being a blackhat.
   </a>
 </div>
 
-    
+<p>
+  
 Something is missing? Suggestions for improvement? 
 Please let me know about your ideas! You can help to make the Hunter-Toolkit better.
 ### Thank You For Your Time!
