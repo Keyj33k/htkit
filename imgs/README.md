@@ -16,10 +16,10 @@
 
 ---
 
-<img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/huntermux.png?raw=true" alt="httermux"/></a>
+<img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/httermux.jpg?raw=true" alt="httermux"/></a>
 
 ### :computer: HT On Kali:
 
 ---
 
-<img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/hunterkali.png?raw=true" alt="htkali"/></a>
+<img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/htkali.png?raw=true" alt="htkali"/></a>
