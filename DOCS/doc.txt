@@ -161,7 +161,7 @@ PyVer: 3.10.4
 | TESTED: |
 -----------
 
-    -> Tested on 5.16.0-kali7-amd64, 5.15.0-41-genericUbuntu and Termux-0.118.0
+    -> Tested on 5.18.0-kali7-amd64, 5.15.0-43-genericUbuntu, Termux-4.9.227 and WSL1-4.4.0
 
 
 
