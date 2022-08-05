@@ -45,6 +45,7 @@ Ping                      >>     Send ICMP Packets For Getting Server Status
 IPSweep                   >>     Scan Host Range For Active Devices
 ExternalTools             >>     Most Used Tools
 GetStat                   >>     Get remote server status code
+GetMail                   >>     Extract email addresses from URL
 ```
 
 
