@@ -87,7 +87,7 @@ Tested on 5.18.0-kali7-amd64, 5.15.0-43-genericUbuntu, Termux-4.9.227 and WSL1-4
     
 ---
 
-## :rocket: Stay up to date on Twitter and support the Hunter-Toolkit:
+### :rocket: Stay up to date on Twitter and support the Hunter-Toolkit:
 
 <div id="badges">
   <a href="https://twitter.com/Keyj33k/media">
