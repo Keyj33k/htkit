@@ -95,9 +95,3 @@ Tested on 5.18.0-kali7-amd64, 5.15.0-43-genericUbuntu, Termux-4.9.227 and WSL1-4
   </a>
 </div>
 
-<p>
-  
-### Thank You For Your Time!
-    
-~ Keyjeek
-
