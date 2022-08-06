@@ -79,11 +79,11 @@ permissions to do that. You can end up in jail for being a blackhat.
   <a href="https://www.python.org/">
     <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/pypy.jpeg?raw=true" alt="prfl1">
 
---- 
+``` 
     
 Tested on 5.18.0-kali7-amd64, 5.15.0-43-genericUbuntu, Termux-4.9.227 and WSL1-4.4.0 
     
----
+```
 
 ## :rocket: Stay up to date on Twitter and support the Hunter-Toolkit:
 
