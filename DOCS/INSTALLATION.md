@@ -4,6 +4,8 @@
 
 ### INSTALLATION/USAGE: 
 
+---
+
 <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/installation.gif?raw=true"/>
 
 ---
