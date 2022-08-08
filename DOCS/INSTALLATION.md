@@ -1,6 +1,6 @@
 # Thank you for choosing Hunter-Toolkit!
 
-## INSTALLATION/USAGE: 
+### INSTALLATION/USAGE: 
 
 <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/installation.gif?raw=true"/>
 
