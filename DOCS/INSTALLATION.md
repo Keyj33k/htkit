@@ -1,14 +1,5 @@
 # Thank you for choosing Hunter-Toolkit!
 
-### Details: 
-
----
-
-Author: Keyjeek<br>
-Since: June, 21<br>
-Date: 20.07.22<br>
-PyVer: 3.10.4<br>
-
 ## INSTALLATION/USAGE: 
 
 <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/installation.gif?raw=true"/>
