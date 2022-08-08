@@ -1,23 +1,38 @@
-![version](https://img.shields.io/badge/Version-1.1.10-informational?style=flat&logo=&logoColor=white&color=red) ![stars](https://img.shields.io/github/stars/Keyj33k/Hunter-Toolkit?style=social) ![forks](https://img.shields.io/github/forks/Keyj33k/Hunter-Toolkit?label=Forks&logo=&logoColor=white&color=blue) ![languages](https://img.shields.io/github/languages/count/Keyj33k/Hunter-Toolkit?style=social&logo=&logoColor=white&color=blue) ![issues](https://img.shields.io/github/last-commit/Keyj33k/Hunter-Toolkit?style=flat&logo=&logoColor=white&color=blue) ![platform](https://img.shields.io/badge/Platform-Linux-informational?style=flat&logo=&logoColor=white&color=green) 
+<div align="center">
 
 # Project - Hunter - Toolkit:snake: 
 
-- An Easy To Use, Reliable And Practical Assistant For A Stress-Free Working Process.
+An Easy To Use, Reliable And Practical Assistant For A Stress-Free Working Process.
+  
+</div>
 
-### You Are One Keystroke Away From The Informations.
+<div align="center">
+  
+### You Are One Keystroke Away From The Informations ...
+  
+</div>
 
----
+<div align="center">
+  <a href="https://github.com/Keyj33k/Hunter/archive/refs/heads/main.zip"><img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/hunter1.0.7.png?raw=true" alt="banner"/></a>
+</div>
 
-<a href="https://github.com/Keyj33k/Hunter/archive/refs/heads/main.zip"><img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/hunter1.0.7.png?raw=true" alt="banner"/></a>
+<br>
+
+<div align="center">
+  
+![version](https://img.shields.io/badge/Version-1.1.10-informational?style=flat&logo=&logoColor=white&color=red) ![stars](https://img.shields.io/github/stars/Keyj33k/Hunter-Toolkit?style=social) ![forks](https://img.shields.io/github/forks/Keyj33k/Hunter-Toolkit?label=Forks&logo=&logoColor=white&color=blue) ![languages](https://img.shields.io/github/languages/count/Keyj33k/Hunter-Toolkit?style=social&logo=&logoColor=white&color=blue) ![issues](https://img.shields.io/github/last-commit/Keyj33k/Hunter-Toolkit?style=flat&logo=&logoColor=white&color=blue) ![platform](https://img.shields.io/badge/Platform-Linux-informational?style=flat&logo=&logoColor=white&color=green) 
+
+</div>
 
 ### :question: Why using the Hunter-Toolkit?
 
 ---
 
-- Sometimes you just need a quick answer, but they are often reachable using scanners that take some time for many results. For quick access to many resources, the Hunter Toolkit can be your reliable assistant.
-- You have quick access to many resources like whois lookups, networking stuff and more.
-- In a nutshell: Clear menu, quick access to many resources and an easy usage.
-- Maybe you are something missing, Then you can easily add your own service using the template or let me know about your ideas.
+- Sometimes you just need a quick answer, But they are often reachable using scanners that take some time for many results. For quick access to many resources, This helper can be your reliable assistant.
+- You're often losing the overview of your workspace, Because of too much open consoles just to have always a quick access to many resources? At this point, The Hunter-Toolkit can help you to keep track of your working area.
+- This toolkit gives you quick and easy access to many resources such as information gathering, Networking and cryptography tools.
+- Maybe you are something missing? The Pentesting Assistant will help you to create your own custom modules to extend this helper easily using the module template.
+- You don't have to search long for the tools you need. The pentesting assistant will always give you a clear overview of all available services, To save your time constantly.
 
 
 ### :sparkles: What the Hunter-Toolkit can do for you?
@@ -48,7 +63,6 @@ GetStat                   >>     Get remote server status code
 GetMail                   >>     Extract email addresses from URL
 ```
 
-
 ### :rocket: Getting started:
 
 ---
@@ -56,11 +70,13 @@ GetMail                   >>     Extract email addresses from URL
 - :book: Please read the ![docs](https://github.com/Keyj33k/Hunter-Toolkit/blob/main/DOCS/INSTALLATION.md) to have full instructions for this project
 
 
-### Usage example: Identifying service behind an open port:
+### :movie_camera: Usage example: Identifying service version behind an open port:
 
 ---
 
-<img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/dem.gif?raw=true"/>
+<div align="center">
+  <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/dem.gif?raw=true"/>
+</div>
 
 # :warning: NOTE:
 
@@ -84,16 +100,18 @@ permissions to do that. You can end up in jail for being a blackhat.
 ---
 
 <div align="center">
-  <p>
-    Tested on 5.18.0-kali7-amd64, 5.15.0-43-genericUbuntu, Termux-4.9.227 and WSL1-4.4.0 
-  </p>
+
+### Tested on 5.18.0-kali7-amd64, 5.15.0-43-genericUbuntu, Termux-4.9.227 and WSL1-4.4.0 
+
 </div>
 
 ---
 
 
 <div id="badges" align="center">
-  <p> :rocket: Stay up to date on Twitter and support the Hunter-Toolkit: </p>
+  
+   ### :rocket: Stay up to date on Twitter and support the Hunter-Toolkit:
+  
   <a href="https://twitter.com/Keyj33k/media">
     <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter Badge"/>
   </a>
