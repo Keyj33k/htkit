@@ -42,25 +42,25 @@ An Easy To Use, Reliable And Practical Assistant For A Stress-Free Working Proce
 ```
                     [  Hunter-Toolkit Services  ]   
 ==========================================================================
-Witcher                   >>     Port Scanner
-MD5Crypt                  >>     MD5 Encryption
-WhoisIPv4                 >>     IPv4 Whois Lookup
-BannerGrabber             >>     Get Service Behind An Open Port
-B64Crypt                  >>     En- and Decryption Used Base64
-WhoisPhonenumber          >>     Phonenumber Whois Lookup
-SubdomainScanner          >>     Scan For Subdomains From URL
-Whoami                    >>     Display Private IPv4 Address, MAC Address etc
-MySystem                  >>     Display System Informations
-URL2IPv4                  >>     Extract IPv4 Address From URL
-PasswordGenerator         >>     Generate Random Password
-URLWhois                  >>     URL Whois Lookup
-HTTPHeader                >>     Display Remote Server HTTP Header
-HREFCollector             >>     Extract HREF Attribute
-Ping                      >>     Send ICMP Packets For Getting Server Status
-IPSweep                   >>     Scan Host Range For Active Devices
-ExternalTools             >>     Most Used Tools
-GetStat                   >>     Get remote server status code
-GetMail                   >>     Extract email addresses from URL
+Witcher              >>     Port Scanner
+MD5Crypt             >>     MD5 Encryption
+WhoisIPv4            >>     IPv4 Whois Lookup
+BannerGrabber        >>     Get Service Behind An Open Port
+B64Crypt             >>     En- and Decryption Used Base64
+WhoisPhonenumber     >>     Phonenumber Whois Lookup
+SubdomainScanner     >>     Scan For Subdomains From URL
+Whoami               >>     Display Private IPv4 Address, MAC Address etc
+MySystem             >>     Display System Informations
+URL2IPv4             >>     Extract IPv4 Address From URL
+PasswordGenerator    >>     Generate Random Password
+URLWhois             >>     URL Whois Lookup
+HTTPHeader           >>     Display Remote Server HTTP Header
+HREFCollector        >>     Extract HREF Attribute
+Ping                 >>     Send ICMP Packets For Getting Server Status
+IPSweep              >>     Scan Host Range For Active Devices
+ExternalTools        >>     Most Used Tools
+GetStat              >>     Get remote server status code
+GetMail              >>     Extract email addresses from URL
 ```
 
 ### :rocket: Getting started:
