@@ -28,7 +28,7 @@ An Easy To Use, Reliable And Practical Assistant For A Stress-Free Working Proce
 
 ---
 
-- Sometimes you just need a quick answer, But they are often reachable using scanners that take some time for many results. For quick access to many resources, This helper can be your reliable assistant.
+- Sometimes you just need a quick answer, But they are often reachable using scanners that take some time for many results. For quick access to many resources, This helper can be your reliable assistant with focus on information gathering.
 - You're often losing the overview of your workspace, Because of too much open consoles just to have always a quick access to many resources? At this point, The Hunter-Toolkit can help you to keep track of your working area.
 - This toolkit gives you quick and easy access to many resources such as information gathering, Networking and cryptography tools.
 - Maybe you are something missing? The Pentesting Assistant will help you to create your own custom modules to extend this helper easily using the module template.
