@@ -17,6 +17,34 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 
 ---
 
+### Automated Installation (Debian-/based)
+
+- Change path to the Hunter-Toolkit directory:
+    
+    ```
+    cd Hunter-Toolkit
+    ```
+
+- Run the installer:
+
+    ```
+    bash installer
+    ```
+    
+### Automated Installation (Termux)
+
+- Change path to the Hunter-Toolkit directory:
+    
+    ```
+    cd Hunter-Toolkit
+    ```
+
+- Run the installer:
+
+    ```
+    bash installer-termux
+    ```
+
 ### Manually Installation (Debian-/based)
 
 1) Make sure you have CURL installed:<br>
@@ -79,34 +107,6 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 
     ``` 
     pip install -r requirements.txt
-    ```
-   
-### Automated Installation (Debian-/based)
-
-- Change path to the Hunter-Toolkit directory:
-    
-    ```
-    cd Hunter-Toolkit
-    ```
-
-- Run the installer:
-
-    ```
-    bash installer
-    ```
-    
-### Automated Installation (Termux)
-
-- Change path to the Hunter-Toolkit directory:
-    
-    ```
-    cd Hunter-Toolkit
-    ```
-
-- Run the installer:
-
-    ```
-    bash installer-termux
     ```
 
 ### If the steps above are done, then you are ready for running the Hunter-Toolkit
