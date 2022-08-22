@@ -45,7 +45,6 @@ try:
     import pwd
     import re
     import os
-    
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -90,8 +89,7 @@ class HunterToolkit:
     @staticmethod
     def banner():
         print(cld(pfgt.figlet_format("Hunter", font="poison"), "white"))
-        print(f" {r}<{w} by{r}@{w}keyjeek {r}> {o}Happy Hunting!")
-        print(f" {r}<{w} contact{r}:{w}nomotikag33n{r}@{w}gmail{r}.{w}com {r}>{w} Ver{r}.:{w}1{r}.{w}1{r}.{w}10")
+        print(f" {r}<{w} by{r}@{w}keyjeek {r}> {o}Happy Hunting! {r}< {w}Ver{r}.:{w}1{r}.{w}1{r}.{w}9 {r}>")
         print(f"\n {r}[{w}*{r}] {w}Hunter {r}-{w} Penetration Testing Assistant{r},\n\t\t{w}Information Gathering And More{r}.")
 
     @staticmethod
