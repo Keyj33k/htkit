@@ -2,6 +2,10 @@
 |What's New?|
 =============
 
+22.08.22:
+---------
+- Removed parts of the banner for a better design
+
 06.08.22:
 ---------
 - Redesigned menu for a clearer UI
