@@ -108,12 +108,3 @@ permissions to do that. You can end up in jail for being a blackhat.
 ---
 
 
-<div id="badges" align="center">
-  
-   ### :rocket: Stay up to date on Twitter and support the Hunter-Toolkit:
-  
-  <a href="https://twitter.com/Keyj33k/media">
-    <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter Badge"/>
-  </a>
-</div>
-
