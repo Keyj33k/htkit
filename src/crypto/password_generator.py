@@ -3,6 +3,7 @@
 try:
     from termcolor import colored as cld
     import random
+    import string
     import os
 except ImportError:
     raise RuntimeError("""
@@ -15,18 +16,7 @@ except ImportError:
     "pip3 install -r requirements.txt" 
 
     You will find this file in the req directory.
-
-
     """)
-    
-# # # # # # # # # # # # # # # # # # # # # #
-#                                         #
-#   Author  :   Keyjeek                   #
-#   Contact :   nomotikag33n@gmail.com    #
-#   Github  :   @Keyj33k                  #
-#   Version :   1.1.9                     #
-#                                         #
-# # # # # # # # # # # # # # # # # # # # # #
 
 w = "\033[0;37m"
 g = "\033[0;32m"
@@ -36,10 +26,7 @@ y = "\033[0;33m"
 
 class PasswordGenerator:
 
-    def __init__(
-            self,
-            password_length: int
-    ):
+    def __init__(self, password_length: int):
         self.password_length = password_length
 
     def main(self):
@@ -48,26 +35,24 @@ class PasswordGenerator:
                 break
             elif self.password_length <= 7:
                 print(f"{w}[{y}-{w}] Your password should be always bigger than eight characters{r}.")
+
                 break
 
-            numbers = "1234567890"
-            lowers = "abcdefghijklmnopqrstuvwxyz"
-            uppers = "ABVDEFGHIJKLMNOPQRSTUVWXYZ"
+            digits = string.digits
+            lowers = string.ascii_lowercase
+            uppers = string.ascii_uppercase
             special = "!$%&/()?{}][-_"
-            mixer = numbers + lowers + uppers + special
-            passw_result = random.sample(
-                mixer,
-                self.password_length
-            )
-            finalpassword = ''.join(passw_result)
+            mixer = digits + lowers + uppers + special
+            passw_result = random.sample(mixer, self.password_length)
+            final_password = ''.join(passw_result)
 
             print(f"{r}=" * 70)
-            print(f"{w}[{g}+{w}] Your generated password{r}:{w} {finalpassword}")
+            print(f"{w}[{g}+{w}] Your generated password{r}:{w} {final_password}")
             print(f"{r}=" * 70)
             print(chr(0xa))
             input(f"\n{w}[{r}*{w}] Press enter key to continue")
-            break
 
+            break
 
 
 
