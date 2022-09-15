@@ -15,18 +15,7 @@ except ImportError:
     "pip3 install -r requirements.txt" 
     
     You will find this file in the req directory.
-    
-    
     """)
-
-# # # # # # # # # # # # # # # # # # # # # #
-#                                         #
-#   Author  :   Keyjeek                   #
-#   Contact :   nomotikag33n@gmail.com    #
-#   Github  :   @Keyj33k                  #
-#   Version :   0.0.1                     #
-#                                         #
-# # # # # # # # # # # # # # # # # # # # # #
 
 w = "\033[0;37m"
 g = "\033[0;32m"
@@ -36,10 +25,7 @@ y = "\033[0;33m"
 
 class EmailExtractor:
 
-    def __init__(
-            self,
-            uniformresourcelocator: str
-    ):
+    def __init__(self, uniformresourcelocator: str):
         self.uniformresourcelocator = uniformresourcelocator
 
     def extract_mail_address(self):
@@ -53,19 +39,18 @@ class EmailExtractor:
             try:
                 content = requests.get(self.uniformresourcelocator).content
 
-                for url in re.finditer(
-                        email_address_regex,
-                        content.decode()
-                ):
+                for url in re.finditer(email_address_regex, content.decode()):
                     addr = url.group()
-
                     print(f"{w}[{g}+{w}] Email address found!\t{addr}")
+
                 break
             except requests.exceptions.MissingSchema:
                 print(f"{w}[{y}-{w}] Invalid format{r}.{w} Did you mean 'http://{self.uniformresourcelocator}/'{r}?{w}")
+
                 break
             except Exception as excerr:
                 print(excerr)
+
                 break
 
         end_time = datetime.now()
