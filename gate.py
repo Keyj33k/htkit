@@ -1,17 +1,5 @@
 #!/usr/bin/env python3
 
-#
-# 誰も隠すことはできません
-#
-# ▓▓ __\«\_/»/__ ▓▓
-# ▓▓------☼------▓▓
-# /|{ (@) ^ (@) }|\
-# |||(○_/♦|♦\_○)|||
-# |||\((▼▼▼▼▼))/|||
-# /|||\\▼▲▲▲▼//|||\
-#
-#
-
 try:
     from src.net.check_host_availability import CheckHostAvailability
     from src.crypto.password_generator import PasswordGenerator
@@ -56,8 +44,6 @@ except ImportError:
     "pip3 install -r requirements.txt" 
 
     You will find this file in the req directory.
-
-
     """)
     
 # # # # # # # # # # # # # # # # # # # # # #
@@ -65,7 +51,7 @@ except ImportError:
 #   Author  :   Keyjeek                   #
 #   Contact :   nomotikag33n@gmail.com    #
 #   Github  :   @Keyj33k                  #
-#   Version :   1.1.10                    #
+#   Version :   1.1.11                    #
 #                                         #
 # # # # # # # # # # # # # # # # # # # # # #
 
@@ -80,16 +66,13 @@ o = "\033[0;93m"
 
 class HunterToolkit:
 
-    def __init__(
-            self,
-            menu_option_choice: int
-    ):
+    def __init__(self, menu_option_choice: int):
         self.menu_option_choice = menu_option_choice
 
     @staticmethod
     def banner():
         print(cld(pfgt.figlet_format("Hunter", font="poison"), "white"))
-        print(f" {r}<{w} by{r}@{w}keyjeek {r}> {o}Happy Hunting! {r}< {w}Ver{r}.:{w}1{r}.{w}1{r}.{w}10 {r}>")
+        print(f" {r}<{w} by{r}@{w}keyjeek {r}> {o}Happy Hunting! {r}< {w}Ver{r}.:{w}1{r}.{w}1{r}.{w}11 {r}>")
         print(f"\n {r}[{w}*{r}] {w}Hunter {r}-{w} Penetration Testing Assistant{r},\n\t\t{w}Information Gathering And More{r}.")
 
     @staticmethod
@@ -112,10 +95,7 @@ class HunterToolkit:
     def my_system():
         try:
             while True:
-                print(cld(figlet_format(
-                    "MySystem",
-                    font="bulbhead"
-                ), "yellow"))
+                print(cld(figlet_format("MySystem", font="bulbhead"), "yellow"))
 
                 continue_or_exit = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} Enter to continue{r},{w} 'x' to exit{r})>>{o} "))
                 start_time = dtt.now()
@@ -228,76 +208,50 @@ class HunterToolkit:
         except PermissionError as permerr:
             print(permerr)
 
-        # input(f"\n{w}[{r}*{w}]Press enter key to continue")
-
     def hunter_gate(self):
         try:
             if self.menu_option_choice == 0:
                 call(["clear"])
             elif self.menu_option_choice == 1:
-                print(cld(figlet_format(
-                    "Witcher",
-                    font="bulbhead"
-                ), "yellow"))
-
+                print(cld(figlet_format("Witcher", font="bulbhead"), "yellow"))
                 ip_gipv4u = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} Address{r})>>{o} "))
+
                 if ip_gipv4u == 'x' or ip_gipv4u == 'exit':
                     print(f"{w}[{o}-{w}] Sorry{r},{w} But command '{ip_gipv4u}' is invalid{r}.{w} Please use Ctrl+C to exit Witcher{r}!{w}")
 
                 sp_gipv4u = int(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} Min{r}.{w} Port{r})>>{o} "))
                 mp_gipv4u = int(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} Max{r}.{w} Port{r})>>{o} "))
-                extract_ipv4 = WitcherPortscanner(
-                    ip_gipv4u,
-                    sp_gipv4u,
-                    mp_gipv4u
-                )
-
+                extract_ipv4 = WitcherPortscanner(ip_gipv4u, sp_gipv4u, mp_gipv4u)
                 extract_ipv4.main()
             elif self.menu_option_choice == 2:
-                print(cld(figlet_format(
-                    "MD5Crypt",
-                    font="bulbhead"
-                ), "yellow"))
-
+                print(cld(figlet_format("MD5Crypt", font="bulbhead"), "yellow"))
                 string_to_encrypt = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} String{r})>>{o} "))
                 md5crypt = MD5Encrypt(string_to_encrypt)
-
                 md5crypt.main()
             elif self.menu_option_choice == 3:
-                print(cld(figlet_format(
-                    "IPv4Whois",
-                    font="bulbhead"
-                ), "yellow"))
-
+                print(cld(figlet_format("IPv4Whois", font="bulbhead"), "yellow"))
                 ipv4_address = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} IPv4{r})>>{o} "))
                 ipv4_lookup = IPv4Lookup(ipv4_address)
-
                 ipv4_lookup.main()
             elif self.menu_option_choice == 4:
-                print(cld(figlet_format(
-                    "Banner\nGrabber",
-                    font="bulbhead"
-                ), "yellow"))
-
+                print(cld(figlet_format("Banner\nGrabber", font="bulbhead"), "yellow"))
                 ipv4_address = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} Address{r})>>{o} "))
+
                 if ipv4_address == 'x' or ipv4_address == 'exit':
                     print(f"{w}[{o}-{w}] Sorry{r},{w} But command '{ipv4_address}' is invalid{r}.{w} Please use Ctrl+C to exit BannerGrabber{r}!")
 
                 target_port = int(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} Port{r})>>{o} "))
                 get_service = BannerGrabber(ipv4_address, target_port)
-
                 get_service.main()
             elif self.menu_option_choice == 5:
                 while True:
-                    print(cld(figlet_format(
-                        "B64Crypt",
-                        font="bulbhead"
-                    ), "yellow"))
+                    print(cld(figlet_format("B64Crypt", font="bulbhead"), "yellow"))
                     print(f"\n\t{w}[{r}1{w}] Encoder")
                     print(f"\t{w}[{r}2{w}] Decoder")
                     print(f"\t{w}[{r}x{w}] Exit")
 
                     b64_choice = input(f"\n{w}[{r}*{w}] Choice {r}>>{o} ")
+
                     if b64_choice == "1":
                         hash_value = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} Value{r})>>{o} "))
                         
@@ -314,7 +268,6 @@ class HunterToolkit:
                             print(f"{r}=" * 70)
                             print(chr(0xa))
                             input(f"{w}[{r}*{w}] Press enter key to continue")
-
                         except Exception as error:
                             print(cld(f"An error was defined: {error}", "red"))
                             print(chr(0xa))
@@ -344,38 +297,24 @@ class HunterToolkit:
                     else:
                         print(cld("Invalid Input!", "red"))
             elif self.menu_option_choice == 6:
-                print(cld(figlet_format(
-                    "Whois\nPhonenumber",
-                    font="bulbhead"
-                ), "yellow"))
-
+                print(cld(figlet_format("Whois\nPhonenumber", font="bulbhead"), "yellow"))
                 url_ps = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} Phonenumber{r})>>{o} "))
                 phon_inf = PhonenumberWhois(url_ps)
-
                 phon_inf.main()
             elif self.menu_option_choice == 7:
-                print(cld(figlet_format(
-                    "Subdomain\nScanner",
-                    font="bulbhead"
-                ), "yellow"))
-
+                print(cld(figlet_format("Subdomain\nScanner", font="bulbhead"), "yellow"))
                 url_sds = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} URL{r})>>{o} "))
+
                 if url_sds == 'x' or url_sds == 'exit':
                     print(f"{w}[{o}-{w}] Sorry{r},{w} But command '{url_sds}' is invalid{r}.{w} Please use Ctrl+C to exit SubdomainScanner{r}!")
 
-                wordl = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} Wordlist{r}[{w}empty for default wordlist{r}])>>{o} "))
-                bruteforce_subdomains = SubdomainScanner(
-                    url_sds,
-                    wordl
-                )
-
+                wordl = str(input(
+                    f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} Wordlist{r}[{w}empty for default wordlist{r}])>>{o} "
+                ))
+                bruteforce_subdomains = SubdomainScanner(url_sds, wordl)
                 bruteforce_subdomains.main()
             elif self.menu_option_choice == 8:
-                get_mac = ':'.join(
-                    re.findall(
-                        '..', '%012x' % uuid.getnode()
-                    )
-                )
+                get_mac = ":".join(re.findall("..", "%012x" % uuid.getnode()))
                 get_hostname = socket.gethostname()
                 get_host_ip = socket.gethostbyname(get_hostname)
                 get_username = pwd.getpwuid(os.getuid())[0]
@@ -407,88 +346,59 @@ class HunterToolkit:
             elif self.menu_option_choice == 9:
                 HunterToolkit.my_system()
             elif self.menu_option_choice == 10:
-                print(cld(figlet_format(
-                    "URL2IPv4",
-                    font="bulbhead"
-                ), "yellow"))
+                print(cld(figlet_format("URL2IPv4", font="bulbhead"), "yellow"))
 
                 url_gipv4u = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} URL{r})>>{o} "))
                 extract_ipv4 = GetIPv4fromURL(url_gipv4u)
-
                 extract_ipv4.main()
             elif self.menu_option_choice == 11:
-                print(cld(figlet_format(
-                    "Password\nGenerator",
-                    font="bulbhead"
-                ), "yellow"))
+                print(cld(figlet_format("Password\nGenerator", font="bulbhead"), "yellow"))
 
                 passw_length = int(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} Password length{r})>>{o} "))
                 extract_ipv4 = PasswordGenerator(passw_length)
-
                 extract_ipv4.main()
             elif self.menu_option_choice == 12:
-                print(cld(figlet_format(
-                    "URLWhois",
-                    font="bulbhead"
-                ), "yellow"))
+                print(cld(figlet_format("URLWhois", font="bulbhead"), "yellow"))
 
                 url_whois = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} URL{r})>>{o} "))
                 get_lookup = WhoisLookupForURL(url_whois)
-
                 get_lookup.main()
             elif self.menu_option_choice == 13:
-                print(cld(figlet_format(
-                    "HTTPHeader",
-                    font="bulbhead"
-                ), "yellow"))
+                print(cld(figlet_format("HTTPHeader", font="bulbhead"), "yellow"))
 
                 url_ghttph = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} URL{r})>>{o} "))
                 gethttpheader = GetHTTPHeader(url_ghttph)
-
                 gethttpheader.main()
             elif self.menu_option_choice == 14:
-                print(cld(figlet_format(
-                    "Link\nCollector",
-                    font="bulbhead"
-                ), "yellow"))
-                
+                print(cld(figlet_format("Link\nCollector", font="bulbhead"), "yellow"))
+
                 url_lc = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} URL{r})>>{o} "))
                 linkcollector = LinkCollector(url_lc)
-
                 linkcollector.main()
             elif self.menu_option_choice == 15:
-                print(cld(figlet_format(
-                    "Ping",
-                    font="bulbhead"
-                ), "yellow"))
-                
+                print(cld(figlet_format("Ping", font="bulbhead"), "yellow"))
+
                 addr = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} Address{r})>>{o} "))
                 check = CheckHostAvailability(addr)
-
                 check.main()
             elif self.menu_option_choice == 16:
-                print(cld(figlet_format(
-                    "IPSweep",
-                    font="bulbhead"
-                ), "yellow"))
-                
-                ipv4 = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} Address{r})>>{o} "))
+                print(cld(figlet_format("IPSweep", font="bulbhead"), "yellow"))
+
+                ipv4 = str(input(
+                    f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} IPv4 Address(First Three Octets Only){r})>>{o} "
+                ))
+
                 if ipv4 == 'x' or ipv4 == 'exit':
                     print(f"{w}[{o}-{w}] Sorry{r},{w} But command '{ipv4}' is invalid{r}.{w} Please use Ctrl+C to exit IPSweep{r}!")
 
                 start_range = int(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} Start Range{r})>>{o} "))
                 last_range = int(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} Last Range{r})>>{o} "))
                 ping_count = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} Ping Count{r})>>{o} "))
+
                 if ping_count == 'x' or ping_count == 'exit':
                     print(f"{w}[{o}-{w}] Sorry{r},{w} But command '{ping_count}' is invalid{r}.{w} Please use Ctrl+C to exit IPSweep{r}!")
 
-                ipsweep = IPv4Sweep(
-                    ipv4,
-                    start_range,
-                    last_range,
-                    ping_count
-                )
-
+                ipsweep = IPv4Sweep(ipv4, start_range, last_range, ping_count)
                 ipsweep.get_status()
             elif self.menu_option_choice == 17:
                 print(f"\n{w}[{r}*{w}] Most Used Tools{r}:")
@@ -504,31 +414,22 @@ class HunterToolkit:
                 print(chr(0xa))
                 input(f"\n{w}[{r}*{w}] Press enter key to continue")
             elif self.menu_option_choice == 18:
-                print(cld(figlet_format(
-                    "GetStat",
-                    font="bulbhead"
-                ), "yellow"))
+                print(cld(figlet_format("GetStat", font="bulbhead"), "yellow"))
 
                 gs_url = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} Address{r})>>{o} "))
                 get_status_code = RemoteServerStatusCode(gs_url)
-
                 get_status_code.get_code()
             elif self.menu_option_choice == 19:
-                print(cld(figlet_format(
-                    "GetMail",
-                    font="bulbhead"
-                ), "yellow"))
+                print(cld(figlet_format("GetMail", font="bulbhead"), "yellow"))
 
                 gm_url = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} Full URL{r})>>{o} "))
                 extract_mail_addr = EmailExtractor(gm_url)
-
                 extract_mail_addr.extract_mail_address()
             elif self.menu_option_choice == 99:
                 print(f"\n{w}[{r}*{w}] Goodbye{r},{w} {pwd.getpwuid(os.getuid())[0]}{r}.{w} Follow the white rabbit {r}...\n")
                 sys.exit(0)
             else:
                 print(f"\n{w}[{y}-{w}] Invalid Input{r}!")
-                
         except KeyboardInterrupt:
             print(f"\n{w}[{y}-{w}] You pressed Ctrl+C{r}.{w} Exit{r}!")
         except Exception:
@@ -537,22 +438,6 @@ class HunterToolkit:
 
 if __name__ == "__main__":
     while True:
-        call(["clear"])
-        print(f"{w}[{r}*{w}] Welcome{r},{w} {pwd.getpwuid(os.getuid())[0]}{r}!")
-        time.sleep(1.15)
-
-        while True:
-            start = input(f"{w}[{r}*{w}] Do you want to start Hunter-Toolkit{r}?{w} y{r}/{w}n{o} ")
-            if start == 'y' or start == 'Y':
-                break
-            elif start == 'n' or start == 'N':
-                print(f"{w}[{r}*{w}] Goodbye{r},{w} {pwd.getpwuid(os.getuid())[0]}{r}.{w} Follow the white rabbit {r}...\n")
-                sys.exit(0)
-            else:
-                print(f"{w}[{y}-{w}] Invalid Input{r}!")
-
-        print(f"{w}[{r}*{w}] But first {r}...")
-        time.sleep(1.15)
         print(cld("""
 \t\tWelcome To Hunter Toolkit!
 < =============================================================== >
@@ -570,30 +455,29 @@ Thank you and have a nice day!
 ~ Keyjeek\n
         """, "red"))
 
-        choice = input(f"{r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r})>>{o} ")
-        
-        if choice == 'y' or choice == 'Y':
+        start = str(input(f"{w}[{r}*{w}] Accept{r}?{w} y{r}/{w}n{o} "))
+
+        if start == 'y' or start == 'Y':
             break
-        elif choice == 'n' or choice == 'N':
-            print(f"\n{w}[{y}-{w}] You need to accept the terms above to use Hunter{r}.{w} Exit{r}.\n")
-            sys.exit(1)
+        elif start == 'n' or start == 'N':
+            print(f"{w}[{r}*{w}] You need to accept the terms to use the Hunter-Toolkit{r}.{w} Exit {r}...\n")
+            sys.exit(0)
         else:
-            print(f"\n{w}[{y}-{w}] Invalid Input{r}!")
-            pass
+            print(f"{w}[{y}-{w}] Invalid Input{r}!")
 
     while True:
         try:
             HunterToolkit.banner()
             HunterToolkit.menu()
-
             hunter_choice = int(input(f"{r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r})>>{o} "))
             hunter_toolkit = HunterToolkit(hunter_choice)
-
             hunter_toolkit.hunter_gate()
         except KeyboardInterrupt:
             print(f"\n{w}[{y}-{w}] You pressed Ctrl+C{r}.{w} Exit{r}!")
             sys.exit(1)
         except ValueError:
             print(f"\n{w}[{y}-{w}] You need to enter a integer value{r}!")
+
+
 
 
