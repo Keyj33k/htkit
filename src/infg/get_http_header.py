@@ -2,7 +2,6 @@
 
 try:
     import subprocess
-    
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -14,18 +13,7 @@ except ImportError:
     "pip3 install -r requirements.txt" 
 
     You will find this file in the req directory.
-
-
     """)
-    
-# # # # # # # # # # # # # # # # # # # # # #
-#                                         #
-#   Author  :   Keyjeek                   #
-#   Contact :   nomotikag33n@gmail.com    #
-#   Github  :   @Keyj33k                  #
-#   Version :   1.1.9                     #
-#                                         #
-# # # # # # # # # # # # # # # # # # # # # #
 
 w = "\033[0;37m"
 g = "\033[0;32m"
@@ -35,10 +23,7 @@ y = "\033[0;33m"
 
 class GetHTTPHeader:
 
-    def __init__(
-            self,
-            uniformresourcelocator: str
-    ):
+    def __init__(self, uniformresourcelocator: str):
         self.uniformresourcelocator = uniformresourcelocator
 
     def main(self):
@@ -50,19 +35,18 @@ class GetHTTPHeader:
             print(f"=" * 70, f"{w}")
 
             try:
-                subprocess.call([
-                    "curl", "-I",
-                    self.uniformresourcelocator
-                ])
+                subprocess.call(["curl", "-I", self.uniformresourcelocator])
 
                 print(f"{r}=" * 70)
                 print(chr(0xa))
                 input(f"{w}[{r}*{w}] Press enter key to continue")
+
                 break
             except subprocess.CalledProcessError:
                 print(f"{w}[{y}-{w}] Failed getting header from {self.uniformresourcelocator}{r}!")
                 print(chr(0xa))
                 input(f"{w}[{r}*{w}] Press enter key to continue")
+
                 break
 
 
