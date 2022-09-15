@@ -15,18 +15,7 @@ except ImportError:
     "pip3 install -r requirements.txt" 
 
     You will find this file in the req directory.
-
-
     """)
-    
-# # # # # # # # # # # # # # # # # # # # # #
-#                                         #
-#   Author  :   Keyjeek                   #
-#   Contact :   nomotikag33n@gmail.com    #
-#   Github  :   @Keyj33k                  #
-#   Version :   1.1.9                     #
-#                                         #
-# # # # # # # # # # # # # # # # # # # # # #
 
 w = "\033[0;37m"
 g = "\033[0;32m"
@@ -36,17 +25,14 @@ y = "\033[0;33m"
 
 class SubdomainScanner:
 
-    def __init__(
-            self,
-            uniformresourcelocator: str,
-            wordlist: str
-    ):
+    def __init__(self, uniformresourcelocator: str, wordlist: str):
         self.wordlist = wordlist
         self.uniformresourcelocator = uniformresourcelocator
 
     def main(self):
         while True:
             found_subdomain = []
+
             if self.wordlist == 'exit' or self.wordlist == 'x':
                 break
 
@@ -94,12 +80,14 @@ class SubdomainScanner:
 
                 print(f"{r}=" * 70, f"\n{chr(0xa)}")
                 input(f"{w}[{r}*{w}] Press enter key to continue")
+
                 break
             except FileNotFoundError:
                 print(f"{w}[{y}-{w}] You need the subdomain file in the current directory to run this tool{r}.")
+
                 break
             except KeyboardInterrupt:
                 print(f"{w}[{r}*{w}] You pressed Ctrl+C{r}.{w} Exit{r}.")
-                break
 
+                break
 
