@@ -43,7 +43,7 @@ class SubdomainScanner:
                         subdomain = read_file.splitlines()
 
                         print(f"\n{w}[{r}*{w}] Start scanning for subdomains from {self.uniformresourcelocator} {r}...")
-                        print(f"{w}[{r}*{w}] Be patient{r},{w} It may take some time {r}...")
+                        print(f"\n{w}[{r}*{w}] Be patient{r},{w} It may take some time {r}...")
                         print(f"{r}=" * 70)
 
                         for list_domains in subdomain:
