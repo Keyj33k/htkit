@@ -7,12 +7,6 @@ An Easy To Use, Reliable And Practical Assistant For A Stress-Free Working Proce
 </div>
 
 <div align="center">
-  
-### You Are One Keystroke Away From The Informations ...
-  
-</div>
-
-<div align="center">
   <a href="https://github.com/Keyj33k/Hunter/archive/refs/heads/main.zip"><img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/hunter1.0.7.png?raw=true" alt="banner"/></a>
 </div>
 
