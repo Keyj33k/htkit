@@ -16,18 +16,7 @@ except ImportError:
     "pip3 install -r requirements.txt" 
 
     You will find this file in the req directory.
-
-
     """)
-    
-# # # # # # # # # # # # # # # # # # # # # #
-#                                         #
-#   Author  :   Keyjeek                   #
-#   Contact :   nomotikag33n@gmail.com    #
-#   Github  :   @Keyj33k                  #
-#   Version :   1.1.9                     #
-#                                         #
-# # # # # # # # # # # # # # # # # # # # # #
 
 w = "\033[0;37m"
 g = "\033[0;32m"
@@ -36,10 +25,7 @@ r = "\033[0;31m"
 
 class IPv4Lookup:
 
-    def __init__(
-            self,
-            ipv4_address: str
-    ):
+    def __init__(self, ipv4_address: str):
         self.ipv4_address = ipv4_address
 
     def main(self):
@@ -51,11 +37,7 @@ class IPv4Lookup:
             print(f"\n{w}[{r}*{w}] Results{r}:")
 
             try:
-                response = requests.post(
-                    "http://ip-api.com/batch",
-                    json=[{"query": self.ipv4_address}]
-                ).json()
-
+                response = requests.post("http://ip-api.com/batch", json=[{"query": self.ipv4_address}]).json()
                 print("=" * 70)
 
                 for lookup in response:
@@ -69,15 +51,10 @@ class IPv4Lookup:
                 print(f"{w}[{r}*{w}] Scanner done in {time_result}!")
                 print(chr(0xa))
                 input(f"{w}[{r}*{w}] Press enter key to continue")
+
                 break
             except Exception as error:
-                print(cld(
-                    f"An error was defined! {error}",
-                    "red"
-                ))
+                print(cld(f"An error was defined! {error}", "red"))
                 input(f"{w}[{g}+{w}] Press enter key to continue")
+
                 break
-
-
-
-
