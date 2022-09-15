@@ -13,18 +13,7 @@ except ImportError:
     "pip3 install -r requirements.txt" 
 
     You will find this file in the req directory.
-
-
     """)
-    
-# # # # # # # # # # # # # # # # # # # # # #
-#                                         #
-#   Author  :   Keyjeek                   #
-#   Contact :   nomotikag33n@gmail.com    #
-#   Github  :   @Keyj33k                  #
-#   Version :   1.1.9                     #
-#                                         #
-# # # # # # # # # # # # # # # # # # # # # #
 
 w = "\033[0;37m"
 g = "\033[0;32m"
@@ -33,10 +22,7 @@ r = "\033[0;31m"
 
 class CheckHostAvailability:
 
-    def __init__(
-            self,
-            target_address: str
-    ):
+    def __init__(self, target_address: str):
         self.target_address = target_address
 
     def main(self):
@@ -47,12 +33,10 @@ class CheckHostAvailability:
             print(f"\n{w}[{g}+{w}] Result{r}:{w}")
             print(f"{r}=" * 70, f"{w}")
 
-            call([
-                "ping", "-c", "3",
-                self.target_address
-            ])
+            call(["ping", "-c", "3", self.target_address])
 
             print(f"{r}=" * 70)
             print(chr(0xa))
             input(f"{w}[{r}*{w}] Press enter key to continue")
+
             break
