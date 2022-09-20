@@ -455,15 +455,19 @@ Thank you and have a nice day!
 ~ Keyjeek\n
         """, "red"))
 
-        start = str(input(f"{w}[{r}*{w}] Accept{r}?{w} y{r}/{w}n{o} "))
+        try:
+            start = str(input(f"{w}[{r}*{w}] Accept{r}?{w} y{r}/{w}n{o} "))
 
-        if start == 'y' or start == 'Y':
-            break
-        elif start == 'n' or start == 'N':
-            print(f"{w}[{r}*{w}] You need to accept the terms to use the Hunter-Toolkit{r}.{w} Exit {r}...\n")
-            sys.exit(0)
-        else:
-            print(f"{w}[{y}-{w}] Invalid Input{r}!")
+            if start == 'y' or start == 'Y':
+                break
+            elif start == 'n' or start == 'N':
+                print(f"{w}[{r}*{w}] You need to accept the terms to use the Hunter-Toolkit{r}.{w} Exit {r}...\n")
+                sys.exit(0)
+            else:
+                print(f"\n{w}[{y}-{w}] Only 'y/Y' or 'n/N' are allowed{r}!")
+        except KeyboardInterrupt:
+            print(f"\n{w}[{y}-{w}] You pressed Ctrl+C{r}.{w} Exit{r}!")
+            sys.exit(1)
 
     while True:
         try:
