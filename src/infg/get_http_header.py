@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 try:
-    import subprocess
+    from subprocess import call, CalledProcessError
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -22,7 +22,6 @@ y = "\033[0;33m"
 
 
 class GetHTTPHeader:
-
     def __init__(self, uniformresourcelocator: str):
         self.uniformresourcelocator = uniformresourcelocator
 
@@ -31,22 +30,18 @@ class GetHTTPHeader:
             if self.uniformresourcelocator == 'x' or self.uniformresourcelocator == 'exit':
                 break
 
-            print(f"\n{w}[{g}+{w}] Result{r}:")
-            print(f"=" * 70, f"{w}")
+            print(f"\n{w}[{g}+{w}] Result{r}:\n{'=' * 70}{w}")
 
             try:
-                subprocess.call(["curl", "-I", self.uniformresourcelocator])
-
+                call(["curl", "-I", self.uniformresourcelocator])
                 print(f"{r}=" * 70)
                 print(chr(0xa))
                 input(f"{w}[{r}*{w}] Press enter key to continue")
-
                 break
-            except subprocess.CalledProcessError:
+            except CalledProcessError:
                 print(f"{w}[{y}-{w}] Failed getting header from {self.uniformresourcelocator}{r}!")
                 print(chr(0xa))
                 input(f"{w}[{r}*{w}] Press enter key to continue")
-
                 break
 
 
