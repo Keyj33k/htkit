@@ -2,10 +2,7 @@
 
 try:
     from termcolor import colored as cld
-    from pyfiglet import figlet_format
-    from bs4 import BeautifulSoup
     import hashlib
-    import requests
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -25,7 +22,6 @@ r = "\033[0;31m"
 
 
 class MD5Encrypt:
-
     def __init__(self, input_data: str):
         self.input_data = input_data
 
@@ -35,21 +31,16 @@ class MD5Encrypt:
                 break
 
             try:
-                encrypted_string = hashlib.md5(self.input_data.encode())
-
                 print(f"{r}=" * 70)
-                print(f"{w}[{g}+{w}] {self.input_data} {r}->{w} {encrypted_string.hexdigest()}")
-                print(f"{r}=" * 70)
-                input(f"\n{w}[{r}*{w}] Press enter key to continue")
-
+                print(f"{w}[{g}+{w}] {self.input_data} {r}->{w} {hashlib.md5(self.input_data.encode()).hexdigest()}")
+                input(f"{r}{'=' * 70}\n{w}[{r}*{w}] Press enter key to continue")
                 break
             except Exception as excerr:
                 print(cld(f"{excerr}", "red"))
-                print(chr(0xa))
-                input(f"\n{w}[{r}*{w}] Press enter key to continue")
-
+                input(f"{chr(0xa)}\n{w}[{r}*{w}] Press enter key to continue")
                 break
 
                 # https://www.md5online.org/md5-decrypt.html
                 # This program is using a big database to bruteforce the hash for you
-
+                
+                
