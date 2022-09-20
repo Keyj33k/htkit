@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 try:
-    import whois
+    from whois import whois
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -32,19 +32,11 @@ class WhoisLookupForURL:
                 break
 
             try:
-                whois_url = whois.whois(self.uniformresourcelocator)
-
-                print(f"{w}[{g}+{w}] Results{r}:")
-                print("=" * 70, f"{w}")
-                print(whois_url.text)
-                print(whois_url)
-                print(f"{r}=" * 70)
-                print(chr(0xa))
-                input(f"{w}[{r}*{w}] Press enter key to continue")
-
+                whois_url = whois(self.uniformresourcelocator)
+                print(f"\n{w}[{g}+{w}] Results:\n{r}{'=' * 70}{w}")
+                print(f"{whois_url.text}\n{whois_url}")
+                input(f"{r}{'=' * 70}{chr(0xa)}\n{w}[{r}*{w}] Press enter key to continue")
                 break
             except Exception as excerr:
                 print(excerr)
-
                 break
-
