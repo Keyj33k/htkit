@@ -3,7 +3,7 @@
 try:
     from datetime import datetime as dtt
     from termcolor import colored as cld
-    import requests
+    from requests import post
     import os
 except ImportError:
     raise RuntimeError("""
@@ -24,7 +24,6 @@ r = "\033[0;31m"
 
 
 class IPv4Lookup:
-
     def __init__(self, ipv4_address: str):
         self.ipv4_address = ipv4_address
 
@@ -37,7 +36,7 @@ class IPv4Lookup:
             print(f"\n{w}[{r}*{w}] Results{r}:")
 
             try:
-                response = requests.post("http://ip-api.com/batch", json=[{"query": self.ipv4_address}]).json()
+                response = post("http://ip-api.com/batch", json=[{"query": self.ipv4_address}]).json()
                 print("=" * 70)
 
                 for lookup in response:
@@ -46,15 +45,12 @@ class IPv4Lookup:
 
                 time_stop = dtt.now()
                 time_result = time_stop - time_start
-
                 print(f"{r}=" * 70)
                 print(f"{w}[{r}*{w}] Scanner done in {time_result}!")
                 print(chr(0xa))
                 input(f"{w}[{r}*{w}] Press enter key to continue")
-
                 break
             except Exception as error:
-                print(cld(f"An error was defined! {error}", "red"))
+                print(cld(str(error), "red"))
                 input(f"{w}[{g}+{w}] Press enter key to continue")
-
                 break
