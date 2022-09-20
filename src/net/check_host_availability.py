@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 try:
-    from subprocess import call
+    from subprocess import call, CalledProcessError
+    from termcolor import colored as cld
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -21,7 +22,6 @@ r = "\033[0;31m"
 
 
 class CheckHostAvailability:
-
     def __init__(self, target_address: str):
         self.target_address = target_address
 
@@ -33,10 +33,12 @@ class CheckHostAvailability:
             print(f"\n{w}[{g}+{w}] Result{r}:{w}")
             print(f"{r}=" * 70, f"{w}")
 
-            call(["ping", "-c", "3", self.target_address])
+            try:
+                call(["ping", "-c", "2", self.target_address])
+            except CalledProcessError as cpe:
+                print(cld(str(cpe), "red"))
 
             print(f"{r}=" * 70)
             print(chr(0xa))
             input(f"{w}[{r}*{w}] Press enter key to continue")
-
             break
