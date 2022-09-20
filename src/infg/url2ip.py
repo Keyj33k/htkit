@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 try:
-    import socket
+    from socket import gethostbyname, gaierror
     from termcolor import colored as cld
     from pyfiglet import figlet_format
 except ImportError:
@@ -24,9 +24,14 @@ y = "\033[0;33m"
 
 
 class GetIPv4fromURL:
-
     def __init__(self, uniformresourcelocator: str):
         self.uniformresourcelocator = uniformresourcelocator
+
+    @staticmethod
+    def error_message():
+        print(f"{w}[{y}-{w}] You need to enter a value like{r}:{w} google.com in example{r}.")
+        print(chr(0xa))
+        input(f"{w}[{r}*{w}] Press enter key to continue")
 
     def main(self):
         while True:
@@ -36,24 +41,16 @@ class GetIPv4fromURL:
             try:
                 print(f"{r}=" * 70)
                 print(
-                    f"{w}[{g}+{w}] IP Address from {self.uniformresourcelocator} {r}->{w} " +
-                    socket.gethostbyname(self.uniformresourcelocator)
+                    f"{w}[{g}+{w}] IP Address from {self.uniformresourcelocator} {r}->{w} " + \
+                    f"{gethostbyname(self.uniformresourcelocator)}"
                 )
                 print(f"{r}=" * 70)
                 print(chr(0xa))
                 input(f"{w}[{r}*{w}] Press enter key to continue")
-
                 break
             except ValueError:
-                print(f"{w}[{y}-{w}] You need to enter a value like{r}:{w} google.com in example{r}.")
-                print(chr(0xa))
-                input(f"{w}[{r}*{w}] Press enter key to continue")
-
+                GetIPv4fromURL.error_message()
                 break
-            except socket.gaierror:
-                print(f"\n{w}[{y}-{w}] You need to enter a value like{r}:{w} google.com in example{r}.")
-                print(chr(0xa))
-                input(f"{w}[{r}*{w}] Press any key to continue")
-
+            except gaierror:
+                GetIPv4fromURL.error_message()
                 break
-
