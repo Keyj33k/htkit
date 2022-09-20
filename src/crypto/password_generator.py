@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
 
 try:
-    from termcolor import colored as cld
-    import random
-    import string
-    import os
+    from random import sample
+    from string import digits, ascii_uppercase, ascii_lowercase
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -33,26 +31,17 @@ class PasswordGenerator:
         while True:
             if self.password_length == 0:
                 break
-            elif self.password_length <= 7:
+            elif self.password_length < 8:
                 print(f"{w}[{y}-{w}] Your password should be always bigger than eight characters{r}.")
-
                 break
 
-            digits = string.digits
-            lowers = string.ascii_lowercase
-            uppers = string.ascii_uppercase
-            special = "!$%&/()?{}][-_"
-            mixer = digits + lowers + uppers + special
-            passw_result = random.sample(mixer, self.password_length)
-            final_password = ''.join(passw_result)
+            special_chars = "!$%&/()?{}][-_"
+            mixer = digits + ascii_lowercase + ascii_uppercase + special_chars
+            final_password = ''.join(sample(mixer, self.password_length))
 
-            print(f"{r}=" * 70)
-            print(f"{w}[{g}+{w}] Your generated password{r}:{w} {final_password}")
-            print(f"{r}=" * 70)
-            print(chr(0xa))
+            print(f"{r}{'=' * 70}\n{w}[{g}+{w}] Your generated password{r}:{w} {final_password}")
+            print(f"{r}{'=' * 70}{chr(0xa)}")
             input(f"\n{w}[{r}*{w}] Press enter key to continue")
-
             break
-
 
 
