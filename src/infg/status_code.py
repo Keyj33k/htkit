@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
 
 try:
-    from datetime import datetime
-    import requests
+    from termcolor import colored as cld
     import urllib3
-    import socket
-    import time
-    import os
+    from time import sleep
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -27,28 +24,22 @@ y = "\033[0;33m"
 
 
 class RemoteServerStatusCode:
-
-    def __init__( self, uniformresourcelocator: str):
+    def __init__(self, uniformresourcelocator: str):
         self.uniformresourcelocator = uniformresourcelocator
 
     def get_code(self):
         while True:
             try:
-                request_ = urllib3.PoolManager().request("GET", self.uniformresourcelocator)
-
-                print(f"\n{w}[{r}*{w}] Getting the status code from {self.uniformresourcelocator} {r}...\n" + "=" * 70)
-                time.sleep(1.25)
-                print(f"{w}[{g}+{w}] Status Code From {self.uniformresourcelocator} {r}->{w} {request_.status}")
+                send_request = urllib3.PoolManager().request("GET", self.uniformresourcelocator)
+                print(f"\n{w}[{r}*{w}] Getting the status code from {self.uniformresourcelocator} {r}...\n{'=' * 70}")
+                sleep(1.25)
+                print(f"{w}[{g}+{w}] Status Code From {self.uniformresourcelocator} {r}->{w} {send_request.status}")
                 print(f"{r}=" * 70)
                 input(f"\n{w}[{r}*{w}] Press enter key to continue")
-
                 break
             except KeyboardInterrupt:
                 print(f"\n{w}[{r}*{w}] You pressed Ctrl+C{r}.{w} Exit{r}.")
-
                 break
             except Exception as excerr:
-                print(excerr)
-
+                print(cld(str(excerr), "red"))
                 break
-
