@@ -2,8 +2,9 @@
 
 try:
     from datetime import datetime as dtt
+    from termcolor import colored as cld
     import time
-    import socket
+    from socket import socket, AF_INET, SOCK_STREAM, error
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -23,7 +24,6 @@ r = "\033[0;31m"
 
 
 class BannerGrabber:
-
     def __init__(self, target_address: str, target_port: int):
         self.target_address = target_address
         self.target_port = target_port
@@ -36,21 +36,19 @@ class BannerGrabber:
                 break
 
             try:
-                with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as socket_sock:
+                with socket(AF_INET, SOCK_STREAM) as socket_sock:
                     socket_sock.connect_ex((self.target_address, self.target_port))
                     socket_sock.settimeout(5)
                     service = socket_sock.recv(1024).decode()
-
-                print(f"\n{w}[{r}*{w}] Start scanning {self.target_address} at {dtt.now()}")
-                time.sleep(1.5)
-                print(f"{r}=" * 70)
-                print(f"{w}[{g}+{w}] Port {self.target_port} {r}->{w} {service}" + f"{r}=" * 70)
-                print(chr(0xa))
-                input(f"{w}[{r}*{w}] Press enter key to continue")
-
+                    
+                    print(f"\n{w}[{r}*{w}] Start scanning {self.target_address} at {dtt.now()}")
+                    time.sleep(1.5)
+                    print(f"{r}=" * 70)
+                    print(f"{w}[{g}+{w}] Port {self.target_port} {r}->{w} {service}" + f"{r}=" * 70)
+                    print(chr(0xa))
+                    input(f"{w}[{r}*{w}] Press enter key to continue")
                 break
-            except socket.error as sockerr:
-                print(sockerr)
-
+            except error as sockerr:
+                print(cld(sockerr, "red"))
                 break
 
