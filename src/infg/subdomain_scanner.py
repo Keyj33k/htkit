@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 
 try:
-    import requests
-    import time
-    import os
+    from requests import get, ConnectionError
+    from time import sleep
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -24,70 +23,43 @@ y = "\033[0;33m"
 
 
 class SubdomainScanner:
-
     def __init__(self, uniformresourcelocator: str, wordlist: str):
         self.wordlist = wordlist
         self.uniformresourcelocator = uniformresourcelocator
 
     def main(self):
-        while True:
-            found_subdomain = []
+        def scanner(database):
+            with open(database, "r") as file:
+                print(f"\n{w}[{r}*{w}] Start scanning for subdomains from {self.uniformresourcelocator} {r}...")
+                print(f"\n{w}[{r}*{w}] Be patient{r},{w} It may take some time {r}...")
+                print(f"{r}=" * 70)
 
-            if self.wordlist == 'exit' or self.wordlist == 'x':
+                for list_domains in file.read().splitlines():
+                    uniformresourcelocator = f"http://{list_domains}.{self.uniformresourcelocator}"
+                    sleep(0.5)
+
+                    try:
+                        get(uniformresourcelocator)
+                        print(f"{w}[{g}+{w}] Discovered {r}->{w} {uniformresourcelocator}")
+                    except ConnectionError:
+                        pass
+
+        while True:
+            if self.wordlist == "exit" or self.wordlist == 'x':
                 break
 
             try:
                 if self.wordlist == "":
-                    with open("subdomains.txt", "r") as FILE:
-                        read_file = FILE.read()
-                        subdomain = read_file.splitlines()
-
-                        print(f"\n{w}[{r}*{w}] Start scanning for subdomains from {self.uniformresourcelocator} {r}...")
-                        print(f"\n{w}[{r}*{w}] Be patient{r},{w} It may take some time {r}...")
-                        print(f"{r}=" * 70)
-
-                        for list_domains in subdomain:
-                            uniformresourcelocator = f"http://{list_domains}.{self.uniformresourcelocator}"
-                            time.sleep(0.5)
-
-                            try:
-                                requests.get(uniformresourcelocator)
-                            except requests.ConnectionError:
-                                pass
-                            else:
-                                print(f"{w}[{g}+{w}] Discovered {r}->{w} {uniformresourcelocator}")
-                                found_subdomain.append(uniformresourcelocator)
+                    scanner("subdomains.txt")
                 else:
-                    with open(f"{self.wordlist}", "r") as FILE:
-                        read_file = FILE.read()
-                        subdomain = read_file.splitlines()
+                    scanner(self.wordlist)
 
-                        print(f"\n{w}[{r}*{w}] Start scanning for subdomains from {self.uniformresourcelocator} {r}...")
-                        print(f"{w}[{r}*{w}] Be patient, It may take some time {r}...")
-                        print(f"{r}=" * 70)
-
-                        for list_domains in subdomain:
-                            uniformresourcelocator = f"http://{list_domains}.{self.uniformresourcelocator}"
-                            time.sleep(0.5)
-
-                            try:
-                                requests.get(uniformresourcelocator)
-                            except requests.ConnectionError:
-                                pass
-                            else:
-                                print(f"{w}[{g}+{w}] Discovered {r}->{w} {uniformresourcelocator}")
-                                found_subdomain.append(uniformresourcelocator)
-
-                print(f"{r}=" * 70, f"\n{chr(0xa)}")
+                print(f"{r}{'=' * 70}\n{chr(0xa)}")
                 input(f"{w}[{r}*{w}] Press enter key to continue")
-
                 break
             except FileNotFoundError:
                 print(f"{w}[{y}-{w}] You need the subdomain file in the current directory to run this tool{r}.")
-
                 break
             except KeyboardInterrupt:
                 print(f"{w}[{r}*{w}] You pressed Ctrl+C{r}.{w} Exit{r}.")
-
                 break
-
