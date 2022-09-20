@@ -4,7 +4,8 @@ try:
     from termcolor import colored as cld
     from pyfiglet import figlet_format
     from bs4 import BeautifulSoup
-    import requests
+    from requests import get
+    from requests.exceptions import MissingSchema
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -25,7 +26,6 @@ y = "\033[0;33m"
 
 
 class LinkCollector:
-
     def __init__(self, uniformresourcelocator: str):
         self.uniformresourcelocator = uniformresourcelocator
 
@@ -34,30 +34,23 @@ class LinkCollector:
             if self.uniformresourcelocator == 'x' or self.uniformresourcelocator == 'exit':
                 break
 
-            print(f"\n{w}[{r}*{w}] Results:")
-            print(f"{r}=" * 70)
+            print(f"\n{w}[{r}*{w}] Results:\n{r}{'=' * 70}")
 
             try:
-                request = requests.get(self.uniformresourcelocator)
-                soup = BeautifulSoup(request.text, "html.parser")
-
+                soup = BeautifulSoup(get(self.uniformresourcelocator).text, "html.parser")
                 for collected_links in soup.find_all("a"):
                     print(f"{w}[{g}+{w}] Href found {r}->{w} ", collected_links.get('href'))
 
                 print(f"{r}=" * 70)
                 print(chr(0xa))
                 input(f"{w}[{r}*{w}] Press enter key to continue")
-
                 break
-            except requests.exceptions.MissingSchema:
-                request = requests.get(f"http://{self.uniformresourcelocator}/")
-                soup = BeautifulSoup(request.text, "html.parser")
-
+            except MissingSchema:
+                soup = BeautifulSoup(get(f"http://{self.uniformresourcelocator}/").text, "html.parser")
                 for collected_links in soup.find_all("a"):
                     print(f"{w}[{g}+{w}] Href found {r}->{w} ", collected_links.get('href'))
 
                 print(f"{r}=" * 70)
                 print(chr(0xa))
                 input(f"{w}[{r}*{w}] Press enter key to continue")
-
                 break
