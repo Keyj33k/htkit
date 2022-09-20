@@ -24,7 +24,6 @@ y = "\033[0;33m"
 
 
 class WitcherPortscanner:
-
     def __init__(self, target_ipv4: str, start_port: int, maximum_port: int):
         self.start_port = start_port
         self.target_ipv4 = target_ipv4
@@ -51,7 +50,7 @@ class WitcherPortscanner:
                         if final_result == 0:
                             try:
                                 print(f"TCP\t\t{target_port}  \t\topen\t", socket.getservbyport(target_port))
-                            except:
+                            except OSError:
                                 print(f"TCP\t\t{target_port}  \t\topen\t Unknown")
                             
                     socket_sock.close()
@@ -64,10 +63,8 @@ class WitcherPortscanner:
 
             time_stop = dtt.now()
             needed_time = time_stop - time_start
-
             print(f"{r}=" * 70)
             print(f"{w}[{r}*{w}] Scanner done in {needed_time}!")
             print(chr(0xa))
             input(f"{w}[{r}*{w}] Press enter key to continue")
-
             break
