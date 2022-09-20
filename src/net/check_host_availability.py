@@ -30,8 +30,7 @@ class CheckHostAvailability:
             if self.target_address == 'x' or self.target_address == 'exit':
                 break
 
-            print(f"\n{w}[{g}+{w}] Result{r}:{w}")
-            print(f"{r}=" * 70, f"{w}")
+            print(f"\n{w}[{g}+{w}] Result{r}:{w}\n{r}{'=' * 70}{w}")
 
             try:
                 call(["ping", "-c", "2", self.target_address])
