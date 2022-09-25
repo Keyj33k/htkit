@@ -2,6 +2,15 @@
 |What's New?|
 =============
 
+25.09.22:
+---------
+- Changed project banner
+
+20.09.22:
+---------
+- Refactored project and version update (from 1.1.10 to 1.1.11)
+- Changed IPSweep address handling
+
 22.08.22:
 ---------
 - Removed parts of the banner for a better design
