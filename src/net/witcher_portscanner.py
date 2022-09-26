@@ -31,29 +31,29 @@ class WitcherPortscanner:
 
     def main(self):
         while True:
-            if self.target_ipv4 == 'x' or self.target_ipv4 == "exit":
+            if self.start_port <= 0 or self.start_port >= 65534:
+                print(f"\n{w}[{y}-{w}] Port {self.start_port} is invalid{r}!")
                 break
-            elif self.maximum_port == 0:
+            elif self.maximum_port <= 1 or self.maximum_port >= 65535:
+                print(f"\n{w}[{y}-{w}] Port {self.maximum_port} is invalid{r}!")
                 break
+
+            time_start = dtt.now()
 
             print(f"\n{w}[{r}*{w}] Started scanning at{r}:{w}\t{dtt.now()}")
             print(f"{r}=" * 70)
-            time_start = dtt.now()
             print(f"{w}Protocol\tPort\t\tStatus\t Service\n{'-' * 70}")
 
             try:
                 for target_port in range(self.start_port, self.maximum_port + 1):
                     with socket(AF_INET, SOCK_STREAM) as socket_sock:
-                        final_result = socket_sock.connect_ex((self.target_ipv4, target_port))
                         socket_sock.settimeout(5)
-                    
+                        final_result = socket_sock.connect_ex((self.target_ipv4, target_port))
                         if final_result == 0:
                             try:
                                 print(f"TCP\t\t{target_port}  \t\topen\t", getservbyport(target_port))
                             except OSError:
                                 print(f"TCP\t\t{target_port}  \t\topen\t Unknown")
-                            
-                    socket_sock.close()
             except error as socket_error:
                 print(cld(socket_error, "red"))
                 break
