@@ -35,7 +35,7 @@ class IPv4Sweep:
     def get_status(self):
         while True:
             address_split = self.ipv4_address.split(".")
-            if len(self.ipv4_address.split(".")) != 3:
+            if len(address_split) != 3:
                 print(f"\n{w}[{y}-{w}] Only the first three octets are allowed{r}!")
                 break
             elif self.min_range <= 0 or self.min_range >= 252:
