@@ -47,17 +47,7 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 
 ### Manually Installation (Debian-/based)
 
-1) Make sure you have CURL installed:<br>
-    -> We need curl to get the http header from the server.<br>
-    -> If curl is not installed, use the following commands:
-    ``` 
-    sudo apt-get update && sudo apt-get full-upgrade -y
-    ``` 
-    ``` 
-    sudo apt-get install -y curl
-    ```
-
-2) Make sure you have PYTHON3 installed<br>
+1) Make sure you have PYTHON3 installed<br>
     -> We need python3 to run this toolkit<br>
     -> If python3 is not installed, use the following commands:
     ``` 
@@ -67,7 +57,7 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
     sudo apt-get install python3 python3-pip
     ``` 
    
-3) Now you need to install the needed python modules/requirements
+2) Now you need to install the needed python modules/requirements
     - Change path to the Hunter-Toolkit directory:
     
     ```
@@ -82,21 +72,14 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
     
 ### Manually Installation (Termux)
 
-1) Make sure you have CURL installed:<br>
-    -> We need curl to get the http header from the server.<br>
-    -> If curl is not installed, use the following commands:
-    ``` 
-    pkg update -y && pkg install curl -y
-    ```
-
-2) Make sure you have PYTHON3 installed<br>
+1) Make sure you have PYTHON3 installed<br>
     -> We need python3 to run this toolkit<br>
     -> If python3 is not installed, use the following commands:
     ``` 
     pkg update -y && pkg install python3 -y
     ``` 
    
-3) Now you need to install the needed python modules/requirements
+2) Now you need to install the needed python modules/requirements
     - Change path to the Hunter-Toolkit directory:
     
     ```
