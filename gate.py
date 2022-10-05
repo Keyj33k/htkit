@@ -9,12 +9,12 @@ try:
     from src.infg.status_code import RemoteServerStatusCode
     from src.infg.subdomain_scanner import SubdomainScanner
     from src.infg.email_extractor import EmailExtractor
-    from src.infg.get_http_header import GetHTTPHeader
     from src.infg.link_collector import LinkCollector
     from src.infg.banner_grabber import BannerGrabber
     from src.crypto.md5encrypt import MD5Encrypt
     from src.infg.ipv4_whois import IPv4Lookup
     from src.infg.url2ip import GetIPv4fromURL
+    from src.infg.http_header import HTTPHeader
     from src.net.ipsweep import IPv4Sweep
 
     from termcolor import colored as cld
@@ -90,13 +90,13 @@ class HunterToolkit:
         print(f"{r}[{w}0{r}]{w} Clear Screen\t\t{r}[{w}10{r}]{w} Extract IPv4 From URL")
         print(f"{r}[{w}1{r}]{w} Port Scanner\t\t{r}[{w}11{r}]{w} Password Generator")
         print(f"{r}[{w}2{r}]{w} MD5 Encryption\t\t{r}[{w}12{r}]{w} Whois URL")
-        print(f"{r}[{w}3{r}]{w} Whois IPv4\t\t\t{r}[{w}13{r}]{w} Get HTTP Header")
+        print(f"{r}[{w}3{r}]{w} Whois IPv4\t\t\t{r}[{w}13{r}]{w} HTTP Header")
         print(f"{r}[{w}4{r}]{w} Banner Grabber\t\t{r}[{w}14{r}]{w} HREF Collector")
         print(f"{r}[{w}5{r}]{w} B64 En-/Decrypt\t\t{r}[{w}15{r}]{w} Ping")
         print(f"{r}[{w}6{r}]{w} Whois Phonenumber\t\t{r}[{w}16{r}]{w} IPSweep")
         print(f"{r}[{w}7{r}]{w} Subdomain Scanner\t\t{r}[{w}17{r}]{w} External Tools")
         print(f"{r}[{w}8{r}]{w} Whoami\t\t\t{r}[{w}18{r}]{w} Get Status Code")
-        print(f"{r}[{w}9{r}]{w} System Overview\t\t{r}[{w}19{r}]{w} Extract Email Addresses from URL")
+        print(f"{r}[{w}9{r}]{w} System Overview\t\t{r}[{w}19{r}]{w} Email Extractor")
         print(f"{r}[{w}99{r}]{w} Exit")
         print(f"{r}=" * 70)
 
@@ -339,8 +339,8 @@ class HunterToolkit:
             elif self.menu_option_choice == 13:
                 print(cld(figlet_format("HTTPHeader", font="bulbhead"), "yellow"))
                 url_ghttph = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} URL{r})>>{o} "))
-                gethttpheader = GetHTTPHeader(url_ghttph)
-                gethttpheader.main()
+                httpheader = HTTPHeader(url_ghttph)
+                httpheader.main()
             elif self.menu_option_choice == 14:
                 print(cld(figlet_format("Link\nCollector", font="bulbhead"), "yellow"))
                 url_lc = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} URL{r})>>{o} "))
@@ -377,8 +377,8 @@ class HunterToolkit:
             elif self.menu_option_choice == 18:
                 print(cld(figlet_format("GetStat", font="bulbhead"), "yellow"))
                 gs_url = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} Address{r})>>{o} "))
-                get_status_code = RemoteServerStatusCode(gs_url)
-                get_status_code.get_code()
+                status_code = RemoteServerStatusCode(gs_url)
+                status_code.get_code()
             elif self.menu_option_choice == 19:
                 print(cld(figlet_format("GetMail", font="bulbhead"), "yellow"))
                 gm_url = str(input(f"{w}[{r}*{w}] {r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r},{w} Full URL{r})>>{o} "))
@@ -447,6 +447,3 @@ if __name__ == "__main__":
             sys.exit(1)
         except ValueError:
             print(f"\n{w}[{y}-{w}] You need to enter a integer value{r}!")
-
-
-
