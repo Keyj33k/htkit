@@ -35,7 +35,7 @@ class HTTPHeader:
 
             try:
                 for category, result in get(f"http://{self.uniformresourcelocator}").headers.items():
-                    print(f"+ {category}: {result}")
+                    print(f"{category}: {result}")
 
                 print(f"{r}{'=' * 70}\n{chr(0xa)}")
                 input(f"{w}[{r}*{w}] Press enter key to continue")
