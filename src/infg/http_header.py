@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 try:
-    from subprocess import call, CalledProcessError
+    from requests import get
+    from requests.exceptions import ConnectionError
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -21,7 +22,7 @@ r = "\033[0;31m"
 y = "\033[0;33m"
 
 
-class GetHTTPHeader:
+class HTTPHeader:
     def __init__(self, uniformresourcelocator: str):
         self.uniformresourcelocator = uniformresourcelocator
 
@@ -33,15 +34,13 @@ class GetHTTPHeader:
             print(f"\n{w}[{g}+{w}] Result{r}:\n{'=' * 70}{w}")
 
             try:
-                call(["curl", "-I", self.uniformresourcelocator])
-                print(f"{r}=" * 70)
-                print(chr(0xa))
+                for category, result in get(f"http://{self.uniformresourcelocator}").headers.items():
+                    print(f"+ {category}: {result}")
+
+                print(f"{r}{'=' * 70}\n{chr(0xa)}")
                 input(f"{w}[{r}*{w}] Press enter key to continue")
                 break
-            except CalledProcessError:
-                print(f"{w}[{y}-{w}] Failed getting header from {self.uniformresourcelocator}{r}!")
-                print(chr(0xa))
+            except ConnectionError:
+                print(f"{w}[{y}-{w}] Failed getting header from {self.uniformresourcelocator}{r}!\n{chr(0xa)}")
                 input(f"{w}[{r}*{w}] Press enter key to continue")
                 break
-
-
