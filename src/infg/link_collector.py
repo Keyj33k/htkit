@@ -24,6 +24,15 @@ g = "\033[0;32m"
 r = "\033[0;31m"
 y = "\033[0;33m"
 
+def conv_url(url: str):
+    return f"http://{url}/"
+
+def collect(addr: str):
+    for collected_links in BeautifulSoup(get(addr).text, "html.parser").find_all("a"):
+        print(f"{w}[{g}+{w}] Href found {r}->{w} ", collected_links.get('href'))
+
+    print(f"{r}{'=' * 70}\n{chr(0xa)}")
+    input(f"{w}[{r}*{w}] Press enter key to continue")
 
 class LinkCollector:
     def __init__(self, uniformresourcelocator: str):
@@ -37,20 +46,8 @@ class LinkCollector:
             print(f"\n{w}[{r}*{w}] Results:\n{r}{'=' * 70}")
 
             try:
-                soup = BeautifulSoup(get(self.uniformresourcelocator).text, "html.parser")
-                for collected_links in soup.find_all("a"):
-                    print(f"{w}[{g}+{w}] Href found {r}->{w} ", collected_links.get('href'))
-
-                print(f"{r}=" * 70)
-                print(chr(0xa))
-                input(f"{w}[{r}*{w}] Press enter key to continue")
+                collect(self.uniformresourcelocator)
                 break
             except MissingSchema:
-                soup = BeautifulSoup(get(f"http://{self.uniformresourcelocator}/").text, "html.parser")
-                for collected_links in soup.find_all("a"):
-                    print(f"{w}[{g}+{w}] Href found {r}->{w} ", collected_links.get('href'))
-
-                print(f"{r}=" * 70)
-                print(chr(0xa))
-                input(f"{w}[{r}*{w}] Press enter key to continue")
+                collect(conv_url(self.uniformresourcelocator))
                 break
