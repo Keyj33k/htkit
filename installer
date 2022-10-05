@@ -23,8 +23,6 @@ fi
 
 if ! command -v pip &> /dev/null; then
         sudo apt-get update && sudo apt-get install python3 python3-pip 
-elif ! command -v curl &> /dev/null; then
-        sudo apt-get update && sudo apt-get install curl
 fi
 
 if [ -f "req/requirements.txt" ]; then
