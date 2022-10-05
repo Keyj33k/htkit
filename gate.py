@@ -95,7 +95,7 @@ class HunterToolkit:
         print(f"{r}[{w}5{r}]{w} B64 En-/Decrypt\t\t{r}[{w}15{r}]{w} Ping")
         print(f"{r}[{w}6{r}]{w} Whois Phonenumber\t\t{r}[{w}16{r}]{w} IPSweep")
         print(f"{r}[{w}7{r}]{w} Subdomain Scanner\t\t{r}[{w}17{r}]{w} External Tools")
-        print(f"{r}[{w}8{r}]{w} Whoami\t\t\t{r}[{w}18{r}]{w} Get Status Code")
+        print(f"{r}[{w}8{r}]{w} Whoami\t\t\t{r}[{w}18{r}]{w} Status Code")
         print(f"{r}[{w}9{r}]{w} System Overview\t\t{r}[{w}19{r}]{w} Email Extractor")
         print(f"{r}[{w}99{r}]{w} Exit")
         print(f"{r}=" * 70)
