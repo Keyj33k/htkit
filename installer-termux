@@ -23,8 +23,6 @@ fi
 
 if ! command -v pip &> /dev/null; then
         pkg update -y && pkg install python3 -y 
-elif ! command -v curl &> /dev/null; then
-        pkg update -y && pkg install curl -y
 fi
 
 if [ -f "req/requirements.txt" ]; then
