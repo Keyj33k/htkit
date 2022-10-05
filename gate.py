@@ -385,8 +385,7 @@ class HunterToolkit:
                 extract_mail_addr = EmailExtractor(gm_url)
                 extract_mail_addr.extract_mail_address()
             elif self.menu_option_choice == 99:
-                print(f"\n{w}[{r}*{w}] Goodbye{r},{w} {pwd.getpwuid(os.getuid())[0]}{r}.{w} Follow the white rabbit {r}...\n")
-                sys.exit(0)
+                sys.exit(f"\n{w}[{r}*{w}] Goodbye{r},{w} {pwd.getpwuid(os.getuid())[0]}{r}.{w} Follow the white rabbit {r}...\n")
             else:
                 print(f"\n{w}[{y}-{w}] Invalid Input{r}!")
         except KeyboardInterrupt:
@@ -428,13 +427,11 @@ if __name__ == "__main__":
             if start == 'y' or start == 'Y':
                 break
             elif start == 'n' or start == 'N':
-                print(f"{w}[{r}*{w}] You need to accept the terms to use the Hunter-Toolkit{r}.{w} Exit {r}...\n")
-                sys.exit(0)
+                sys.exit(f"{w}[{r}*{w}] You need to accept the terms to use the Hunter-Toolkit{r}.{w} Exit {r}...\n")
             else:
                 print(f"\n{w}[{y}-{w}] Only 'y/Y' or 'n/N' are allowed{r}!")
         except KeyboardInterrupt:
-            print(f"\n{w}[{y}-{w}] You pressed Ctrl+C{r}.{w} Exit{r}!")
-            sys.exit(1)
+            sys.exit(f"\n{w}[{y}-{w}] You pressed Ctrl+C{r}.{w} Exit{r}!")
 
     while True:
         try:
@@ -443,7 +440,6 @@ if __name__ == "__main__":
             hunter_toolkit = HunterToolkit(int(input(f"{r}({w}{pwd.getpwuid(os.getuid())[0]}{r}@{w}Hunter{r})>>{o} ")))
             hunter_toolkit.hunter_gate()
         except KeyboardInterrupt:
-            print(f"\n{w}[{y}-{w}] You pressed Ctrl+C{r}.{w} Exit{r}!")
-            sys.exit(1)
+            sys.exit(f"\n{w}[{y}-{w}] You pressed Ctrl+C{r}.{w} Exit{r}!")
         except ValueError:
             print(f"\n{w}[{y}-{w}] You need to enter a integer value{r}!")
