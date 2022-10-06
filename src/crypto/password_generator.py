@@ -23,14 +23,12 @@ y = "\033[0;33m"
 
 
 class PasswordGenerator:
-
     def __init__(self, password_length: int):
         self.password_length = password_length
 
     def main(self):
         while True:
-            if self.password_length == 0:
-                break
+            if self.password_length == 0: break
             elif self.password_length < 8:
                 print(f"{w}[{y}-{w}] Your password should be always bigger than eight characters{r}.")
                 break
@@ -39,9 +37,7 @@ class PasswordGenerator:
             mixer = digits + ascii_lowercase + ascii_uppercase + special_chars
             final_password = ''.join(sample(mixer, self.password_length))
 
-            print(f"{r}{'=' * 70}\n{w}[{g}+{w}] Your generated password{r}:{w} {final_password}")
-            print(f"{r}{'=' * 70}\n{chr(0xa)}")
+            print(f"{r}{'=' * 70}\n{w}[{g}+{w}] Your generated password{r}:"
+                  f"{w} {final_password}\n{r}{'=' * 70}{chr(0xa)}")
             input(f"\n{w}[{r}*{w}] Press enter key to continue")
             break
-
-
