@@ -72,12 +72,6 @@ permissions to do that. You can end up in jail for being a blackhat.
 - Don't hack anyone without permissions.
 - With great force follows great responsibility.
 
-<div id="profile">
-  <a href="https://www.python.org/">
-    <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/pypy.jpeg?raw=true" alt="prfl1">
-  </a>
-</div>
-
 ### LICENCE
 ```
 Copyright (c) 2022 Keyjeek
