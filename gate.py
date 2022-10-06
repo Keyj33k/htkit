@@ -87,7 +87,7 @@ class HunterToolkit:
     @staticmethod
     def menu():
         print(f"{r}=" * 70)
-        print(f"{r}[{w}0{r}]{w} Clear Screen\t\t{r}[{w}10{r}]{w} Extract IPv4 From URL")
+        print(f"{r}[{w}0{r}]{w} Clear Screen\t\t{r}[{w}10{r}]{w} IPv4 Extractor")
         print(f"{r}[{w}1{r}]{w} Port Scanner\t\t{r}[{w}11{r}]{w} Password Generator")
         print(f"{r}[{w}2{r}]{w} MD5 Encryption\t\t{r}[{w}12{r}]{w} Whois URL")
         print(f"{r}[{w}3{r}]{w} Whois IPv4\t\t\t{r}[{w}13{r}]{w} HTTP Header")
