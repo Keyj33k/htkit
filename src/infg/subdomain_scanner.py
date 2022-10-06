@@ -22,40 +22,33 @@ r = "\033[0;31m"
 y = "\033[0;33m"
 
 
-class SubdomainScanner:
-    def __init__(self, uniformresourcelocator: str, wordlist: str):
-        self.wordlist = wordlist
-        self.uniformresourcelocator = uniformresourcelocator
+def scanner(database: str, uniformresourcelocator: str):
+    with open(database, "r") as file:
+        print(f"\n{w}[{r}*{w}] Start scanning for subdomains from {uniformresourcelocator} {r}..."
+              f"\n{w}[{r}*{w}] Be patient{r},{w} It may take some time {r}...\n{r}{'=' * 70}")
 
-    def main(self):
-        def scanner(database):
-            with open(database, "r") as file:
-                print(f"\n{w}[{r}*{w}] Start scanning for subdomains from {self.uniformresourcelocator} {r}...")
-                print(f"\n{w}[{r}*{w}] Be patient{r},{w} It may take some time {r}...")
-                print(f"{r}=" * 70)
-
-                for list_domains in file.read().splitlines():
-                    uniformresourcelocator = f"http://{list_domains}.{self.uniformresourcelocator}"
-                    sleep(0.5)
-
-                    try:
-                        get(uniformresourcelocator)
-                        print(f"{w}[{g}+{w}] Discovered {r}->{w} {uniformresourcelocator}")
-                    except ConnectionError:
-                        pass
-
-        while True:
-            if self.wordlist == "exit" or self.wordlist == 'x':
-                break
+        for list_domains in file.read().splitlines():
+            build_url = f"http://{list_domains}.{uniformresourcelocator}"
+            sleep(0.75)
 
             try:
-                if self.wordlist == "":
-                    scanner("subdomains.txt")
-                else:
-                    scanner(self.wordlist)
+                print(f"{w}[{g}+{w}] {build_url}:\t{get(build_url).status_code}")
+            except ConnectionError:
+                pass
 
-                print(f"{r}{'=' * 70}\n{chr(0xa)}")
-                input(f"{w}[{r}*{w}] Press enter key to continue")
+
+class SubdomainScanner:
+    def __init__(self, url: str, wordlist: str):
+        self.url = url
+        self.wordlist = wordlist
+
+    def main(self):
+        while True:
+            if self.wordlist == "exit" or self.wordlist == 'x': break
+
+            try:
+                scanner("subdomains.txt", self.url) if self.wordlist == "" else scanner(self.wordlist, self.url)
+                input(f"{r}{'=' * 70}\n{chr(0xa)}\n{w}[{r}*{w}] Press enter key to continue")
                 break
             except FileNotFoundError:
                 print(f"{w}[{y}-{w}] You need the subdomain file in the current directory to run this tool{r}.")
