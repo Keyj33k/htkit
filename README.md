@@ -56,7 +56,7 @@ GetMail              >>     Extract email addresses from URL
 ---
 
 <div align="center">
-  <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/hunter_toolkit_example.gif?raw=true"/>
+  <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/hunter_demo.gif?raw=true"/>
 </div>
 
 # :warning: NOTE:
