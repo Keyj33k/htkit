@@ -42,7 +42,7 @@
 - :book: Please read the ![docs](https://github.com/Keyj33k/Hunter-Toolkit/blob/main/DOCS/INSTALLATION.md) to have full instructions for this project
 
 
-### :movie_camera: Usage example: Identifying service version behind an open port:
+### Usage example: Identifying service version behind an open port:
 
 ---
 
