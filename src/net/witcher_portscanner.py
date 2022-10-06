@@ -22,6 +22,8 @@ g = "\033[0;32m"
 r = "\033[0;31m"
 y = "\033[0;33m"
 
+def output(port: int, service: str):
+    print(f"TCP\t\t{port}  \t\topen\t{service}")
 
 class WitcherPortscanner:
     def __init__(self, target_ipv4: str, start_port: int, maximum_port: int):
@@ -39,21 +41,18 @@ class WitcherPortscanner:
                 break
 
             time_start = dtt.now()
-
-            print(f"\n{w}[{r}*{w}] Started scanning at{r}:{w}\t{dtt.now()}")
-            print(f"{r}=" * 70)
+            print(f"\n{w}[{r}*{w}] Started scanning at{r}:{w}\t{time_start}\n{'=' * 70}")
             print(f"{w}Protocol\tPort\t\tStatus\t Service\n{'-' * 70}")
 
             try:
                 for target_port in range(self.start_port, self.maximum_port + 1):
                     with socket(AF_INET, SOCK_STREAM) as socket_sock:
                         socket_sock.settimeout(5)
-                        final_result = socket_sock.connect_ex((self.target_ipv4, target_port))
-                        if final_result == 0:
+                        if socket_sock.connect_ex((self.target_ipv4, target_port)) == 0:
                             try:
-                                print(f"TCP\t\t{target_port}  \t\topen\t", getservbyport(target_port))
+                                output(target_port, getservbyport(target_port))
                             except OSError:
-                                print(f"TCP\t\t{target_port}  \t\topen\t Unknown")
+                                output(target_port, "unknown")
             except error as socket_error:
                 print(cld(socket_error, "red"))
                 break
@@ -61,10 +60,6 @@ class WitcherPortscanner:
                 print(f"\n{w}[{y}-{w}] Ctrl+C pressed{r}.{w} Exit{r}.")
                 break
 
-            time_stop = dtt.now()
-            needed_time = time_stop - time_start
-            print(f"{r}=" * 70)
-            print(f"{w}[{r}*{w}] Scanner done in {needed_time}!")
-            print(chr(0xa))
+            print(f"{r}{'=' * 70}\n{w}[{r}*{w}] Scanner done in {dtt.now() - time_start}!\n{chr(0xa)}")
             input(f"{w}[{r}*{w}] Press enter key to continue")
             break
