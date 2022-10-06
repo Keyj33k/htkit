@@ -35,8 +35,8 @@ class GetIPv4fromURL:
 
             try:
                 print(
-                    f"{'=' * 70}\n{w}[{g}+{w}] IP Address from {self.uniformresourcelocator}"
-                    f" {r}->{w} " + f"{gethostbyname(self.uniformresourcelocator)}\n{'=' * 70}\n{chr(0xa)}")
+                    f"{r}{'=' * 70}\n{w}[{g}+{w}] IP Address from {self.uniformresourcelocator}"
+                    f" {r}->{w} " + f"{gethostbyname(self.uniformresourcelocator)}\n{r}{'=' * 70}\n{chr(0xa)}")
                 input(f"{w}[{r}*{w}] Press enter key to continue")
                 break
             except (ValueError, gaierror):
