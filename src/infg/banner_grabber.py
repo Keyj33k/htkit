@@ -30,10 +30,8 @@ class BannerGrabber:
 
     def main(self):
         while True:
-            if self.target_address == 'x' or self.target_address == 'exit':
-                break
-            elif self.target_port == 0:
-                break
+            if self.target_address == 'x' or self.target_address == 'exit': break
+            if self.target_port == 0: break
 
             try:
                 with socket(AF_INET, SOCK_STREAM) as socket_sock:
