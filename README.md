@@ -22,26 +22,17 @@
 ---
 
 ```
-                    [  Hunter-Toolkit Services  ]   
-==========================================================================
-Witcher              >>     Port Scanner
-MD5Crypt             >>     MD5 Encryption
-WhoisIPv4            >>     IPv4 Whois Lookup
-BannerGrabber        >>     Get Service Behind An Open Port
-B64Crypt             >>     En- and Decryption Used Base64
-WhoisPhonenumber     >>     Phonenumber Whois Lookup
-SubdomainScanner     >>     Scan For Subdomains From URL
-Whoami               >>     Display Private IPv4 Address, MAC Address etc
-MySystem             >>     Display System Informations
-URL2IPv4             >>     Extract IPv4 Address From URL
-PasswordGenerator    >>     Generate Random Password
-URLWhois             >>     URL Whois Lookup
-HTTPHeader           >>     Display Remote Server HTTP Header
-HREFCollector        >>     Extract HREF Attribute
-Ping                 >>     Send ICMP Packets For Getting Server Status
-IPSweep              >>     Scan Host Range For Active Devices
-GetStat              >>     Get remote server status code
-GetMail              >>     Extract email addresses from URL
+[0] Clear Screen		[10] IPv4 Extractor
+[1] Port Scanner		[11] Password Generator
+[2] MD5 Encryption		[12] Whois URL
+[3] Whois IPv4			[13] HTTP Header
+[4] Banner Grabber		[14] HREF Collector
+[5] B64 En-/Decrypt		[15] Ping
+[6] Whois Phonenumber		[16] IPSweep
+[7] Subdomain Scanner		[17] Status Code
+[8] Whoami			[18] Email Extractor
+[9] System Overview		[99] Exit
+
 ```
 
 ### :rocket: Getting started:
