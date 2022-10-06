@@ -41,7 +41,7 @@ class WitcherPortscanner:
                 break
 
             time_start = dtt.now()
-            print(f"\n{w}[{r}*{w}] Started scanning at{r}:{w}\t{time_start}\n{'=' * 70}")
+            print(f"\n{w}[{r}*{w}] Started scanning at{r}:{w}\t{time_start}\n{r}{'=' * 70}")
             print(f"{w}Protocol\tPort\t\tStatus\t Service\n{'-' * 70}")
 
             try:
@@ -53,13 +53,12 @@ class WitcherPortscanner:
                                 output(target_port, getservbyport(target_port))
                             except OSError:
                                 output(target_port, "unknown")
+                print(f"{r}{'=' * 70}\n{w}[{r}*{w}] Scanner done in {dtt.now() - time_start}!\n{chr(0xa)}")
+                input(f"{w}[{r}*{w}] Press enter key to continue")
+                break
             except error as socket_error:
                 print(cld(socket_error, "red"))
                 break
             except KeyboardInterrupt:
                 print(f"\n{w}[{y}-{w}] Ctrl+C pressed{r}.{w} Exit{r}.")
                 break
-
-            print(f"{r}{'=' * 70}\n{w}[{r}*{w}] Scanner done in {dtt.now() - time_start}!\n{chr(0xa)}")
-            input(f"{w}[{r}*{w}] Press enter key to continue")
-            break
