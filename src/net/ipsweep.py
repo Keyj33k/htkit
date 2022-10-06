@@ -24,43 +24,37 @@ r = "\033[0;31m"
 y = "\033[0;33m"
 
 
-class IPv4Sweep:
+def conf_check(addr: str, min_host: int, max_host: int):
+    address_split = addr.split(".")
+    if len(address_split) != 3:
+        print(f"\n{w}[{y}-{w}] Only the first three octets are allowed{r}!")
+        return False
+    elif min_host <= 0 or min_host >= 252 or max_host <= 0 or max_host >= 253:
+        print(f"\n{w}[{y}-{w}] Invalid host config!")
+        return False
 
-    def __init__(self, ipv4_address: str, min_range: int, max_range: int, ping_count: str):
+    for octet in range(3):
+        if int(address_split[octet]) <= 0 or int(address_split[octet]) >= 253:
+            print(f"\n{w}[{y}-{w}] Octet {address_split[0]} is invalid{r}!")
+            return False
+
+
+class IPv4Sweep:
+    def __init__(self, ipv4_address: str, host_min: int, host_max: int, ping_count: str):
+        self.host_min = host_min
+        self.host_max = host_max
         self.ping_count = ping_count
-        self.min_range = min_range
-        self.max_range = max_range
         self.ipv4_address = ipv4_address
 
     def get_status(self):
         while True:
-            address_split = self.ipv4_address.split(".")
-            if len(address_split) != 3:
-                print(f"\n{w}[{y}-{w}] Only the first three octets are allowed{r}!")
-                break
-            elif self.min_range <= 0 or self.min_range >= 252:
-                print(f"\n{w}[{y}-{w}] Invalid min host config!")
-                break
-            elif self.max_range <= 0 or self.max_range >= 253:
-                print(f"\n{w}[{y}-{w}] Invalid max host config!")
-                break
-            elif int(address_split[0]) <= 0 or int(address_split[0]) >= 253:
-                print(f"\n{w}[{y}-{w}] Octet {address_split[0]} is invalid{r}!")
-                break
-            elif int(address_split[1]) <= 0 or int(address_split[1]) >= 253:
-                print(f"\n{w}[{y}-{w}] Octet {address_split[1]} is invalid{r}!")
-                break
-            elif int(address_split[2]) <= 0 or int(address_split[2]) >= 253:
-                print(f"\n{w}[{y}-{w}] Octet {address_split[2]} is invalid{r}!")
-                break
-
-            print(f"\n{w}[{r}*{w}] Started scanning at{r}:{w}\t{datetime.now()}")
-            print(f"{r}=" * 70)
-
+            if conf_check(self.ipv4_address, self.host_min, self.host_max) is False: break
+            print(f"\n{w}[{r}*{w}] Started scanning at{r}:{w}\t{datetime.now()}\n{r}{'=' * 70}")
             start = datetime.now()
 
-            for icmp_request in range(self.min_range, self.max_range + 1):
+            for icmp_request in range(self.host_min, self.host_max + 1):
                 ip_address = f"{self.ipv4_address}.{str(icmp_request)}"
+
                 try:
                     check_output(["ping", "-c", self.ping_count, ip_address])
                     print(f"{w}[{g}+{w}] Host {ip_address} is reachable{r}!")
@@ -70,9 +64,6 @@ class IPv4Sweep:
                 except CalledProcessError:
                     print(f"{w}[{y}-{w}] Host {ip_address} is not reachable{r}!")
 
-            end = datetime.now()
-            print(f"{r}=" * 70)
-            print(f"{w}[{r}*{w}] Scanner done in {end - start}{r}!")
-            print(chr(0xa))
+            print(f"{r}{'=' * 70}\n{w}[{r}*{w}] Scanner done in {datetime.now() - start}{r}!\n{chr(0xa)}")
             input(f"{w}[{r}*{w}] Press enter key to continue")
             break
