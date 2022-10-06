@@ -32,8 +32,6 @@
 [7] Whoami			[17] Email Extractor
 [8] System Overview		[99] Exit
 [9] IPv4 Extractor
-
-
 ```
 
 ### Getting started:
