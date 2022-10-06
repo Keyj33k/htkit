@@ -37,7 +37,6 @@ class CheckHostAvailability:
             except CalledProcessError as cpe:
                 print(cld(str(cpe), "red"))
 
-            print(f"{r}=" * 70)
-            print(chr(0xa))
+            print(f"{r}{'=' * 70}\n{chr(0xa)}")
             input(f"{w}[{r}*{w}] Press enter key to continue")
             break
