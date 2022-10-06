@@ -31,9 +31,7 @@ class PhonenumberWhois:
 
     def main(self):
         while True:
-            if self.target_phonenumber == 'x' or self.target_phonenumber == 'exit':
-                break
-
+            if self.target_phonenumber == 'x' or self.target_phonenumber == 'exit': break
             time_start = dtt.now()
             print(f"\n{w}[{r}*{w}] Request\t\tResponse\n{r}{'=' * 70}")
 
