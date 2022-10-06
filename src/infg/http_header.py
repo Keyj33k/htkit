@@ -28,9 +28,7 @@ class HTTPHeader:
 
     def main(self):
         while True:
-            if self.uniformresourcelocator == 'x' or self.uniformresourcelocator == 'exit':
-                break
-
+            if self.uniformresourcelocator == 'x' or self.uniformresourcelocator == 'exit': break
             print(f"\n{w}[{g}+{w}] Result{r}:\n{'=' * 70}{w}")
 
             try:
