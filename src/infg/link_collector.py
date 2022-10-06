@@ -40,9 +40,7 @@ class LinkCollector:
 
     def main(self):
         while True:
-            if self.uniformresourcelocator == 'x' or self.uniformresourcelocator == 'exit':
-                break
-
+            if self.uniformresourcelocator == 'x' or self.uniformresourcelocator == 'exit': break
             print(f"\n{w}[{r}*{w}] Results:\n{r}{'=' * 70}")
 
             try:
