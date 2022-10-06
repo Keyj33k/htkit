@@ -97,7 +97,7 @@ class HunterToolkit:
               f"{r}[{w}6{r}]{w} Subdomain Scanner\t\t{r}[{w}16{r}]{w} Status Code\n"
               f"{r}[{w}7{r}]{w} Whoami\t\t\t{r}[{w}17{r}]{w} Email Extractor\n"
               f"{r}[{w}8{r}]{w} System Overview\t\t{r}[{w}99{r}]{w} Exit\n"
-              f"{r}[{w}9{r}]{w} IPv4 Extractor Exit\n{r}{'=' * 70}\n")
+              f"{r}[{w}9{r}]{w} IPv4 Extractor\n{r}{'=' * 70}\n")
 
     @staticmethod
     def my_system():
