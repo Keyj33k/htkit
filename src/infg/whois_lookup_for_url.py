@@ -32,7 +32,7 @@ class WhoisLookupForURL:
 
             try:
                 print(f"\n{w}[{g}+{w}] Results:\n{r}{'=' * 70}{w}\n{whois(self.uniformresourcelocator).text}")
-                input(f"{r}{'=' * 70}{chr(0xa)}\n{w}[{r}*{w}] Press enter key to continue")
+                input(f"{r}{'=' * 70}\n{chr(0xa)}\n{w}[{r}*{w}] Press enter key to continue")
                 break
             except Exception as excerr:
                 print(colored(str(excerr), "red"))
