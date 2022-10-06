@@ -31,11 +31,9 @@ class RemoteServerStatusCode:
         while True:
             try:
                 send_request = urllib3.PoolManager().request("GET", self.uniformresourcelocator)
-                print(f"\n{w}[{r}*{w}] Getting the status code from {self.uniformresourcelocator} {r}...\n{'=' * 70}")
-                sleep(1.25)
-                print(f"{w}[{g}+{w}] Status Code From {self.uniformresourcelocator} {r}->{w} {send_request.status}")
-                print(f"{r}=" * 70)
-                input(f"\n{w}[{r}*{w}] Press enter key to continue")
+                print(f"\n{w}Result:\n{r}{'=' * 70}\n"
+                      f"{w}[{g}+{w}] {self.uniformresourcelocator} status code {r}->{w} {send_request.status}")
+                input(f"{r}{'=' * 70}\n{chr(0xa)}\n{w}[{r}*{w}] Press enter key to continue")
                 break
             except KeyboardInterrupt:
                 print(f"\n{w}[{r}*{w}] You pressed Ctrl+C{r}.{w} Exit{r}.")
