@@ -6,7 +6,7 @@
 
 </div>
 
-### :question: Why using the Hunter-Toolkit?
+### Why using the Hunter-Toolkit?
 
 ---
 
@@ -17,7 +17,7 @@
 - You don't have to search long for the tools you need. The pentesting assistant will always give you a clear overview of all available services, To save your time constantly.
 
 
-### :sparkles: What the Hunter-Toolkit can do for you?
+### What the Hunter-Toolkit can do for you?
 
 ---
 
@@ -35,7 +35,7 @@
 
 ```
 
-### :rocket: Getting started:
+### Getting started:
 
 ---
 
