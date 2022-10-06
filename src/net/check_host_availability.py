@@ -27,9 +27,7 @@ class CheckHostAvailability:
 
     def main(self):
         while True:
-            if self.target_address == 'x' or self.target_address == 'exit':
-                break
-
+            if self.target_address == 'x' or self.target_address == 'exit': break
             print(f"\n{w}[{g}+{w}] Result{r}:{w}\n{r}{'=' * 70}{w}")
 
             try:
