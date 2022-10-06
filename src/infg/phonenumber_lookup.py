@@ -49,22 +49,17 @@ class PhonenumberWhois:
                 final_phonenumbers_location = gc.description_for_number(phonenumbers_, "en")
                 final_phonenumbers_provider = cr.name_for_number(phonenumbers_, "en")
 
-                print(f"{w}[{g}+{w}] Validation{r}:{w}\t\t{phonenumber_val}")
-                print(f"{w}[{g}+{w}] National{r}:{w}\t\t{national}")
-                print(f"{w}[{g}+{w}] International{r}:{w}\t{international}")
-                print(f"{w}[{g}+{w}] Timezone{r}:{w}\t\t{final_timezone}")
-                print(f"{w}[{g}+{w}] Location{r}:{w}\t\t{final_phonenumbers_location}")
-                print(f"{w}[{g}+{w}] Provider{r}:{w}\t\t{final_phonenumbers_provider}")
-                
-                time_stop = dtt.now()
-                time_result = time_stop - time_start
-                print(f"{r}=" * 70)
-                print(f"{w}[{r}*{w}] Job done in {time_result}")
-                print(chr(0xa))
-                input(f"{w}[{r}*{w}] Press enter key to continue")
+                print(f"{w}[{g}+{w}] Validation{r}:{w}\t\t{phonenumber_val}\n"
+                      f"{w}[{g}+{w}] National{r}:{w}\t\t{national}\n"
+                      f"{w}[{g}+{w}] International{r}:{w}\t{international}\n"
+                      f"{w}[{g}+{w}] Timezone{r}:{w}\t\t{final_timezone}\n"
+                      f"{w}[{g}+{w}] Location{r}:{w}\t\t{final_phonenumbers_location}\n"
+                      f"{w}[{g}+{w}] Provider{r}:{w}\t\t{final_phonenumbers_provider}")
+
+                print(f"{r}{'=' * 70}\n{w}[{r}*{w}] Job done in {dtt.now() - time_start}")
+                input(f"{chr(0xa)}\n{w}[{r}*{w}] Press enter key to continue")
                 break
             except Exception as error:
-                print(cld("An error was defined!", "red"))
-                print(error)
+                print(cld(str(error), "red"))
                 input(f"{w}[{r}*{w}] Press enter key to continue")
                 break
