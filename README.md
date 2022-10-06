@@ -22,16 +22,17 @@
 ---
 
 ```
-[0] Clear Screen		[10] IPv4 Extractor
-[1] Port Scanner		[11] Password Generator
-[2] MD5 Encryption		[12] Whois URL
-[3] Whois IPv4			[13] HTTP Header
-[4] Banner Grabber		[14] HREF Collector
-[5] B64 En-/Decrypt		[15] Ping
-[6] Whois Phonenumber		[16] IPSweep
-[7] Subdomain Scanner		[17] Status Code
-[8] Whoami			[18] Email Extractor
-[9] System Overview		[99] Exit
+[0] Clear Screen		[10] Password Generator
+[1] Port Scanner		[11] Whois URL
+[2] Whois IPv4			[12] HTTP Header
+[3] Banner Grabber		[13] HREF Collector
+[4] B64 En-/Decrypt		[14] Ping
+[5] Whois Phonenumber		[15] IPSweep
+[6] Subdomain Scanner		[16] Status Code
+[7] Whoami			[17] Email Extractor
+[8] System Overview		[99] Exit
+[9] IPv4 Extractor
+
 
 ```
 
