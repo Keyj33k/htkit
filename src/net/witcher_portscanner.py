@@ -41,8 +41,8 @@ class WitcherPortscanner:
                 break
 
             time_start = dtt.now()
-            print(f"\n{w}[{r}*{w}] Started scanning at{r}:{w}\t{time_start}\n{r}{'=' * 70}")
-            print(f"{w}Protocol\tPort\t\tStatus\t Service\n{'-' * 70}")
+            print(f"\n{w}[{r}*{w}] Started scanning at{r}:{w}\t{time_start}\n{r}{'=' * 70}\n"
+                  f"{w}Protocol\tPort\t\tStatus\t Service\n{'-' * 70}")
 
             try:
                 for target_port in range(self.start_port, self.maximum_port + 1):
