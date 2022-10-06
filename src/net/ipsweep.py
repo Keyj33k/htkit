@@ -35,7 +35,7 @@ def conf_check(addr: str, min_host: int, max_host: int):
 
     for octet in range(3):
         if int(address_split[octet]) <= 0 or int(address_split[octet]) >= 253:
-            print(f"\n{w}[{y}-{w}] Octet {address_split[0]} is invalid{r}!")
+            print(f"\n{w}[{y}-{w}] Octet {octet} is invalid{r}!")
             return False
 
 
