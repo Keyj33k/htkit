@@ -2,9 +2,13 @@
 |What's New?|
 =============
 
+06.10.22:
+---------
+- refactored project, redesigned and added features (status code grabbing)
+
 30.09.22:
 ---------
-updated disclaimer banner and refactored source code
+- updated disclaimer banner and refactored source code
 
 25.09.22:
 ---------
