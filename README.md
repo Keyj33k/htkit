@@ -2,7 +2,7 @@
   
 ![version](https://img.shields.io/badge/Version-1.1.12-informational?style=flat&logo=&logoColor=white&color=red) ![stars](https://img.shields.io/github/stars/Keyj33k/Hunter-Toolkit?style=social) ![forks](https://img.shields.io/github/forks/Keyj33k/Hunter-Toolkit?label=Forks&logo=&logoColor=white&color=blue) ![languages](https://img.shields.io/github/languages/count/Keyj33k/Hunter-Toolkit?style=social&logo=&logoColor=white&color=blue) ![issues](https://img.shields.io/github/last-commit/Keyj33k/Hunter-Toolkit?style=flat&logo=&logoColor=white&color=blue) ![platform](https://img.shields.io/badge/Platform-Linux-informational?style=flat&logo=&logoColor=white&color=green) 
   
-  <a href="https://github.com/Keyj33k/Hunter/archive/refs/heads/main.zip"><img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/hunter_banner.svg" alt="banner"/></a>
+  <a href="https://github.com/Keyj33k/Hunter/archive/refs/heads/main.zip"><img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/ht_banner.svg" alt="banner"/></a>
 
 </div>
 
