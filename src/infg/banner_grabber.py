@@ -38,17 +38,14 @@ class BannerGrabber:
             try:
                 with socket(AF_INET, SOCK_STREAM) as socket_sock:
                     socket_sock.connect_ex((self.target_address, self.target_port))
-                    socket_sock.settimeout(5)
-                    service = socket_sock.recv(1024).decode()
+                    socket_sock.settimeout(2)
+                    banner = socket_sock.recv(1024).decode().replace("\n", "")
                     
-                    print(f"\n{w}[{r}*{w}] Start scanning {self.target_address} at {dtt.now()}")
-                    time.sleep(1.5)
-                    print(f"{r}=" * 70)
-                    print(f"{w}[{g}+{w}] Port {self.target_port} {r}->{w} {service}" + f"{r}=" * 70)
-                    print(chr(0xa))
-                    input(f"{w}[{r}*{w}] Press enter key to continue")
+                print(f"\n{w}[{r}*{w}] Start scanning {self.target_address} at {dtt.now()}\n{r}{'=' * 70}")
+                time.sleep(0.75)
+                print(f"{w}[{g}+{w}] Port {self.target_port} {r}->{w} {banner}\n{r}{'=' * 70}")
+                input(f"{chr(0xa)}\n{w}[{r}*{w}] Press enter key to continue")
                 break
             except error as sockerr:
                 print(cld(sockerr, "red"))
                 break
-
