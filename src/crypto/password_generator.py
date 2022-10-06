@@ -40,7 +40,7 @@ class PasswordGenerator:
             final_password = ''.join(sample(mixer, self.password_length))
 
             print(f"{r}{'=' * 70}\n{w}[{g}+{w}] Your generated password{r}:{w} {final_password}")
-            print(f"{r}{'=' * 70}{chr(0xa)}")
+            print(f"{r}{'=' * 70}\n{chr(0xa)}")
             input(f"\n{w}[{r}*{w}] Press enter key to continue")
             break
 
