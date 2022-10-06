@@ -32,7 +32,7 @@ def scanner(database: str, uniformresourcelocator: str):
             sleep(0.75)
 
             try:
-                print(f"{w}[{g}+{w}] {build_url}:\t{get(build_url).status_code}")
+                print(f"{w}[{g}+{w}] {build_url}\t{r}[{w} {get(build_url).status_code} {r}]{w}")
             except ConnectionError:
                 pass
 
