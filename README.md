@@ -46,7 +46,7 @@
 ---
 
 <div align="center">
-  <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/hunter_demo.gif?raw=true"/>
+  <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/usage_example.gif?raw=true"/>
 </div>
 
 # :warning: NOTE:
