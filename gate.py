@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
 
 try:
-    from src.net.check_host_availability import CheckHostAvailability
-    from src.crypto.password_generator import PasswordGenerator
     from src.infg.whois_lookup_for_url import WhoisLookupForURL
-    from src.net.witcher_portscanner import WitcherPortscanner
     from src.infg.phonenumber_lookup import PhonenumberWhois
     from src.infg.status_code import RemoteServerStatusCode
     from src.infg.subdomain_scanner import SubdomainScanner
@@ -14,6 +11,12 @@ try:
     from src.infg.ipv4_whois import IPv4Lookup
     from src.infg.url2ip import GetIPv4fromURL
     from src.infg.http_header import HTTPHeader
+
+    from src.crypto.password_generator import PasswordGenerator
+    from src.crypto.b64_crypt import Crypt
+
+    from src.net.check_host_availability import CheckHostAvailability
+    from src.net.witcher_portscanner import WitcherPortscanner
     from src.net.ipsweep import IPv4Sweep
 
     from termcolor import colored as cld
@@ -205,8 +208,7 @@ class HunterToolkit:
 
     def hunter_gate(self):
         try:
-            if self.menu_option_choice == 0:
-                call(["clear"])
+            if self.menu_option_choice == 0: call(["clear"])
             elif self.menu_option_choice == 1:
                 print(cld(figlet_format("Witcher", font="bulbhead"), "yellow"))
                 ip_gipv4u = str(input(f"{w}[{r}*{w}] {r}({w}{USERNAME}{r}@{w}Hunter{r},{w} Address{r})>>{o} "))
@@ -231,40 +233,7 @@ class HunterToolkit:
                 get_service = BannerGrabber(ipv4_address, target_port)
                 get_service.main()
             elif self.menu_option_choice == 4:
-                while True:
-                    print(cld(figlet_format("B64Crypt", font="bulbhead"), "yellow"))
-                    print(f"\n\t{w}[{r}1{w}] Encoder\n"
-                          f"\t{w}[{r}2{w}] Decoder\n"
-                          f"\t{w}[{r}x{w}] Exit")
-                    b64_choice = input(f"\n{w}[{r}*{w}] Choice {r}>>{o} ")
-                    if b64_choice == "1":
-                        hash_value = str(input(f"{w}[{r}*{w}] {r}({w}{USERNAME}{r}@{w}Hunter{r},{w} Value{r})>>{o} "))
-                        if hash_value == 'exit' or hash_value == 'x': break
-
-                        try:
-                            print(f"{r}{'=' * 70}\n{w}[{g}+{w}] {hash_value} {r}->{w} "
-                                  f"{b64.b64encode(hash_value.encode('ascii')).decode('ascii')}\n"
-                                  f"{r}{'=' * 70}\n{chr(0xa)}")
-                            input(f"{w}[{r}*{w}] Press enter key to continue")
-                        except Exception as error:
-                            print(cld(f"An error was defined: {error}", "red"))
-                            input(f"{w}[{r}*{w}] Press enter key to continue")
-                    elif b64_choice == "2":
-                        decode_hash = str(input(f"{w}[{r}*{w}] {r}({w}{USERNAME}{r}@{w}Hunter{r},{w} Value{r})>>{o} "))
-                        if decode_hash == 'exit' or decode_hash == 'x': break
-
-                        try:
-                            print(f"{r}{'=' * 70}\n{w}[{g}+{w}] {decode_hash} {r}->{w} "
-                                  f"{b64.b64decode(decode_hash.encode('ascii')).decode('ascii')}\n"
-                                  f"{r}{'=' * 70}\n{chr(0xa)}")
-                            input(f"{w}[{r}*{w}] Press enter key to continue")
-                        except Exception as error:
-                            print(cld(f"An error was defined:\n{error}", "red"))
-                            input(f"{w}[{r}*{w}] Press enter key to continue")
-                    elif b64_choice == 'x' or b64_choice == 'exit':
-                        break
-                    else:
-                        print(cld("Invalid Input!", "red"))
+                Crypt.main()
             elif self.menu_option_choice == 5:
                 print(cld(figlet_format("Whois\nPhonenumber", font="bulbhead"), "yellow"))
                 url_ps = str(input(f"{w}[{r}*{w}] {r}({w}{USERNAME}{r}@{w}Hunter{r},{w} Phonenumber{r})>>{o} "))
@@ -392,10 +361,9 @@ if __name__ == "__main__":
 
         try:
             start = str(input(f"{w}[{r}*{w}] Accept{r}?{w} y{r}/{w}n{o} "))
-            if start == 'y' or start == 'Y':
-                break
+            if start == 'y' or start == 'Y': break
             elif start == 'n' or start == 'N':
-                sys.exit(f"{w}[{r}*{w}] You need to accept the terms to use the Hunter-Toolkit{r}.{w} Exit {r}...\n")
+                sys.exit(f"\n{w}[{r}*{w}] You need to accept the terms to use the Hunter-Toolkit{r}.{w} Exit {r}...")
             else:
                 print(f"\n{w}[{y}-{w}] Only 'y/Y' or 'n/N' are allowed{r}!")
         except KeyboardInterrupt:
