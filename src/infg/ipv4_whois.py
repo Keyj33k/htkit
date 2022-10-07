@@ -4,6 +4,7 @@ try:
     from datetime import datetime as dtt
     from termcolor import colored as cld
     from requests import post, RequestException
+    from src.conf_checks.conf import Conf
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -22,24 +23,13 @@ g = "\033[0;32m"
 r = "\033[0;31m"
 y = "\033[0;33m"
 
-def config_check(ip_addr: str):
-    split_address = ip_addr.split(".")
-    if len(split_address) != 4:
-        print(f"\n{w}[{y}-{w}] You need to enter a valid 32 bit address{r}!")
-        return False
-
-    for octet in range(4):
-        if int(split_address[octet]) <= 0 or int(split_address[octet]) >= 253:
-            print(f"\n{w}[{y}-{w}] Octet {octet + 1} ( {split_address[octet]} ) is invalid{r}!")
-            return False
-
 class IPv4Lookup:
     def __init__(self, ipv4_address: str):
         self.ipv4_address = ipv4_address
 
     def main(self):
         while True:
-            if config_check(self.ipv4_address) is False: break
+            if Conf.octets(self.ipv4_address, 4) is False: break
             time_start = dtt.now()
             print(f"\n{w}[{r}*{w}] Results{r}:\n{'=' * 70}")
 
