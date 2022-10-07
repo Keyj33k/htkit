@@ -25,7 +25,7 @@ try:
     from datetime import datetime as dtt
     from pyfiglet import figlet_format
     from subprocess import call
-    import sys
+    from sys import exit
     from pwd import getpwuid
     from os import getuid
 except ImportError:
@@ -94,108 +94,110 @@ class HunterToolkit:
 
     def hunter_gate(self):
         try:
-            if self.menu_option_choice == 0: call(["clear"])
-            elif self.menu_option_choice == 1:
-                print(cld(figlet_format("Witcher", font="bulbhead"), "yellow"))
-                ip_gipv4u = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Address{R})>>{Y} "))
-                exit_str_err(ip_gipv4u, "Witcher")
-                sp_gipv4u = int(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Min{R}.{W} Port{R})>>{Y} "))
-                exit_int_err(sp_gipv4u, "Witcher")
-                mp_gipv4u = int(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Max{R}.{W} Port{R})>>{Y} "))
-                exit_int_err(mp_gipv4u, "Witcher")
-                extract_ipv4 = WitcherPortscanner(ip_gipv4u, sp_gipv4u, mp_gipv4u)
-                extract_ipv4.main()
-            elif self.menu_option_choice == 2:
-                print(cld(figlet_format("IPv4Whois", font="bulbhead"), "yellow"))
-                ipv4_address = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} IPv4{R})>>{Y} "))
-                ipv4_lookup = IPv4Lookup(ipv4_address)
-                ipv4_lookup.main()
-            elif self.menu_option_choice == 3:
-                print(cld(figlet_format("Banner\nGrabber", font="bulbhead"), "yellow"))
-                ipv4_address = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Address{R})>>{Y} "))
-                exit_str_err(ipv4_address, "Banner Grabber")
-                target_port = int(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Port{R})>>{Y} "))
-                exit_int_err(target_port, "Banner Grabber")
-                get_service = BannerGrabber(ipv4_address, target_port)
-                get_service.main()
-            elif self.menu_option_choice == 4:
-                Crypt.main()
-            elif self.menu_option_choice == 5:
-                print(cld(figlet_format("Whois\nPhonenumber", font="bulbhead"), "yellow"))
-                url_ps = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Phonenumber{R})>>{Y} "))
-                phon_inf = PhonenumberWhois(url_ps)
-                phon_inf.main()
-            elif self.menu_option_choice == 6:
-                print(cld(figlet_format("Subdomain\nScanner", font="bulbhead"), "yellow"))
-                url_sds = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} URL{R})>>{Y} "))
-                exit_str_err(url_sds, "Subdomain Scanner")
-                wordl = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} "
-                                  f"Wordlist{R}[{W}empty for default wordlist{R}])>>{Y} "))
-                exit_str_err(wordl, "Subdomain Scanner")
-                bruteforce_subdomains = SubdomainScanner(url_sds, wordl)
-                bruteforce_subdomains.main()
-            elif self.menu_option_choice == 7:
-                SystemInformations.details()
-            elif self.menu_option_choice == 8:
-                SystemInformations.overview()
-            elif self.menu_option_choice == 9:
-                print(cld(figlet_format("URL2IPv4", font="bulbhead"), "yellow"))
-                url_gipv4u = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} URL{R})>>{Y} "))
-                extract_ipv4 = GetIPv4fromURL(url_gipv4u)
-                extract_ipv4.main()
-            elif self.menu_option_choice == 10:
-                print(cld(figlet_format("Password\nGenerator", font="bulbhead"), "yellow"))
-                passw_length = int(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}"
-                                         f"Hunter{R},{W} Password length{R})>>{Y} "))
-                extract_ipv4 = PasswordGenerator(passw_length)
-                extract_ipv4.main()
-            elif self.menu_option_choice == 11:
-                print(cld(figlet_format("URLWhois", font="bulbhead"), "yellow"))
-                url_whois = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} URL{R})>>{Y} "))
-                get_lookup = WhoisLookupForURL(url_whois)
-                get_lookup.main()
-            elif self.menu_option_choice == 12:
-                print(cld(figlet_format("HTTPHeader", font="bulbhead"), "yellow"))
-                url_ghttph = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} URL{R})>>{Y} "))
-                httpheader = HTTPHeader(url_ghttph)
-                httpheader.main()
-            elif self.menu_option_choice == 13:
-                print(cld(figlet_format("Link\nCollector", font="bulbhead"), "yellow"))
-                url_lc = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} URL{R})>>{Y} "))
-                linkcollector = LinkCollector(url_lc)
-                linkcollector.main()
-            elif self.menu_option_choice == 14:
-                print(cld(figlet_format("Ping", font="bulbhead"), "yellow"))
-                addr = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Address{R})>>{Y} "))
-                check = CheckHostAvailability(addr)
-                check.main()
-            elif self.menu_option_choice == 15:
-                print(cld(figlet_format("IPSweep", font="bulbhead"), "yellow"))
-                ipv4 = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},"
-                                 f"{W} IPv4 Address(First Three Octets Only){R})>>{Y} "))
-                exit_str_err(ipv4, "IPSweep")
-                start_range = int(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Start Range{R})>>{Y} "))
-                exit_int_err(start_range, "IPSweep")
-                last_range = int(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Last Range{R})>>{Y} "))
-                exit_int_err(last_range, "IPSweep")
-                ping_count = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Ping Count{R})>>{Y} "))
-                exit_str_err(ping_count, "IPSweep")
-                ipsweep = IPv4Sweep(ipv4, start_range, last_range, ping_count)
-                ipsweep.get_status()
-            elif self.menu_option_choice == 16:
-                print(cld(figlet_format("GetStat", font="bulbhead"), "yellow"))
-                gs_url = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Address{R})>>{Y} "))
-                status_code = RemoteServerStatusCode(gs_url)
-                status_code.get_code()
-            elif self.menu_option_choice == 17:
-                print(cld(figlet_format("GetMail", font="bulbhead"), "yellow"))
-                gm_url = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Full URL{R})>>{Y} "))
-                extract_mail_addr = EmailExtractor(gm_url)
-                extract_mail_addr.extract_mail_address()
-            elif self.menu_option_choice == 99:
-                sys.exit(f"\n{W}[{R}*{W}] Goodbye{R},{W} {USERNAME}{R}.{W} Follow the white rabbit {R}...\n")
-            else:
-                print(f"\n{W}[{Y}-{W}] Invalid Input{R}!")
+            match self.menu_option_choice:
+                case 0:
+                    call(["clear"])
+                case 1:
+                    print(cld(figlet_format("Witcher", font="bulbhead"), "yellow"))
+                    ip_gipv4u = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Address{R})>>{Y} "))
+                    exit_str_err(ip_gipv4u, "Witcher")
+                    sp_gipv4u = int(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Min{R}.{W} Port{R})>>{Y} "))
+                    exit_int_err(sp_gipv4u, "Witcher")
+                    mp_gipv4u = int(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Max{R}.{W} Port{R})>>{Y} "))
+                    exit_int_err(mp_gipv4u, "Witcher")
+                    port_scanner = WitcherPortscanner(ip_gipv4u, sp_gipv4u, mp_gipv4u)
+                    port_scanner.main()
+                case 2:
+                    print(cld(figlet_format("IPv4Whois", font="bulbhead"), "yellow"))
+                    ipv4_address = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} IPv4{R})>>{Y} "))
+                    ipv4_lookup = IPv4Lookup(ipv4_address)
+                    ipv4_lookup.main()
+                case 3:
+                    print(cld(figlet_format("Banner\nGrabber", font="bulbhead"), "yellow"))
+                    ipv4_address = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Address{R})>>{Y} "))
+                    exit_str_err(ipv4_address, "Banner Grabber")
+                    target_port = int(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Port{R})>>{Y} "))
+                    exit_int_err(target_port, "Banner Grabber")
+                    get_service = BannerGrabber(ipv4_address, target_port)
+                    get_service.main()
+                case 4:
+                    Crypt.main()
+                case 5:
+                    print(cld(figlet_format("Whois\nPhonenumber", font="bulbhead"), "yellow"))
+                    url_ps = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Phonenumber{R})>>{Y} "))
+                    phon_inf = PhonenumberWhois(url_ps)
+                    phon_inf.main()
+                case 6:
+                    print(cld(figlet_format("Subdomain\nScanner", font="bulbhead"), "yellow"))
+                    url_sds = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} URL{R})>>{Y} "))
+                    exit_str_err(url_sds, "Subdomain Scanner")
+                    wordl = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} "
+                                      f"Wordlist{R}[{W}empty for default wordlist{R}])>>{Y} "))
+                    exit_str_err(wordl, "Subdomain Scanner")
+                    bruteforce_subdomains = SubdomainScanner(url_sds, wordl)
+                    bruteforce_subdomains.main()
+                case 7:
+                    SystemInformations.details()
+                case 8:
+                    SystemInformations.overview()
+                case 9:
+                    print(cld(figlet_format("URL2IPv4", font="bulbhead"), "yellow"))
+                    url_gipv4u = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} URL{R})>>{Y} "))
+                    extract_ipv4 = GetIPv4fromURL(url_gipv4u)
+                    extract_ipv4.main()
+                case 10:
+                    print(cld(figlet_format("Password\nGenerator", font="bulbhead"), "yellow"))
+                    passw_length = int(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}"
+                                             f"Hunter{R},{W} Password length{R})>>{Y} "))
+                    extract_ipv4 = PasswordGenerator(passw_length)
+                    extract_ipv4.main()
+                case 11:
+                    print(cld(figlet_format("URLWhois", font="bulbhead"), "yellow"))
+                    url_whois = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} URL{R})>>{Y} "))
+                    get_lookup = WhoisLookupForURL(url_whois)
+                    get_lookup.main()
+                case 12:
+                    print(cld(figlet_format("HTTPHeader", font="bulbhead"), "yellow"))
+                    url_ghttph = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} URL{R})>>{Y} "))
+                    httpheader = HTTPHeader(url_ghttph)
+                    httpheader.main()
+                case 13:
+                    print(cld(figlet_format("Link\nCollector", font="bulbhead"), "yellow"))
+                    url_lc = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} URL{R})>>{Y} "))
+                    linkcollector = LinkCollector(url_lc)
+                    linkcollector.main()
+                case 14:
+                    print(cld(figlet_format("Ping", font="bulbhead"), "yellow"))
+                    addr = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Address{R})>>{Y} "))
+                    check = CheckHostAvailability(addr)
+                    check.main()
+                case 15:
+                    print(cld(figlet_format("IPSweep", font="bulbhead"), "yellow"))
+                    ipv4 = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},"
+                                     f"{W} IPv4 Address(First Three Octets Only){R})>>{Y} "))
+                    exit_str_err(ipv4, "IPSweep")
+                    start_range = int(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Start Range{R})>>{Y} "))
+                    exit_int_err(start_range, "IPSweep")
+                    last_range = int(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Last Range{R})>>{Y} "))
+                    exit_int_err(last_range, "IPSweep")
+                    ping_count = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Ping Count{R})>>{Y} "))
+                    exit_str_err(ping_count, "IPSweep")
+                    ipsweep = IPv4Sweep(ipv4, start_range, last_range, ping_count)
+                    ipsweep.get_status()
+                case 16:
+                    print(cld(figlet_format("GetStat", font="bulbhead"), "yellow"))
+                    gs_url = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Address{R})>>{Y} "))
+                    status_code = RemoteServerStatusCode(gs_url)
+                    status_code.get_code()
+                case 17:
+                    print(cld(figlet_format("GetMail", font="bulbhead"), "yellow"))
+                    gm_url = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Full URL{R})>>{Y} "))
+                    extract_mail_addr = EmailExtractor(gm_url)
+                    extract_mail_addr.extract_mail_address()
+                case 99:
+                    exit(f"\n{W}[{R}*{W}] Goodbye{R},{W} {USERNAME}{R}.{W} Follow the white rabbit {R}...\n")
+                case _:
+                    raise RuntimeError(f"\n{W}[{Y}-{W}] Invalid Input{R}!")
         except KeyboardInterrupt:
             print(f"\n{W}[{Y}-{W}] You pressed Ctrl{R}+{W}C{R}.{W} Exit{R}!")
         except Exception as exc:
@@ -233,11 +235,11 @@ if __name__ == "__main__":
             start = str(input(f"{W}[{R}*{W}] Accept{R}?{W} y{R}/{W}n{Y} "))
             if start == 'y' or start == 'Y': break
             elif start == 'n' or start == 'N':
-                sys.exit(f"\n{W}[{R}*{W}] You need to accept the terms to use the Hunter-Toolkit{R}.{W} Exit {R}...")
+                exit(f"\n{W}[{R}*{W}] You need to accept the terms to use the Hunter-Toolkit{R}.{W} Exit {R}...")
             else:
                 print(f"\n{W}[{Y}-{W}] Only 'y/Y' or 'n/N' are allowed{R}!")
         except KeyboardInterrupt:
-            sys.exit(f"\n{W}[{Y}-{W}] You pressed Ctrl{R}+{W}C{R}.{W} Exit{R}!")
+            exit(f"\n{W}[{Y}-{W}] You pressed Ctrl{R}+{W}C{R}.{W} Exit{R}!")
 
     while True:
         try:
@@ -246,6 +248,6 @@ if __name__ == "__main__":
             hunter_toolkit = HunterToolkit(int(input(f"{R}({W}{USERNAME}{R}@{W}Hunter{R})>>{Y} ")))
             hunter_toolkit.hunter_gate()
         except KeyboardInterrupt:
-            sys.exit(f"\n{W}[{Y}-{W}] You pressed Ctrl{R}+{W}C{R}.{W} Exit{R}!")
+            exit(f"\n{W}[{Y}-{W}] You pressed Ctrl{R}+{W}C{R}.{W} Exit{R}!")
         except ValueError:
             print(f"\n{W}[{Y}-{W}] You need to enter a integer value{R}!")
