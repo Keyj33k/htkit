@@ -33,7 +33,6 @@ w = "\033[0;37m"
 r = "\033[0;31m"
 
 class SystemInformations:
-
     @staticmethod
     def overview():
         try:
@@ -41,7 +40,7 @@ class SystemInformations:
                 print(cld(figlet_format("MySystem", font="bulbhead"), "yellow"))
                 continue_or_exit = str(input(f"{w}[{r}*{w}] {r}({w}{USERNAME}{r}@{w}Hunter{r},"
                                              f"{w} Enter to continue{r},{w} {r}'{w}x{r}'{w} to exit{r})>>{y} "))
-                if continue_or_exit == 'exit' or continue_or_exit == 'x': break
+                if continue_or_exit == "exit" or continue_or_exit == 'x': break
                 start_time = dtt.now()
                 get_system = uname()
 
@@ -114,11 +113,11 @@ class SystemInformations:
                 for interface_name, interface_addresses in if_addrs.items():
                     for address in interface_addresses:
                         print(f"{w}Interface {r}->{w} {interface_name}")
-                        if str(address.family) == 'AddressFamily.AF_INET':
+                        if str(address.family) == "AddressFamily.AF_INET":
                             print(f"{w}IP {r}->{w} {address.address}\n"
                                   f"{w}Netmask {r}->{w} {address.netmask}\n"
                                   f"{w}Broadcast IP {r}->{w} {address.broadcast}\n")
-                        elif str(address.family) == 'AddressFamily.AF_PACKET':
+                        elif str(address.family) == "AddressFamily.AF_PACKET":
                             print(f"{w}MAC {r}->{w} {address.address}\n"
                                   f"{w}Netmask {r}->{w} {address.netmask}\n"
                                   f"{w}Broadcast MAC {r}->{w} {address.broadcast}")
