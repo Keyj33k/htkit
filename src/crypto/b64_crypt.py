@@ -37,6 +37,7 @@ def crypt(value: str, to_crypt):
 USERNAME = getpwuid(getuid())[0]
 
 class Crypt:
+    
     @staticmethod
     def main():
         while True:
