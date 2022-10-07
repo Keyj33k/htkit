@@ -5,6 +5,7 @@ try:
     from subprocess import check_output
     from pyfiglet import figlet_format
     from datetime import datetime
+    from src.conf_checks.conf import Conf
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -18,25 +19,10 @@ except ImportError:
     You will find this file in the req directory.
     """)
 
-w = "\033[0;37m"
-g = "\033[0;32m"
-r = "\033[0;31m"
-y = "\033[0;33m"
-
-
-def conf_check(addr: str, min_host: int, max_host: int):
-    address_split = addr.split(".")
-    if len(address_split) != 3:
-        print(f"\n{w}[{y}-{w}] Only the first three octets are allowed{r}!")
-        return False
-    elif min_host <= 0 or min_host >= 252 or max_host <= 0 or max_host >= 253:
-        print(f"\n{w}[{y}-{w}] Invalid host config!")
-        return False
-
-    for octet in range(3):
-        if int(address_split[octet]) <= 0 or int(address_split[octet]) >= 253:
-            print(f"\n{w}[{y}-{w}] Octet {address_split[octet]} is invalid{r}!")
-            return False
+W = "\033[0;37m"
+G = "\033[0;32m"
+R = "\033[0;31m"
+Y = "\033[0;33m"
 
 
 class IPv4Sweep:
@@ -48,8 +34,8 @@ class IPv4Sweep:
 
     def get_status(self):
         while True:
-            if conf_check(self.ipv4_address, self.host_min, self.host_max) is False: break
-            print(f"\n{w}[{r}*{w}] Started scanning at{r}:{w}\t{datetime.now()}\n{r}{'=' * 70}")
+            if Conf.octets(self.ipv4_address, 3) is False or Conf.hosts(self.host_min, self.host_max) is False: break
+            print(f"\n{W}[{R}*{W}] Started scanning at{R}:{W}\t{datetime.now()}\n{R}{'=' * 70}")
             start = datetime.now()
 
             for icmp_request in range(self.host_min, self.host_max + 1):
@@ -57,13 +43,13 @@ class IPv4Sweep:
 
                 try:
                     check_output(["ping", "-c", self.ping_count, ip_address])
-                    print(f"{w}[{g}+{w}] Host {ip_address} is reachable{r}!")
+                    print(f"{W}[{G}+{W}] Host {ip_address} is reachable{R}!")
                 except KeyboardInterrupt:
-                    print(f"{w}[{y}-{w}] You pressed Ctrl+C{r}.{w} Interrupted!")
+                    print(f"{W}[{Y}-{W}] You pressed Ctrl+C{R}.{W} Interrupted!")
                     break
                 except CalledProcessError:
-                    print(f"{w}[{y}-{w}] Host {ip_address} is not reachable{r}!")
+                    print(f"{W}[{Y}-{W}] Host {ip_address} is not reachable{R}!")
 
-            print(f"{r}{'=' * 70}\n{w}[{r}*{w}] Scanner done in {datetime.now() - start}{r}!\n{chr(0xa)}")
-            input(f"{w}[{r}*{w}] Press enter key to continue")
+            print(f"{R}{'=' * 70}\n{W}[{R}*{W}] Scanner done in {datetime.now() - start}{R}!\n{chr(0xa)}")
+            input(f"{W}[{R}*{W}] Press enter key to continue")
             break
