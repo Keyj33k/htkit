@@ -24,7 +24,7 @@ R = "\033[0;31m"
 Y = "\033[0;93m"
 G = "\033[0;32m"
 
-def crypt(value: str, to_crypt):
+def build_result(value: str, to_crypt):
     try:
         print(f"{R}{'=' * 70}\n{W}[{G}+{W}] {value} {R}->{W} "
               f"{to_crypt}\n"
@@ -51,11 +51,11 @@ class Crypt:
             if b64_choice == "1":
                 value_to_encrypt = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Value{R})>>{Y} "))
                 if value_to_encrypt == "exit" or value_to_encrypt == 'x': break
-                crypt(value_to_encrypt, b64.b64encode(value_to_encrypt.encode('ascii')).decode('ascii'))
+                build_result(value_to_encrypt, b64.b64encode(value_to_encrypt.encode('ascii')).decode('ascii'))
             elif b64_choice == "2":
                 hash_to_decrypt = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Value{R})>>{Y} "))
                 if hash_to_decrypt == "exit" or hash_to_decrypt == 'x': break
-                crypt(hash_to_decrypt, b64.b64decode(hash_to_decrypt.encode('ascii')).decode('ascii'))
+                build_result(hash_to_decrypt, b64.b64decode(hash_to_decrypt.encode('ascii')).decode('ascii'))
             elif b64_choice == "exit" or b64_choice == 'x':
                 break
             else:
