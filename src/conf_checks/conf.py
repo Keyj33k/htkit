@@ -32,7 +32,7 @@ class Conf:
     def octets(ipv4_addr: str, num_of_octets: int):
         split_address = ipv4_addr.split(".")
         if len(split_address) != num_of_octets:
-            print(f"\n{W}[{Y}-{W}] You need to enter a valid 32 bit address{R}!")
+            print(f"\n{W}[{Y}-{W}] The given address is invalid{R}!")
             return False
 
         for octet in range(num_of_octets):
