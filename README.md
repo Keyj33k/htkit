@@ -7,20 +7,14 @@
 </div>
 
 ### Why using the Hunter-Toolkit?
-
 ---
-
-- Sometimes you just need a quick answer, But they are often reachable using scanners that take some time for many results. For quick access to many resources with focus on information gathering, This helper can be your reliable assistant.
-- You're often losing the overview of your workspace, Because of too much open consoles just to have always a quick access to many resources? At this point, The Hunter-Toolkit can help you to keep track of your working area.
-- This toolkit gives you quick and easy access to many resources such as information gathering, Networking and cryptography tools.
-- Maybe you are something missing? The Pentesting Assistant will help you to create your own custom modules to extend this helper easily using the module template.
-- You don't have to search long for the tools you need. The pentesting assistant will always give you a clear overview of all available services, To save your time constantly.
-
+- information gathering toolkit, access to many resources to gain quick access
+- clear workspace and service overview
+- subdivided in tools for web, local networking and passive information gathering
+- easy to maintain
 
 ### What the Hunter-Toolkit can do for you?
-
 ---
-
 ```
 [0] Clear Screen		[10] Password Generator
 [1] Port Scanner		[11] Whois URL
@@ -35,16 +29,12 @@
 ```
 
 ### Getting started:
-
 ---
-
 - :book: Please read the ![docs](https://github.com/Keyj33k/Hunter-Toolkit/blob/main/DOCS/INSTALLATION.md) to have full instructions for this project
 
 
 ### Usage example: Identifying service version behind an open port:
-
 ---
-
 <div align="center">
   <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/demo.gif?raw=true"/>
 </div>
@@ -54,13 +44,13 @@
 The following isn't some silly blah blah or anything. It's a serious warning.
 Always remember that port scanning etc. can be illegal if you don't have any
 permissions to do that. You can end up in jail for being a blackhat.
-    
-### Make the internet a safer place.
 
 - This tool is only for ethical purposes. 
 - I'm not responsible for your actions. 
 - Don't hack anyone without permissions.
 - With great force follows great responsibility.
+
+### Make the internet a safer place.
 
 ### LICENCE
 ```
@@ -88,9 +78,7 @@ SOFTWARE.
 ---
 
 <div align="center">
-
 ### Tested on 5.18.0-kali7-amd64, 5.15.0-47-genericUbuntu, Termux-4.9.227 and WSL1-4.4.0 
-
 </div>
 
 ---
