@@ -31,7 +31,7 @@
 [6] Subdomain Scanner		[16] Status Code
 [7] Whoami			[17] Email Extractor
 [8] System Overview		
-[9] IPv4 Extractor  [99] Exit
+[9] IPv4 Extractor              [99] Exit
 ```
 
 ### Getting started:
