@@ -17,10 +17,10 @@ except ImportError:
     You will find this file in the req directory.
     """)
 
-w = "\033[0;37m"
-g = "\033[0;32m"
-r = "\033[0;31m"
-y = "\033[0;33m"
+W = "\033[0;37m"
+G = "\033[0;32m"
+R = "\033[0;31m"
+Y = "\033[0;33m"
 
 def extractor(url: str):
     email_address_regex = ("(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&"
@@ -33,23 +33,21 @@ def extractor(url: str):
                            "\x5a\x53-\x7f]|\\[\n\x01-\x09\x0b\x0c\x0e-\x7f])+)\])")
 
     for url in re.finditer(email_address_regex, requests.get(url).content.decode()):
-        print(f"{w}[{g}+{w}] Email address found:\t{url.group()}")
+        print(f"{W}[{G}+{W}] Email address found: {url.group()}")
 
 class EmailExtractor:
     def __init__(self, uniformresourcelocator: str):
         self.uniformresourcelocator = uniformresourcelocator
 
-    def extract_mail_address(self):
+    def main(self):
         while True:
-            print(f"\n{w}[{r}*{w}] Results\n{r}{'=' * 70}")
-
+            print(f"{W}[{R}*{W}] Sending GET request and extract all addresses {R}...")
             try:
                 extractor(self.uniformresourcelocator)
-            except requests.exceptions.MissingSchema:
+            except MissingSchema:
                 extractor(f"http://{self.uniformresourcelocator}/")
             except Exception as excerr:
                 print(excerr)
                 break
-
-            input(f"{r}{'=' * 70}\n{chr(0xa)}\n{w}[{r}*{w}] Press enter key to continue")
+            input(f"{W}[{R}*{W}] Press enter key to continue")
             break
