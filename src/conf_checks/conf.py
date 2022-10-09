@@ -5,7 +5,6 @@ R = "\033[0;31m"
 Y = "\033[0;33m"
 
 class Conf:
-
     @staticmethod
     def hosts(min_host: int, max_host: int):
         if min_host <= 0 or min_host >= 252:
@@ -39,5 +38,4 @@ class Conf:
             if int(split_address[octet]) <= 0 or int(split_address[octet]) >= 253:
                 print(f"\n{W}[{Y}-{W}] Octet {octet + 1} ( {split_address[octet]} ) is invalid{R}!")
                 return False
-
 
