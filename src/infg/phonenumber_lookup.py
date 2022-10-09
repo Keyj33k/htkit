@@ -6,7 +6,7 @@ try:
     from phonenumbers import geocoder as gc
     from phonenumbers import carrier as cr
     import phonenumbers as pnmb
-    from termcolor import colored as cld
+    from time import sleep
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -20,9 +20,10 @@ except ImportError:
     You will find this file in the req directory.
     """)
 
-w = "\033[0;37m"
-g = "\033[0;32m"
-r = "\033[0;31m"
+W = "\033[0;37m"
+G = "\033[0;32m"
+R = "\033[0;31m"
+Y = "\033[0;33m"
 
 
 class PhonenumberWhois:
@@ -33,7 +34,7 @@ class PhonenumberWhois:
         while True:
             if self.target_phonenumber == 'x' or self.target_phonenumber == 'exit': break
             time_start = dtt.now()
-            print(f"\n{w}[{r}*{w}] Request\t\tResponse\n{r}{'=' * 70}")
+            print(f"{W}[{R}*{W}] Collecting values {R}...")
 
             try:
                 phonenumber_val = pnmb.is_valid_number(pnmb.parse(self.target_phonenumber))
@@ -47,17 +48,22 @@ class PhonenumberWhois:
                 final_phonenumbers_location = gc.description_for_number(phonenumbers_, "en")
                 final_phonenumbers_provider = cr.name_for_number(phonenumbers_, "en")
 
-                print(f"{w}[{g}+{w}] Validation{r}:{w}\t\t{phonenumber_val}\n"
-                      f"{w}[{g}+{w}] National{r}:{w}\t\t{national}\n"
-                      f"{w}[{g}+{w}] International{r}:{w}\t{international}\n"
-                      f"{w}[{g}+{w}] Timezone{r}:{w}\t\t{final_timezone}\n"
-                      f"{w}[{g}+{w}] Location{r}:{w}\t\t{final_phonenumbers_location}\n"
-                      f"{w}[{g}+{w}] Provider{r}:{w}\t\t{final_phonenumbers_provider}")
+                output = [
+                    f"Validation{R}:{W} {phonenumber_val}",
+                    f"National{R}:{W} {national}",
+                    f"International{R}:{W} {international}",
+                    f"Timezone{R}:{W} {final_timezone}",
+                    f"Location{R}:{W} {final_phonenumbers_location}",
+                    f"Provider{R}:{W} {final_phonenumbers_provider}"
+                ]
 
-                print(f"{r}{'=' * 70}\n{w}[{r}*{w}] Job done in {dtt.now() - time_start}")
-                input(f"{chr(0xa)}\n{w}[{r}*{w}] Press enter key to continue")
+                for results in output:
+                    sleep(0.25)
+                    print(f"{W}[{G}+{W}] {results}")
+
+                print(f"{W}[{R}*{W}] Done, runtime{R}:{W} {dtt.now() - time_start}")
+                input(f"{W}[{R}*{W}] Press enter key to continue")
                 break
             except Exception as error:
-                print(cld(str(error), "red"))
-                input(f"{w}[{r}*{w}] Press enter key to continue")
+                print(f"{W}[{Y}-{W}] Error{R}:{W} {error}")
                 break
