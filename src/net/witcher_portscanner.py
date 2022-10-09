@@ -53,7 +53,7 @@ class WitcherPortscanner:
                 total = self.maximum_port - self.start_port
                 closed_ports = total - open_ports
                 print(f"\n{W}[{R}*{W}] Done, runtime{R}:{W} {dtt.now() - time_start}{R},{W} "
-                      f"total{R}:{W} {total}, open{R}:{W} {open_ports}, closed{R}:{W} {closed_ports}")
+                      f"total{R}:{W} {total}{R},{W} open{R}:{W} {open_ports}{R},{W} closed{R}:{W} {closed_ports}")
                 input(f"{W}[{R}*{W}] Press enter key to continue")
                 break
             except error as socket_error:
