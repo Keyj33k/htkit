@@ -24,6 +24,8 @@ G = "\033[0;32m"
 R = "\033[0;31m"
 Y = "\033[0;33m"
 
+def count_config(ip_address: str, ping_count: str):
+    check_output(["ping", "-c", ping_count, ip_address])
 
 class IPv4Sweep:
     def __init__(self, ipv4_address: str, host_min: int, host_max: int, ping_count: str):
@@ -42,7 +44,11 @@ class IPv4Sweep:
                 ip_address = f"{self.ipv4_address}.{str(icmp_request)}"
                 host_count += 1
                 try:
-                    check_output(["ping", "-c", self.ping_count, ip_address])
+                    if self.ping_count == "":
+                        count_config(ip_address, "2")
+                    else:
+                        count_config(ip_address, self.ping_count)
+
                     print(f"{W}[{G}+{W}] Host {ip_address} is reachable{R}!")
                     active_hosts += 1
                 except CalledProcessError:
