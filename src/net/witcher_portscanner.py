@@ -8,20 +8,17 @@ try:
 except ImportError:
     raise RuntimeError("""
     Oops,
-
     this tool uses important modules, which don't seem to be 
     installed at the moment.
-
     Use the requirements file and this command:
     "pip3 install -r requirements.txt" 
-
     You will find this file in the req directory.
     """)
 
-w = "\033[0;37m"
-g = "\033[0;32m"
-r = "\033[0;31m"
-y = "\033[0;33m"
+W = "\033[0;37m"
+G = "\033[0;32m"
+R = "\033[0;31m"
+Y = "\033[0;33m"
 
 class WitcherPortscanner:
     def __init__(self, target_ipv4: str, start_port: int, maximum_port: int):
@@ -31,14 +28,15 @@ class WitcherPortscanner:
 
     @staticmethod
     def output(port: int, service: str):
-        print(f"TCP\t\t{port}  \t\topen\t{service}")
+        print(f"\tTCP\t\t{port}  \t\topen\t{service}")
 
     def main(self):
         while True:
             if Conf.ports(self.start_port, self.maximum_port) is False: break
             time_start = dtt.now()
-            print(f"\n{w}[{r}*{w}] Started scanning at{r}:{w}\t{time_start}\n{r}{'=' * 70}\n"
-                  f"{w}Protocol\tPort\t\tStatus\t Service\n{'-' * 70}")
+            print(f"\n{W}[{R}*{W}] Started port scan\n\n"
+                  f"\t{W}Protocol\tPort\t\tStatus\tService\n"
+                  f"\t{'-' * 8}\t{'-' * 4}\t\t{'-' * 6}\t{'-' * 7}")
 
             try:
                 for target_port in range(self.start_port, self.maximum_port + 1):
@@ -49,12 +47,12 @@ class WitcherPortscanner:
                                 WitcherPortscanner.output(target_port, getservbyport(target_port))
                             except OSError:
                                 WitcherPortscanner.output(target_port, "unknown")
-                print(f"{r}{'=' * 70}\n{w}[{r}*{w}] Scanner done in {dtt.now() - time_start}!\n{chr(0xa)}")
-                input(f"{w}[{r}*{w}] Press enter key to continue")
+                print(f"\n{W}[{R}*{W}] Done, runtime{R}:{W} {dtt.now() - time_start}{R}!")
+                input(f"{W}[{R}*{W}] Press enter key to continue")
                 break
             except error as socket_error:
                 print(cld(socket_error, "red"))
                 break
             except KeyboardInterrupt:
-                print(f"\n{w}[{y}-{w}] Ctrl+C pressed{r}.{w} Exit{r}.")
+                print(f"\n{W}[{Y}-{W}] Ctrl{R}+{W}C pressed{R}.{W} Exit{R}.")
                 break
