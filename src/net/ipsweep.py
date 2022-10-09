@@ -35,21 +35,22 @@ class IPv4Sweep:
     def get_status(self):
         while True:
             if Conf.octets(self.ipv4_address, 3) is False or Conf.hosts(self.host_min, self.host_max) is False: break
-            print(f"\n{W}[{R}*{W}] Started scanning at{R}:{W}\t{datetime.now()}\n{R}{'=' * 70}")
+            print(f"{W}[{R}*{W}] Scanning host range {R}...{W}")
             start = datetime.now()
-
+            active_hosts, host_count, inactive_hosts = 0, 0, 0
             for icmp_request in range(self.host_min, self.host_max + 1):
                 ip_address = f"{self.ipv4_address}.{str(icmp_request)}"
-
+                host_count += 1
                 try:
                     check_output(["ping", "-c", self.ping_count, ip_address])
                     print(f"{W}[{G}+{W}] Host {ip_address} is reachable{R}!")
-                except KeyboardInterrupt:
-                    print(f"{W}[{Y}-{W}] You pressed Ctrl+C{R}.{W} Interrupted!")
-                    break
+                    active_hosts += 1
                 except CalledProcessError:
-                    print(f"{W}[{Y}-{W}] Host {ip_address} is not reachable{R}!")
-
-            print(f"{R}{'=' * 70}\n{W}[{R}*{W}] Scanner done in {datetime.now() - start}{R}!\n{chr(0xa)}")
+                    inactive_hosts += 1
+                except KeyboardInterrupt:
+                    print(f"{W}[{Y}-{W}] You pressed Ctrl{R}+{W}C{R}.{W} Interrupted!")
+                    break
+            print(f"{W}[{R}*{W}] Done{R},{W} runtime{R}:{W} {datetime.now() - start}{R},{W} total{R}:{W} "
+                  f"{host_count}{R},{W} active{R}:{W} {active_hosts}{R},{W} inactive{R}:{W} {inactive_hosts}")
             input(f"{W}[{R}*{W}] Press enter key to continue")
             break
