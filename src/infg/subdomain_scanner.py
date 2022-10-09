@@ -16,23 +16,23 @@ except ImportError:
     You will find this file in the req directory.
     """)
 
-w = "\033[0;37m"
-g = "\033[0;32m"
-r = "\033[0;31m"
-y = "\033[0;33m"
+W = "\033[0;37m"
+G = "\033[0;32m"
+R = "\033[0;31m"
+Y = "\033[0;33m"
 
 
 def scanner(database: str, uniformresourcelocator: str):
     with open(database, "r") as file:
-        print(f"\n{w}[{r}*{w}] Start scanning for subdomains from {uniformresourcelocator} {r}..."
-              f"\n{w}[{r}*{w}] Be patient{r},{w} It may take some time {r}...\n{r}{'=' * 70}")
+        print(f"{W}[{R}*{W}] Sending GET requests {R}...\n"
+              f"{W}[{Y}!{W}] Be patient{R},{W} It may take some time {R}...")
 
         for list_domains in file.read().splitlines():
             build_url = f"http://{list_domains}.{uniformresourcelocator}"
             sleep(0.75)
 
             try:
-                print(f"{w}[{g}+{w}] {build_url}\t{r}[{w} {get(build_url).status_code} {r}]{w}")
+                print(f"{W}[{G}+{W}] {build_url}\t{R}[{W} {get(build_url).status_code} {R}]{W}")
             except ConnectionError:
                 pass
 
@@ -48,11 +48,11 @@ class SubdomainScanner:
 
             try:
                 scanner("subdomains.txt", self.url) if self.wordlist == "" else scanner(self.wordlist, self.url)
-                input(f"{r}{'=' * 70}\n{chr(0xa)}\n{w}[{r}*{w}] Press enter key to continue")
+                input(f"{W}[{R}*{W}] Press enter key to continue")
                 break
             except FileNotFoundError:
-                print(f"{w}[{y}-{w}] You need the subdomain file in the current directory to run this tool{r}.")
+                print(f"{W}[{Y}-{W}] You need the subdomain file in the current directory to run this tool{R}.")
                 break
             except KeyboardInterrupt:
-                print(f"{w}[{r}*{w}] You pressed Ctrl+C{r}.{w} Exit{r}.")
+                print(f"{W}[{R}*{W}] You pressed Ctrl{R}+{W}C{R}.{W} Exit{R}.")
                 break
