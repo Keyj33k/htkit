@@ -8,10 +8,13 @@ try:
 except ImportError:
     raise RuntimeError("""
     Oops,
+    
     this tool uses important modules, which don't seem to be 
     installed at the moment.
+    
     Use the requirements file and this command:
     "pip3 install -r requirements.txt" 
+    
     You will find this file in the req directory.
     """)
 
@@ -34,7 +37,7 @@ class WitcherPortscanner:
         while True:
             if Conf.ports(self.start_port, self.maximum_port) is False: break
             time_start = dtt.now()
-            print(f"\n{W}[{R}*{W}] Started port scan\n\n"
+            print(f"\n{W}[{R}*{W}] Start port scan {R}...\n\n"
                   f"\t{W}Protocol\tPort\t\tStatus\tService\n"
                   f"\t{'-' * 8}\t{'-' * 4}\t\t{'-' * 6}\t{'-' * 7}")
             open_ports = 0
