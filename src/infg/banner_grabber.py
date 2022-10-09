@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 
 try:
-    from datetime import datetime as dtt
-    from termcolor import colored as cld
     import time
+    from datetime import datetime
     from socket import socket, AF_INET, SOCK_STREAM, error
 except ImportError:
     raise RuntimeError("""
@@ -18,9 +17,10 @@ except ImportError:
     You will find this file in the req directory.
     """)
 
-w = "\033[0;37m"
-g = "\033[0;32m"
-r = "\033[0;31m"
+W = "\033[0;37m"
+G = "\033[0;32m"
+R = "\033[0;31m"
+Y = "\033[0;33m"
 
 
 class BannerGrabber:
@@ -30,20 +30,25 @@ class BannerGrabber:
 
     def main(self):
         while True:
-            if self.target_address == 'x' or self.target_address == 'exit': break
+            if self.target_address == 'x' or self.target_address == "exit": break
             if self.target_port == 0: break
 
             try:
+                start = datetime.now()
                 with socket(AF_INET, SOCK_STREAM) as socket_sock:
                     socket_sock.connect_ex((self.target_address, self.target_port))
                     socket_sock.settimeout(2)
                     banner = socket_sock.recv(1024).decode().replace("\n", "")
                     
-                print(f"\n{w}[{r}*{w}] Start scanning {self.target_address} at {dtt.now()}\n{r}{'=' * 70}")
-                time.sleep(0.75)
-                print(f"{w}[{g}+{w}] Port {self.target_port} {r}->{w} {banner}\n{r}{'=' * 70}")
-                input(f"{chr(0xa)}\n{w}[{r}*{w}] Press enter key to continue")
+                print(f"{W}[{R}*{W}] Sending TCP request {R}...")
+                time.sleep(0.25)
+                print(f"{W}[{G}+{W}] Port {self.target_port}{R}:{W} {banner}\n{W}[{R}*{W}] "
+                      f"Done{R},{W} runtime{R}:{W} {datetime.now() - start}")
+                input(f"{W}[{R}*{W}] Press enter key to continue")
                 break
             except error as sockerr:
-                print(cld(sockerr, "red"))
+                print(f"{W}[{Y}-{W}] Error{R}:{W} {sockerr}")
+                break
+            except KeyboardInterrupt:
+                print(f"{W}[{R}*{W}] You pressed Ctrl{R}+{W}C{R}.{W} Exit{R}.")
                 break
