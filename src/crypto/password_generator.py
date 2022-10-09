@@ -16,10 +16,10 @@ except ImportError:
     You will find this file in the req directory.
     """)
 
-w = "\033[0;37m"
-g = "\033[0;32m"
-r = "\033[0;31m"
-y = "\033[0;33m"
+W = "\033[0;37m"
+G = "\033[0;32m"
+R = "\033[0;31m"
+Y = "\033[0;33m"
 
 
 class PasswordGenerator:
@@ -30,14 +30,13 @@ class PasswordGenerator:
         while True:
             if self.password_length == 0: break
             elif self.password_length < 8:
-                print(f"{w}[{y}-{w}] Your password should be always bigger than eight characters{r}.")
+                print(f"{W}[{Y}-{W}] Your password should be always bigger than eight characters{R}.")
                 break
 
             special_chars = "!$%&/()?{}][-_"
             mixer = digits + ascii_lowercase + ascii_uppercase + special_chars
             final_password = ''.join(sample(mixer, self.password_length))
 
-            print(f"{r}{'=' * 70}\n{w}[{g}+{w}] Your generated password{r}:"
-                  f"{w} {final_password}\n{r}{'=' * 70}{chr(0xa)}")
-            input(f"\n{w}[{r}*{w}] Press enter key to continue")
+            print(f"{W}[{G}+{W}] Generated {self.password_length} digits value{R}:{W} {final_password}")
+            input(f"{W}[{R}*{W}] Press enter key to continue")
             break
