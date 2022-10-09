@@ -21,17 +21,15 @@ except ImportError:
 
 W = "\033[0;37m"
 R = "\033[0;31m"
-Y = "\033[0;93m"
+Y = "\033[0;33m"
 G = "\033[0;32m"
 
 def build_result(value: str, to_crypt):
     try:
-        print(f"{R}{'=' * 70}\n{W}[{G}+{W}] {value} {R}->{W} "
-              f"{to_crypt}\n"
-              f"{R}{'=' * 70}\n{chr(0xa)}")
-        input(f"{W}[{R}*{W}] Press enter key to continue")
+        print(f"{W}[{G}+{W}] {value}{R}:{W} {to_crypt}")
     except Exception as error:
-        print(cld(f"An error was defined: {error}", "red"))
+        print(f"{W}[{Y}-{W}] Error{R}:{W} {error}")
+    finally:
         input(f"{W}[{R}*{W}] Press enter key to continue")
 
 USERNAME = getpwuid(getuid())[0]
@@ -49,11 +47,11 @@ class Crypt:
             b64_choice = input(f"\n{W}[{R}*{W}] Choice {R}>>{Y} ")
             
             if b64_choice == "1":
-                value_to_encrypt = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Value{R})>>{Y} "))
+                value_to_encrypt = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Value{R} >>{Y} "))
                 if value_to_encrypt == "exit" or value_to_encrypt == 'x': break
                 build_result(value_to_encrypt, b64.b64encode(value_to_encrypt.encode('ascii')).decode('ascii'))
             elif b64_choice == "2":
-                hash_to_decrypt = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Value{R})>>{Y} "))
+                hash_to_decrypt = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Value{R} >>{Y} "))
                 if hash_to_decrypt == "exit" or hash_to_decrypt == 'x': break
                 build_result(hash_to_decrypt, b64.b64decode(hash_to_decrypt.encode('ascii')).decode('ascii'))
             elif b64_choice == "exit" or b64_choice == 'x':
