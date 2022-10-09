@@ -130,19 +130,4 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 
 NOTE: Use Ctrl+C to return to the menu or exit the Hunter-Toolkit.
 
-### DISCLAIMER: 
-
----
-
-    The following isn't some silly blah blah or anything. It's a serious warning.
-    Always remember that port scanning etc. can be illegal if you don't have any
-    permissions to do that. You can end up in jail for being a blackhat.
-    Make the internet a safer place.
-
-    -> This tool is for ethical purposes only.
-    -> I'm not responsible for your actions.
-    -> Don't hack anyone without permissions.
-    -> With great force follows great responsibility.
-
-
 
