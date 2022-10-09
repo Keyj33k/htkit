@@ -16,25 +16,26 @@ except ImportError:
     You will find this file in the req directory.
     """)
 
-w = "\033[0;37m"
-g = "\033[0;32m"
-r = "\033[0;31m"
+W = "\033[0;37m"
+G = "\033[0;32m"
+R = "\033[0;31m"
+Y = "\033[0;33m"
 
 
 class CheckHostAvailability:
-    def __init__(self, target_address: str):
+    def __init__(self, target_address: str, ping_count: str):
+        self.ping_count = ping_count
         self.target_address = target_address
 
     def main(self):
         while True:
-            if self.target_address == 'x' or self.target_address == 'exit': break
-            print(f"\n{w}[{g}+{w}] Result{r}:{w}\n{r}{'=' * 70}{w}")
-
             try:
-                call(["ping", "-c", "2", self.target_address])
+                print(W)
+                if self.ping_count == "":
+                    call(["ping", "-c", "2", self.target_address])
+                else:
+                    call(["ping", "-c", self.ping_count, self.target_address])
+                input(f"\n{W}[{R}*{W}] Press enter key to continue")
+                break
             except CalledProcessError as cpe:
-                print(cld(str(cpe), "red"))
-
-            print(f"{r}{'=' * 70}\n{chr(0xa)}")
-            input(f"{w}[{r}*{w}] Press enter key to continue")
-            break
+                print(f"{W}[{Y}-{W}] Error: {cpe}")
