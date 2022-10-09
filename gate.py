@@ -174,13 +174,14 @@ class HunterToolkit:
                 case 15:
                     print(cld(figlet_format("IPSweep", font="bulbhead"), "yellow"))
                     value_to_build = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},"
-                                     f"{W} IPv4 Address{R}({W} First Three Octets Only {R}) >>{Y} "))
+                                     f"{W} IPv4 Address {R}({W} First Three Octets Only {R}) >>{Y} "))
                     exit_str_err(value_to_build, "IPSweep")
                     start_range = int(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Start Range{R} >>{Y} "))
                     exit_int_err(start_range, "IPSweep")
                     last_range = int(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Last Range{R} >>{Y} "))
                     exit_int_err(last_range, "IPSweep")
-                    ping_count = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Ping Count{R} >>{Y} "))
+                    ping_count = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Ping Count "
+                                           f"{R}({W} Enter for default {R}) >>{Y} "))
                     exit_str_err(ping_count, "IPSweep")
                     ipsweep = IPv4Sweep(value_to_build, start_range, last_range, ping_count)
                     ipsweep.get_status()
