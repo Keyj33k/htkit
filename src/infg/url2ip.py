@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 try:
-    from socket import gethostbyname, gaierror
+    from socket import gethostbyname, gaierror, gethostbyaddr
     from termcolor import colored as cld
 except ImportError:
     raise RuntimeError("""
@@ -16,14 +16,14 @@ except ImportError:
     You will find this file in the req directory.
     """)
 
-w = "\033[0;37m"
-g = "\033[0;32m"
-r = "\033[0;31m"
-y = "\033[0;33m"
+W = "\033[0;37m"
+G = "\033[0;32m"
+R = "\033[0;31m"
+Y = "\033[0;33m"
 
 def error_message():
-    print(f"{w}[{y}-{w}] You need to enter a value like{r}:{w} google.com in example{r}.\n{chr(0xa)}")
-    input(f"{w}[{r}*{w}] Press enter key to continue")
+    print(f"{W}[{Y}-{W}] You need to enter a value like{R}:{W} example.com{R}.")
+    input(f"{W}[{R}*{W}] Press enter key to continue")
 
 class GetIPv4fromURL:
     def __init__(self, uniformresourcelocator: str):
@@ -31,13 +31,12 @@ class GetIPv4fromURL:
 
     def main(self):
         while True:
-            if self.uniformresourcelocator == 'x' or self.uniformresourcelocator == 'exit': break
+            if self.uniformresourcelocator == 'x' or self.uniformresourcelocator == "exit": break
 
             try:
-                print(
-                    f"{r}{'=' * 70}\n{w}[{g}+{w}] IP Address from {self.uniformresourcelocator}"
-                    f" {r}->{w} " + f"{gethostbyname(self.uniformresourcelocator)}\n{r}{'=' * 70}\n{chr(0xa)}")
-                input(f"{w}[{r}*{w}] Press enter key to continue")
+                print(f"{W}[{G}+{W}] IPv4{R}:{W} {gethostbyname(self.uniformresourcelocator)}\n"
+                      f"{W}[{G}+{W}] IPv6{R}:{W} {''.join(gethostbyaddr(self.uniformresourcelocator)[2])}")
+                input(f"{W}[{R}*{W}] Press enter key to continue")
                 break
             except (ValueError, gaierror):
                 error_message()
