@@ -2,9 +2,9 @@
 
 try:
     from datetime import datetime as dtt
-    from termcolor import colored as cld
     from requests import post, RequestException
     from src.conf_checks.conf import Conf
+    from time import sleep
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -18,10 +18,10 @@ except ImportError:
     You will find this file in the req directory.
     """)
 
-w = "\033[0;37m"
-g = "\033[0;32m"
-r = "\033[0;31m"
-y = "\033[0;33m"
+W = "\033[0;37m"
+G = "\033[0;32m"
+R = "\033[0;31m"
+Y = "\033[0;33m"
 
 class IPv4Lookup:
     def __init__(self, ipv4_address: str):
@@ -31,17 +31,17 @@ class IPv4Lookup:
         while True:
             if Conf.octets(self.ipv4_address, 4) is False: break
             time_start = dtt.now()
-            print(f"\n{w}[{r}*{w}] Results{r}:\n{'=' * 70}")
+            print(f"{W}[{R}*{W}] Sending api request{R} ...")
 
             try:
                 for lookup in post("http://ip-api.com/batch", json=[{"query": self.ipv4_address}]).json():
                     for category, result in lookup.items():
-                        print(f"{w}[{g}+{w}] {category}: {result}")
+                        sleep(0.25)
+                        print(f"{W}[{G}+{W}] {category}{R}:{W} {result}")
 
-                print(f"{r}{'=' * 70}\n{w}[{r}*{w}] Scanner done in {dtt.now() - time_start}!")
-                input(f"{chr(0xa)}\n{w}[{r}*{w}] Press enter key to continue")
+                print(f"{W}[{R}*{W}] Done{R},{W} runtime{R}:{W} {dtt.now() - time_start}")
+                input(f"{W}[{R}*{W}] Press enter key to continue")
                 break
             except RequestException as error:
-                print(cld(str(error), "red"))
-                input(f"{w}[{g}+{w}] Press enter key to continue")
+                print(f"{W}[{Y}-{W}] Error{R}:{W} {error}")
                 break
