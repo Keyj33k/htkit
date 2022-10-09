@@ -37,21 +37,27 @@ class WitcherPortscanner:
             print(f"\n{W}[{R}*{W}] Started port scan\n\n"
                   f"\t{W}Protocol\tPort\t\tStatus\tService\n"
                   f"\t{'-' * 8}\t{'-' * 4}\t\t{'-' * 6}\t{'-' * 7}")
+            open_ports = 0
 
             try:
                 for target_port in range(self.start_port, self.maximum_port + 1):
                     with socket(AF_INET, SOCK_STREAM) as socket_sock:
                         socket_sock.settimeout(5)
                         if socket_sock.connect_ex((self.target_ipv4, target_port)) == 0:
+                            open_ports += 1
                             try:
                                 WitcherPortscanner.output(target_port, getservbyport(target_port))
                             except OSError:
                                 WitcherPortscanner.output(target_port, "unknown")
-                print(f"\n{W}[{R}*{W}] Done, runtime{R}:{W} {dtt.now() - time_start}{R}!")
+
+                total = self.maximum_port - self.start_port
+                closed_ports = total - open_ports
+                print(f"\n{W}[{R}*{W}] Done, runtime{R}:{W} {dtt.now() - time_start}{R},{W} "
+                      f"total{R}:{W} {total}, open{R}:{W} {open_ports}, closed{R}:{W} {closed_ports}")
                 input(f"{W}[{R}*{W}] Press enter key to continue")
                 break
             except error as socket_error:
-                print(cld(socket_error, "red"))
+                print(f"{W}[{Y}-{W}] Error{R}:{W} {socket_error}")
                 break
             except KeyboardInterrupt:
                 print(f"\n{W}[{Y}-{W}] Ctrl{R}+{W}C pressed{R}.{W} Exit{R}.")
