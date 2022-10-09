@@ -28,12 +28,12 @@ class WhoisLookupForURL:
 
     def main(self):
         while True:
-            if self.uniformresourcelocator == 'x' or self.uniformresourcelocator == 'exit': break
+            if self.uniformresourcelocator == 'x' or self.uniformresourcelocator == "exit": break
 
             try:
-                print(f"\n{w}[{g}+{w}] Results:\n{r}{'=' * 70}{w}\n{whois(self.uniformresourcelocator).text}")
-                input(f"{r}{'=' * 70}\n{chr(0xa)}\n{w}[{r}*{w}] Press enter key to continue")
+                print(colored(whois(self.uniformresourcelocator).text, "white"))
+                input(f"{w}[{r}*{w}] Press enter key to continue")
                 break
             except Exception as excerr:
-                print(colored(str(excerr), "red"))
+                print(f"{w}[{y}-{w}] Error{r}:{w} {excerr}")
                 break
