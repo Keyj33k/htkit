@@ -30,8 +30,8 @@
 [5] Whois Phonenumber		[15] IPSweep
 [6] Subdomain Scanner		[16] Status Code
 [7] Whoami			[17] Email Extractor
-[8] System Overview		[99] Exit
-[9] IPv4 Extractor
+[8] System Overview		
+[9] IPv4 Extractor  [99] Exit
 ```
 
 ### Getting started:
@@ -46,7 +46,7 @@
 ---
 
 <div align="center">
-  <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/usage_example.gif?raw=true"/>
+  <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/demo.gif?raw=true"/>
 </div>
 
 # :warning: NOTE:
