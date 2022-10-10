@@ -42,7 +42,7 @@ class SystemInformations:
                 continue_or_exit = str(input(f"{w}[{r}*{w}] {w}{USERNAME}{r}@{w}Hunter{r},"
                                              f"{w} Enter to continue{r},{w} {r}'{w}x{r}'{w} to exit{r} >>{y} "))
                 if continue_or_exit == 'exit' or continue_or_exit == 'x': break
-                if continue_or_exit is not "":
+                if continue_or_exit != "":
                     print(f"{w}[{y}-{w}] Invalid input")
                     break
                 start_time = dtt.now()
