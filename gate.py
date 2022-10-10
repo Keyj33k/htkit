@@ -58,12 +58,12 @@ USERNAME = getpwuid(getuid())[0]
 
 def exit_str_err(command: str, tool: str):
     if command == 'x' or command == "exit":
-        print(f"{W}[{Y}-{W}] Sorry{R},{W} But command '{command}' is"
+        print(f"{W}[{Y}-{W}] Error{R}:{W} {R}'{W}{command}{R}'{W} is"
               f" invalid{R}.{W} Please use Ctrl{R}+{W}C to exit {tool}{R}!{W}")
 
 def exit_int_err(command: int, tool: str):
     if command == 0:
-        print(f"{W}[{Y}-{W}] Sorry{R},{W} But command '{command}' is "
+        print(f"{W}[{Y}-{W}] Error{R}:{W} {R}'{W}{command}{R}'{W} is "
               f"invalid{R}.{W} Please use Ctrl{R}+{W}C to exit {tool}{R}!{W}")
 
 class HunterToolkit:
