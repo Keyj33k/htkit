@@ -47,7 +47,7 @@ class InputGrabber:
     @staticmethod
     def grab_phonenumber(service: str):
         while True:
-            phonenumber = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Max{R}.{W} Port{R} >>{Y} "))
+            phonenumber = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Phonenumber{R} >>{Y} "))
             if exit_str_err(phonenumber, service) is True: return phonenumber
 
     @staticmethod
