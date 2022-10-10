@@ -31,8 +31,6 @@ class GetIPv4fromURL:
 
     def main(self):
         while True:
-            if self.uniformresourcelocator == 'x' or self.uniformresourcelocator == "exit": break
-
             try:
                 print(f"{W}[{G}+{W}] IPv4{R}:{W} {gethostbyname(self.uniformresourcelocator)}\n"
                       f"{W}[{G}+{W}] IPv6{R}:{W} {''.join(gethostbyaddr(self.uniformresourcelocator)[2])}")
