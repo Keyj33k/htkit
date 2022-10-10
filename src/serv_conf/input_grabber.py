@@ -53,13 +53,13 @@ class InputGrabber:
     @staticmethod
     def grab_url(service: str):
         while True:
-            url = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} IPv4{R} >>{Y} "))
+            url = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} URL{R} >>{Y} "))
             if exit_str_err(url, service) is True: return url
 
     @staticmethod
     def grab_int(service: str, category: str):
         while True:
-            value = int(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Min{R}.{W} {category}{R} >>{Y} "))
+            value = int(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} {category}{R} >>{Y} "))
             if exit_int_err(value, service) is True: return value
 
     @staticmethod
