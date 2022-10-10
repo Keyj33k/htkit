@@ -97,7 +97,7 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 - Use this command:
     
     ```
-    python3 gate.py
+    python3 htkit.py
     ``` 
   
 ## Update the pentesting assistant (Debian-/based):
