@@ -30,7 +30,6 @@ class HTTPHeader:
 
     def main(self):
         while True:
-            if self.uniformresourcelocator == 'x' or self.uniformresourcelocator == "exit": break
             print(f"{W}[{R}*{W}] Sending GET request")
             start = datetime.now()
             try:
@@ -40,6 +39,7 @@ class HTTPHeader:
                 print(f"{W}[{R}*{W}] Done, runtime{R}:{W} {datetime.now() - start}")
                 input(f"{W}[{R}*{W}] Press enter key to continue")
                 break
-            except ConnectionError:
-                print(f"{W}[{Y}-{W}] Failed getting header from {self.uniformresourcelocator}{R}!")
+            except ConnectionError as conn_err:
+                print(f"{W}[{Y}-{W}] Error{R}:{W} {conn_err}")
+                break
 
