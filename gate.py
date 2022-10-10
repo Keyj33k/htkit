@@ -21,6 +21,8 @@ try:
 
     from src.system.system_inf import SystemInformations
 
+    from src.serv_conf.input_grabber import InputGrabber
+
     from termcolor import colored as cld
     from pyfiglet import figlet_format
     from subprocess import call
@@ -56,16 +58,6 @@ R = "\033[0;31m"
 
 USERNAME = getpwuid(getuid())[0]
 
-def exit_str_err(command: str, tool: str):
-    if command == 'x' or command == "exit":
-        print(f"{W}[{Y}-{W}] Error{R}:{W} {R}'{W}{command}{R}'{W} is"
-              f" invalid{R}.{W} Please use Ctrl{R}+{W}C to exit {tool}{R}!{W}")
-
-def exit_int_err(command: int, tool: str):
-    if command == 0:
-        print(f"{W}[{Y}-{W}] Error{R}:{W} {R}'{W}{command}{R}'{W} is "
-              f"invalid{R}.{W} Please use Ctrl{R}+{W}C to exit {tool}{R}!{W}")
-
 class HunterToolkit:
     def __init__(self, service: int):
         self.service = service
@@ -95,44 +87,29 @@ class HunterToolkit:
                     call(["clear"])
                 case 1:
                     print(cld(figlet_format("port\nscanner", font="bulbhead"), "yellow"))
-                    address = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Address{R} >>{Y} "))
-                    exit_str_err(address, "Witcher")
-                    start_port = int(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Min{R}.{W} Port{R} >>{Y} "))
-                    exit_int_err(start_port, "Witcher")
-                    last_port = int(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Max{R}.{W} Port{R} >>{Y} "))
-                    exit_int_err(last_port, "Witcher")
-                    port_scanner = WitcherPortscanner(address, start_port, last_port)
+                    port_scanner = WitcherPortscanner(InputGrabber.grab_address("Witcher"),
+                                                      InputGrabber.grab_int("Witcher", "Port"),
+                                                      InputGrabber.grab_sec_port("Witcher"))
                     port_scanner.main()
                 case 2:
                     print(cld(figlet_format("IPv4Whois", font="bulbhead"), "yellow"))
-                    ipv4_address = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} IPv4 {R}>>{Y} "))
-                    exit_str_err(ipv4_address, "IPv4 Whois")
-                    ip_lookup = IPv4Lookup(ipv4_address)
+                    ip_lookup = IPv4Lookup(InputGrabber.grab_ipv4("IPv4 Whois"))
                     ip_lookup.main()
                 case 3:
                     print(cld(figlet_format("Banner\nGrabber", font="bulbhead"), "yellow"))
-                    ipv4_address = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Address{R} >>{Y} "))
-                    exit_str_err(ipv4_address, "Banner Grabber")
-                    target_port = int(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Port{R} >>{Y} "))
-                    exit_int_err(target_port, "Banner Grabber")
-                    banner_grabber = BannerGrabber(ipv4_address, target_port)
+                    banner_grabber = BannerGrabber(InputGrabber.grab_ipv4("Banner Grabber"),
+                                                   InputGrabber.grab_int("Banner Grabber", "Port"))
                     banner_grabber.main()
                 case 4:
                     Crypt.main()
                 case 5:
                     print(cld(figlet_format("Whois\nPhonenumber", font="bulbhead"), "yellow"))
-                    target_phonenumber = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Phonenumber{R} >>{Y} "))
-                    exit_str_err(target_phonenumber, "Phonenumber Whois")
-                    phonenumber_whois = PhonenumberWhois(target_phonenumber)
+                    phonenumber_whois = PhonenumberWhois(InputGrabber.grab_phonenumber("Phonenumber Whois"))
                     phonenumber_whois.main()
                 case 6:
                     print(cld(figlet_format("Subdomain\nScanner", font="bulbhead"), "yellow"))
-                    url = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} URL{R} >>{Y} "))
-                    exit_str_err(url, "Subdomain Scanner")
-                    wordlist = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} "
-                                      f"Wordlist{R}({W}empty for default wordlist{R}) >>{Y} "))
-                    exit_str_err(wordlist, "Subdomain Scanner")
-                    subdomain_scanner = SubdomainScanner(url, wordlist)
+                    subdomain_scanner = SubdomainScanner(InputGrabber.grab_url("Subdomain Scanner"),
+                                                         InputGrabber.grab_wordlist("Subdomain Scanner"))
                     subdomain_scanner.main()
                 case 7:
                     SystemInformations.details()
@@ -140,69 +117,44 @@ class HunterToolkit:
                     SystemInformations.overview()
                 case 9:
                     print(cld(figlet_format("ipextract", font="bulbhead"), "yellow"))
-                    url = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} URL{R} >>{Y} "))
-                    exit_str_err(url, "IP Extractor")
-                    ip_extractor = GetIPv4fromURL(url)
+                    ip_extractor = GetIPv4fromURL(InputGrabber.grab_url("IPExtract"))
                     ip_extractor.main()
                 case 10:
                     print(cld(figlet_format("Password\nGenerator", font="bulbhead"), "yellow"))
-                    password_length = int(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}"
-                                             f"Hunter{R},{W} Password length{R} >>{Y} "))
-                    exit_int_err(password_length, "Password Generator")
-                    password_generator = PasswordGenerator(password_length)
+                    password_generator = PasswordGenerator(InputGrabber.grab_int("Password Generator", "Length"))
                     password_generator.main()
                 case 11:
                     print(cld(figlet_format("URLWhois", font="bulbhead"), "yellow"))
-                    url = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} URL{R} >>{Y} "))
-                    exit_str_err(url, "URL Whois")
-                    url_lookup = WhoisLookupForURL(url)
+                    url_lookup = WhoisLookupForURL(InputGrabber.grab_url("URL Whois"))
                     url_lookup.main()
                 case 12:
                     print(cld(figlet_format("Header\nGrabber", font="bulbhead"), "yellow"))
-                    url = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} URL{R} >>{Y} "))
-                    exit_str_err(url, "Header Grabber")
-                    header_grabber = HTTPHeader(url)
+                    header_grabber = HTTPHeader(InputGrabber.grab_url("Header Grabber"))
                     header_grabber.main()
                 case 13:
                     print(cld(figlet_format("HREF\nCollector", font="bulbhead"), "yellow"))
-                    url = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} URL{R} >>{Y} "))
-                    exit_str_err(url, "HREF Collector")
-                    href_collector = HREFCollector(url)
+                    href_collector = HREFCollector(InputGrabber.grab_url("HREF Collector"))
                     href_collector.main()
                 case 14:
                     print(cld(figlet_format("Ping", font="bulbhead"), "yellow"))
-                    address = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Address{R} >>{Y} "))
-                    exit_str_err(address, "Ping")
-                    ping_count = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W}"
-                                           f" Ping Count {R}({W} Enter for default {R}) >>{Y} "))
-                    exit_str_err(ping_count, "Ping")
-                    ping = CheckHostAvailability(address, ping_count)
+                    ping = CheckHostAvailability(InputGrabber.grab_address("Ping"),
+                                                 InputGrabber.grab_int("Ping", "Count"))
                     ping.main()
                 case 15:
                     print(cld(figlet_format("IPSweep", font="bulbhead"), "yellow"))
-                    value_to_build = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},"
-                                     f"{W} IPv4 Address {R}({W} First Three Octets Only {R}) >>{Y} "))
-                    exit_str_err(value_to_build, "IPSweep")
-                    start_range = int(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Start Range{R} >>{Y} "))
-                    exit_int_err(start_range, "IPSweep")
-                    last_range = int(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Last Range{R} >>{Y} "))
-                    exit_int_err(last_range, "IPSweep")
-                    ping_count = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Ping Count "
-                                           f"{R}({W} Enter for default {R}) >>{Y} "))
-                    exit_str_err(ping_count, "IPSweep")
-                    ipsweep = IPv4Sweep(value_to_build, start_range, last_range, ping_count)
+                    ipsweep = IPv4Sweep(InputGrabber.grab_ip_val("IPSweep"),
+                                        InputGrabber.grab_int("IPSweep", "Start Host"),
+                                        InputGrabber.grab_int("IPSweep", "Last Host"),
+                                        InputGrabber.grab_int("IPSweep",
+                                                              f"Ping Count {R}({W} Enter For Default {R}){W}"))
                     ipsweep.get_status()
                 case 16:
                     print(cld(figlet_format("Code\nGrabber", font="bulbhead"), "yellow"))
-                    url = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Address {R}>>{Y} "))
-                    exit_str_err(url, "Code Grabber")
-                    status_code_grabber = RemoteServerStatusCode(url)
+                    status_code_grabber = RemoteServerStatusCode(InputGrabber.grab_url("Code Grabber"))
                     status_code_grabber.main()
                 case 17:
                     print(cld(figlet_format("Email\nExtractor", font="bulbhead"), "yellow"))
-                    url = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Full URL {R}>>{Y} "))
-                    exit_str_err(url, "Email Extractor")
-                    email_extractor = EmailExtractor(url)
+                    email_extractor = EmailExtractor(InputGrabber.grab_url("Email Extractor"))
                     email_extractor.main()
                 case 99:
                     exit(f"\n{W}[{R}*{W}] Goodbye{R},{W} {USERNAME}{R}.{W} Follow the white rabbit {R}...\n")
