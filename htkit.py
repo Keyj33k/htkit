@@ -97,7 +97,7 @@ class HunterToolkit:
                     ip_lookup.main()
                 case 3:
                     print(cld(figlet_format("Banner\nGrabber", font="bulbhead"), "yellow"))
-                    banner_grabber = BannerGrabber(InputGrabber.grab_ipv4("Banner Grabber"),
+                    banner_grabber = BannerGrabber(InputGrabber.grab_address("Banner Grabber"),
                                                    InputGrabber.grab_int("Banner Grabber", "Port"))
                     banner_grabber.main()
                 case 4:
