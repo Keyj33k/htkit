@@ -31,7 +31,6 @@ class HREFCollector:
 
     def main(self):
         while True:
-            if self.url == 'x' or self.url == 'exit': break
             print(f"{W}[{R}*{W}] Sending GET requests {R}...")
             start = datetime.now()
             for collected_links in BeautifulSoup(get(f"http://{self.url}/").text, "html.parser").find_all("a"):
