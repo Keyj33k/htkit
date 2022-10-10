@@ -28,7 +28,7 @@ def count_config(ip_address: str, ping_count: str):
     check_output(["ping", "-c", ping_count, ip_address])
 
 class IPv4Sweep:
-    def __init__(self, ipv4_address: str, host_min: int, host_max: int, ping_count: str):
+    def __init__(self, ipv4_address: str, host_min: int, host_max: int, ping_count: int):
         self.host_min = host_min
         self.host_max = host_max
         self.ping_count = ping_count
@@ -45,9 +45,9 @@ class IPv4Sweep:
                 host_count += 1
                 try:
                     if self.ping_count == "":
-                        count_config(ip_address, "2")
+                        count_config(ip_address, str(2))
                     else:
-                        count_config(ip_address, self.ping_count)
+                        count_config(ip_address, str(self.ping_count))
 
                     print(f"{W}[{G}+{W}] Host {ip_address} is reachable{R}!")
                     active_hosts += 1
