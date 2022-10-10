@@ -1,0 +1,15 @@
+=============
+|What's New?|
+=============
+
+10.10.22:
+---------
+- updated exit helper and fixed missing exception issue
+
+07.10.22:
+---------
+- added separate file for config checks 
+
+06.10.22:
+---------
+- refactored project, redesigned and added features (status code grabbing)
