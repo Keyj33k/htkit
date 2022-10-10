@@ -23,19 +23,24 @@ Y = "\033[0;33m"
 
 
 class CheckHostAvailability:
-    def __init__(self, target_address: str, ping_count: str):
+    def __init__(self, target_address: str, ping_count: int):
         self.ping_count = ping_count
         self.target_address = target_address
 
     def main(self):
         while True:
             try:
+                if self.ping_count >= 20:
+                    print(f"{W}[{Y}-{W}] Error{R}:{W} ping "
+                          f"count of size {self.ping_count} is not supported")
+                    break
                 print(W)
                 if self.ping_count == "":
-                    call(["ping", "-c", "2", self.target_address])
+                    call(["ping", "-c", str(2), self.target_address])
                 else:
-                    call(["ping", "-c", self.ping_count, self.target_address])
+                    call(["ping", "-c", str(self.ping_count), self.target_address])
                 input(f"\n{W}[{R}*{W}] Press enter key to continue")
                 break
             except CalledProcessError as cpe:
                 print(f"{W}[{Y}-{W}] Error: {cpe}")
+                break
