@@ -28,8 +28,7 @@ class PasswordGenerator:
 
     def main(self):
         while True:
-            if self.password_length == 0: break
-            elif self.password_length < 8:
+            if self.password_length < 8:
                 print(f"{W}[{Y}-{W}] Your password should be always bigger than eight characters{R}.")
                 break
 
