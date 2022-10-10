@@ -28,8 +28,6 @@ class WhoisLookupForURL:
 
     def main(self):
         while True:
-            if self.uniformresourcelocator == 'x' or self.uniformresourcelocator == "exit": break
-
             try:
                 print(colored(whois(self.uniformresourcelocator).text, "white"))
                 input(f"{w}[{r}*{w}] Press enter key to continue")
