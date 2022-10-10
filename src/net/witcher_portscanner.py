@@ -37,7 +37,7 @@ class WitcherPortscanner:
         while True:
             if Conf.ports(self.start_port, self.maximum_port) is False: break
             time_start = dtt.now()
-            print(f"\n{W}[{R}*{W}] Start port scan {R}...\n\n"
+            print(f"{W}[{R}*{W}] Start port scan {R}...\n\n"
                   f"\t{W}Protocol\tPort\t\tStatus\tService\n"
                   f"\t{'-' * 8}\t{'-' * 4}\t\t{'-' * 6}\t{'-' * 7}")
             open_ports = 0
