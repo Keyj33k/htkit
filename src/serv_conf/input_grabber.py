@@ -29,7 +29,8 @@ class InputGrabber:
     @staticmethod
     def grab_wordlist(service: str):
         while True:
-            wordlist = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Wordlist{R} >>{Y} "))
+            wordlist = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Wordlist "
+                                 f"{R}({W} Enter For Default Wordlist ) {R} >>{Y} "))
             if exit_str_err(wordlist, service) is True: return wordlist
 
     @staticmethod
