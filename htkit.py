@@ -88,7 +88,7 @@ class HunterToolkit:
                 case 1:
                     print(cld(figlet_format("port\nscanner", font="bulbhead"), "yellow"))
                     port_scanner = WitcherPortscanner(InputGrabber.grab_address("Witcher"),
-                                                      InputGrabber.grab_int("Witcher", "Port"),
+                                                      InputGrabber.grab_int("Witcher", f"Min{R}.{W} Port"),
                                                       InputGrabber.grab_sec_port("Witcher"))
                     port_scanner.main()
                 case 2:
@@ -129,7 +129,7 @@ class HunterToolkit:
                     url_lookup.main()
                 case 12:
                     print(cld(figlet_format("Header\nGrabber", font="bulbhead"), "yellow"))
-                    header_grabber = HTTPHeader(InputGrabber.grab_url("Header Grabber"))
+                    header_grabber = HTTPHeader(InputGrabber.grab_address("Header Grabber"))
                     header_grabber.main()
                 case 13:
                     print(cld(figlet_format("HREF\nCollector", font="bulbhead"), "yellow"))
