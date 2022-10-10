@@ -207,7 +207,7 @@ if __name__ == "__main__":
         try:
             HunterToolkit.banner()
             HunterToolkit.menu()
-            hunter_toolkit = HunterToolkit(int(input(f"{W}{USERNAME}{R}@{W}Hunter {R}>>{Y} ")))
+            hunter_toolkit = HunterToolkit(int(input(f"{W}{USERNAME}{R}@{W}htkit {R}>>{Y} ")))
             hunter_toolkit.hunter_gate()
         except KeyboardInterrupt:
             exit(f"\n{W}[{Y}-{W}] You pressed Ctrl{R}+{W}C{R}.{W} Exit{R}!")
