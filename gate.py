@@ -106,6 +106,7 @@ class HunterToolkit:
                 case 2:
                     print(cld(figlet_format("IPv4Whois", font="bulbhead"), "yellow"))
                     ipv4_address = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} IPv4 {R}>>{Y} "))
+                    exit_str_err(ipv4_address, "IPv4 Whois")
                     ip_lookup = IPv4Lookup(ipv4_address)
                     ip_lookup.main()
                 case 3:
@@ -121,6 +122,7 @@ class HunterToolkit:
                 case 5:
                     print(cld(figlet_format("Whois\nPhonenumber", font="bulbhead"), "yellow"))
                     target_phonenumber = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Phonenumber{R} >>{Y} "))
+                    exit_str_err(target_phonenumber, "Phonenumber Whois")
                     phonenumber_whois = PhonenumberWhois(target_phonenumber)
                     phonenumber_whois.main()
                 case 6:
@@ -139,27 +141,32 @@ class HunterToolkit:
                 case 9:
                     print(cld(figlet_format("ipextract", font="bulbhead"), "yellow"))
                     url = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} URL{R} >>{Y} "))
+                    exit_str_err(url, "IP Extractor")
                     ip_extractor = GetIPv4fromURL(url)
                     ip_extractor.main()
                 case 10:
                     print(cld(figlet_format("Password\nGenerator", font="bulbhead"), "yellow"))
                     password_length = int(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}"
                                              f"Hunter{R},{W} Password length{R} >>{Y} "))
+                    exit_int_err(password_length, "Password Generator")
                     password_generator = PasswordGenerator(password_length)
                     password_generator.main()
                 case 11:
                     print(cld(figlet_format("URLWhois", font="bulbhead"), "yellow"))
                     url = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} URL{R} >>{Y} "))
+                    exit_str_err(url, "URL Whois")
                     url_lookup = WhoisLookupForURL(url)
                     url_lookup.main()
                 case 12:
                     print(cld(figlet_format("Header\nGrabber", font="bulbhead"), "yellow"))
                     url = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} URL{R} >>{Y} "))
+                    exit_str_err(url, "Header Grabber")
                     header_grabber = HTTPHeader(url)
                     header_grabber.main()
                 case 13:
                     print(cld(figlet_format("HREF\nCollector", font="bulbhead"), "yellow"))
                     url = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} URL{R} >>{Y} "))
+                    exit_str_err(url, "HREF Collector")
                     href_collector = HREFCollector(url)
                     href_collector.main()
                 case 14:
@@ -188,11 +195,13 @@ class HunterToolkit:
                 case 16:
                     print(cld(figlet_format("Code\nGrabber", font="bulbhead"), "yellow"))
                     url = str(input(f"{W}[{R}*{W}] {R}({W}{USERNAME}{R}@{W}Hunter{R},{W} Address {R}>>{Y} "))
+                    exit_str_err(url, "Code Grabber")
                     status_code_grabber = RemoteServerStatusCode(url)
                     status_code_grabber.main()
                 case 17:
                     print(cld(figlet_format("Email\nExtractor", font="bulbhead"), "yellow"))
                     url = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}Hunter{R},{W} Full URL {R}>>{Y} "))
+                    exit_str_err(url, "Email Extractor")
                     email_extractor = EmailExtractor(url)
                     email_extractor.main()
                 case 99:
