@@ -78,7 +78,9 @@ SOFTWARE.
 ---
 
 <div align="center">
+
 ### Tested on 5.18.0-kali7-amd64, 5.15.0-47-genericUbuntu, Termux-4.9.227 and WSL1-4.4.0 
+
 </div>
 
 ---
