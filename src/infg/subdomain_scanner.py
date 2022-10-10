@@ -44,8 +44,6 @@ class SubdomainScanner:
 
     def main(self):
         while True:
-            if self.wordlist == "exit" or self.wordlist == 'x': break
-
             try:
                 scanner("subdomains.txt", self.url) if self.wordlist == "" else scanner(self.wordlist, self.url)
                 input(f"{W}[{R}*{W}] Press enter key to continue")
