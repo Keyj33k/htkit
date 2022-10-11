@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 
 try:
+    from datetime import datetime
+    from requests import get
     from requests.exceptions import MissingSchema
-    import requests
-    import re
+    from re import finditer
+    from bs4 import BeautifulSoup
+    from requests.exceptions import MissingSchema, InvalidSchema, ConnectionError
+    from time import sleep
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -22,7 +26,7 @@ G = "\033[0;32m"
 R = "\033[0;31m"
 Y = "\033[0;33m"
 
-def extractor(url: str):
+def extractor(target_url: str):
     email_address_regex = ("(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&"
                            "'*+/=?^_`{|}~-]+)*|(?:[\x01-\x08\x0b\x0c\x0e-"
                            "\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*"
@@ -32,8 +36,23 @@ def extractor(url: str):
                            "|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-"
                            "\x5a\x53-\x7f]|\\[\n\x01-\x09\x0b\x0c\x0e-\x7f])+)\])")
 
-    for url in re.finditer(email_address_regex, requests.get(url).content.decode()):
-        print(f"{W}[{G}+{W}] Email address found: {url.group()}")
+    print(f"{W}[{R}*{W}] Scanning {target_url} for addresses {R}...")
+    
+    for address in finditer(email_address_regex, get(target_url).content.decode()):
+        print(f"{W}[{G}+{W}] Email address found: {address.group()}")
+    else:
+        print(f"{W}[{R}*{W}] Done")
+
+def request(target_url: str):
+    for collected_links in BeautifulSoup(get(target_url).text, "html.parser").find_all('a'):
+        href = collected_links.get("href")
+        sleep(0.5)
+        
+        try:
+            if get(href).status_code == 200:
+                extractor(href)
+        except MissingSchema:
+            pass
 
 class EmailExtractor:
     def __init__(self, uniformresourcelocator: str):
@@ -41,13 +60,13 @@ class EmailExtractor:
 
     def main(self):
         while True:
-            print(f"{W}[{R}*{W}] Sending GET request and extract all addresses {R}...")
             try:
-                extractor(self.uniformresourcelocator)
-            except MissingSchema:
-                extractor(f"http://{self.uniformresourcelocator}/")
+                request(self.uniformresourcelocator)
+            except (MissingSchema, InvalidSchema):
+                request(f"http://{self.uniformresourcelocator}/")
             except Exception as excerr:
                 print(excerr)
                 break
+                
             input(f"{W}[{R}*{W}] Press enter key to continue")
             break
