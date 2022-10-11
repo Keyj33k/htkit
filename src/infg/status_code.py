@@ -5,6 +5,7 @@ try:
     from time import sleep
     from pwd import getpwuid
     from os import getuid
+    from datetime import datetime
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -30,9 +31,11 @@ class RemoteServerStatusCode:
     def main(self):
         while True:
             try:
+                start = datetime.now()
                 print(f"{W}[{R}*{W}] Sending GET request {R}...")
                 sleep(0.25)
-                print(f"{W}[{G}+{W}] {self.url}{R}:{W} {urllib3.PoolManager().request('GET', self.url).status}")
+                print(f"{W}[{G}+{W}] {self.url}{R}:{W} {urllib3.PoolManager().request('GET', self.url).status}\n"
+                      f"{W}[{R}*{W}] Done{R},{W} runtime{R}:{W} {datetime.now() - start}")
                 input(f"{W}[{R}*{W}] Press enter key to continue")
                 break
             except Exception as excerr:
