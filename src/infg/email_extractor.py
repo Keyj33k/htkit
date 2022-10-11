@@ -42,7 +42,7 @@ def extractor(target_url: str):
     print(f"{W}[{R}*{W}] Scanning {target_url} for addresses {R}...")
     
     for address in finditer(email_address_regex, get(target_url).content.decode()):
-        print(f"{W}[{G}+{W}] Email address found: {address.group()}")
+        print(f"{W}[{G}+{W}] Email address found{R}:{W} {address.group()}")
     else:
         print(f"{W}[{R}*{W}] Finished")
 
