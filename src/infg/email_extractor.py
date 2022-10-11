@@ -26,6 +26,9 @@ G = "\033[0;32m"
 R = "\033[0;31m"
 Y = "\033[0;33m"
 
+def runtime(start_time):
+    print(f"{W}[{R}*{W}] Done{R},{W} runtime{R}:{W} {datetime.now() - start_time}")
+
 def extractor(target_url: str):
     email_address_regex = ("(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&"
                            "'*+/=?^_`{|}~-]+)*|(?:[\x01-\x08\x0b\x0c\x0e-"
@@ -41,7 +44,7 @@ def extractor(target_url: str):
     for address in finditer(email_address_regex, get(target_url).content.decode()):
         print(f"{W}[{G}+{W}] Email address found: {address.group()}")
     else:
-        print(f"{W}[{R}*{W}] Done")
+        print(f"{W}[{R}*{W}] Finished")
 
 def request(target_url: str):
     for collected_links in BeautifulSoup(get(target_url).text, "html.parser").find_all('a'):
@@ -54,16 +57,20 @@ def request(target_url: str):
         except MissingSchema:
             pass
 
+
 class EmailExtractor:
     def __init__(self, uniformresourcelocator: str):
         self.uniformresourcelocator = uniformresourcelocator
 
     def main(self):
         while True:
+            start = datetime.now()
             try:
                 request(self.uniformresourcelocator)
+                runtime(start)
             except (MissingSchema, InvalidSchema):
                 request(f"http://{self.uniformresourcelocator}/")
+                runtime(start)
             except Exception as excerr:
                 print(excerr)
                 break
