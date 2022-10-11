@@ -2,6 +2,10 @@
 |What's New?|
 =============
 
+11.10.22
+--------
+- email extractor now scans every link for available addresses
+
 10.10.22:
 ---------
 - updated exit helper and fixed missing exception issue
