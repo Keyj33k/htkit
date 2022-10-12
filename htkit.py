@@ -145,7 +145,7 @@ class HunterToolkit:
                     ipsweep = IPv4Sweep(InputGrabber.grab_ip_val("IPSweep"),
                                         InputGrabber.grab_int("IPSweep", "Start Host"),
                                         InputGrabber.grab_int("IPSweep", "Last Host"),
-                                        InputGrabber.grab_int("IPSweep",
+                                        InputGrabber.grab_str("IPSweep",
                                                               f"Ping Count {R}({W} Enter For Default {R}){W}"))
                     ipsweep.get_status()
                 case 16:
