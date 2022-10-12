@@ -52,7 +52,6 @@ class IPv4Sweep:
                     print(f"{W}[{G}+{W}] Host {ip_address} is reachable{R}!")
                     active_hosts += 1
                 except CalledProcessError:
-                    print(f"\r{W}[{Y}-{W}] Host {ip_address} is not reachable{R}!", end="\r")
                     inactive_hosts += 1
                 except KeyboardInterrupt:
                     print(f"{W}[{Y}-{W}] You pressed Ctrl{R}+{W}C{R}.{W} Interrupted!")
