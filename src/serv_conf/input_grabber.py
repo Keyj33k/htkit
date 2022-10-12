@@ -62,6 +62,12 @@ class InputGrabber:
         while True:
             value = int(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}htkit{R},{W} {category}{R} >>{Y} "))
             if exit_int_err(value, service) is True: return value
+            
+    @staticmethod
+    def grab_str(service: str, category: str):
+        while True:
+            value = str(input(f"{W}[{R}*{W}] {W}{USERNAME}{R}@{W}htkit{R},{W} {category}{R} >>{Y} "))
+            if exit_str_err(value, service) is True: return value
 
     @staticmethod
     def grab_sec_port(service: str):
