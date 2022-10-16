@@ -21,9 +21,8 @@ try:
 
     from src.system.system_inf import SystemInformations
 
-    from src.serv_conf.input_grabber import InputGrabber
-    
-    from src.colors.coloring import R, W, Y
+    from src.utils.input_grabber import InputGrabber
+    from src.utils.coloring import R, W, Y
 
     from termcolor import colored as cld
     from pyfiglet import figlet_format
@@ -49,7 +48,7 @@ except ImportError:
 #   Author  :   Keyjeek                   #
 #   Contact :   K3yjeek@proton.me         #
 #   Github  :   @Keyj33k                  #
-#   Version :   1.1.13                    #
+#   Version :   1.1.14                    #
 #                                         #
 # # # # # # # # # # # # # # # # # # # # # #
 
@@ -62,7 +61,7 @@ class HunterToolkit:
     @staticmethod
     def banner():
         print(cld(figlet_format("Hunter", font="poison"), "white"))
-        print(f"\t{R}[{W} by{R}@{W}keyjeek {R}| {W}Toolkit{R} |{W} Ver{R}.:{W}1{R}.{W}1{R}.{W}13 {R}]\n")
+        print(f"\t{R}[{W} by{R}@{W}keyjeek {R}| {W}Toolkit{R} |{W} Ver{R}.:{W}1{R}.{W}1{R}.{W}14 {R}]\n")
 
     @staticmethod
     def menu():
@@ -210,3 +209,4 @@ if __name__ == "__main__":
             exit(f"\n{W}[{Y}-{W}] You pressed Ctrl{R}+{W}C{R}.{W} Exit{R}!")
         except ValueError:
             print(f"\n{W}[{Y}-{W}] You need to enter a integer value{R}!")
+
