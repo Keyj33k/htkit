@@ -4,6 +4,7 @@ try:
     import time
     from datetime import datetime
     from socket import socket, AF_INET, SOCK_STREAM, error
+    from src.colors.coloring import W, R, Y, G
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -16,12 +17,6 @@ except ImportError:
 
     You will find this file in the req directory.
     """)
-
-W = "\033[0;37m"
-G = "\033[0;32m"
-R = "\033[0;31m"
-Y = "\033[0;33m"
-
 
 class BannerGrabber:
     def __init__(self, target_address: str, target_port: int):
