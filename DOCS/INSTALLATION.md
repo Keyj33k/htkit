@@ -12,7 +12,7 @@
 
 Clone the repository:
 ``` 
-git clone https://github.com/Keyj33k/Hunter-Toolkit.git
+git clone https://github.com/Keyj33k/htkit.git
 ```
 
 ---
@@ -22,7 +22,7 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 - Change path to the Hunter-Toolkit directory:
     
     ```
-    cd Hunter-Toolkit
+    cd htkit
     ```
 
 - Run the installer:
@@ -36,7 +36,7 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 - Change path to the Hunter-Toolkit directory:
     
     ```
-    cd Hunter-Toolkit
+    cd htkit
     ```
 
 - Run the installer:
@@ -61,7 +61,7 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
     - Change path to the Hunter-Toolkit directory:
     
     ```
-    cd Hunter-Toolkit/req/
+    cd htkit/req/
     ```
 
     - Install the requirements:   
@@ -97,7 +97,7 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 - Use this command:
     
     ```
-    python3 htkit.py
+    cd .. && python3 htkit
     ``` 
   
 ## Update the pentesting assistant (Debian-/based):
@@ -105,7 +105,7 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 - Change path to the Hunter-Toolkit directory and type:
 
     ```
-    cd Hunter-Toolkit
+    cd htkit
     ```
     
 - Run the updater
@@ -119,7 +119,7 @@ git clone https://github.com/Keyj33k/Hunter-Toolkit.git
 - Change path to the Hunter-Toolkit directory and type:
 
     ```
-    cd Hunter-Toolkit
+    cd htkit
     ```
     
 - Run the updater
