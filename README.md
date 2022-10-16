@@ -28,10 +28,28 @@
 [9] IPv4 Extractor              [99] Exit
 ```
 
-### Getting started:
+### :rocket: Getting started:
 ---
-- :book: Please read the ![docs](https://github.com/Keyj33k/Hunter-Toolkit/blob/main/DOCS/INSTALLATION.md) to have full instructions for this project
-
+1 ) Clone the repo:
+```
+git clone https://github.com/Keyj33k/htkit.git
+```
+2 ) Run the installer:
+```
+bash htkit/installer
+```
+Or install the requirements separately:
+```
+pip3 install -r htkit/requirements.txt
+```
+3 ) Run the Hunter-Toolkit:
+```
+python3 htkit
+``` 
+Update this project:
+```
+bash htkit/updater
+```
 
 ### Usage example: Identifying service version behind an open port:
 ---
