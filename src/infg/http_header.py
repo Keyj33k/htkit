@@ -5,6 +5,7 @@ try:
     from requests.exceptions import ConnectionError
     from time import sleep
     from datetime import datetime
+    from src.colors.coloring import W, R, Y, G
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -17,12 +18,6 @@ except ImportError:
 
     You will find this file in the req directory.
     """)
-
-W = "\033[0;37m"
-G = "\033[0;32m"
-R = "\033[0;31m"
-Y = "\033[0;33m"
-
 
 class HTTPHeader:
     def __init__(self, uniformresourcelocator: str):
