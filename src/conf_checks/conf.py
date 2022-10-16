@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-
-W = "\033[0;37m"
-R = "\033[0;31m"
-Y = "\033[0;33m"
+from src.colors.coloring import R, W, Y
 
 class Conf:
     @staticmethod
