@@ -19,9 +19,8 @@ setup(
         "psutil>=5.9.2"
     ],
     classifiers=[
-        "Intended Audience :: Pentesting/Cybersecurity/Information Gathering/OSINT",
-        "License :: MIT",
-        "Operating System :: Linux",
-        "Programming Language :: Python :: 3.10.6"
+        "Operating System :: POSIX :: Linux",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3.10"
     ]
 )
