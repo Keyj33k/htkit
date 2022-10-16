@@ -52,4 +52,4 @@ class Crypt:
                     if hash_to_decrypt == "exit" or hash_to_decrypt == 'x': break
                     build_result(hash_to_decrypt, b64.b64decode(hash_to_decrypt.encode('ascii')).decode('ascii'))
                 case _:
-                    print(cld("Invalid Input!", "red"))
+                    print(f"{W}[{Y}-{W}] Error{R}:{W} Invalid Input{R}!")
