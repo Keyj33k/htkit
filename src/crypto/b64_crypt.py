@@ -6,7 +6,7 @@ try:
     from pwd import getpwuid
     from os import getuid
     import base64 as b64
-    from src.colors.coloring import W, R, Y
+    from src.colors.coloring import W, R, Y, G
 except ImportError:
     raise RuntimeError("""
     Oops,
