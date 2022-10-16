@@ -3,6 +3,7 @@
 try:
     from requests import get, ConnectionError
     from time import sleep
+    from src.colors.coloring import W, R, Y, G
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -16,26 +17,17 @@ except ImportError:
     You will find this file in the req directory.
     """)
 
-W = "\033[0;37m"
-G = "\033[0;32m"
-R = "\033[0;31m"
-Y = "\033[0;33m"
-
-
 def scanner(database: str, uniformresourcelocator: str):
     with open(database, "r") as file:
         print(f"{W}[{R}*{W}] Sending GET requests {R}...\n"
               f"{W}[{Y}!{W}] Be patient{R},{W} It may take some time {R}...")
-
         for list_domains in file.read().splitlines():
             build_url = f"http://{list_domains}.{uniformresourcelocator}"
             sleep(0.75)
-
             try:
                 print(f"{W}[{G}+{W}] {build_url}\t{R}[{W} {get(build_url).status_code} {R}]{W}")
             except ConnectionError:
                 pass
-
 
 class SubdomainScanner:
     def __init__(self, url: str, wordlist: str):
