@@ -38,7 +38,7 @@ git clone https://github.com/Keyj33k/htkit.git
 ```
 bash htkit/installer
 ```
-Or install the requirements separately:
+(install the requirements separately):
 ```
 pip3 install -r htkit/requirements.txt
 ```
