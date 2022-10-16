@@ -6,6 +6,7 @@ try:
     from pyfiglet import figlet_format
     from datetime import datetime
     from src.conf_checks.conf import Conf
+    from src.colors.coloring import W, R, Y, G
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -18,11 +19,6 @@ except ImportError:
 
     You will find this file in the req directory.
     """)
-
-W = "\033[0;37m"
-G = "\033[0;32m"
-R = "\033[0;31m"
-Y = "\033[0;33m"
 
 def count_config(ip_address: str, ping_count: str):
     check_output(["ping", "-c", ping_count, ip_address])
