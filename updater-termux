@@ -43,9 +43,13 @@ printf "$W[$G+$W] Done.\n"
 sleep 1.25
 printf "$W[$R*$W] Getting Hunter-Toolkit ...\n"
 
-git clone https://github.com/Keyj33k/htkit.git || (printf "$W[$Y-$W] Failed getting Hunter-Toolkit!" && exit 1)
+if git clone https://github.com/Keyj33k/htkit.git; then
+        printf "$W[$G+$W] Done.\n"
+else 
+        printf "$W[$Y-$W] Failed getting Hunter-Toolkit!\n"
+        exit 1
+fi
 
-printf "$W[$G+$W] Done.\n"
 sleep 1.25
 printf "$W[$R*$W] Do you want to start the Hunter-Toolkit? y/n "
 read CHOICE
