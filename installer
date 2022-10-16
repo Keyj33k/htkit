@@ -37,7 +37,7 @@ read CHOICE
 if [[ $CHOICE == "y" || $CHOICE == "Y" ]]; then
 	printf "$W[$R*$W] Starting the Hunter-Toolkit ...\n"
 	sleep 1.25
-	python3 htkit.py
+	python3 htkit
 	exit 0
 elif [[ $CHOICE == "n" || $CHOICE == "N" ]]; then
 	printf "$W[$R*$W] All right, thank you for choosing the Hunter-Toolkit!\n"
