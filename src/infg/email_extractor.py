@@ -8,6 +8,7 @@ try:
     from bs4 import BeautifulSoup
     from requests.exceptions import MissingSchema, InvalidSchema, ConnectionError
     from time import sleep
+    from src.colors.coloring import W, R, Y, G
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -20,11 +21,6 @@ except ImportError:
     
     You will find this file in the req directory.
     """)
-
-W = "\033[0;37m"
-G = "\033[0;32m"
-R = "\033[0;31m"
-Y = "\033[0;33m"
 
 def runtime(start_time):
     print(f"{W}[{R}*{W}] Done{R},{W} runtime{R}:{W} {datetime.now() - start_time}")
@@ -40,7 +36,6 @@ def extractor(target_url: str):
                            "\x5a\x53-\x7f]|\\[\n\x01-\x09\x0b\x0c\x0e-\x7f])+)\])")
 
     print(f"{W}[{R}*{W}] Scanning {target_url} for addresses {R}...")
-    
     for address in finditer(email_address_regex, get(target_url).content.decode()):
         print(f"{W}[{G}+{W}] Email address found{R}:{W} {address.group()}")
     else:
@@ -56,7 +51,6 @@ def request(target_url: str):
                 extractor(href)
         except MissingSchema:
             pass
-
 
 class EmailExtractor:
     def __init__(self, uniformresourcelocator: str):
