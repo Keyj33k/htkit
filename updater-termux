@@ -43,7 +43,7 @@ printf "$W[$G+$W] Done.\n"
 sleep 1.25
 printf "$W[$R*$W] Getting Hunter-Toolkit ...\n"
 
-git clone https://github.com/Keyj33k/Hunter-Toolkit.git || (printf "$W[$Y-$W] Failed getting Hunter-Toolkit!" && exit 1)
+git clone https://github.com/Keyj33k/htkit.git || (printf "$W[$Y-$W] Failed getting Hunter-Toolkit!" && exit 1)
 
 printf "$W[$G+$W] Done.\n"
 sleep 1.25
