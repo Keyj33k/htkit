@@ -41,15 +41,6 @@ except ImportError:
     You will find this file in the req directory.
     """)
 
-# # # # # # # # # # # # # # # # # # # # # #
-#                                         #
-#   Author  :   Keyjeek                   #
-#   Contact :   K3yjeek@proton.me         #
-#   Github  :   @Keyj33k                  #
-#   Version :   1.1.14                    #
-#                                         #
-# # # # # # # # # # # # # # # # # # # # # #
-
 USERNAME = getpwuid(getuid())[0]
 
 class HunterToolkit:
