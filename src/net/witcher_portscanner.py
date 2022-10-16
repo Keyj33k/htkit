@@ -5,6 +5,7 @@ try:
     from termcolor import colored as cld
     from socket import error, AF_INET, SOCK_STREAM, socket, getservbyport
     from src.conf_checks.conf import Conf
+    from src.colors.coloring import W, R, Y, G
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -17,11 +18,6 @@ except ImportError:
     
     You will find this file in the req directory.
     """)
-
-W = "\033[0;37m"
-G = "\033[0;32m"
-R = "\033[0;31m"
-Y = "\033[0;33m"
 
 class WitcherPortscanner:
     def __init__(self, target_ipv4: str, start_port: int, maximum_port: int):
