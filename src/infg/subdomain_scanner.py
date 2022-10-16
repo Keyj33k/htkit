@@ -41,7 +41,7 @@ class SubdomainScanner:
                 input(f"{W}[{R}*{W}] Press enter key to continue")
                 break
             except FileNotFoundError:
-                print(f"{W}[{Y}-{W}] You need the subdomain file in the current directory to run this tool{R}.")
+                print(f"{W}[{Y}-{W}] Error{R}:{W} wordlist not found{R}!")
                 break
             except KeyboardInterrupt:
                 print(f"{W}[{R}*{W}] You pressed Ctrl{R}+{W}C{R}.{W} Exit{R}.")
