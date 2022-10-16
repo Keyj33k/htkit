@@ -39,6 +39,11 @@
   <img src="https://github.com/Keyj33k/Hunter-Toolkit/blob/main/imgs/demo.gif?raw=true"/>
 </div>
 
+## Feedback And Bug Report
+
+If you found a bug, or wanna start a discussion, please use ![Github issues](https://github.com/Keyj33k/htkit/issues). You are also invited to <br>
+send an email to the following address: `K3yjeek@proton.me`
+
 # :warning: NOTE:
 
 The following isn't some silly blah blah or anything. It's a serious warning.
