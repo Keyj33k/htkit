@@ -2,11 +2,7 @@
 
 from pwd import getpwuid
 from os import getuid
-
-Y = "\033[0;33m"
-G = "\033[0;32m"
-W = "\033[0;37m"
-R = "\033[0;31m"
+from src.colors.coloring import W, R, Y, G
 
 USERNAME = getpwuid(getuid())[0]
 
@@ -16,7 +12,6 @@ def exit_str_err(command: str, tool: str):
               f" invalid{R}.{W} Please use Ctrl{R}+{W}C to exit {tool}{R}!{W}")
         return False
     return True
-
 
 def exit_int_err(command: int, tool: str):
     if command == 0:
