@@ -3,6 +3,7 @@
 try:
     from random import sample
     from string import digits, ascii_uppercase, ascii_lowercase
+    from src.colors.coloring import R, W, Y, G
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -15,12 +16,6 @@ except ImportError:
 
     You will find this file in the req directory.
     """)
-
-W = "\033[0;37m"
-G = "\033[0;32m"
-R = "\033[0;31m"
-Y = "\033[0;33m"
-
 
 class PasswordGenerator:
     def __init__(self, password_length: int):
