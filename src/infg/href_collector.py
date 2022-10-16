@@ -7,6 +7,7 @@ try:
     from requests import get
     from requests.exceptions import MissingSchema, ConnectionError, InvalidSchema
     from datetime import datetime
+    from src.colors.coloring import W, R, Y, G
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -20,11 +21,6 @@ except ImportError:
     You will find this file in the req directory.
     """)
 
-W = "\033[0;37m"
-G = "\033[0;32m"
-R = "\033[0;31m"
-Y = "\033[0;33m"
-
 class HREFCollector:
     def __init__(self, url: str):
         self.url = url
@@ -33,9 +29,8 @@ class HREFCollector:
         while True:
             print(f"{W}[{R}*{W}] Sending GET requests {R}...")
             start = datetime.now()
-            for collected_links in BeautifulSoup(get(f"http://{self.url}/").text, "html.parser").find_all("a"):
+            for collected_links in BeautifulSoup(get(f"http://{self.url}/").text, "html.parser").find_all('a'):
                 try:
-
                     print(f"{W}[{G}+{W}] Href found{R}:{W} {collected_links.get('href')} "
                           f"{R}[{W} {get(collected_links.get('href')).status_code} {R}]{W}")
                 except (InvalidSchema, MissingSchema):
