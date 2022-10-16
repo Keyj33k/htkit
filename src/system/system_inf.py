@@ -12,6 +12,7 @@ try:
     from requests import get
     from re import findall
     from uuid import getnode
+    from src.colors.coloring import W, R, Y, G
 except ImportError:
     raise RuntimeError("""
     Oops,
@@ -27,13 +28,7 @@ except ImportError:
 
 USERNAME = getpwuid(os.getuid())[0]
 
-y = "\033[0;33m"
-g = "\033[0;32m"
-w = "\033[0;37m"
-r = "\033[0;31m"
-
 class SystemInformations:
-
     @staticmethod
     def overview():
         try:
@@ -47,7 +42,6 @@ class SystemInformations:
                     break
                 start_time = dtt.now()
                 get_system = uname()
-
                 print(f"{w}[{r}*{w}] Details\n"
                       f"{w}[{g}+{w}] System{r}:{w} {get_system.system}\n"
                       f"{w}[{g}+{w}] Name{r}:{w} {get_system.node}\n"
@@ -65,7 +59,6 @@ class SystemInformations:
 
                 get_partitions = psutil.disk_partitions()
                 print(f"\n{w}[{r}*{w}] Disk")
-
                 for part in get_partitions:
                     print(f"\n{w}[{g}+{w}] Device{r}:{w} {part.device}\n"
                           f"{w}[{g}+{w}] Mounted At{r}:{w} {part.mountpoint}\n"
@@ -84,7 +77,6 @@ class SystemInformations:
                 disk_io = psutil.disk_io_counters()
                 print(f"{w}[{g}+{w}] Read Since Boot{r}:{w} {show_size(disk_io.read_bytes)}\n"
                       f"{w}[{g}+{w}] Written Since Boot{r}:{w} {show_size(disk_io.write_bytes)}\n")
-
                 print(f"{w}[{r}*{w}] CPU\n"
                       f"{w}[{g}+{w}] Cores{r}:{w} {psutil.cpu_count(logical=False)}\n"
                       f"{w}[{g}+{w}] Logical Cores{r}:{w} {psutil.cpu_count(logical=True)}\n"
@@ -98,7 +90,6 @@ class SystemInformations:
 
                 virtual_mem = psutil.virtual_memory()
                 swap = psutil.swap_memory()
-
                 print(f"\n{w}[{r}*{w}] Ram\n"
                       f"{w}[{g}+{w}] Total{r}:{w} {show_size(virtual_mem.total)}\n"
                       f"{w}[{g}+{w}] Available{r}:{w} {show_size(virtual_mem.available)}\n"
@@ -129,7 +120,6 @@ class SystemInformations:
                 net_io = psutil.net_io_counters()
                 boot_time_timestamp = psutil.boot_time()
                 boot_time = dtt.fromtimestamp(boot_time_timestamp)
-
                 print(f"{w}[{g}+{w}] Total Bytes Sent{r}:{w} {show_size(net_io.bytes_sent)}\n"
                       f"{w}[{g}+{w}] Total Bytes Received{r}:{w} {show_size(net_io.bytes_recv)}\n")
 
