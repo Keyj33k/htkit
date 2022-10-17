@@ -22,11 +22,23 @@ else
 fi
 
 if ! command -v pip &> /dev/null; then
-        pkg update -y && pkg install python3 -y 
+	(pkg update -y && pkg install python3 -y) || (printf "$W[$Y-$W] installer failed, cannot install the requirements\n" && exit 1) 
 fi
 
-if [ -f "req/requirements.txt" ]; then
-        pip install -r req/requirements.txt
+if [ -f "htkit/requirements.txt" ]; then
+	if pip install -r htkit/requirements.txt &> /dev/null; then
+		printf "$W[$G+$W] requirements installed successfully\n"
+	else
+	 	printf "$W[$Y-$W] installer failed, cannot install the requirements\n" 
+	 	exit 1
+	fi	
+elif [ -f "requirements.txt" ]; then
+	if pip install -r requirements.txt &> /dev/null; then
+		printf "$W[$G+$W] requirements installed successfully\n"
+	else
+	 	printf "$W[$Y-$W] installer failed, cannot install the requirements\n" 
+	 	exit 1
+	 fi
 fi
 
 printf "$W[$G+$W] Hunter-Toolkit is now ready to use ...\n"
@@ -46,4 +58,3 @@ else
 	printf "$W[$Y-$W] Invalid Input!\n"
 	exit 1
 fi
-
