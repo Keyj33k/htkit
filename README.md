@@ -35,18 +35,27 @@
 git clone https://github.com/Keyj33k/htkit.git
 ```
 2 ) Run the installer:
+- (Debian/-based):
 ```
 sudo bash htkit/installer
+```
+- (Termux):
+```
+bash htkit/installer-termux
 ```
 3 ) Run the Hunter-Toolkit:
 ```
 htkit
 ``` 
 Update this project:
+- (Debian/-based):
 ```
 bash htkit/updater
 ```
-
+- (Termux):
+```
+bash htkit/updater-termux
+```
 ### Usage example: Identifying service version behind an open port:
 ---
 <div align="center">
