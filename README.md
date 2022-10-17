@@ -43,11 +43,20 @@ sudo bash htkit/installer
 ```
 bash htkit/installer-termux
 ```
+(Or install the requirements separately):
+```
+pip install -r htkit/requirements.txt
+```
 3 ) Run the Hunter-Toolkit:
+- If you used the installer:
 ```
 htkit
-``` 
-Update this project:
+```
+- Or if you installed this project manually:
+```
+python3 htkit
+```
+### Update this project:
 - (Debian/-based):
 ```
 bash htkit/updater
