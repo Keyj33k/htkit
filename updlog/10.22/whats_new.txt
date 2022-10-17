@@ -2,6 +2,11 @@
 |What's New?|
 =============
 
+17.10.22:
+---------
+- command registration in Debian/-based installer
+- error handling for installer
+
 16.10.22:
 ---------
 - restructured file system 
