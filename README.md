@@ -35,11 +35,11 @@
 git clone https://github.com/Keyj33k/htkit.git
 ```
 2 ) Run the installer:
-- (Debian/-based):
+- Debian/-based:
 ```
 sudo bash htkit/installer
 ```
-- (Termux):
+- Termux:
 ```
 bash htkit/installer-termux
 ```
@@ -57,11 +57,11 @@ htkit
 python3 htkit
 ```
 ### Update this project:
-- (Debian/-based):
+- Debian/-based:
 ```
 bash htkit/updater
 ```
-- (Termux):
+- Termux:
 ```
 bash htkit/updater-termux
 ```
