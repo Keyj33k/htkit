@@ -2,7 +2,12 @@
 |What's New?|
 =============
 
-11.10.22
+16.10.22:
+---------
+- restructured file system 
+- refactored main file 
+
+11.10.22:
 --------
 - email extractor now scans every link for available addresses
 
