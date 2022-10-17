@@ -36,15 +36,11 @@ git clone https://github.com/Keyj33k/htkit.git
 ```
 2 ) Run the installer:
 ```
-bash htkit/installer
-```
-(install the requirements separately):
-```
-pip3 install -r htkit/requirements.txt
+sudo bash htkit/installer
 ```
 3 ) Run the Hunter-Toolkit:
 ```
-python3 htkit
+htkit
 ``` 
 Update this project:
 ```
